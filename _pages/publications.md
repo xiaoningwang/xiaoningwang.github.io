@@ -6,13 +6,13 @@ author_profile: true
 
 # English 
 
-- Xi Wang, Shukai Li, Tao Tang, **Xiaoning Wang**, Jing Xun, "Intelligent operation of heavy haul train with data imbalance: A machine learning method," Knowledge-Based Systems, 163, 36-50.
+- Xi Wang, Shukai Li, Tao Tang, **Xiaoning Wang**, Jing Xun,(2018), "Intelligent operation of heavy haul train with data imbalance: A machine learning method," Knowledge-Based Systems, 163: 36-50.
 
-- Xiaoling Lu, **Xiaoning Wang** and Zhimeng Sun. (2018), "FIC Based Model Averaging for the Censored Quantile Varying Coefficient Regression Model,"Journal of Systems Science \& Complexity.
+- Xiaoling Lu, **Xiaoning Wang** and Zhimeng Sun. (2018), "FIC Based Model Averaging for the Censored Quantile Varying Coefficient Regression Model,"Journal of Systems Science and Complexity,38(7): 746-763.
 
 # Chinese(中文）
 
-- 王小宁, 金勇进. 权数的评估和控制研究[J]. 调研世界, 2017(3):53-56.
+- **王小宁**, 金勇进. 权数的评估和控制研究[J]. 调研世界, 2017(3):53-56.
 
 # Translation Works(译著)
 
