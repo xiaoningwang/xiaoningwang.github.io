@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "中文"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,11 +9,11 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+教育经历
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* 理学学士, 天津理工大学, 2013
+* 经济学硕士（统计学专业）, 中国人民大学, 2017
+* 经济学博士（统计学专业）, 中国人民大学, 2019 
 
 Work experience
 ======
