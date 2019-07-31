@@ -12,20 +12,20 @@ redirect_from:
 教育经历
 ======
 * 理学学士, 天津理工大学, 2013
-* 经济学硕士（统计学专业）, 中国人民大学, 2017，导师：吕晓玲教授(http://stat.ruc.edu.cn/teacher_more.php?id=39&cid=25)
-* 经济学博士（统计学专业）, 中国人民大学, 2019 ,导师：金勇进教授(http://stat.ruc.edu.cn/teacher_more.php?id=119&cid=25)
+* 经济学硕士（统计学专业）, 中国人民大学, 2017，导师：[吕晓玲教授](http://stat.ruc.edu.cn/teacher_more.php?id=39&cid=25)
+* 经济学博士（统计学专业）, 中国人民大学, 2019 ,导师：[金勇进教授](http://stat.ruc.edu.cn/teacher_more.php?id=119&cid=25)
 
 工作经历
 ======
 * 2017.9 - 2018.4: 访问学者
   * 威斯康辛大学-麦迪逊分校
   * 研究方向：缺失数据和生存分析
-  * 指导教授: 邵军(http://www.stat.wisc.edu/~shao/)和Lu mao(https://biostat.wisc.edu/content/mao-lu)
+  * 指导教授: [邵军](http://www.stat.wisc.edu/~shao/)和[Lu mao](https://biostat.wisc.edu/content/mao-lu)
 
 * 2019.7-现在: 师资博士后
   * 中国传媒大学，数据科学与智能媒体学院
   * 研究方向：融媒体技术和评价体系、融媒体数据分析
-  * 指导教授：柴剑平(http://dsmi.cuc.edu.cn/2019/0425/c4580a123002/page.htm)
+  * 指导教授：[柴剑平](http://dsmi.cuc.edu.cn/2019/0425/c4580a123002/page.htm)
   
 常用研究工具
 ======
