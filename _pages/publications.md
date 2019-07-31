@@ -1,11 +1,4 @@
 ---
-layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
----
-
----
 title: "Publications"
 permalink: /publications/
 author_profile: true
@@ -19,7 +12,7 @@ author_profile: true
 
 # Chinese(中文）
 
-王小宁, 金勇进. 权数的评估和控制研究[J]. 调研世界, 2017(3):53-56.
+- 王小宁, 金勇进. 权数的评估和控制研究[J]. 调研世界, 2017(3):53-56.
 
 # Translation Works(译著)
 
