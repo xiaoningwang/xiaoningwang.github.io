@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Xiaoning Wang"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Xiaoning Wang"
 description              : &description "personal description"
 url                      : https://xiaoningwang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -83,7 +83,7 @@ author:
   name             : "Xiaoning Wang"
   avatar           : "wxn.jpg"
   bio              : "Post-doctorate Fellow & Lecturer"
-  location         : "Beijing,China"
+  location         : "Beijing, China"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
