@@ -1,5 +1,8 @@
 # main links links
 main:
+  - title: "中文"
+    url: /cv/
+    
   - title: "Publications"
     url: /publications/
 
@@ -11,9 +14,6 @@ main:
         
   - title: "Blog Posts"
     url: /year-archive/
-    
-  - title: "中文"
-    url: /cv/
     
   - title: "Guide"
     url: /markdown/
