@@ -11,7 +11,7 @@ redirect_from:
 
 教育经历
 ======
-* 理学学士, 天津理工大学, 2013
+* 理学学士(数学与应用数学专业), 天津理工大学, 2013
 * 经济学硕士（统计学专业）, 中国人民大学, 2017，导师：[吕晓玲教授](http://stat.ruc.edu.cn/teacher_more.php?id=39&cid=25)
 * 经济学博士（统计学专业）, 中国人民大学, 2019 ,导师：[金勇进教授](http://stat.ruc.edu.cn/teacher_more.php?id=119&cid=25)
 
@@ -31,11 +31,11 @@ redirect_from:
 ======
 * R
 * Linux
-  * Hadoop
-  * Spark
-  * Hbase
+* Hadoop
+* Spark
+* Hbase
 * Python
-* SPSS 
+* SPSS & Stata
 
 发表文章和著作
 ======
