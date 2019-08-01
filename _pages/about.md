@@ -9,12 +9,13 @@ redirect_from:
 ---
 
 
-I am currently a Post-doctorate Fellow & Lecturer in [School of Data Science and smart media](http://dsmi.cuc.edu.cn/main.htm) at Communication University of China. I got my Ph.D. degree from [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019, under the supervision of [Prof. Yongjin Jin](http://stat.ruc.edu.cn/teacher_more.php?id=119&cid=25). My research interests are mainly on sampling survey and machine learning for media data. 
+I am currently a Post-doctorate Fellow & Lecturer in [School of Data Science and Smart Media](http://dsmi.cuc.edu.cn/main.htm) at Communication University of China. I got my Ph.D. degree from [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019, under the supervision of [Prof. Yongjin Jin](http://stat.ruc.edu.cn/teacher_more.php?id=119&cid=25). My research interests are mainly on sampling survey and machine learning for media data. 
 
 
 # Education
 
 - 2019, Ph.D. in Statistics, School of Statistics, Renmin University of China
+- 2017, M.S. in Statistics, School of Statistics, Renmin University of China
 - 2013, B.S. in Applied Mathematics, Department of Mathematics, Tianjin University of Technology
 
 # Research Interests
