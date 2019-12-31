@@ -6,7 +6,8 @@ redirect_from:
   - /md/
   - /markdown.html
 ---
-
+## Some useful links
+[Statistics and Probability Journal](http://web.petrsu.ru/~eflov/online/onlinest.html)
 ## Locations of key files/directories
 
 * Basic config options: _config.yml
