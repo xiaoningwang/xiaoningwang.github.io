@@ -1,5 +1,5 @@
 ---
-title: "Translation Works(译著)"
+title: "译著"
 collection: publications
 permalink: /publication/2019-books
 
