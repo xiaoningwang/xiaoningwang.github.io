@@ -2,8 +2,8 @@
 title: "数据科学导论"
 collection: teaching
 type: "本科一年级下"
-permalink: /teaching/2021-data science
-venue: "Data Science and Big Data Technology"
+permalink: /teaching/2021-data-science
+venue: "数据科学与大数据技术（传媒大数据方向）"
 date: 2021-03-01
 location: "Beijing, China"
 ---
@@ -12,7 +12,7 @@ location: "Beijing, China"
 
 数据科学导论导读
 ======
-Introduction of Python.
+导读
 
 第9讲
 ======
