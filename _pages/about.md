@@ -21,7 +21,7 @@ I am currently a Post-doctorate Fellow & Lecturer in [School of Data Science and
 # Research Interests
 
 - Sampling Survey Techniques
+- Data Integration and Split for Management
 - Missing Data Analysis
 - Media Data Analysis
-- Database Technology
 - Social Network Analysis
