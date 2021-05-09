@@ -18,7 +18,7 @@ Part 1
 Part 9
 ======
 
-支持向量机
+- [支持向量机(SVM)]({{ '/files/ch9-支持向量机.pdf' | prepend: site.baseurl }})
 
 Part 10
 ======
