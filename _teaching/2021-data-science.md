@@ -16,6 +16,8 @@ location: "Beijing, China"
 
 - [支持向量机(SVM)]({{ '/files/ch9-支持向量机.pdf' | prepend: site.baseurl }}) [第三次作业数据（AD.CSV）]({{ '/files/AD.csv' | prepend: site.baseurl }}) 
 
+- [数据智慧和十大原则]({{ '/files/数据智慧和十大原则.pdf' | prepend: site.baseurl }})
+
 - 无监督学习
 
 
