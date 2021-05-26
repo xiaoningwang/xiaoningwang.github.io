@@ -18,6 +18,10 @@ location: "Beijing, China"
 
 - [数据智慧和十大原则]({{ '/files/数据智慧和十大原则.pdf' | prepend: site.baseurl }})
 
-- 无监督学习
+- 无监督学习({{ '/files/ch10-无监督学习.pdf' | prepend: site.baseurl }})
+
+- 推荐算法
+
+
 
 
