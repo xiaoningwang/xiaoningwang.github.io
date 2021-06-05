@@ -18,10 +18,14 @@ location: "Beijing, China"
 
 - [数据智慧和十大原则]({{ '/files/数据智慧和十大原则.pdf' | prepend: site.baseurl }})
 
+- [数据分析报告基础]({{ '/files/数据分析报告基础.pdf' | prepend: site.baseurl }})
+
 - [无监督学习]({{ '/files/ch10-无监督学习.pdf' | prepend: site.baseurl }})
 
-- 推荐算法
 
+- 社交网络分析
 
+- 推荐算法和计算广告
 
+- 计算社会学和计算传播学
 
