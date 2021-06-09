@@ -20,12 +20,12 @@ location: "Beijing, China"
 
 - [数据分析报告基础]({{ '/files/数据分析报告基础.pdf' | prepend: site.baseurl }})
 
-- [无监督学习]({{ '/files/ch10-无监督学习.pdf' | prepend: site.baseurl }})
+- [无监督学习]({{ '/files/ch10-无监督学习.pdf' | prepend: site.baseurl }})和[推荐算法]({{ '/files/ch11-推荐算法.pdf' | prepend: site.baseurl }})
 
 
 - 社交网络分析
 
-- 推荐算法和计算广告
+- 计算广告学
 
 - 计算社会学和计算传播学
 
