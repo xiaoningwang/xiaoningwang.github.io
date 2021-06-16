@@ -23,7 +23,7 @@ location: "Beijing, China"
 - [无监督学习]({{ '/files/ch10-无监督学习.pdf' | prepend: site.baseurl }})和[推荐算法]({{ '/files/ch11-推荐算法.pdf' | prepend: site.baseurl }})
 
 
-- [文本分析]({{ '/files/ch12-文本分析.pdf' | prepend: site.baseurl }})和[社交网络分析]({{ '/files/ch13-社交网络分析.pdf' | prepend: site.baseurl }})
+- [文本分析]({{ '/files/ch12-文本挖掘.pdf' | prepend: site.baseurl }})和[社交网络分析]({{ '/files/ch13-社交网络分析.pdf' | prepend: site.baseurl }})
 
 - 计算社会学和计算传播学
 
