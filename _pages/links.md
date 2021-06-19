@@ -51,3 +51,13 @@ redirect_from:
 [中国收入分配数据CHIPS](http://www.ciidbnu.org/chip/index.asp)
 
 [中国劳动力动态调查数据CLDS](http://css.sysu.edu.cn/Data)
+
+## 数据挖掘数据库
+
+[机器学习方法](https://github.com/josephmisiti/awesome-machine-learning)
+
+[因果推断算法数据](https://github.com/rguo12/awesome-causality-algorithms)
+
+[数据科学表单](https://github.com/prashanthbasani/Awesome-DataScience-Cheatsheets)
+
+
