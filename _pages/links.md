@@ -13,3 +13,7 @@ redirect_from:
 ## 抽样技术
 
 ## 文本挖掘
+
+## 数据整合
+
+欧盟委员会[Multi-sources](https://ec.europa.eu/eurostat/cros/search/custom-taxonomy/knowledge-repository-general-innovation-area/multisource-statistics)
