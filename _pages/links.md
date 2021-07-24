@@ -76,6 +76,16 @@ redirect_from:
 
 [中国劳动力动态调查数据CLDS](http://css.sysu.edu.cn/Data)
 
+## 数据搜索引擎
+
+[Google 数据集搜索引擎](https://datasetsearch.research.google.com/)
+
+[Reddit数据集](https://www.reddit.com/r/datasets/)
+
+[Paper With Code 数据集](https://www.paperswithcode.com/datasets)
+
+[ClUE 数据集](https://www.cluebenchmarks.com/dataSet_search.html)
+
 ## 数据挖掘数据库
 
 [机器学习方法](https://github.com/josephmisiti/awesome-machine-learning)
@@ -83,6 +93,12 @@ redirect_from:
 [因果推断算法数据](https://github.com/rguo12/awesome-causality-algorithms)
 
 [数据科学表单](https://github.com/prashanthbasani/Awesome-DataScience-Cheatsheets)
+
+[Huggingface数据集](https://github.com/huggingface/datasets)
+
+[Kaggle数据集](https://www.kaggle.com/datasets)
+
+
 
 ## 中文语料库
 
