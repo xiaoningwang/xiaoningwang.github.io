@@ -1,7 +1,7 @@
 ---
 title: "新闻与舆情数据学"
 collection: teaching
-type: "传媒大数据，大三上"
+type: "传媒大数据专业，大三上"
 permalink: /teaching/2022-Data Science of Journalism and Public Opinion
 venue: "掌握基本的新闻文本数据分析方法"
 date: 2021-09-1
