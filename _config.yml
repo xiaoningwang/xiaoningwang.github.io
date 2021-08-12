@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Xiaoning Wang"
   avatar           : "wxn.jpg"
-  bio              : "Post-doctorate Fellow & Lecturer"
+  bio              : "Lecturer"
   location         : "Beijing, China"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : "xiaoningwang@foxmail.com"
+  email            : "sdwangxiaoning@foxmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -97,7 +97,7 @@ author:
   facebook         :
   foursquare       :
   github           : "xiaoningwang"
-  google_plus      :
+ WeChat            : "SamplingSurvey"
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
