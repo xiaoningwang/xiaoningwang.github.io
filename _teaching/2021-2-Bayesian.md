@@ -12,6 +12,21 @@ location: "北京市，中国"
 
 **贝叶斯思维-统计建模的Python学习法，人民邮电出版社，2015**
 
+### 相关辅助信息
+
+[贝叶斯机器学习路径](https://metacademy.org/roadmaps/rgrosse/bayesian_machine_learning)
+
+[机器学习里的贝叶斯方法](http://www.cse.wustl.edu/~garnett/cse515t/)
+
+[机器学习和概率模型](http://www.cedar.buffalo.edu/~srihari/CSE574/index.html)
+
+
+[主题模型](http://mimno.infosci.cornell.edu/info6150/)
+
+[NLP里的贝叶斯分析](http://www.cs.columbia.edu/~scohen/bayesian/)
+
+[Advanced NLP(Bayesian Methods) ](https://courses.engr.illinois.edu/cs598jhm/sp2013/index.html)
+
 **英文名称：Bayesian Statistics**
 
 **先修课程：高等代数、概率论、数理统计**
