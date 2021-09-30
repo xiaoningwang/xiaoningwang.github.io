@@ -12,6 +12,17 @@ redirect_from:
 [R语言实战（第2版）](https://book.douban.com/subject/26785199/)
 [数据科学实战](https://book.douban.com/subject/26320485/)
 
+## 图神经网络
+
+[多模态机器学习](https://github.com/pliang279/awesome-multimodal-ml)
+
+[图神经网络-斯坦福图机器学习](https://www.bilibili.com/video/BV1RZ4y1c7Co)
+
+[图神经网络-宾夕法尼亚大学图神经机器学习](https://www.bilibili.com/video/BV1L5411j7kb)
+
+[图神经网络必读文献](https://github.com/thunlp/GNNPapers)
+
+
 ## 网络科学
 
 ### 书籍
@@ -27,7 +38,6 @@ redirect_from:
 [抽样调查-金勇进](https://book.douban.com/subject/30379559/)
 
 
-
 ## 文本挖掘
 
 书籍[文本数据挖掘](https://book.douban.com/subject/34441323/)
@@ -36,6 +46,7 @@ redirect_from:
 ## 数据整合
 
 欧盟委员会[Multi-sources](https://ec.europa.eu/eurostat/cros/search/custom-taxonomy/knowledge-repository-general-innovation-area/multisource-statistics)
+
 
 
 ## 微观数据库
