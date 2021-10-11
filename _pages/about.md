@@ -25,3 +25,6 @@ I am currently a Lecturer in [School of Data Science and Media Intelligence](htt
 - Missing Data Analysis
 - Media Data Analysis
 - Social Network Analysis
+
+
+![Xiaoning's GitHub stats](https://github-readme-stats.vercel.app/api?username=xiaoningwang&show_icons=true&theme=radical)
