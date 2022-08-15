@@ -1,5 +1,5 @@
 ---
-title: "R语言实战视频公开课"
+title: "R语言数据分析实战"
 collection: teaching
 type: "R语言入门者"
 permalink: /teaching/2021-R-in-action
@@ -8,4 +8,5 @@ date: 2021-05-12
 location: "Beijing, China"
 ---
 
-在狗熊会推出的《R语言实战》视频公开课，即将上线。参考教材《R语言实战（第2版）》
+本书是与图灵教育合作的一个书籍，预计2023年9月份出版，具体更新内容详见链接：https://xiangyunhuang.github.io/data-analysis-in-action/
+
