@@ -43,6 +43,3 @@ https://www.bilibili.com/video/BV1jz411z7UT?spm_id_from=333.337.search-card.all.
 2. [数据分析思维](https://www.bilibili.com/video/BV16W4y117Gw?spm_id_from=333.337.search-card.all.click&vd_source=e04ad65aaf3336ca7ed37aab4cecbd26)
 
 3. [大数据时代里如何从数据分析到商业价值](https://www.bilibili.com/video/BV1q54y1r7ny?spm_id_from=333.337.search-card.all.click&vd_source=e04ad65aaf3336ca7ed37aab4cecbd26)
-
-
-
