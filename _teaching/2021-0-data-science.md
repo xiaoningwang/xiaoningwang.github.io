@@ -25,7 +25,7 @@ location: "Beijing, China"
 
 - [文本分析]({{ '/files/ch12-文本挖掘.pdf' | prepend: site.baseurl }})和[社交网络分析]({{ '/files/ch13-社交网络分析.pdf' | prepend: site.baseurl }})
 
-- 并行和分布式计算({{ '/files/ch15-并行分布式和云计算.pdf' | prepend: site.baseurl }})
+- [并行和分布式计算]({{ '/files/ch15-并行分布式和云计算.pdf' | prepend: site.baseurl }})
 
 
 [数据科学的学习资料](https://xiaoningwang.github.io/links/)
@@ -40,7 +40,7 @@ location: "Beijing, China"
 [统计与真理视频合集](https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w)
 
 
-[]
+[调查与计算广告分析报告合集](https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w)
 
 
 
