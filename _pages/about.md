@@ -20,6 +20,7 @@ I am currently a Associate Professor in [School of Data Science and Media Intell
 
 # Research Interests
 
+- Large Language Model and Agent
 - Sampling Survey Techniques
 - Data Integration and Split for Management
 - Missing Data Analysis
