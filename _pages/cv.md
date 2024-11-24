@@ -83,5 +83,5 @@ redirect_from:
 
 * 抽样调查之家
 
-![](/_posts/figure/QRCODE.jpg)
+![欢迎扫码](/_posts/figure/QRCODE.jpg)
 
