@@ -1,5 +1,5 @@
 ---
-title: 近三年市调获奖作品有哪些特点-2024年
+title:
 date: '2024-11-3'
 permalink: /posts/2024/11/2024huojiangxuanti/
 tags:
