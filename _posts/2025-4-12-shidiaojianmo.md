@@ -1,7 +1,7 @@
 ---
 title: 大赛|市调大赛与统计建模大赛评审规则对比分析
 date: '2025-4-12'
-permalink: /posts/2025/4/jielunjianyi 
+permalink: /posts/2025/4/shidiaojianmo
 tags:
   - 市调大赛
   - 统计建模
