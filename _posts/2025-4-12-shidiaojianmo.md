@@ -1,5 +1,5 @@
 ---
-title: 大赛|市调大赛与统计建模大赛评审规则对比分析
+title: 市调大赛|现场答辩有哪些注意事项
 date: '2025-4-19'
 permalink: /posts/2025/4/shidiaoxianchang
 tags:
