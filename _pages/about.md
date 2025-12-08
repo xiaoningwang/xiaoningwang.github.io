@@ -74,3 +74,35 @@ My research focuses on the intersection of **sampling survey techniques, machine
   </div>
 </div>
 
+## 📱 公众号文章
+
+<div class="wechat-articles">
+  <h3>抽样调查之家</h3>
+  <div class="article-list">
+    <!-- 示例文章 - 请根据实际情况更新 -->
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/XHdrDFet6oMGQA2uDZc28w" class="article-title">市调大赛常见问题解答</a>
+      <span class="article-date">2024-12-15</span>
+    </div>
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/abc123" class="article-title">基于BP神经网络的伪设计样本融合研究</a>
+      <span class="article-date">2024-12-10</span>
+    </div>
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/def456" class="article-title">2024市调大赛获奖作品分析</a>
+      <span class="article-date">2024-11-25</span>
+    </div>
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/ghi789" class="article-title">如何撰写高质量的市场调查报告</a>
+      <span class="article-date">2024-11-18</span>
+    </div>
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/jkl012" class="article-title">抽样调查中的常见误差及控制方法</a>
+      <span class="article-date">2024-11-10</span>
+    </div>
+  </div>
+  <div class="article-more">
+    <a href="https://mp.weixin.qq.com/" class="btn btn-primary" target="_blank">查看更多文章</a>
+  </div>
+</div>
+

@@ -805,6 +805,124 @@ a.reversefootnote {
   display: none;
 }
 
-.page__date {
+/* Remove social share buttons */
+.share-box {
+  display: none;
+}
+
+/* WeChat Articles Section */
+.wechat-articles {
+  background: $body-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.wechat-articles h3 {
+  margin-top: 0;
+  color: $tech-blue;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.wechat-articles h3::before {
+  content: '📱';
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+.article-list {
+  margin-bottom: 1.5rem;
+}
+
+.article-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid $border-color;
+  transition: all 0.3s ease;
+}
+
+.article-item:last-child {
+  border-bottom: none;
+}
+
+.article-item:hover {
+  transform: translateX(5px);
+}
+
+.article-title {
+  color: $dark-gray;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  flex: 1;
+  margin-right: 1rem;
+  line-height: 1.4;
+}
+
+.article-title:hover {
+  color: $tech-blue;
+  text-decoration: none;
+}
+
+.article-date {
+  font-size: 0.9rem;
+  color: $gray;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.article-more {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Style for buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: $tech-blue;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: $tech-indigo;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .article-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .article-date {
+    margin-top: 0.5rem;
+  }
+  
+  .wechat-articles {
+    padding: 1.5rem;
+  }
+}
+
+/* Remove social share */
+.social-share {
   display: none;
 }
