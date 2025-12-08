@@ -10,26 +10,54 @@ redirect_from:
 
 
 
-I am currently a Associate Professor in [School of Data Science and Media Intelligence](http://dsmi.cuc.edu.cn/main.htm) at Communication University of China. I got my Ph.D. degree from [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019, under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My research interests are mainly on sampling survey and machine learning for media data. 
+I am currently an Associate Professor in the [School of Data Science and Media Intelligence](http://dsmi.cuc.edu.cn/main.htm) at Communication University of China. I obtained my Ph.D. degree from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019, under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). 
 
-Our team is developing an intelligent teaching assistant(LLM+Agent) called Scholar Hero. Teachers and students who are interested are welcome to try it out and provide feedback: [scholarhero.cn](https://scholarhero.cn/)
+My research focuses on the intersection of **sampling survey techniques, machine learning, and media data analytics**. I am particularly interested in developing intelligent systems that leverage advanced AI technologies to solve complex problems in media and communication.
 
+## 🔬 Current Research Projects
 
-# Education
+- **Intelligent Teaching Assistant (Scholar Hero)**: An LLM+Agent system designed to enhance teaching and learning experiences. Try it out: [scholarhero.cn](https://scholarhero.cn/)
+- **AI-Powered Media Analytics**: Developing algorithms for analyzing large-scale media data using machine learning and deep learning techniques
+- **Smart Survey Systems**: Integrating sampling methods with AI to improve survey efficiency and accuracy
+
+# 🎓 Education
 
 - 2019, Ph.D. in Statistics, School of Statistics, Renmin University of China
 - 2017, M.S. in Statistics, School of Statistics, Renmin University of China
 - 2013, B.S. in Applied Mathematics, Department of Mathematics, Tianjin University of Technology
 
-# Research Interests
+# 🔍 Research Interests
 
-- Large Language Model and Agent
-- Sampling Survey Techniques
-- Data Integration and Split for Management
-- Missing Data Analysis
-- Media Data Analysis
-- Social Network Analysis
+<div class="tech-stack">
+  <div class="tech-item">
+    <strong>Large Language Models & Agents</strong><br>
+    <small>LLM architecture, fine-tuning, prompt engineering, multi-agent systems</small>
+  </div>
+  <div class="tech-item">
+    <strong>Sampling Survey Techniques</strong><br>
+    <small>Complex sampling designs, survey methodology, data quality assessment</small>
+  </div>
+  <div class="tech-item">
+    <strong>Machine Learning</strong><br>
+    <small>Supervised/unsupervised learning, deep learning, reinforcement learning</small>
+  </div>
+  <div class="tech-item">
+    <strong>Media Data Analysis</strong><br>
+    <small>Text mining, social network analysis, sentiment analysis, content recommendation</small>
+  </div>
+  <div class="tech-item">
+    <strong>Data Integration & Management</strong><br>
+    <small>Data fusion, missing data imputation, big data processing</small>
+  </div>
+</div>
 
+## 📊 GitHub Stats
 
 ![Xiaoning's GitHub stats](https://github-readme-stats.vercel.app/api?username=xiaoningwang&show_icons=true&theme=radical)
+
+## 🌐 Connect with Me
+
+- **GitHub**: [@xiaoningwang](https://github.com/xiaoningwang)
+- **Email**: sdwangxiaoning@foxmail.com
+- **Scholar Hero**: [scholarhero.cn](https://scholarhero.cn/)
 

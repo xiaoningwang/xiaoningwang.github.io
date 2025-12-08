@@ -502,3 +502,99 @@ a.reversefootnote {
   color: $danger-color;
   font-weight: bold;
 }
+
+/*
+   Tech Stack Styles
+   ========================================================================== */
+
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5em 0;
+}
+
+.tech-item {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.tech-item small {
+  color: #7f8c8d;
+  line-height: 1.5;
+}
+
+/* Hero Section */
+
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.hero-section p {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Tech Badges */
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tech-badge {
+  background: #3498db;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.tech-badge.primary {
+  background: #3498db;
+}
+
+.tech-badge.success {
+  background: #2ecc71;
+}
+
+.tech-badge.info {
+  background: #1abc9c;
+}
+
+.tech-badge.warning {
+  background: #f39c12;
+}
+
+.tech-badge.danger {
+  background: #e74c3c;
+}
