@@ -747,3 +747,64 @@ a.reversefootnote {
   color: $gray;
   line-height: 1.5;
 }
+
+/* Blog Archive Styles */
+
+/* Style for blog archive items */
+.archive__item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border-color;
+}
+
+/* Remove border for last item */
+.archive__item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* Style for archive title with date on right */
+.archive__item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* Style for date on right side */
+.archive__item-date {
+  font-size: 0.9rem;
+  color: $gray;
+  font-weight: normal;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .archive__item-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .archive__item-date {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Style for blog archive list */
+.list__item {
+  margin-bottom: 0;
+}
+
+/* Remove read time and default date display */
+.page__meta {
+  display: none;
+}
+
+.page__date {
+  display: none;
+}
