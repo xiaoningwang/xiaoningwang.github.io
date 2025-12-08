@@ -226,7 +226,7 @@ redirect_from:
           <p>分享统计学知识、数据分析技巧和研究动态</p>
         </div>
         <div class="wechat-qrcode">
-          <img src="{{ site.baseurl }}/_posts/figure/QRCODE.jpg" alt="欢迎扫码关注公众号" class="qrcode-img">
+          <img src="{{ '/_posts/figure/QRCODE.jpg' | prepend: site.baseurl }}" alt="欢迎扫码关注公众号" class="qrcode-img">
           <p class="qrcode-desc">欢迎扫码关注</p>
         </div>
       </div>
