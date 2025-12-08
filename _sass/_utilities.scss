@@ -571,30 +571,179 @@ a.reversefootnote {
 }
 
 .tech-badge {
-  background: #3498db;
+  background: $tech-blue;
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: $tech-indigo;
 }
 
 .tech-badge.primary {
-  background: #3498db;
+  background: $tech-blue;
 }
 
 .tech-badge.success {
-  background: #2ecc71;
+  background: $success-color;
 }
 
 .tech-badge.info {
-  background: #1abc9c;
+  background: $info-color;
 }
 
 .tech-badge.warning {
-  background: #f39c12;
+  background: $warning-color;
 }
 
 .tech-badge.danger {
-  background: #e74c3c;
+  background: $danger-color;
+}
+
+/* Connect Section */
+
+.connect-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: $body-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.connect-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.connect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connect-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.connect-list strong {
+  color: $tech-blue;
+}
+
+.connect-list a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.connect-list a:hover {
+  color: $link-color-hover;
+  text-decoration: underline;
+}
+
+/* WeChat Section */
+
+.wechat-section {
+  text-align: center;
+  min-width: 200px;
+}
+
+.wechat-section h4 {
+  margin: 0 0 1rem 0;
+  color: $dark-gray;
+  font-size: 1.2rem;
+}
+
+.wechat-qrcode {
+  background: $body-color;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.wechat-qrcode img {
+  display: block;
+  max-width: 150px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.wechat-desc {
+  margin: 0;
+  color: $gray;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Placeholder QR Code Style */
+
+.qrcode-placeholder {
+  background: $light-gray;
+  color: $gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Hero Section Enhancement */
+
+.hero-section {
+  background: $gradient-primary;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.hero-section p {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Tech Stack Enhancement */
+
+.tech-item {
+  background: linear-gradient(135deg, $body-color 0%, $lighter-gray 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-item strong {
+  color: $tech-blue;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.tech-item small {
+  color: $gray;
+  line-height: 1.5;
 }

@@ -55,24 +55,31 @@ $sidebar-link-max-width     : 250px;
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+// Tech colors palette
+$tech-blue                  : #2563eb;
+$tech-purple                : #8b5cf6;
+$tech-cyan                  : #06b6d4;
+$tech-indigo                : #4f46e5;
+$tech-sky                   : #3b82f6;
+
+$gray                       : #64748b;
+$dark-gray                  : #334155;
+$darker-gray                : #1e293b;
+$light-gray                 : #e2e8f0;
+$lighter-gray               : #f1f5f9;
 
 $body-color                 : #fff;
-$background-color           : #fff;
-$code-background-color      : #fafafa;
+$background-color           : #f8fafc;
+$code-background-color      : #f1f5f9;
 $code-background-color-dark : $light-gray;
 $text-color                 : $dark-gray;
-$border-color               : $lighter-gray;
+$border-color               : $light-gray;
 
-$primary-color              : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-$danger-color               : #ee5f5b;
-$info-color                 : #52adc8;
+$primary-color              : $tech-blue;
+$success-color              : #10b981;
+$warning-color              : #f59e0b;
+$danger-color               : #ef4444;
+$info-color                 : $tech-cyan;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -102,11 +109,15 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : $info-color;
-$link-color-hover           : mix(#000, $link-color, 25%);
-$link-color-visited         : mix(#fff, $link-color, 25%);
+$link-color                 : $tech-blue;
+$link-color-hover           : $tech-indigo;
+$link-color-visited         : $tech-purple;
 $masthead-link-color        : $primary-color;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$masthead-link-color-hover  : $tech-indigo;
+
+/* tech gradients */
+$gradient-primary           : linear-gradient(135deg, $tech-blue 0%, $tech-purple 100%);
+$gradient-secondary         : linear-gradient(135deg, $tech-cyan 0%, $tech-sky 100%);
 
 
 /*

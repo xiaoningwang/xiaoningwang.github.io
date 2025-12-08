@@ -70,5 +70,5 @@ TraeAI是一门前沿的人工智能课程，专注于大语言模型、生成�
 
 ## 课程链接
 
-- [课程GitHub仓库](https://github.com/yourusername/traeai-course)
-- [在线学习平台](https://example.com/traeai)
+- [课程GitHub仓库](https://github.com/xiaoningwang/traeai)
+- [在线学习平台](https://themodernsoftware.dev/)

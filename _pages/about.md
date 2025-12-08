@@ -57,7 +57,21 @@ My research focuses on the intersection of **sampling survey techniques, machine
 
 ## 🌐 Connect with Me
 
-- **GitHub**: [@xiaoningwang](https://github.com/xiaoningwang)
-- **Email**: sdwangxiaoning@foxmail.com
-- **Scholar Hero**: [scholarhero.cn](https://scholarhero.cn/)
+<div class="connect-section">
+  <div class="connect-info">
+    <ul class="connect-list">
+      <li><strong>GitHub</strong>: <a href="https://github.com/xiaoningwang">@xiaoningwang</a></li>
+      <li><strong>Email</strong>: sdwangxiaoning@foxmail.com</li>
+      <li><strong>Scholar Hero</strong>: <a href="https://scholarhero.cn/">scholarhero.cn</a></li>
+    </ul>
+  </div>
+  <div class="wechat-section">
+    <h4>📱 关注公众号</h4>
+    <div class="wechat-qrcode">
+      <!-- 请将下方图片替换为实际的公众号二维码 -->
+      <img src="{{ '/images/qrcode-placeholder.png' | prepend: site.baseurl }}" alt="公众号二维码" width="150" height="150">
+    </div>
+    <p class="wechat-desc">扫描二维码关注我的公众号，获取最新的研究动态和技术分享</p>
+  </div>
+</div>
 
