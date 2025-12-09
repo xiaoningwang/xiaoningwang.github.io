@@ -2,7 +2,7 @@
 title: "数据科学导论"
 collection: teaching
 type: "本科一年级下"
-permalink: /teaching/2021-0-data-science
+permalink: /teaching/data-science
 venue: "数据科学与大数据技术（传媒大数据方向）、智能影响、计算广告专业"
 date: 2022-02-22
 location: "Beijing, China"
@@ -41,6 +41,9 @@ location: "Beijing, China"
 
 
 [调查与计算广告分析报告合集](https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w)
+
+
+[合集|数据科学导论课程报告展示](https://mp.weixin.qq.com/s?src=11&timestamp=1765266294&ver=6407&signature=McxNxjaX3AYOFXC9kML2YSDUc-YV7GfVjY0UtXDYBAgqai7MP*8z-U367u5gzIr2q0rm*m7l9T2hJu4vA0CdigbRC5MNczZYo9jM3gsn03WN-Uy9Y*RtLVc77g1I66qI&new=1)
 
 
 

@@ -38,9 +38,13 @@
     </h2>
     
     {% if post.collection == 'teaching' %}
-      <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+      {% if post.type and post.venue and post.date %}
+        <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }} </p>
+      {% endif %}
     {% elsif post.collection == 'publications' %}
-      <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+      {% if post.venue and post.date %}
+        <p>Published in <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }} </p>
+      {% endif %}
     {% endif %}
 
     {% if post.excerpt and site.read_more != 'enabled' %}
