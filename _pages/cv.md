@@ -189,6 +189,37 @@ redirect_from:
     </div>
   </section>
 
+  <!-- Lecture Experience Section -->
+  <section class="cv-section lectures">
+    <div class="section-header">
+      <h2 class="section-title">🎤 讲座经历</h2>
+    </div>
+    <div class="section-content">
+      <p>曾受邀为国家统计局申请民意调查中心、人力资源和社会保障部、教育部、民政部老龄科学中心、微众银行、中国商业统计学会、中国人民大学、首都经济贸易大学、暨南大学、中国知网、华东师范大学等多家政府单位和高校讲授数据分析、智能体、AI赋能教学、AI赋能科研的讲座。</p>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="cv-section awards">
+    <div class="section-header">
+      <h2 class="section-title">🏆 获奖情况</h2>
+    </div>
+    <div class="section-content">
+      <ol class="awards-list">
+        <li>"AI融合"校级优质本科课程，中国传媒大学，2025</li>
+        <li>中国传媒大学第十届（2025年）本科教学成果奖二等奖，中国传媒大学，2025</li>
+        <li>"个人突出贡献奖"和"优秀导师"， 中国商业统计学会，2025</li>
+        <li>优秀共产党员，中国传媒大学，2024</li>
+        <li>首届教师AI基本功大赛，中国传媒大学，2024，一等奖</li>
+        <li>首届孺子牛奖，中国传媒大学，2024</li>
+        <li>优秀班主任，中国传媒大学，2022</li>
+        <li>首届孺子牛奖，中国传媒大学数据科学与智能媒体学院，2021</li>
+        <li>指导本科生全国大学生市场调查大赛，本科2024年：国赛二等奖3组，国赛三等奖8组，北京市一等奖8组，二等奖3组，三等奖2组；本科2023年：国赛一等奖2组，国赛三等奖7组，北京市一等奖4组，二等奖1组；本科2022年：国赛一等奖1组，国赛二等奖1组，国赛三等奖5组，北京市二等奖1组；2021研究生市场调查大赛全国三等奖1组，连续3年获得最佳院校组织奖（2022-2024）</li>
+        <li>曾获北京市优秀毕业生（2019）、中国人民大学学业一等奖学金（2018）、社会工作与志愿服务奖学金（2018）、三好学生（2018）、优秀研究生（2017）、优秀社会实践调查员（2017）、全国高校学生创新统计联盟优秀论文（2016）等。</li>
+      </ol>
+    </div>
+  </section>
+
   <!-- Hobbies Section -->
   <section class="cv-section hobbies">
     <div class="section-header">
@@ -455,7 +486,8 @@ redirect_from:
 /* Lists */
 .publication-list,
 .teaching-list,
-.positions-list {
+.positions-list,
+.awards-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -463,10 +495,12 @@ redirect_from:
 
 .publication-list li,
 .teaching-list li,
-.positions-list li {
+.positions-list li,
+.awards-list li {
   margin-bottom: 15px;
   padding-left: 25px;
   position: relative;
+  line-height: 1.6;
 }
 
 .publication-list li::before,
@@ -476,6 +510,23 @@ redirect_from:
   position: absolute;
   left: 0;
   top: 2px;
+}
+
+.awards-list {
+  counter-reset: award-counter;
+}
+
+.awards-list li {
+  counter-increment: award-counter;
+}
+
+.awards-list li::before {
+  content: counter(award-counter) '. ';
+  font-weight: bold;
+  color: #2563eb;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /* Hobby Grid */
