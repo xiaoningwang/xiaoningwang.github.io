@@ -926,3 +926,135 @@ a.reversefootnote {
 .social-share {
   display: none;
 }
+
+/* Publications Page Styles */
+.publication-section {
+  background: $body-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.publication-list {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.publication-list li {
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.publication-list li:last-child {
+  margin-bottom: 0;
+}
+
+.publication-list li:hover {
+  transform: translateX(5px);
+}
+
+/* Style for publication page headers */
+.publication-section h3 {
+  margin-top: 0;
+  color: $tech-blue;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Add some spacing between publication sections */
+.publication-section + h2 {
+  margin-top: 3rem;
+}
+
+/* Style for horizontal rule */
+h2 + hr {
+  margin-bottom: 0;
+  border-top: 2px solid $tech-blue;
+  opacity: 0.5;
+}
+
+/* Style for Google Scholar link */
+.wordwrap {
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+  color: $dark-gray;
+}
+
+.wordwrap a {
+  color: $tech-blue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.wordwrap a:hover {
+  color: $tech-indigo;
+  text-decoration: underline;
+}
+
+/* Responsive design for publications page */
+@media (max-width: 768px) {
+  .publication-section {
+    padding: 1.5rem;
+    margin: 1rem 0 1.5rem;
+  }
+  
+  .publication-list {
+    padding-left: 1.2rem;
+  }
+  
+  .publication-list li {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Improve readability for long publication titles */
+.publication-list li {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Style for publication categories */
+.archive__item {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: $body-color;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.archive__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Style for publication titles */
+.archive__item-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: $dark-gray;
+}
+
+/* Style for publication meta information */
+.archive__item-excerpt {
+  font-size: 0.95rem;
+  color: $gray;
+  margin-bottom: 0.5rem;
+}
+
+/* Style for publication links */
+.archive__item a {
+  color: $tech-blue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.archive__item a:hover {
+  color: $tech-indigo;
+  text-decoration: underline;
+}
