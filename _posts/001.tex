@@ -1,0 +1,1030 @@
+%% 
+%% Copyright 2007-2024 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.3 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+
+%\usepackage[UTF8]{ctex}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{shorttoc}
+\usepackage{lscape}
+\usepackage[all]{xy}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{mathrsfs}
+\usepackage{ulem}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{threeparttable}
+%\usepackage{ctex}
+%\usepackage{tocloft}
+\usepackage{makecell}
+\usepackage{bm}
+\usepackage{fontspec}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{subfigure}
+\usepackage{natbib}
+\renewcommand{\figurename}{Figure.} % 加入的代码
+\renewcommand{\tablename}{Table.} % 加入的代码
+\renewcommand{\abstractname}{Abstract}
+\renewcommand{\refname}{Reference}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Information Sciences}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \affiliation for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+% \title{Title\tnoteref{label1}}
+% \tnotetext[label1]{}
+% \author{Yuxuan Guo\corref{cor1}\fnref{label2}}
+% \ead{email address}
+% \ead[url]{home page}
+% \fntext[label2]{}
+% \cortext[cor1]{}
+% \affiliation[label1]{organization={Renmin},
+%             addressline={},
+%             city={},
+%             postcode={},
+%             state={},
+%             country={}}
+% \fntext[label3]{}
+\title{MMRP: Multimodal Multitask Network for Rating Prediction}
+
+%\author[label1]{Xiaoning Wang}
+%\address[label1]{School of Data Science and Media Intelligence, Communication University of China, Beijing, China}
+
+%\author[label2]{Yuxuan Guo}
+%\address[label2]{Sino-Securities Index Information Service (Shanghai) Co.Ltd, Shanghai, China}
+
+%\author[label3]{Libo Sun}
+%\address[label3]{School of Data Science, Fudan University, Shanghai, China}
+
+%\author[label4]{Xiaoling Lu\corref{mycorrespondingauthor}}
+%\address[label4]{Center for Applied Statistics, School of Statistics, Innovation Platform, Renmin Unversity of China, Beijing, China}
+
+%\cortext[mycorrespondingauthor]{Corresponding author}
+%\ead{xiaolinglu@ruc.edu.cn}
+
+
+
+%\title{MMRP: Multimodal Multitask Network for Rating Prediction} %% Article title
+%
+%\author{Yuxuan Guo}
+%
+%\author{Feifei Wang}
+%
+%\author{Chen Xing}
+%
+%\author[label3]{Xiaoling Lu\corref{mycorrespondingauthor}}
+%\cortext[mycorrespondingauthor]{Corresponding author}
+%\ead{xiaolinglu@ruc.edu.cn}
+%\affiliation[label3]{organization={Center for Applied Statistics, School of Statistics, Renmin University of China},
+%	addressline={},
+%				city={Beijing},
+%	             postcode={100872},
+%                 state={Beijing},
+%	             country={China}}
+
+%\address{Center for Applied Statistics, School of Statistics, Renmin University of China, Beijing 100872, China}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+%\author{} %% Author name
+
+%% Author affiliation
+%\affiliation{organization={},%Department and Organization
+%            addressline={}, 
+%            city={},
+%            postcode={}, 
+%            state={},
+%            country={}}
+
+%% Abstract
+\begin{abstract}
+%% Text of abstract
+Rating prediction is an important task of review mining. Aspect category sentiment analysis and overall rating prediction are two highly related rating prediction problems, the joint model dealing them together can make full use of information to improve the model performance. The previous joint model for these two tasks used only textual data. With the development of camera devices on smartphones, the review image data provides a wealth of information. However, the former multimodal model for review rating prediction can only solve single task. To fill this gap, this research proposes a multimodal multitask model named MMRP, focusing on analyzing rating prediction problems for multimodal review data combining images and text. This multitask model solves aspect category sentiment analysis and overall rating prediction problems simultaneously. This multimodal model uses both text and image information, fully integrated multimodal information improves the prediction accuracy of the tasks. What's more, this model uses Cross-modal Transformer to integrate the text and image information, it achieves better results compared with the traditional fusion method. The effectiveness of the proposed model is validated on the ZOL mobile review dataset. We also conduct in-depth comparison experiments, ablation experiments, sensitivity analysis and case study. 
+\end{abstract}
+
+%%Graphical abstract
+%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%%Research highlights
+%\begin{highlights}
+%\begin{itemize}
+%\item Research highlight 1:
+%
+%This research proposes a multimodal multitask model named MMRP, focusing on analyzing rating prediction problems for multimodal review data combining images and text.
+%
+%\item Research highlight 2:
+%
+%This multitask model solves aspect category sentiment analysis and overall rating prediction problems simultaneously. The relationship among these two tasks could be fully used to improve the efficiency and accuracy of model.
+%
+%\item Research highlight 3:
+%
+%This multimodal model uses both text and image information, fully integrated multimodal information improves the prediction accuracy of the tasks. What's more, this model uses Cross-modal Transformer to integrate the text and image information, it achieves better results compared with the traditional fusion method.
+%
+%\item Research highlight 4:
+%
+%The effectiveness of the proposed model is validated on the ZOL mobile review dataset. At the same time we also conduct in-depth comparison experiments and ablation experiments.
+%
+%\end{itemize}
+%\end{highlights}
+
+%% Keywords
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Review Mining \sep Multimodal Data Analysis \sep Multitask Rating Prediction
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% Add \usepackage{lineno} before \begin{document} and uncomment 
+%% following line to enable line numbers
+%% \linenumbers
+
+%% main text
+%%
+
+\section{Introduction}
+
+
+Sharing user-generated comments has become a prevalent social practice, facilitating the exchange of experiences and opinions. Particularly on e-commerce platforms, user reviews hold substantial importance for documenting and disseminating consumption experiences \citep{pang2008opinion,liu2022sentiment}. The user review data holds significant value for both businesses and customers. For businesses, review data aids in understanding user preferences, monitoring perceptions of products, and driving improvements. For consumers, review data assists in identifying product strengths and weaknesses, thereby aiding better purchasing decisions \citep{liu2020sentiment,hu2004mining,wu2024decision}. Consequently, conducting in-depth analysis of the information within user reviews, i.e. reviews mining stands as an exceedingly important and meaningful research theme.
+
+Rating prediction is an important supervised task in the field of review mining. The Rating Prediction (RP) task entails predicting specific ratings based on the sentiment expressed in reviews. RP is a central focus of this study due to its practical significance, as many platforms employ 5-star scale ratings for user feedback. Aspect Category Sentiment Analysis (ACSA) on online platforms aims to analyze and understand users' sentiment expressions at a fine-grained level, predicting the sentiment expressions on various aspect categories. Specifically, for a given review content like ``The fish is delicious, but the waiter is terrible!", the ACSA task aims to infer the sentiment polarity of the aspect category \textbf{food} as positive and the opinion on the aspect category \textbf{service} as negative. The ACSA task focused on in this study requires predicting sentiment scores on given aspect categories, so the essence of ACSA is rating prediction. 
+
+The ACSA task and the overall rating prediction problem (ORP) often occur simultaneously. ACSA focuses on predicting sentiment scores for different aspect categories, which is actually a fine-grained rating task. ORP, on the other hand, focuses on predicting the overall sentiment from review content, which is a coarse-grained overall rating task. These two tasks are highly correlated, covering sentiment polarity detection from fine-grained to coarse-grained levels. Studies of these two tasks were mostly single-tasking \citep{seo2017interpretable,li2011incorporating,tang2015user,zhang2016collaborative}. These studies focus on building advanced model structures to achieve more accurate rating prediction results and integrate various auxiliary information to improve prediction accuracy. Joint modeling of ACSA and ORP can make full use of information at different granularities to improve prediction accuracy \citep{bu2021asap}, the limitation of this model is that it uses review textual data only.
+
+With the widespread usage of taking pictures on mobile phones, reviews include more images than ever before. As a result, many e-commerce reviews are multimodal. Review mining for text content is a mature research field, but the studies on multimodal review mining with image information are still limited. Studies have shown that images are often more visually impactful than text, and that images in reviews contain strong user opinions \citep{you2016cross,luo2015examining}. The text and image in the reviews usually do not exist independently, and the image data are often supplement to the text data, emphasize or support the text expressed. In other words, images do not tell the whole story on their own. Compared to textual analysis alone, multimodal reviews containing images provide a wealthier source of information. The inclusion of visual content enhances our comprehension of review context, consequently elevating the accuracy of tasks such as rating prediction. The intuitive picture information reduces the purchase risk of consumers and improves the shopping satisfaction \citep{truong2017visual}. 
+
+In sum, current research in rating prediction faces several limitations. Frist, although ACSA and ORP are highly related tasks, they are typically studied in isolation, with most models focusing on single-task learning. Existing models for review rating prediction often address only one task (either ACSA or ORP), missing the opportunity to leverage the strong correlation between these tasks to enhance prediction accuracy. Second, most existing models rely on single-modality approaches. These models predominantly depend on textual data, failing to fully utilize the rich information provided by images in reviews. Third, traditional multimodal fusion methods, such as feature concatenation, are insufficient for rating prediction tasks. These methods fail to fully exploit the interactions between modalities, resulting in suboptimal performance. 
+
+To address these gaps, we propose the Multimodal Multitask Rating Prediction (MMRP) model. MMRP leverages both textual and visual data, overcoming the limitations of single-modality approaches. By incorporating image data, the model captures visual cues that may be overlooked in text, enabling a more comprehensive understanding of user sentiment. Furthermore, MMRP simultaneously addresses ACSA and ORP tasks, allowing the model to exploit the relationship between these tasks. This joint modeling approach improves the efficiency and accuracy of both tasks by sharing information across them. To enhance multimodal fusion, MMRP employs a cross-modal transformer to integrate textual and visual information. It excels at matching highly related content across modalities. This aligns closely with our goal of addressing the ACSA problem. Therefore, we adopted the Cross-modal Transformer as the primary structure for data fusion, aiming to achieve further improvements in both the ACSA and ORP tasks compared to existing approaches.
+
+This study makes the following three contributions:
+\begin{itemize}
+    \item We introduce a novel multimodal, multitask model that can simultaneously address both ACSA and ORP tasks via considering both visual and textual reviewing contents. This modeling approach enhances model's performance significantly.
+
+    \item MMRP incorporates a cross-modal transformer, effectively integrating both textual and visual information.  This fusion method enables deeper interactions between modalities, resulting in higher accuracy for sentiment and rating predictions.
+    
+    \item We conduct extensive experiments on the ZOL mobile phone review dataset, including comparison, ablation study, sensitivity analysis and case study, to validate the effectiveness of MMRP. The results demonstrate that MMRP significantly outperforms existing models in both ACSA and ORP tasks, highlighting its superiority in multi-modal review mining.
+\end{itemize}
+
+
+%The research contributions of this chapter can be summarized into three points. Firstly, it integrates image information on the basis of pure textual review studies. This study proposes the Multimodal-ASAP (MMRP) network architecture, which utilizes image information to assist in aspect category sentiment analysis (ACSA) and rating prediction (RP), greatly aiding in understanding the role of images in reviews. Compared to purely textual tasks, the inclusion of image information improves the prediction accuracy of ACSA and RP problems. Secondly, this study jointly models ACSA and RP as multi-task learning problems. By jointly solving ACSA and RP tasks with relevant information, the analysis accuracy can be higher than that of single-task modeling. Finally, compared to other multimodal rating prediction models, this study employs a more effective Cross-modal Transformer to fuse multimodal information for higher accuracy. This chapter conducts extensive empirical data research, and on the ZOL Zhongguancun multimodal mobile phone dataset, the proposed MMRP model outperforms numerous baseline models.
+
+The remainder of the paper is organized as follows. Section 2 presents the related work. Section 3 illustrates in detail the proposed MMRP model. Section 4 conducts the experiment settings. The results of comparison experiments, ablation experiments, sensitivity analysis, and case study are presented in Section 5. Finally, Section 6 concludes the paper.
+
+%Furthermore, user reviews not only contain textual information but also, with the development of social media and e-commerce platforms, the frequency of image-based reviews is increasing. Multimodal reviews can provide richer information and sentiment than text alone. Therefore, research on the fusion of text and image in multimodal reviews has become a hot topic and challenge in the field of data mining. Image information, as an important component of reviews, provides an intuitive expression carrier. Compared to textual reviews, images can overcome language barriers and more intuitively convey users' feelings and evaluations. In this context, how to fully utilize image information in reviews to improve the prediction accuracy of downstream tasks has become a key research topic in the field of review mining.
+
+\section{Related Works}
+\subsection{Rating Prediction}
+Rating prediction for reviews is an important research direction in the fields of data science and natural language processing, aiming to predict the ratings or sentiment tendencies corresponding to reviews by analyzing the user-generated review content (\citep{liu2022sentiment}, \citep{Khan2021deep}). The research on the rating prediction of e-commerce platform is of great value to both consumers and merchants (\citep{Xiong2024review}, \citep{Dhillon2021modeling}, \citep{zhou2024product} ). Most of the existing rating prediction studies use only text information and focus only on overall rating prediction (ORP). \citet{feng2021intersentiment} introduce the InterSentiment model, which utilizes deep neural network model to analyze user-product interactions and review sentiments for rating prediction.\citet{wang2020MRMRP} propose a rating prediction model MRMRP based on multiple comments, which collects supplementary comments from similar users, extracts features from them, integrates them into different neural models, and improves prediction accuracy. \citet{Bauman2022knowthy} propose a new context parsing method to systematically extract context information from user generated comments, predict ratings, and improve recommendation performance.
+
+The goal of Aspect Category Sentiment Analysis (ACSA) is to predict users' sentiment expressions at each aspect category, so it is also essentially a rating prediction task. For ACSA task, traditional tokenization methods may fail to accurately capture the semantic content in review mining. The ARP model \citep{wu2019arp} aims to address this issue. The core idea of is to adopt a multi-view learning framework to capture semantic information from different perspectives (i.e., words and characters), thereby predict review ratings more accurately. Att-BiLSTM \citep{zhou2016attention} model applies Bidirectional Long Short-Term Memory (BiLSTM) networks, combined with attention mechanisms, effectively processing and understanding sentence structures without relying on external lexical resources or complex natural language processing scenarios. \citet{long2017cognition} propose a novel attention model trained by cognition grounded eye-tracking data, which firstly uses eye tracking data to establish a reading prediction model, and then uses the predicted reading time to construct a cognitive-based attention layer for neural emotion analysis.
+
+To solve multi tasks simultaneously, \citet{bu2021asap} propose a joint model which focuses on both sentiment analysis (ACSA) and rating prediction (ORP) tasks in e-commerce. This structure effectively integrates the two tasks, achieving the prediction of sentiment polarity of aspect categories and overall sentiment in user reviews, thus improving prediction accuracy and efficiency. The research indicates a high correlation between ACSA and ORP, often jointly used in practical e-commerce scenarios. Moreover, There are several multitasking frameworks that can solve multitasking learning, such as MoE \citep{jacobs1991adaptive} and MMoE \citep{ma2018modeling}. It is more appropriate and concise to directly add the two designed loss functions together, because the two tasks are strongly related.
+
+There are several multimodal studies that focus on rating prediction, using both picture and text information, but they are single-tasking. For the ACSA problem, the MIMN \citep{xu2019multi} employed interactive learning methods to enhance analysis accuracy. The Co-Memory+Aspect \citep{xu2017multisentinet} model uses MultiSentiNet module as a key part, aiming to enhance the accuracy of sentiment analysis by integrating textual and visual data. For overall rating prediction problem, BiGRU-aVGG model \citep{tang2015document} and HAN-aVGG \citep{yang2016hierarchical} model are two examples. The BiGRU-aVGG model is consisted of a BiGRU model for processing textual data and a VGG model for processing images. For HAN-aVGG, the core idea of the Hierarchical Attention Network (HAN) model is to utilize the hierarchical structure of documents for document classification. \citet{lin2022modeling} proposes a MSA hierarchical graph contrastive learning framework, which constructs a unimodal graph for each modal representation and employs graph contrastive learning strategy to explore potential relationships based on unimodal graph enhancement. \citet{Lu2024coordinated} proposes a coordinated-joint translation fusion framework with affective interaction graph. 
+
+
+\subsection{Multimodal Information Fusion Strategy}
+
+The core of multimodal feature fusion is to unify features from different modalities into a consistent form. The choice of multimodal fusion strategy significantly affects the quality of feature extraction and prediction performance. Existing methods can mainly be divided into three categories.
+
+The first category is feature concatenation, as used in the method for analyzing the usefulness of multimodal reviews by \citet{ma2018effects}. \citet{hu2018multimodal} developed the Deep Sentiment model, which combines GloVe word vectors and pre-trained Inception networks. Through LSTM networks and feature concatenation, this model obtains multimodal features to predict emotion labels. This method is simple and intuitive, but it fails to deeply explore the interaction between modalities. Concatenation operations cannot interact with feature information from different modalities and rely on neural layers to adaptively learn to utilize information from different modalities.
+
+The second category is methods based on bilinear pooling, such as low-rank bilinear pooling and separable bilinear pooling with multiple output channels applied in the Visual Question Answering(VAQ) domain (\citep{yu2017multi}, \citep{yu2018beyond}). These methods achieve more complex interactions between two information flows through outer product, allowing deep interactions between two modalities. Among them, Multimodal Compact Bilinear (MCB) pooling \citet{fukui2016multimodal} and Multimodal Low-rank Bilinear (MLB) pooling \citet{kim2016hadamard} are the two most famous methods. MCB approximates the outer product between image and text features in a low-dimensional space, while MLB uses Hadamard product and linear mapping to approximate bilinear pooling, aiming to reduce computational complexity and use fewer parameters in neural networks.
+
+The third category adopts attention mechanisms to achieve effective feature fusion. \citet{truong2019vistanet} use image information by learning attention scores of the correlation between image and text features. The VistaNet model proposed in this study enhances sentiment analysis of text by treating images as auxiliary information. By attending to image content, this model strengthens sentence-level text features to capture more precise emotional meanings. \citet{tsai2019multimodal} proposed Cross-modal Transformer for aligning audiovisual data and text. The core idea of Cross-modal Transformer is to perform targeted feature fusion for two different modalities, where one is considered the target modality and the other as the source modality. This mechanism uses features of the target modality as the Query matrix and treats features of the source modality as Key and Value, executing the operation of Multi-Head Attention. Compared to traditional methods, this approach utilizes the capability of multi-head attention to accurately establish connections between feature vectors within the target modality and corresponding relevant feature vectors in the source modality, facilitating multimodal interactions from the source modality to the target modality. And it finally gets better fusion features. \citet{yu2022targeted} applied Cross-modal Transformer to sentiment analysis, achieving significant improvements.
+
+
+
+\section{Methodology}
+
+\subsection{Problem Definition}
+
+In the context of multimodal product reviews, let the textual review of user $u$ on product $p$ be denoted as $R_{u \rightarrow p}=\{w_1,w_2,\dots,w_L\}$, where $w_j$ represents the $j$-th word, and $L$ is the length of the review. Let the set of images corresponding to this review be denoted as $I_{u\rightarrow p}=\{i_1,i_2,\ldots,i_C\}$, where $C$ represents the number of images attached to the review, and $i_k$ denotes the $k$-th image.
+
+This study focuses on two rating tasks in the domain of review mining: Aspect Category Sentiment Analysis (ACSA) and Overall Rating Prediction (ORP). The ACSA task aims to predict the score $y_i$ of the review on aspect category $a_i$, based on the textual review $R$ and accompanying images $I$. Here, $i \in {1,2,\ldots,N}$, where $N$ is the number of aspect categories in the set. To address the issue of some aspect categories not being discussed in the review, a masking vector $P=[p_1,p_2,\ldots,p_N]$ is introduced to indicate the presence of aspect categories in the set. When aspect category $a_i$ is mentioned in the review, $p_i=1$; otherwise, $p_i=0$. Assuming that $K$ aspect categories are mentioned in the review, we have $\sum_{i=1}^N p_i = K$. The ORP task aims to predict the overall rating $g$ of the review based on the textual review $R$ and accompanying images $I$. 
+
+For both ACSA and ORP, the ratings are usually given by the reviewers, according to the design of the platform. Regarding different real situation, $y_i$ and $g$ can take various forms, such as binary classification into positive or negative sentiment or a numerical score ranging from $1$ to $10$.
+
+% % The ASAP model serves as the foundational model in this study, which is a joint model based on pure textual data. This model utilizes BERT encoder to accomplish Aspect Category Sentiment Analysis (ACSA) and Rating Prediction (RP) tasks \citep{bu2021asap}. The structure of the ASAP model is clear and concise, as depicted in Figure~\ref{fig:asap-structure}\footnote{Image source: Adapted from \citep{bu2021asap}}. Overall, the ASAP model processes the review text using the BERT model encoder and employs attention mechanism to focus on the text portions related to each aspect set.
+
+% % As illustrated on the right side of Figure~\ref{fig:asap-structure}, the ACSA part utilizes an attention pooling layer to dynamically aggregate word embeddings related to each aspect and then predicts the sentiment polarity of different aspects mentioned in user reviews using a softmax layer. The left side RP part of Figure~\ref{fig:asap-structure} utilizes the embedding of the [CLS] token of BERT to predict the overall rating, considering the overall semantics of user reviews, providing an intuitive assessment of user satisfaction. The loss of the model is a combination of ACSA loss and RP loss. This structure effectively integrates ACSA and RP tasks, achieving the prediction of sentiment polarity of aspect sets and overall sentiment in user reviews, thus improving prediction accuracy and efficiency.
+
+% % According to the experimental results on actual datasets, ASAP performs excellently on both ACSA and RP tasks, outperforming other models (some non-BERT models and some BERT-based models), which demonstrates the rationality of the model's structural design. Additionally, experiments reveal that removing the ACSA task leads to a decline in the performance of the RP task, indicating that fine-grained aspect sentiment prediction contributes to accurately predicting the overall rating of reviews. This finding is of significant practical importance for understanding and analyzing user reviews in e-commerce, especially for user-generated data that simultaneously contain fine-grained information and overall rating information. The ASAP model not only provides a new perspective for sentiment analysis and rating prediction but also offers new insights for future research.
+
+% % With the development of multimodal data, the ASAP model based solely on textual data cannot accommodate multiple modalities. To address this issue, this study proposes the MMRP model. On one hand, the MMRP model can simultaneously analyze image data and textual data, greatly expanding the richness of data and delving deeper into user review data. On the other hand, the MMRP model can continue the core idea of the ASAP model, which is to simultaneously analyze fine-grained sentiment information and overall ratings, fully utilizing the information at both granularities to enhance task accuracy.
+
+% % \begin{figure}[ht]
+% % 	\centering
+% % 	\includegraphics[width=0.8\textwidth]{asap_structure.png}
+% % 	\caption{ASAP模型结构示意图}
+% % 	\label{fig:asap-structure}
+% % \end{figure}
+
+\subsection{MMRP Model}
+
+This study proposes a comprehensive model, namely the Multimodal Multitask Rating Prediction (MMRP), consisting of three key modules to achieve a more comprehensive understanding of multimodal data and accomplish the multi-task rating prediction problems. The structure of MMRP model is illustrated in the left of Figure~\ref{fig:multiasap-structure}.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{MMRP.png}
+	\caption{The structure of the MMRP}
+	\label{fig:multiasap-structure}
+\end{figure}
+
+
+Firstly, this study introduces a feature extraction module aimed at fully exploiting the rich information from text and images. For the input text data, BERT is used for feature extraction to obtain text representations. For image data, VGG model is employed to extract image feature representations. The objective of this stage is to capture rich information from multimodal data and convert text and images into feature representations for subsequent processing.
+
+Secondly, a cross-modal fusion module is introduced, which serves as the core of the entire model. In this module, our study adopts cross-modal transformer model to fuse text features with image features. Transformer encoders with S layers are utilized to interactively learn the relationships between text features and image features, enabling the model to better understand the correlation between text and images, following a self fusion module with T layers to further process features. The goal of this step is to preserve and enhance the semantic correlations between text and images after fusion, providing more informative inputs for subsequent tasks. 
+
+Finally, a multitask prediction module is designed. This module is responsible for predicting ACSA and ORP labels. Leveraging the features processed by the cross-modal fusion module, an appropriate classifier and regression model are utilized for label prediction. The aim of this step is to translate the deep cross-modal information learned by the model into meaningful outputs for specific tasks, achieving accurate prediction of ratings. 
+
+In the following, we will give detailed descriptions for these modules.
+
+\subsubsection {Feature Extraction Module}
+
+For the input textual review \( R = \{w_1, w_2, ..., w_L\} \), tokenization processing is applied to convert it into the input format required by the BERT model\footnote{BERT pre-trained model: https://huggingface.co/google-bert/bert-base-chinese}. The architecture of the BERT model consists primarily of encoders, which are designed as a multi-layer stacked Transformer structure. Each layer consists of a multi-head self-attention mechanism and a feedforward neural network, which allows the model to focus on different parts of the input sequence at the same time. In each Transformer encoder layer, the BERT model encodes bidirectional context information through multi-head self-attention mechanisms. This mechanism allows the model to focus on information in different locations simultaneously when processing input sequences, rather than just being limited to one-way contexts. Specifically, the multi-head self-attention mechanism allows the model to compute multiple different attention weights, enabling each position to fuse information from the entire input sequence. In addition, each encoder layer also includes a feedforward neural network layer to further process the output of the self-attention mechanism. The feedforward neural network can extract higher level semantic information and enhance the representation ability of the model for the input sequence. With the multi-layer stacked Transformer encoder, BERT model can gradually learn and extract complex semantic structures from input sequences to form more abstract and rich representations. Through processing by the BERT model, the final hidden layer matrix of the textual review \( H_R: \{h_{R1}, h_{R2}, ..., h_{RL}\} \) is obtained, where \( H_R \in \mathbb{R}^{L \times d_R} \), \( d_R \) is the dimension of the BERT hidden layer, and \( L \) represents the length of the review. This processing step retains rich semantic information for each word in the review, providing strong textual features for subsequent multimodal fusion.
+
+For the image data, feature extraction is performed using the VGG16 model\footnote{VGG16 pre-trained model: \url{https://download.pytorch.org/models/vgg16-397923af.pth}}. Compared with traditional CNN networks, VGG uses a deeper network level, and the size of the convolutional kernel is unified to $3 \times $3. This design makes the model more expressive, and can better capture the features of the input data. The VGG model suggests that using multiple smaller convolution nuclei is preferable to using a single larger convolution kernel. By continuously using the small convolution kernel of $3 \times 3$, the VGG model can improve the representation ability of the network. This design has made the VGG model a classic model in deep learning. The VGG16 network structure used in this study is as follows, which is shown in Figure~\ref{fig:vgg}.
+
+\begin{itemize}
+	\item Input Layer: $224 \times 224$ colored images
+	\item Convolutional Layer: $13$ convolutional layers, each using $3 \times 3$ small convolutional kernels with a stride of $1$
+	\item Pooling Layer: $4$ $2 \times 2$ max-pooling layers
+	\item Fully Connected Layer: $3$ fully connected layers, with the final layer outputting the probability corresponding to each category
+\end{itemize}
+
+ For the image set \( I: \{i_1, i_2, ..., i_C\} \), after processing by the VGG model, the final hidden layer of the image is extracted as the image feature, resulting in the image feature matrix \( H_I: \{h_{I1}, h_{I2}, ..., h_{IC}\} \), where \( H_I \in \mathbb{R}^{C \times d_I} \), \( d_I \) is the dimension of the image feature, and \( C \) represents the number of images. This step helps retain advanced semantics and features of the images, providing strong support for the subsequent processing. 
+
+\begin{figure}[ht]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{doc/VGG16.png}
+ 	\caption{VGG16 network structure}
+ 	\label{fig:vgg}
+\end{figure}
+
+According to these two pre-trained models, BERT and VGG, high-dimensional feature matrices \( H_R \) and \( H_I \) are obtained for review texts and images, respectively. This provides rich data representations for subsequent modal fusion, laying a solid foundation for improving the performance of deep learning models.
+
+
+\subsubsection{Cross-modal Fusion Module}
+
+%%Specifically, $Z_{\alpha}^{[0]}$ is the image modality feature after positional encoding. $Z_{\beta}^{[0]}$ is the text modality feature after positional encoding. $Z_{\beta \to \alpha}^{[i]}$ is the feature at the $i^{th}$ layer of Transformer encoding module. $CM_{\beta \to \alpha}$ denotes the multi-head cross modal attention (passing image modality to text modality). $Q_{\alpha}$ denotes Query, using the image feature representation. $K_{\beta}$ and $V_{\beta}$ are Key and Value, derived from the textual feature representation of the review.
+
+After obtaining the textual and image features, the cross-modal transformer is used to fuse these two modalities. The structure of this module is illustrated in the right of Figure~\ref{fig:multiasap-structure}. The choice of the cross-modal transformer is particularly well-suited for our task because textual and visual reviews of products are inherently correlated. Both modalities describe the same product aspects and reflect consistent sentiment tendencies. The cross-modal transformer excels at aligning and matching highly related content across modalities, as demonstrated by its success in sentiment analysis tasks, as reviewed in the Related Work section. This aligns closely with our goal of addressing the ACSA problem. Therefore, we adopted the cross-modal transformer as the primary structure for data fusion, aiming to achieve further improvements in both the ORP tasks compared to existing approaches.
+
+In order to overcome the issue that Transformer does not include positional information, Positional Encoding (PE) is introduced to embed the ordering information into the modality feature representation. Specifically, for the text modality (denoted as $R$), the positional encoding calculation formula is as follows:
+
+\begin{equation}
+Y_R^{[0]} = H_R + \text{PE}(L, d_R),
+\end{equation}
+where $\text{PE}(L, d_R) \in \mathbb{R}^{(L \times d_R)}$ is used to compute the embedding for each position index, and $Y_R^{[0]}$ is the text modality feature after positional encoding. For the image modality (denoted as $I$), the positional encoding calculation formula is:
+
+\begin{equation}
+Y_I^{[0]} = H_I + \text{PE}(C, d_I),
+\end{equation}
+where $\text{PE}(C, d_I) \in \mathbb{R}^{(C \times d_I)}$ is used to compute the embedding for each position index, and $Y_I^{[0]}$ is the image modality feature after positional encoding.
+
+To achieve cross-modal feature fusion, the cross-modal transformer mechanism with multi-head ($M$) attention is introduced. Define the Query as $Q_I^m = H_I \cdot W_Q^m$, Keys as $K_R^m = H_R \cdot W_K^m$, and Values as $V_R^m = H_R \cdot W_V^m$, where $W_Q^m \in \mathbb{R}^{(d_I \times d_k)}$, $W_K^m, W_V^m \in \mathbb{R}^{(d_R \times d_k)}$, for $m=1,...,M$. The feature representation after passing the image modality to the text modality is denoted as $\text{CM}_{(I \to R)}^m \in \mathbb{R}^{(L \times d_k)}$, and its calculation formula is:
+
+\begin{equation}
+\begin{aligned}
+\text{CM}_{(I \to R)}^m (H_R, H_I) 
+&= \text{softmax}\left(\frac{H_I W_Q^m (W_K^m)^T H_R^T}{\sqrt{d_k}}\right) H_R W_V^m \\
+&= \text{softmax}\left(\frac{Q_I^m (K_R^m)^T}{\sqrt{d_k}}\right) V_R^m 
+\end{aligned}
+\end{equation}
+
+Based on this, the cross-modal transformer module,consisting of $S$ layers, is further defined. Each layer further integrates image information into the fused multimodal representation from the previous layer. This ensures that the image information is fully extracted and utilized. The $i$-th ($i=1,...,S$) layer of passing the image modality to the text modality cross-modal transformer encoding is as follows:
+
+\begin{equation}
+\begin{aligned}
+\hat{Y}_{(I \to R)}^{[i]} & = \text{CM}_{(I \to R)}^{\text{m},[i]}\left(\text{LN}(Y_{(I \to R)}^{[i-1]}), \text{LN}(Y_I^{[0]})\right) + \text{LN}(Y_{(I \to R)}^{[i-1]}) \\
+Y_{(I \to R)}^{[i]} & = f_{\theta_i}\left(\text{LN}(\hat{Y}_{(I \to R)}^{[i]})\right) + \text{LN}(\hat{Y}_{(I \to R)}^{[i]}) 
+\end{aligned}
+\end{equation}
+
+with
+
+\begin{equation}
+\begin{aligned}
+Y_{(I \to R)}^{[0]} & = Y_R^{[0]} \\
+\end{aligned}
+\end{equation}
+where $f_{\theta_i}$ represents the position-wise feed-forward sublayer in the $i$-th layer of the cross-modal encoder, and $\text{LN}$ denotes layer normalization.
+
+After $S$ layers of cross-modal transformer encoding layers, the fused feature \(Y_{(I \to R)}^{[S]} \in \mathbb{R}^{(L \times d_k)}\) is obtained.
+
+Next is the self-fusion module. For the fused feature, a unimodal transformer with $T$ layers is used for further processing to extract features. Multiple rounds of self-fusion are applied to the results of the cross-modal integration, allowing the information from both modalities to be thoroughly combined and the most salient features to be effectively captured. The formula for the $i$-th layer is as follows, with $i=1,...,T$.
+
+\begin{equation}
+\begin{aligned}
+\hat{Z}_R^{[i]} & = \text{CM}_{(I \to R)}^{\text{m},[i]}\left(\text{LN}(Z_R^{[i-1]}), \text{LN}(Z_R^{[0]})\right) + \text{LN}(Z_R^{[i-1]}) \\
+Z_R^{[i]} & = g_{\theta_i}\left(\text{LN}(\hat{Z}_R^{[i]})\right) + \text{LN}(\hat{Z}_R^{[i]})
+\end{aligned}
+\end{equation}
+
+with 
+
+\begin{equation}
+\begin{aligned}
+Z_R^{[0]} & = Y_{(I \to R)}^{[S]}, \\
+\end{aligned}
+\end{equation}
+where $g_{\theta_i}$ represents the positionwise feed-forward sublayer in the $i$-th layer of the unimodal encoder. After $T$ layers of Transformer encoding layers, the feature \(Z_R^{[T]} \in \mathbb{R}^{(L \times d_k)}\) is obtained.
+
+
+\subsubsection{Multitask Prediction Module}
+
+In the ACSA task, for each aspect category $a$, the following formula is used for calculating the score $M_i^a$ at each hidden layer $i$.
+
+\begin{equation}
+M_i^a = \tanh\left(Z_R^{[T]} W_i^a\right),
+\end{equation}
+where \(M_i^a\) represents the characteristic representation of the i-th aspect class throughout the process, which is the intermediate quantity further used for the softmax operation, $W_i^a \in \mathbb{R}^{(d_k \times d_k)}$ is the weight matrix for attention of the aspect category. Then, the softmax operation is used to compute attention weights $\alpha_i$:
+
+\begin{equation}
+\alpha_i = \text{softmax}(M_i^a \omega_i),
+\end{equation}
+where $\omega_i \in \mathbb{R}^{d_k}$ is the weight vector. The attention representation $r_i$ for the $i$-th aspect category $a_i$ of the comment is calculated using the following formula:
+
+\begin{equation}
+r_i = \tanh\left(\alpha_i^T Z_R^{[T]} W_i^p\right),
+\end{equation}
+where $W_i^p \in \mathbb{R}^{(d_k \times d_k)}$ is the weight matrix for comment attention.
+
+Finally, the score prediction for the ACSA task is performed using the following formula:
+
+\begin{equation}
+\hat{y}_i = \text{softmax}(W_i^q r_i + b_i^q),
+\end{equation}
+where $W_i^q \in \mathbb{R}^{(N \times d_k)}$ is the weight matrix for the ACSA task, and $b_i^q \in \mathbb{R}^q$ is the bias vector. $\hat{y}_i$ represents the predicted probability vector for the $i$-th aspect $a_i$, where each component represents the probability of \(a_i\) being classified into the corresponding category, and the true label $y_i$ is an one-hot vector.   
+
+The loss function for the ACSA task, taken classification problem with $K$ categories as example, is defined as entropy loss:
+
+\begin{equation}
+\text{loss}_{\text{ACSA}} = \frac{1}{T} \sum_{i=1}^N p_i \sum_{k=1}^{K} y_{ik} \log \hat{y}_{ik},
+\end{equation}
+where $N$ is the total number of aspects, $p_i \in \{0,1\}$ indicates whether the $i$-th aspect is mentioned, $K = \sum^N_{i=1}p_i$ is the number of mentioned aspects for the sample.
+
+
+In the ORP task, we focus on overall comment ratings, the first embedding after self-fusion $h_R = Z_R^{[i]} [0;:] \in \mathbb{R}^{d_k}$ is used to predict $g$. Specifically, the calculation is performed using the following formula:
+
+\begin{equation}
+\hat{g} = \beta^T \tanh(W^r h_R + b^r)，
+\end{equation}
+
+where $\beta \in \mathbb{R}^{d_k}$, $W^r \in \mathbb{R}^{(d_k \times d_k)}$, and $b^r \in \mathbb{R}^{d_k}$.
+
+The loss function for the ORP task, taking regression problem with numeric values as example, is defined as square loss:
+
+\begin{equation}
+\text{loss}_{\text{ORP}} = |\hat{g} - g|
+\end{equation}
+
+Finally, the losses for the ACSA and ORP tasks are combined to improve the model performance by jointly considering these two tasks to more comprehensively understand user reviews and predict overall attitudes:
+
+\begin{equation}
+\text{loss} = \text{loss}_{\text{ACSA}} + \text{loss}_{\text{ORP}}
+\end{equation}
+
+
+\section{Experiment Settings}
+\subsection{Data Set}
+
+This study evaluates the models on the ZOL Mobile Phone Reviews dataset from Zhongguancun Online (ZOL) \citep{xu2019multi}\footnote{The dataset can be downloaded from https://github.com/xunan0812/MIMN}. ZOL is a leading IT information and commercial portal website in China. It consists of 40 major channels covering news, shopping centers, hardware, downloads, games, mobile phones, etc. The dataset contains 12587 reviews, of which 7359 are single-modal reviews containing only text information, and 5288 are multi-modal reviews with both texts and images, covering a total of 114 brands and 1318 types of mobile phones.
+
+In this dataset, each multi-modal review contains a piece of text review, an image set, and at least one but no more than six aspect categories. These six aspect categories are value for money, performance $\&$ configuration, battery life, design $\&$ feel, camera quality, and display quality. Each aspect category corresponds to an integer sentiment score ranging from 1 to 10, used as labels for the ASCA classification task. Additionally, the overall review also has a numerical sentiment score, used as the label for the ORP regression task.
+
+
+\subsection {Evaluation Metrics}
+
+For the ASCA task, this study employs Macro-F1 score and accuracy (Acc) as evaluation metrics. For the ORP task, Mean Absolute Error (MAE), Macro-F1 score, and accuracy are used as evaluation metrics. When calculating Macro-F1 and accuracy for the RP task, the predicted ORP scores are first discretized through rounding, and then Macro-F1 and accuracy are calculated against ORP labels processed in the same manner. The metrics are defined as follows:
+
+\begin{equation}
+\centering
+\begin{aligned}
+\text{Accuracy} &= \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Observations}} \\
+\text{MAE} &= \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{aligned}
+\end{equation}
+
+
+\subsection{Environment and Hyperparameter Settings}
+
+For the proposed MMRP model, Adam optimizer is used for training. The model is implemented in the PyTorch framework, and all experiments are conducted on an NVIDIA TITAN V 12G GPU. Specific hyperparameter settings are described as follows: learning rate is set to $0.001$, batch size is set to $32$, maximum sequence length is set to $512$, attention dimension is set to $80$, the number of layers in the cross-modal transformer encoder $S$ and the transformer encoder $T$ are both set to $6$, and the number of attention heads is set to $8$. Other baseline models adopt hyperparameters specified in their respective papers or source code. All experiments are repeated $10$ times.
+
+\subsection{Baseline Models}
+
+We selected seven baseline models to validate the performance of our proposed model. These seven models can be divided into two groups according to whether they use multimodal information. Att-BiLSTM \citep{zhou2016attention}, ARP \citep{wu2019arp}, and ASAP \citep{bu2021asap} are single-modal purely using textual information, while MIMN \citep{xu2019multi}, Co-Memory+Aspect \citep{xu2017multisentinet}, HAN-aVGG \citep{yang2016hierarchical}, and BiGRU-aVGG \citep{tang2015document} models are multimodal models using both textual and visual information. The specific details of the seven baseline models are shown in Table \ref{tbl:multi_asap_baseline}. The proposed MMRP model in this study is the only multimodal model that can simultaneously accomplish multitasks. 
+
+Among the three single-modal pure text models, Att-BiLSTM and ARP are single-task models, and they were used separately for the ACSA task and the ORP task in the experimental comparison process. The ASAP model is a multitask model that can simultaneously output results for both the ACSA task and the ORP task for comparison. Among the four multimodal models, MIMN and Co-Memory+Aspect were proposed to handle the ACSA task, while HAN-aVGG and BiGRU-aVGG were used for the ORP task. They were used to compare the ACSA and ORP results output by MMRP, respectively.
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Details For Baseline Models}
+	\begin{tabular}{ccccc}
+		\toprule[1.5pt]
+		Model             & ACSA Task & ORP Task & Multitask & Multimodal \\ \hline
+		Att-BiLSTM           & \ding{51}      & \ding{51}    & \ding{55}   & \ding{55}   \\
+		ARP              & \ding{51}      & \ding{51}    & \ding{55}   & \ding{55}   \\
+		ASAP             & \ding{51}      & \ding{51}    & \ding{51}   & \ding{55}   \\
+		MIMN             & \ding{51}      & \ding{55}    & \ding{55}   & \ding{51}   \\
+		Co-Memory+Aspect & \ding{51}      & \ding{55}    & \ding{55}   & \ding{51}   \\
+		HAN-aVGG            & \ding{55}      & \ding{51}    & \ding{55}   & \ding{51}   \\
+		BiGRU-aVGG            & \ding{55}      & \ding{51}    & \ding{55}   & \ding{51}   \\
+		MMRP        & \ding{51}      & \ding{51}    & \ding{51}   & \ding{51}   \\ \bottomrule[1.5pt]
+	\end{tabular}
+	\label{tbl:multi_asap_baseline}
+\end{table}
+
+
+\section{Experiment Results}
+
+\subsection{Results of Model Comparison}
+\subsubsection{ACSA Task}
+
+In order to comprehensively evaluate the results of the proposed MMRP, this study not only considers the performance indicators but also takes into account the stability of the models. The mean of the indicators for 10 repeated experiments is used as the evaluation of model performance, and the standard deviation of the 10 experiments is used as the evaluation of model stability. The better the mean indicator, the higher the accuracy of the model; the smaller the standard deviation of the indicator, the better the stability of the model. 
+
+The mean indicator results for the ACSA task are shown in Table \ref{table:acsa_result}, with the corresponding standard deviations indicated in brackets. The best model results are indicated in bold.
+
+In the single-modal models, Att-BiLSTM demonstrates the highest precision and good stability. Its mean Macro-F1 is $62.69\%$, and mean Acc is $66.33\%$, the highest among the single-modal models. The ASAP model's precision is intermediate among the single-modal models, with overall small experimental standard deviations, indicating good stability. The proposed MMRP model outperforms all the single-modal models in experimental accuracy, with Macro-F1 and Acc at $63.27\%$ and $66.83\%$, respectively.
+
+In the multimodal models, the MIMN model and the Co-Memory+Aspect model exhibit higher accuracy compared to others, with MIMN's Macro-F1 and Acc at $61.27\%$ and $59.48\%$, and Co-Memory+Aspect's Macro-F1 and Acc at $60.57\%$ and $58.37\%$, respectively. This suggests that different model structures and modal fusion methods for multimodal model have a significant impact on downstream tasks. At the same time, comparing the experimental results of single-modal and multimodal models, it is observed that the optimal single-modal model Att-BiLSTM outperforms MIMN in experimental accuracy, indicating that simply adding multimodal information does not necessarily improve model accuracy; rather, selecting appropriate modal fusion methods is essential for improving model accuracy.
+
+
+\begin{table}[htp]
+	\centering
+	\caption{Model comparison results for ACSA task}
+	\begin{tabular}{cccc}
+		\toprule[1.5pt]
+		\multicolumn{1}{l}{Model Type} & \multicolumn{1}{c}{Model Name}                         & Macro-F1 & Acc.  \\ \hline
+		\multirow{6}{*}{Single Modal}            & \multirow{2}{*}{Att-BiLSTM}                                   & 62.69\%             & 66.33\%          \\
+		&                                                           & (0.0027)          & (0.0051)       \\
+		& \multirow{2}{*}{ARP}                                      & 44.43\%             & 56.84\%          \\
+		&                                                           & (0.0037)          & (0.0049)       \\
+		& \multirow{2}{*}{ASAP}                                     & 59.78\%             & 63.57\%          \\
+		&                                                           & (0.0029)          & (0.0033)       \\ \hline
+		\multirow{8}{*}{Multi Modal}            & \multirow{2}{*}{MIMN}                                     & 61.27\%             & 59.48\%          \\
+		&                                                           & (0.0038)          & (0.0037)       \\
+		& \multirow{2}{*}{Co-Memory+Aspect}                         & 60.57\%             & 58.37\%          \\
+		&                                                           & (0.0034)          & (0.0026)       \\
+		& \multicolumn{1}{l}{\multirow{2}{*}{MMRP Model (w/o ORP)}} & 62.37\%             & 66.64\%          \\
+		& \multicolumn{1}{l}{}                                      & (0.0022)          & (0.0027)       \\
+		& \multirow{2}{*}{MMRP Model}                              & \textbf{63.27\%}    & \textbf{66.83\%} \\
+		&                                                           & (0.0030)          & (0.0025)       \\ \bottomrule[1.5pt]
+	\end{tabular}
+        
+        \begin{tablenotes} %添加此处
+			\footnotesize
+			\item The numbers in brackets are standard deviations. 
+		\end{tablenotes}
+
+    
+	\label{table:acsa_result}
+\end{table}
+
+In addition to model accuracy and stability, this study also calculates the improvement of the proposed model over other comparative baseline models and conducts t-tests on performance indicators to detect whether there is a significant improvement from the perspective of hypothesis testing. The improvement results of the models for the ACSA task are shown in Table \ref{table:acsa_improve}. 
+
+Compared with the single-modal models, MMRP significantly outperforms the ASAP by $5.85\%$ and $5.13\%$, and the best single-modal model Att-BiLSTM by $0.93\%$ and $0.74\%$, respectively, with relatively small experimental standard deviations. This indicates a significant improvement in prediction accuracy with the inclusion of image information.
+
+ MMRP is the best multimodal ACSA model, with improvement rates of $3.27\%$ and $12.36\%$ for the two metrics compared to MIMN. Compared to MIMN's bilinear pooling mode and Co-Memory+Aspect, MMRP using the cross-modal transformer mechanism better handles the fusion of image and text modalities.
+
+\begin{table}[htp]
+	\centering
+	\caption{Improvement and t-test results for ACSA task}
+	\begin{threeparttable}
+		\begin{tabular}{cccc}
+			\toprule[1.5pt]
+			Model Type          & Model Name    & Macro-F1                                        & Acc.                                            \\ \hline
+			\multirow{3}{*}{Single Modal} & Att-BiLSTM           & \begin{tabular}[c]{@{}c@{}}+0.93\%$^{***}$\\ \end{tabular}  & \begin{tabular}[c]{@{}c@{}}+0.74\%$^{***}$\\ \end{tabular}  \\
+			& ARP              & \begin{tabular}[c]{@{}c@{}}+42.42\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+17.58\%$^{***}$\\ \end{tabular} \\
+			& ASAP             & \begin{tabular}[c]{@{}c@{}}+5.85\%$^{***}$\\ \end{tabular}  & \begin{tabular}[c]{@{}c@{}}+5.13\%$^{***}$\\ \end{tabular}  \\ \hline
+			\multirow{2}{*}{Multi Modal} & MIMN             & \begin{tabular}[c]{@{}c@{}}+3.27\%$^{***}$\\ \end{tabular}  & \begin{tabular}[c]{@{}c@{}}+12.36\%$^{***}$\\ \end{tabular} \\
+			& Co-Memory+Aspect & \begin{tabular}[c]{@{}c@{}}+4.46\%$^{***}$\\ \end{tabular}  & \begin{tabular}[c]{@{}c@{}}+14.49\%$^{***}$\\ \end{tabular} \\ \bottomrule[1.5pt]
+		\end{tabular}
+		\begin{tablenotes} %添加此处
+			\footnotesize
+			\item ***: significant at $0.001$ level %添加此处
+		\end{tablenotes} %添加此处
+	\end{threeparttable}
+	\label{table:acsa_improve}
+\end{table}
+
+
+
+
+Additionally, this study extensively explores the impact of the multi-task structure on model accuracy, where MMRP (w/o ORP) denotes the experimental accuracy obtained by exclusively handling the ACSA task without considering the ORP task loss function. It was found that simultaneously handling ACSA and ORP tasks results in higher experimental accuracy than dealing with the ACSA task alone, indicating that information between the two tasks complements each other, and the information regarding the entire comment rating in the ORP task can help improve the judgment of attitude towards aspect categories. 
+
+Figure \ref{fig:acsa_boxplot} illustrates the boxplots of the optimal single-modal model Att-BiLSTM, the optimal multimodal model MIMN, the ASAP, and the proposed MMRP model's experimental results for ACSA, with the orange parts representing the calculated $95\%$ confidence intervals. Overall, this study found that the proposed MMRP model outperforms all single-modal and multimodal baseline models in ACSA experimental accuracy, with significant improvements in experimental indicators over the baseline models, indicating its innovativeness and advancement.
+
+
+% \begin{figure}[htbp]
+% 	\centering
+% 	\subfigure[Att-BiLSTM Macro-F1]{ 
+% 		\label{fig:mini:subfig:a} %% label for first subfigure 
+% 		\begin{minipage}[a]{0.3\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{BiLSTM_acsa_f1.png}
+% 	\end{minipage}}% 
+% 	\subfigure[ASAP Macro-F1]{
+% 		\label{fig:mini:subfig:b} %% label for second subfigure 
+% 		\begin{minipage}{0.3\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{ASAP_acsa_f1.png}
+% 	\end{minipage}}
+% 	\subfigure[MIMN Macro-F1]{
+% 		\label{fig:mini:subfig:c} %% label for second subfigure 
+% 		\begin{minipage}[c]{0.3\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{MIMN_acsa_f1.png}
+% 	\end{minipage}} 
+
+% 	\subfigure[Att-BiLSTM Acc]{ 
+% 		\label{fig:mini:subfig:d} %% label for first subfigure 
+% 		\begin{minipage}[d]{0.3\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{BiLSTM_acsa_Acc.png}
+% 	\end{minipage}}% 
+% 	\subfigure[ASAP Acc]{
+% 		\label{fig:mini:subfig:e} %% label for second subfigure 
+% 		\begin{minipage}[e]{0.3\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{ASAP_acsa_Acc.png}
+% 	\end{minipage}}
+% 	\subfigure[MIMN Acc]{
+% 		\label{fig:mini:subfig:f} %% label for second subfigure 
+% 		\begin{minipage}[f]{0.3\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{MIMN_acsa_Acc.png}
+% 	\end{minipage}} 
+
+% 	\caption{Boxplots for Att-BiLSTM、MIMN、ASAP and MMRP of ACSA task} 
+% 	\label{fig:acsa_boxplot} %% label for entire figure 
+% \end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{acsa_result.pdf}
+	\caption{Boxplots for Att-BiLSTM、MIMN、ASAP and MMRP of ACSA task}
+	\label{fig:acsa_boxplot}
+\end{figure}
+
+\subsubsection{ORP Task}
+
+The evaluation metrics for the ORP task, are similar to the ACSA task, considering both the mean metrics and the standard deviations of 10 repeated experiments. The improvement ratio of the proposed models over the baseline models is computed, and t-tests are performed. The mean results for ORP task metrics are shown in Table \ref{table:rp_result}, with the corresponding standard deviations in the brackets below. The improvements of MMRP over the baseline models for ORP task are presented in Table \ref{table:rp_improve}.
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htp]
+	\centering
+	\caption{Model comparison results for ORP task}
+	\begin{tabular}{ccccc}
+		\toprule[1.5pt]
+		Model Type          & Model Name                           & Macro-F1 & Acc. & MAE      \\ \hline
+		\multirow{6}{*}{Single Modal} & \multirow{2}{*}{Att-BiLSTM}                 & 51.57\%             & 53.59\%         & 0.6531    \\
+		&                                         & (0.0049)          & (0.0136)      & (0.0086) \\
+		& \multirow{2}{*}{ARP}                    & 42.62\%             & 51.28\%         & 0.7707    \\
+		&                                         & (0.0016)          & (0.0151)      & (0.01326) \\
+		& \multirow{2}{*}{ASAP}                   & 32.77\%             & 42.58\%         & 0.9445    \\
+		&                                         & (0.0017)          & (0.0030)      & (0.0049) \\ \hline
+		\multirow{8}{*}{Multi Modal} & \multirow{2}{*}{HAN-aVGG}                    & 48.51\%             & 52.40\%         & 0.7380    \\
+		&                                         & (0.0054)          & (0.0068)      & (0.0198) \\
+		& \multirow{2}{*}{BiGRU-aVGG}                  & 52.04\%             & 53.71\%         & 0.6765    \\
+		&                                         & (0.0061)          & (0.0022)      & (0.0024) \\
+		& \multirow{2}{*}{MMRP (w/o ACSA)} & 53.68\%             & 52.99\%         & 0.6575    \\
+		&                                         & (0.0017)          & (0.0098)      & (0.0125) \\
+		& \multirow{2}{*}{MMRP}            & \textbf{57.33\%}             & \textbf{60.26\%}         & \textbf{0.5663}    \\
+		&                                         & (0.0043)          & (0.0031)      & (0.0079) \\ \bottomrule[1.5pt]
+	\end{tabular}
+
+        \begin{tablenotes} %添加此处
+			\footnotesize
+			\item The numbers in brackets are standard deviations. 
+		\end{tablenotes}
+
+    
+	\label{table:rp_result}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htp]
+	\centering
+	\caption{Improvement and t-test results for ORP task}
+	\begin{threeparttable}
+		\begin{tabular}{ccccc}
+			\toprule[1.5pt]
+			%\hline
+			Model Type          & Model Name & Macro-F1                                        & Acc.                                            & MAE                                             \\ \hline
+			\multirow{3}{*}{Single Modal} & Att-BiLSTM        & \begin{tabular}[c]{@{}c@{}}+11.16\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+12.46\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+13.30\%$^{***}$\\ \end{tabular} \\
+			& ARP           & \begin{tabular}[c]{@{}c@{}}+34.51\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+17.52\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+26.52\%$^{***}$\\ \end{tabular} \\
+			& ASAP          & \begin{tabular}[c]{@{}c@{}}+74.95\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+41.55\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+40.05\%$^{***}$\\ \end{tabular} \\ \hline
+			\multirow{2}{*}{Multi Modal} & HAN-aVGG           & \begin{tabular}[c]{@{}c@{}}+18.19\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+15.00\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+23.27\%$^{***}$\\ \end{tabular} \\
+			& BiGRU-aVGG         & \begin{tabular}[c]{@{}c@{}}+10.16\%$^{***}$\\ \end{tabular}  & \begin{tabular}[c]{@{}c@{}}+12.20\%$^{***}$\\ \end{tabular} & \begin{tabular}[c]{@{}c@{}}+16.29\%$^{***}$\\ \end{tabular} \\ %\hline
+			\bottomrule[1.5pt]
+		\end{tabular}
+		\begin{tablenotes} %添加此处
+			\footnotesize
+			\item ***: significant at $0.001$ level %添加此处
+		\end{tablenotes} %添加此处
+	\end{threeparttable}
+	\label{table:rp_improve}
+\end{table}
+
+Among the single-modal models, Att-BiLSTM achieves the highest precision, but with relatively poor stability. Its mean Macro-F1 is $51.57\%$, mean Acc is $53.59\%$, and MAE is $0.6531$, making it the most accurate among the single-modal models. The experimental standard deviation for its Macro-F1 is $0.0049$, the highest among the three single-modal models. The proposed MMRP model comprehensively outperforms the single-modal models in ORP experimental accuracy, with significant improvements. Its Macro-F1 is $57.33\%$, Acc is $60.26\%$, and MAE is $0.5663$. Compared to the ASAP, the three metrics are significantly improved by $74.95\%$, $41.55\%$, and $40.05\%$. Compared to the best single-modal model Att-BiLSTM, the three metrics are significantly improved by $11.16\%$, $12.46\%$, and $13.30\%$, respectively, indicating a significant improvement in ORP task prediction accuracy with the inclusion of image modality.
+
+Among the multimodal models, the performances of the HAN-aVGG model and the BiGRU-aVGG model are comparable. The BiGRU-aVGG model slightly outperforms the HAN-aVGG model in Macro-F1 and MAE metrics, with smaller experimental standard deviations for Acc and MAE. In the RP task, the BiGRU-aVGG model's accuracy is better than that of all single-modal models. Similar to the ACSA task, the proposed MMRP is the best in RP task among multimodal models, with relatively small experimental standard deviations. Compared to the BiGRU-aVGG model, MMRP significantly improves all three metrics by $10.16\%$, $12.20\%$, and $16.29\%$, respectively. 
+
+Furthermore, for the ORP task, this study also extensively explores the impact of the multitask structure, where MMRP (w/o ACSA) denotes the results obtained by exclusively handling the ORP task without considering the ACSA task. Similar to the conclusions drawn from the ACSA task, the experiments reveal that simultaneously handling ACSA and ORP tasks results in higher experimental accuracy than handling single tasks. According to the experimental results, the role of the ACSA task in enhancing the RP task is more pronounced, indicating that integrating fine-grained aspect category scores complements overall score prediction, thereby achieving better prediction results. 
+
+
+Figure \ref{fig:rp_boxplot} presents boxplots of the experimental results for the best single-modal model Att-BiLSTM, the best multimodal model BiGRU-aVGG, the ASAP and the proposed MMRP model in the RP task. Combining these data, similar to the ACSA task, we found that the proposed MMRP model outperforms all single-modal and multi-modal models in RP experimental accuracy performance, exhibiting significant improvements over the baseline model's experimental metrics.
+
+
+% \begin{figure}[htp]
+% 	\centering
+% 	\subfigure[Att-BiLSTM Macro-F1]{ 
+% 		\label{fig:mini:subfig:a} %% label for first subfigure 
+% 		\begin{minipage}[a]{0.25\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{BiLSTM_rp_f1.png}
+% 	\end{minipage}}% 
+% 	\subfigure[ASAP Macro-F1]{
+% 		\label{fig:mini:subfig:b} %% label for second subfigure 
+% 		\begin{minipage}{0.25\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{ASAP_rp_f1.png}
+% 	\end{minipage}}
+% 	\subfigure[BiGRU-aVGG Macro-F1]{
+% 		\label{fig:mini:subfig:c} %% label for second subfigure 
+% 		\begin{minipage}[c]{0.25\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{BiGRU_rp_f1.png}
+% 	\end{minipage}} 
+
+% 	\subfigure[Att-BiLSTM Acc]{ 
+% 	\label{fig:mini:subfig:d} %% label for first subfigure 
+% 	\begin{minipage}[d]{0.25\textwidth} 
+% 		\centering 
+% 		\includegraphics[width=\linewidth]{BiLSTM_rp_Acc.png}
+% 	\end{minipage}}% 
+% 	\subfigure[ASAP Acc]{
+% 	\label{fig:mini:subfig:e} %% label for second subfigure 
+% 	\begin{minipage}[e]{0.25\textwidth} 
+% 		\centering 
+% 		\includegraphics[width=\linewidth]{ASAP_rp_Acc.png}
+% 	\end{minipage}}
+% 	\subfigure[BiGRU-aVGG Acc]{
+% 	\label{fig:mini:subfig:f} %% label for second subfigure 
+% 	\begin{minipage}[f]{0.25\textwidth} 
+% 		\centering 
+% 		\includegraphics[width=\linewidth]{BiGRU_rp_Acc.png}
+% 	\end{minipage}} 
+
+% 	\subfigure[Att-BiLSTM MAE]{ 
+% 	\label{fig:mini:subfig:g} %% label for first subfigure 
+% 	\begin{minipage}[g]{0.25\textwidth} 
+% 		\centering 
+% 		\includegraphics[width=\linewidth]{BiLSTM_rp_MAE.png}
+% 	\end{minipage}}% 
+% 	\subfigure[ASAP MAE]{
+% 		\label{fig:mini:subfig:h} %% label for second subfigure 
+% 		\begin{minipage}[h]{0.25\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{ASAP_rp_MAE.png}
+% 	\end{minipage}}
+% 	\subfigure[BiGRU-aVGG MAE]{
+% 		\label{fig:mini:subfig:i} %% label for second subfigure 
+% 		\begin{minipage}[i]{0.25\textwidth} 
+% 			\centering 
+% 			\includegraphics[width=\linewidth]{BiGRU_rp_MAE.png}
+% 	\end{minipage}} 
+% 	\caption{Boxplots for Att-BiLSTM、ASAP、BiGRU-aVGG and MMRP of RP task} 
+% 	\label{fig:rp_boxplot} %% label for entire figure 
+% \end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{rp_result.pdf}
+	\caption{Boxplots for Att-BiLSTM、ASAP、BiGRU-aVGG and MMRP of ORP task}
+	\label{fig:rp_boxplot}
+\end{figure}
+
+
+\subsection{Ablation Experiment}
+
+The design of the model structure has a significant impact on performance. To validate the rationality and effectiveness of the proposed model architecture, we investigate the role of core modules of the proposed model, which are cross-modal transformer and the self-attention mechanism. The model that only utilizes the BERT model to extract text encoding for rating prediction serves as the baseline for comparison. The effects of the cross-modal transformer and the self-attention mechanism on the accuracy of ACSA and ORP task predictions are evaluated, as shown in Table \ref{table:asap_structure}.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htp]
+	\centering
+	\caption{Ablation experiment results for structure design}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{cccccccc}
+			\toprule[1.5pt]
+			\multirow{2}{*}{BERT} & \multirow{2}{*}{ Cross-modal Transformer} & \multirow{2}{*}{Selt-Attention} & \multicolumn{2}{c}{ACSA}                                 & \multicolumn{3}{c}{ORP}                                                                     \\ \cline{4-8} 
+			&                                  &                                  & Macro-F1               & Acc.                   & Macro-F1               & Acc.                   & MAE                    \\ \hline
+			\checkmark        &                                  &                                  & 44.30\%                           & 54.07\%                           & 40.06\%                           & 46.41\%                           & 0.7688                           \\
+			\checkmark        & \checkmark        &                                  & 61.91\%                           & 66.18\%                           & 44.59\%                           & 47.81\%                           & 0.7085                           \\
+			\checkmark        & \checkmark        & \checkmark        & \textbf{63.27\%} & \textbf{66.83\%} & \textbf{57.33\%} & \textbf{60.26\%} & \textbf{0.5663} \\ \bottomrule[1.5pt]
+		\end{tabular}
+	}
+	\label{table:asap_structure}
+\end{table}
+
+
+The baseline model using only the BERT module achieves a Macro-F1 of $44.30\%$ and an Acc of $54.07\%$ on the ACSA task. On the ORP task, it achieves a Macro-F1 of $40.06\%$, Acc of $46.41\%$, and MAE of $0.7688$. Introducing the cross-modal transformer structure for integrating images leads to significant improvements across all evaluation metrics. The Macro-F1 for the ACSA task increases to $61.91\%$, Acc to $66.18\%$, and for the ORP task, the Macro-F1 increases to $44.59\%$, Acc to $47.81\%$, with MAE decreasing to $0.7085$. These results demonstrate that the integration of image modality information through the cross-modal transformer structure significantly enhances the model's rating prediction capability.
+
+When the model combines the BERT text encoder, cross-modal transformer mechanism, and self-attention mechanism, further performance improvement is observed. On the ACSA task, this model achieves a Macro-F1 of $63.27\%$ and an Acc of $66.83\%$. On the ORP task, the Macro-F1 reaches $57.33\%$ with an Acc of $60.26\%$, and MAE decreases to $0.5663$. The comprehensive performance improvement suggests that the inclusion of the self-attention mechanism enables the model to obtain higher-quality feature vectors.
+
+\subsection{Sensitivity Analysis}
+
+\subsubsection{Feature Extraction Encoder}
+
+
+In the field of multimodal data analysis, the choice of image and text encoders has an important impact on the final performance of the model. In this section, we compare the impact of selecting different image and text encoders on the accuracy of the ACSA and ORP tasks. Regarding image encoders, in addition to the VGG model used by MMRP, the commonly used ResNet model \citep{he2016deep} is also compared. For text encoders, besides the BERT model used by MMRP, the RoBERTa model \citep{liu2019roberta} and Tencent word vectors \footnote{Tencent word vectors: https://modelscope.cn/models/lili666/text2vec-word2vec-tencent-chinese/files} are also compared. The experimental results are shown in Table \ref{table:part_asap}.
+
+\begin{table}[htp]
+	\centering
+	\caption{Results for different feature extraction encoders}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{c|c|cc|ccc}
+			\toprule[1.5pt]
+			Image encoder & Text encoder & \multicolumn{2}{c|}{ACSA}                    & \multicolumn{3}{c}{ORP}                                                    \\ \cline{3-7} 
+			\textbf{}              & \textbf{}             & \multicolumn{1}{c|}{Macro-F1} & Acc & \multicolumn{1}{c|}{Macro-F1} & \multicolumn{1}{c|}{Acc} & MAE \\ \hline
+			& BERT                  & \multicolumn{1}{c|}{\textbf{63.27\%}}             & 66.83\%        & \multicolumn{1}{c|}{\textbf{57.33\%}}       & \multicolumn{1}{c|}{\textbf{60.26\%}}        & \textbf{0.5663}        \\
+			VGG                    & RoBERTa                & \multicolumn{1}{c|}{56.41\%}             & \textbf{67.25\%}        & \multicolumn{1}{c|}{53.73\%}       & \multicolumn{1}{c|}{59.23\%}        & 0.6035        \\
+			& Tencent               & \multicolumn{1}{c|}{51.07\%}             & 57.04\%        & \multicolumn{1}{c|}{47.00\%}       & \multicolumn{1}{c|}{47.21\%}        & 0.9356        \\ \hline
+			& BERT                  & \multicolumn{1}{c|}{61.51\%}             & 64.25\%        & \multicolumn{1}{c|}{55.27\%}       & \multicolumn{1}{c|}{57.69\%}        & 0.6213        \\
+			ResNet                 & RoBERTa                & \multicolumn{1}{c|}{60.23\%}             & 64.02\%        & \multicolumn{1}{c|}{52.91\%}       & \multicolumn{1}{c|}{56.36\%}        & 0.6580        \\
+			& Tencent               & \multicolumn{1}{c|}{50.26\%}             & 57.58\%        & \multicolumn{1}{c|}{46.53\%}       & \multicolumn{1}{c|}{48.15\%}        & 0.9822        \\ 
+			\bottomrule[1.5pt]
+		\end{tabular}
+	}
+	\label{table:part_asap}
+\end{table}
+
+Regarding text encoders, compared to using RoBERTa or Tencent word vectors, the BERT model has a significant advantage in all metrics. In the ACSA task, the combination of VGG as the image encoder and BERT as the text encoder achieved the highest Macro-F1 at $63.27\%$, among all experimental combinations. The Acc reached $66.83\%$, second only to the combination of VGG and RoBERTa. In the ORP task, the combination of VGG and BERT also performed the best in terms of Macro-F1, reaching $57.33\%$, with an Acc of $60.26\%$ and an MAE of $0.5663$, outperforming any other combination in all metrics. This result indicates the significant advantage of BERT in text feature extraction. In terms of image encoder selection, the VGG model has a significant advantage over ResNet. Regardless of whether BERT, RoBERTa, or Tencent word vectors are selected as text encoders, the VGG model achieved good accuracy in both ACSA and ORP tasks. In conclusion, using VGG and BERT as image and text encoders respectively demonstrates advantages in the multi-task rating prediction task.
+
+\subsubsection{Multitask Framework}
+
+Since this study focuses on a multitask learning problem, selecting an appropriate multitask framework is crucial in balancing training cost and model accuracy. The choice of different frameworks significantly impacts the final performance of the model. In this section, we compare the proposed MMRP model with alternative multitask frameworks to investigate their influence on the results of the ACSA and ORP tasks.
+
+The MMRP model adopts a simple shared-bottom architecture, where lower layers are shared for representation learning, while task-specific layers are placed on top. In this work, the Cross-modal Transformer Encoder and Transformer Encoder serve as the shared lower layers. To further explore the impact of different multitask frameworks, we compare MMRP against two alternative architectures: MMoE and AdaTT.
+
+MMoE \citep{mmoe}, an earlier and widely used multitask framework, employs a mixture of experts shared across all tasks, with gating networks dynamically fusing them for each task. These gating networks process input features and generate softmax-based weights to selectively utilize different experts. AdaTT \citep{adatt}, a more recent framework designed for recommendation tasks, introduces task-specific experts, shared experts (optional), and gating modules to explicitly model task-to-task interactions at both the task-pair and global levels.
+
+In our experiments, all experts are implemented as single-layer MLPs, with hidden dimensions matching the attention dimension (set to 80 in this study). The MMoE framework shares three experts across the two tasks, with each task assigning weights through its respective gating network. In contrast, AdaTT assigns two dedicated experts per task, while also utilizing a gating network to allocate weights across all experts to capture inter-task dependencies. Both MMoE and AdaTT are integrated into the architecture shown in Figure \ref{fig:multiasap-structure}, positioned after the Transformer Encoder.
+
+To evaluate the effect of different multitask frameworks, we trained models under each setting ten times, and the results are summarized in Table \ref{table:multitask}, with the corresponding standard deviations in the brackets below. 
+% 由于本研究关注的是一个多任务问题，根据模型训练成本与结果准确性选择合适的多任务框架是非常关键的。不同多任务框架的选择对模型的最终性能具有重要影响。本节另外选择了与MMRP模型不同的多任务框架进行对比，探讨多任务框架的选择对 ACSA 和 ORP 任务准确率的影响。  
+
+% 本文提出的MMRP模型使用最简单的Shared-bottom结构。This structure utilizes shared lower layers for representation learning and has task-specific layers on top of it. 在本文中，Cross-modal Transformer Encoder and Tansformer Encoder 构成 shared lower layers. 我们另外选择了两种多任务框架进行对比：MMOE与AdaTT. 
+
+% MMoE \citep{mmoe} 是一种较早提出、应用较广、较为成熟的多任务框架，它 introduces a mixture of experts which are shared by all tasks and employs gating networks to dynamically fuse them for each task. The gating networks take the input features and output softmax gates assembling the experts with different weights, allowing different tasks to utilize experts differently. Adatt\citep{adatt} 则是最近提出的对于推荐任务效果较好的一种多任务框架，它introduce task-specific experts, shared experts(optional) and gating modules to explicitly model the task-to-task interaction at both the task-pair and all-task levels.
+
+% 在实验中，所有的expert均设置为single-layer MLP experts with hidden dimensions 与attention dimension相同（在本文中设为80）。MMoE框架中2个任物共用3个experts，由每个任务各自的gating network分别针对共用的experts进行权重分配。AdaTT框架中2个任务各自独享2个experts。每一个任务既对任务独享的experts分配权重，又利用gating network对所有任务的experts进行权重分配以考虑不同任务之间的相关性。MMOE与AdaTT框架均插入在Figure\ref{fig:multiasap-structure}所示结构中Tansformer Encoder之后。
+
+% 我们将本文所提模型与不同的多任务框架结合，在每种多任务框架下，模型重复训练10次，实验结果如Table\ref{table:multitask}所示。
+%并将使用shared-bottom （原始模型）、MMOE、AdaTT三种结构的模型分别记为MMRP-SD、MMRP-MMOE、MMRP-AdaTT。
+\begin{table}[htp]
+    \centering
+    \caption{image numberask framework selection}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{c|cc|ccc}
+            \toprule[1.5pt]
+            
+            \multirow{2}{*}{\textbf{Multitask Framework}} & \multicolumn{2}{c|}{\textbf{ACSA}} & \multicolumn{3}{c}{\textbf{ORP}} \\ 
+            \cline{2-6}%\cmidrule(lr){2-3} \cmidrule(lr){4-6}
+            & Macro-F1 & Acc & Macro-F1 & Acc & MAE \\ 
+            \hline%\midrule
+            \multirow{2}{*}{Shared-bottom} 
+                & 63.27\%  & \textbf{66.83\%} & \textbf{57.33\%} & \textbf{60.26\%} & \textbf{0.5663} \\
+                & (0.0030) & (0.0025) & (0.0043) & (0.0031) & (0.0079) \\
+            \hline%\cmidrule(r){1-6}
+            \multirow{2}{*}{MMoE} 
+                & \textbf{63.32\%}  & 66.66\% & 51.38\% & 54.76\% & 0.6189 \\
+                & (0.0072) & (0.0055) & (0.0122) & (0.0135) & (0.0139) \\
+            \hline%\cmidrule(r){1-6}
+            \multirow{2}{*}{AdaTT} 
+                & 61.86\%  & 66.58\% & 51.18\% & 54.80\% & 0.6091 \\
+                & (0.0391) & (0.0138) & (0.0501) & (0.0267) & (0.0326) \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+    }
+    \label{table:multitask}
+\end{table}
+In the following discussion, we use MMRP-Sb, MMRP-MMoE, and MMRP-AdaTT to refer to the models under the three different multitask frameworks. For the ACSA task, the performance of all three frameworks is highly similar. The results of the t-test indicate that there are no significant differences among the outcomes of these three methods. MMRP-Sb achieves the highest accuracy (66.83\%), while MMRP-MMoE attains the highest Macro-F1 (63.32\%). For the ORP task, MMRP-Sb outperforms the other frameworks across all three evaluation metrics, achieving a Macro-F1 of 57.33\%, accuracy of 60.26\%, and MAE of 0.5663.
+
+We conducted a t-test on the ORP task results, and as shown in Table \ref{table:multitask—t-test}. The hypothesis testing results indicate that MMRP-Sb demonstrates a statistically significant improvement over MMRP-MMoE and MMRP-AdaTT.
+% 我们在下文的讨论中分别使用MMRP-Sb,MMRP-MMoe,MMRP-AdaTT来指代三种多任务框架下的模型。在ACSA任务中，三种多任务框架的实验结果非常相近。本文提出的MMRP-Sb取得了最高的Acc（$66.83\%$）而MMRP-MMoe取得了最高的Macro-F1（$63.32\%$）。在 ORP 任务中，MMRP-Sb在三个评价指标上都取得了最好的结果，Macro-F1达到了 $57.33\%$，其 Acc 为 $60.26\%$，MAE 为 $0.5663$。我们对于ORP任务的结果进行了t检验，Table\ref{table:multitask—t-test}中结果说明，从假设检验的角度来看，MMRP-Sb相对MMRP-MMoE与MMRP-AdaTT有显著提升。
+\begin{table}[htp]
+    \centering
+    \caption{Improvement and t-test results of different multitask framework for RP task}
+    \begin{threeparttable}
+        \begin{tabular}{cccc}
+            \toprule[1.5pt]
+            Multitask Framework & Macro-F1 & Acc. & MAE \\ 
+            \hline
+            MMoE   & \begin{tabular}[c]{@{}c@{}}+11.57\%$^{***}$\end{tabular} & \begin{tabular}[c]{@{}c@{}}+10.05\%$^{***}$\end{tabular} & \begin{tabular}[c]{@{}c@{}}+8.51\%$^{***}$\end{tabular} \\
+            AdaTT & \begin{tabular}[c]{@{}c@{}}+12.02\%$^{***}$\end{tabular} & \begin{tabular}[c]{@{}c@{}}+9.96\%$^{***}$\end{tabular} & \begin{tabular}[c]{@{}c@{}}+7.02\%$^{***}$\end{tabular} \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \begin{tablenotes}
+            \footnotesize
+            \item *** means significant at $0.001$ level
+        \end{tablenotes}
+    \end{threeparttable}
+    \label{table:multitask—t-test}
+\end{table}
+
+
+\subsubsection{Number of Images}
+
+% 本章节的实验主要研究在多模态评论评分预测任务中，图像的数量是否对模型性能有明显影响。本实验研究了模型在整合不同数量图像信息(分别为1张、2张和3张)时，所提MMRP模型在ACSA和RP任务上的表现。1张、2张和3张图片即在每条评论中随机抽取相应数量的图片，作为图片模态信息。3张即为前述MMRP模型结果。若该条评论图片数量不满足要求，使用其全部图片即可。MEAN表示将所有图片进行像素平均，得到一张图片内容作为所有评论的图片模态信息以作对照。实验结果如表~\ref{table:image_num}所示，最优结果显示为粗体。
+
+
+% 具体来看，在ACSA任务中，img+3模型ACSA的Macro-F1为$63.27\%$，Acc为$66.83\%$，除了Acc稍低于imge+2的Acc的$67.09\%$外，超过了img+1和MEAN模型的所有指标。在RP任务中，img+3模型以$57.33\%$的Macro-F1、$60.26\%$和$0.5663$的MAE领先于其他所有模型的指标，包含三张图片信息的模型(img+3)在多个评价指标上均展现出了优越性，这表明img+3模型在情感分析任务中的综合性能最强，即图片信息内容在提升下游任务精度方面具有明显的优势。
+
+% img+2和img+1模型虽然在ACSA任务中的Macro-F1得分相近，分别为$63.11\%$和$63.09\%$，但在准确率上img+2模型领先，这可能表明在整合两张图片信息时，模型对评分预测略有改善。在RP任务中，img+2模型以$56.38\%$的Macro-F1和$58.10\%$的准确率胜于img+1模型。然而，img+1模型在MAE上的得分为$0.5912$，略低于img+2模型的$0.5985$。img+2和img+1的实验结果全面优于平均模型MEAN。这说明了在模型中整合越多与评论匹配的图片信息，提供的信息量越大，对下游任务的精度提升也越大。这是因为更多的图像信息提供了更丰富的情感线索，使得模型能够更全面地理解表达，从而提高情感分类和评分预测的准确性。本章节的研究结果强调了在多模态分析中充分利用图像信息的重要性。
+
+In the above analysis, for each review, we utilize at most $B=3$ images. For reviews with more than $B$ images, $B$ of the images are randomly selected; if the number of images is less than $B$, all available images are used. The experiments in this section mainly investigated whether the number of images has a significant impact on model performance. 
+
+The experiment examined the performance of the MMRP model on ACSA and ORP tasks when integrating different numbers of image information (1 or 2). The notation ``MEAN" represents averaging all images' pixels to obtain one image content for all reviews for comparison. The experimental results are shown in Table~\ref{table:image_num}, with the best results highlighted in bold.
+
+\begin{table}[htp]
+	\centering
+	\caption{Experiment results for the influence of image number}
+	\begin{tabular}{l|cc|ccc}
+		\toprule[1.5pt]
+		\multicolumn{1}{c|}{Model} & \multicolumn{2}{c|}{ACSA}             & \multicolumn{3}{c}{ORP}                                            \\ \cline{2-6} 
+		& \multicolumn{1}{c|}{Macro-F1} & Acc.  & \multicolumn{1}{c|}{Macro-F1} & \multicolumn{1}{c}{Acc.}  & MAE   \\ \hline
+		img+3                       & \multicolumn{1}{c|}{\textbf{63.27\%}}    & 66.83\% & \multicolumn{1}{c|}{\textbf{57.33\%}}    & \multicolumn{1}{c|}{\textbf{60.26\%}} & \textbf{0.5663} \\
+		img+2                       & \multicolumn{1}{c|}{63.11\%}    & \textbf{67.09\%} & \multicolumn{1}{c|}{56.38\%}    & \multicolumn{1}{c|}{58.10\%}  & 0.5985 \\
+		img+1                       & \multicolumn{1}{c|}{63.09\%}    & 66.91\% & \multicolumn{1}{c|}{56.05\%}    & \multicolumn{1}{c|}{57.57\%} & 0.5912 \\
+		MEAN                        & \multicolumn{1}{c|}{63.14\%}    & 66.71\% & \multicolumn{1}{c|}{55.48\%}    & \multicolumn{1}{c|}{55.46\%} & 0.6078 \\ \bottomrule[1.5pt]
+	\end{tabular}
+	\label{table:image_num}
+\end{table}
+
+Specifically, in the ACSA task, the img+3 model achieved a Macro-F1 of $63.27\%$ and an accuracy of $66.83\%$. Except for the slightly lower accuracy compared to img+2 with an accuracy of $67.09\%$, it outperformed all indicators of img+1 and MEAN models. In the RP task, the img+3 model led with a Macro-F1 of $57.33\%$, an accuracy of $60.26\%$, and an MAE of $0.5663$, outperforming all other models. The model incorporating three images (img+3) demonstrated superiority in multiple evaluation metrics, indicating that the img+3 model had the strongest comprehensive performance in sentiment analysis tasks.
+
+\subsection{Case Study}
+
+The MMRP model unifies ACSA and ORP via a cross‑modal transformer that fuses text and image features through multi‑head attention, overcoming traditional review‐analysis limitations. In this case study we show, for ZOL mobile review dataset, the model's prediction accuracy and its error distribution  on overall rating (ORP) and six aspects (value for money, performance $\&$ configuration, battery life, design $\&$ feel, camera quality, display quality). The results are displayed in Figure  ~\ref{fig:case}.
+
+\begin{figure}[ht]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{case-res.png}
+ 	\caption{Accuracy and Prediction Error of ORP and Aspect Categories}
+ 	\label{fig:case}
+\end{figure}
+
+
+The MMRP model achieves its highest accuracy on concrete aspects such as display quality (74.2$\%$) and battery life (69.3$\%$), while the lowest accuracy on more subjective score like the ORP (59.6$\%$). This suggests that clear visual cues translate into more reliable predictions, whereas holistic judgments remain challenging.
+
+Error distributions indicate that tight, peaked curves for ORP and camera quality are consistent, while slight under‑prediction bias on value for money and performance $\&$ configuration suggests that a small calibration step could improve balance on those aspects.
+
+\section{Conclusion}
+
+
+With the development of social media and e-commerce platforms, user reviews have become crucial references for analyzing brands and products. These reviews not only contain textual information but also include images, offering richer and more intuitive expressions of sentiment. Consequently, multimodal review mining has emerged as a challenge in the field of data mining. Aspect Category Sentiment Analysis (ACSA) and Overall Rating Prediction (ORP) are two key tasks in review mining. This study proposes an innovative multimodal and multi-task rating prediction network structure, MMRP, which leverages text and image information to enhance prediction accuracy by jointly addressing the ACSA and ORP tasks. Compared to traditional methods that rely on textual information, MMRP improves the prediction accuracy of user sentiment polarity and rating inclination by integrating image information. This indicates that images, as an intuitive emotional expression, can transcend language barriers and provide a new perspective for understanding users' sentiments. The model is capable of simultaneously handling both ACSA and ORP tasks. This joint modeling not only enhances the understanding of fine-grained sentiment but also improves the overall rating prediction accuracy. Compared to other multimodal models, such as those using attention mechanisms or bilinear pooling methods, MMRP adopts a more effective cross-modal transformer fusion strategy to achieve higher prediction accuracy. Through experimental comparisons, this study validates the superior performance of the MMRP model. 
+
+There is vast research space in this field for the future. The semantic alignment and fusion strategy of textual and visual data remain an open research issue. Designing more effective algorithms to automatically identify intrinsic connections between text and images, as well as constructing efficient models to handle such highly complex data relationships, will be the focus of future research. Meanwhile, with the increasing awareness of privacy protection and the enactment of relevant regulations, conducting multimodal data mining under the premise of protecting user privacy is also an important issue that future research needs to address.
+
+In summary, through innovative model design and in-depth analysis, this study has made significant progress in the field of multimodal review mining and rating prediction, improving prediction accuracy and providing new perspectives and tools for understanding and utilizing user-generated content.
+
+\section*{Acknowledgement}
+This work is supported by National Natural Science Foundation of China (No. 72171229), and the MOE Project of Key Research Institute of Humanities and Social Sciences (No. 22JJD110001) and Big Data and Responsible Artificial Intelligence for National Governance, Renmin University of China. 
+
+
+\section*{Author contributions}
+The contributions of the authors to this study are as follows: 
+
+Xiaoning Wang: Conceptualization, Methodology, Formal analysis, Writing – original draft 
+
+Yuxuan Guo: Conceptualization, Methodology, data curation, Formal analysis, Writing – original draft
+
+Libo Sun: Formal analysis, Writing – original draft
+
+Xiaoling Lu: Conceptualization, Supervision, Writing – review & editing.
+
+
+
+\section*{ }
+\bibliographystyle{elsarticle-num-names}
+%\biboptions{authoryear}
+\bibliography{test}
+
+%\begin{thebibliography}{00}
+%
+%%% For authoryear reference style
+%%% \bibitem[Author(year)]{label}
+%%% Text of bibliographic item
+%
+%\bibitem[Lamport(1994)]{lamport94}
+%  Leslie Lamport,
+%  \textit{\LaTeX: a document preparation system},
+%  Addison Wesley, Massachusetts,
+%  2nd edition,
+%  1994.
+%
+%\end{thebibliography}
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-num-names.tex'.
+
