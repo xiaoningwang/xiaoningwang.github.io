@@ -10,6 +10,7 @@ redirect_from:
 
 
 
+<<<<<<< ours
 I am currently an Associate Professor in the [School of Data Science and Media Intelligence](http://dsmi.cuc.edu.cn/main.htm) at Communication University of China. I obtained my Ph.D. degree from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019, under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). 
 
 My research focuses on the intersection of **sampling survey techniques, machine learning, and media data analytics**. I am particularly interested in developing intelligent systems that leverage advanced AI technologies to solve complex problems in media and communication.
@@ -21,12 +22,40 @@ My research focuses on the intersection of **sampling survey techniques, machine
 - **Smart Survey Systems**: Integrating sampling methods with AI to improve survey efficiency and accuracy
 
 # 🎓 Education
+=======
+I am an Associate Professor in the [School of Data Science and Media Intelligence](http://dsmi.cuc.edu.cn/main.htm) at the Communication University of China, focused on cultivating data-driven media talent. I earned my Ph.D. from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019 under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My teaching centers on building rigorous courses, guiding students through hands-on projects, and using intelligent tools to support collaborative learning.
 
-- 2019, Ph.D. in Statistics, School of Statistics, Renmin University of China
-- 2017, M.S. in Statistics, School of Statistics, Renmin University of China
-- 2013, B.S. in Applied Mathematics, Department of Mathematics, Tianjin University of Technology
+Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM + Agent) that provides classroom demonstrations, coding guidance, and personalized feedback. Teachers and students are welcome to explore and share suggestions: [scholarhero.cn](https://scholarhero.cn/).
 
+## 教学特色与贡献
+
+- **课程建设与更新**：主讲数据科学导论、采样调查、媒体数据分析等课程，持续将统计学习、大模型与传媒场景结合，形成循序渐进的课程链条。
+- **实践驱动**：在每门课程中加入数据采集、可视化、建模和应用案例，鼓励学生完成真实项目和优秀作业展示，搭建面向传媒领域的项目库。
+- **智能助教探索**：依托 Scholar Hero 辅助课堂讲解、作业辅导和即时问答，打造开放的“教、学、研”互动生态。
+>>>>>>> theirs
+
+## 代表课程与资源
+
+<<<<<<< ours
 # 🔍 Research Interests
+=======
+- **数据科学导论**：覆盖数据采集、统计学习方法、自然语言处理、推荐算法与分布式计算，提供教材化讲义与案例代码，帮助学生从零起步进入数据科学。【F:_teaching/2021-0-data-science.md†L1-L35】
+- **课程资料与优秀作业**：整理 SVM、数据智慧原则、文本分析等幻灯片，并展示优秀报告，方便学生复习与二次创作。【F:_teaching/2021-0-data-science.md†L37-L57】
+- 更多课程信息可在[教学页面](/teaching/)与[学习资料合集](/links/)获取。
+
+## 学生培养
+
+- 指导学生参与数据分析比赛与项目实践，形成多篇优秀报告和课堂视频案例，为后续年级提供参考。
+- 鼓励跨学科合作，帮助传媒、统计与计算机背景学生在真实数据上完成创新性探索。
+
+## 教育背景
+
+- 2019，统计学博士，中国人民大学统计学院
+- 2017，统计学硕士，中国人民大学统计学院
+- 2013，应用数学学士，天津理工大学数学学院
+
+## 研究兴趣
+>>>>>>> theirs
 
 <div class="tech-stack">
   <div class="tech-item">
