@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "数据科学导论"
-permalink: /datascience/
+permalink: /teaching/datascience/
 author_profile: true
 ---
 
@@ -54,6 +54,19 @@ author_profile: true
 
 ### 学习资料
 - [数据科学的学习资料](https://xiaoningwang.github.io/links/)
+
+## 课程讲稿
+
+{% for post in site.teaching %}
+  {% if post.type == "数据科学导论" %}
+    <div style="margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+      <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+      <p style="color: #666; margin-top: 5px;">{{ post.date | date: "%Y年%m月%d日" }}</p>
+      <p style="margin-top: 10px;">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+      <a href="{{ base_path }}{{ post.url }}" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #3498db; color: white; text-decoration: none; border-radius: 4px;">查看完整讲稿</a>
+    </div>
+  {% endif %}
+{% endfor %}
 
 ## 优秀作业展示
 

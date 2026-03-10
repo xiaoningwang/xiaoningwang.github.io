@@ -7,10 +7,178 @@ author_profile: true
 
 {% include base_path %}
 
-我将课堂视作“数据科学 + 媒体应用”的实践场，强调从基础统计思维到大模型应用的渐进式训练。课程中融入数据采集、可视化、建模、文本分析、社交网络等环节，并通过开放的优秀作业和讲义，帮助学生快速上手并形成可复用的项目案例库。【F:_teaching/2021-0-data-science.md†L11-L57】
+<style>
+/* Teaching Page Styles */
+.teaching-intro {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #2c3e50;
+}
 
-为提升学习体验，我正在尝试以 **Scholar Hero** 智能助教支持课堂演示、代码示例和问答反馈，也欢迎跨校同仁交流教材建设与教学创新。
+.teaching-intro p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+.teaching-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.course-category {
+  margin-bottom: 40px;
+}
+
+.course-category h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.course-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.course-card h3 a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.course-card h3 a:hover {
+  color: #3498db;
+}
+
+.course-meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.course-meta .type {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 0.85em;
+}
+
+.course-meta .date {
+  color: #999;
+}
+
+.course-excerpt {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.course-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-list li {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
+
+.course-list li h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+}
+
+.course-list li h3 a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.course-list li h3 a:hover {
+  color: #3498db;
+}
+
+.course-list .course-info {
+  font-size: 0.9em;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="teaching-intro">
+  <p>我将课堂视作<strong>"数据科学 + 媒体应用"</strong>的实践场，强调从基础统计思维到大模型应用的渐进式训练。课程中融入数据采集、可视化、建模、文本分析、社交网络等环节，并通过开放的优秀作业和讲义，帮助学生快速上手并形成可复用的项目案例库。</p>
+  
+  <p>为提升学习体验，我正在尝试以 <strong>Scholar Hero</strong> 智能助教支持课堂演示、代码示例和问答反馈，也欢迎跨校同仁交流教材建设与教学创新。</p>
+</div>
+
+<!-- 核心课程 -->
+<div class="course-category">
+  <h2>核心课程</h2>
+  <div class="course-grid">
+    {% for post in site.teaching reversed %}
+      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" %}
+        <div class="course-card">
+          <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+          <div class="course-meta">
+            <span class="type">{{ post.type }}</span>
+            <span class="date">{{ post.date | date: "%Y" }}</span>
+          </div>
+          {% if post.venue %}
+            <div class="course-meta" style="margin-top: 5px;">{{ post.venue }}</div>
+          {% endif %}
+          <div class="course-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- 所有课程列表 -->
+<div class="course-category">
+  <h2>全部课程</h2>
+  <ul class="course-list">
+    {% for post in site.teaching reversed %}
+      <li>
+        <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="course-info">
+          <strong>{{ post.type }}</strong> | 
+          {{ post.venue }} | 
+          <span style="color: #999;">{{ post.date | date: "%Y年%m月" }}</span>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
