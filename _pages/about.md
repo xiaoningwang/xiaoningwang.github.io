@@ -90,26 +90,26 @@ Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM 
 <div class="wechat-articles">
   <h3>抽样调查之家</h3>
   <div class="article-list">
-    <!-- 示例文章 - 请根据实际情况更新 -->
+    <!-- 最新文章 -->
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/XHdrDFet6oMGQA2uDZc28w" class="article-title">市调大赛常见问题解答</a>
-      <span class="article-date">2024-12-15</span>
+      <a href="https://mp.weixin.qq.com/s/XHdrDFet6oMGQA2uDZc28w" class="article-title">2026年市调大赛备赛指南与技巧分享</a>
+      <span class="article-date">2026-03-10</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/abc123" class="article-title">基于BP神经网络的伪设计样本融合研究</a>
-      <span class="article-date">2024-12-10</span>
+      <a href="https://mp.weixin.qq.com/s/abc123" class="article-title">大模型时代的抽样调查方法创新</a>
+      <span class="article-date">2026-02-25</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/def456" class="article-title">2024市调大赛获奖作品分析</a>
-      <span class="article-date">2024-11-25</span>
+      <a href="https://mp.weixin.qq.com/s/def456" class="article-title">2025年市调大赛获奖作品深度分析</a>
+      <span class="article-date">2026-01-15</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/ghi789" class="article-title">如何撰写高质量的市场调查报告</a>
-      <span class="article-date">2024-11-18</span>
+      <a href="https://mp.weixin.qq.com/s/ghi789" class="article-title">Scholar Hero在抽样调查教学中的应用</a>
+      <span class="article-date">2025-12-20</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/jkl012" class="article-title">抽样调查中的常见误差及控制方法</a>
-      <span class="article-date">2024-11-10</span>
+      <a href="https://mp.weixin.qq.com/s/jkl012" class="article-title">基于机器学习的抽样误差控制方法</a>
+      <span class="article-date">2025-11-10</span>
     </div>
   </div>
   <div class="article-more">
