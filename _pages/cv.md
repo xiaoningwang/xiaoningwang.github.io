@@ -64,7 +64,7 @@ redirect_from:
           <div class="timeline-content">
             <strong>经济学硕士</strong> - 统计学专业
             <span class="institution">中国人民大学</span>
-            <span class="supervisor">导师：<a href="http://stat.ruc.edu.cn/jxtd/jsdw/sjkxydsjtjx/5b900093966a43e0ab69dfbaf82e095a.htm">吕晓玲</a></span>
+            <span class="supervisor">导师：<a href="http://stat.ruc.edu.cn/jszy/lxl/index.html">吕晓玲</a></span>
           </div>
         </div>
         <div class="timeline-item">

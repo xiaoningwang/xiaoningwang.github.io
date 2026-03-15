@@ -64,7 +64,7 @@ Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM 
 
 ## 📊 GitHub Stats
 
-![Xiaoning's GitHub stats](https://github-readme-stats.vercel.app/api?username=xiaoningwang&show_icons=true&theme=radical)
+![Xiaoning's GitHub stats](https://stats.quine.sh/xiaoningwang?theme=radical&show_icons=true)
 
 ## 🌐 Connect with Me
 
