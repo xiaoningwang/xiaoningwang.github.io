@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《大模型实践与应用》研究生课程教改成果</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2d3d;
+      --subtext: #5b6b7b;
+      --line: #dbe4ee;
+      --primary: #1e6bb8;
+      --primary-light: #eaf3ff;
+      --accent: #0f8a5f;
+      --shadow: 0 6px 18px rgba(31, 45, 61, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      align-self: start;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      padding: 8px 10px;
+      margin: 6px 0;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .main {
+      background: transparent;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e6bb8 0%, #3a8dde 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 20px;
+      font-size: 38px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 19px;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(31, 45, 61, 0.15);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: var(--primary);
+      border-left: 6px solid var(--primary);
+      padding-left: 20px;
+      margin-bottom: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .section h3 {
+      margin-top: 36px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 600;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-light);
+      display: inline-block;
+    }
+
+    .section p {
+      margin: 16px 0;
+      color: var(--text);
+      text-align: justify;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .highlight-box {
+      background: #f8fbff;
+      border-left: 5px solid var(--primary);
+      padding: 20px 24px;
+      border-radius: 12px;
+      margin: 20px 0;
+      color: var(--subtext);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .feature-card {
+      background: #fbfdff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(31, 45, 61, 0.1);
+    }
+
+    .feature-card h4 {
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--subtext);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .works-list {
+      padding-left: 24px;
+      margin: 16px 0;
+    }
+
+    .works-list li {
+      margin: 10px 0;
+    }
+
+    .works-list a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .works-list a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .gallery-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .gallery-item p {
+      margin: 0;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--subtext);
+      font-size: 14px;
+      padding: 32px 0 48px;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 24px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .top-link:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .section {
+        padding: 24px 28px;
+      }
+
+      .image-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+    <aside class="sidebar">
+      <h2>目录导航</h2>
+      <a href="#overview">一、项目概况</a>
+      <a href="#goals">二、教改思路与建设目标</a>
+      <a href="#achievements">三、主要教改成果</a>
+      <a href="#feature1">1. 课程体系建设</a>
+      <a href="#feature2">2. 平台与知识库建设</a>
+      <a href="#feature3">3. 教学方式改革</a>
+      <a href="#feature4">4. 考核方式改革</a>
+      <a href="#feature5">5. 课程思政协同育人</a>
+      <a href="#feature6">6. 学生作品与示范</a>
+      <a href="#innovation">四、教改特色与创新点</a>
+      <a href="#effect">五、建设成效</a>
+      <a href="#experience">六、经验总结与推广价值</a>
+      <a href="#future">七、下一步建设方向</a>
+      <a href="#closing">八、结语</a>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <h1>《大模型实践与应用》研究生课程教改成果</h1>
+        <p>
+          面向研究生教育数字化转型需求，围绕大模型实践能力、智能体设计能力与任务驱动学习，
+          探索形成"课程建设—平台支撑—实践产出"相互联动的课程改革模式。
+        </p>
+      </section>
+
+      <section class="section" id="overview">
+        <h2>一、项目概况</h2>
+        <p>《大模型实践与应用》是面向研究生开设的人工智能赋能课程样板建设项目，聚焦大模型实践能力培养、智能体设计能力提升与真实任务场景中的应用训练，已完成课程整体设计并实现正式运行。</p>
+        <p>课程建设同步推进资源建设、智能体开发、知识库搭建与教学运行优化，形成课程内容组织、学习支持与智能辅助相融合的教学模式。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="goals">
+        <h2>二、教改思路与建设目标</h2>
+        <p>项目立足人工智能快速发展与研究生教育数字化转型背景，以"能力导向、实践导向、产出导向"为核心理念，将大模型应用、智能体构建、知识组织与课堂教学深度融合。</p>
+        <div class="highlight-box">
+          课程改革的核心目标：让学生不仅"理解大模型"，更能够"运用大模型""设计智能体""解决真实问题"。
+        </div>
+        <p>围绕目标，重点推进三方面建设：完善课程体系与内容设计，构建课程智能体与知识库支撑环境，改革教学方式与考核评价机制。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="achievements">
+        <h2>三、主要教改成果</h2>
+
+        <h3 id="feature1">1. 构建面向研究生的大模型实践课程体系</h3>
+        <p>完成课程整体设计并正式开设，面向专业硕士研究生稳定运行。课程内容突出"学用结合、做中学、产出导向"，围绕大模型理解、场景应用、智能体设计与实践表达等能力展开。</p>
+
+        <h3 id="feature2">2. 搭建"课程教学—智能体辅助—知识库支撑"三位一体教学平台</h3>
+        <p>开发课程智能体，依托"书卷侠"平台搭建课程专属入口，形成三位一体的教学支持体系。课程知识库围绕核心教学内容持续完善，强化学生在课前预习、课中互动和课后拓展中的连续性学习支持。</p>
+
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="../images/huibao001.png" alt="大模型实践与应用课程界面">
+            <p>大模型实践与应用课程界面</p>
+          </div>
+          <div class="gallery-item">
+            <img src="../images/huibao002.png" alt="智能体聊天界面">
+            <p>智能体聊天界面</p>
+          </div>
+          <div class="gallery-item">
+            <img src="../images/huibao003.png" alt="书卷侠问题解答模式">
+            <p>书卷侠问题解答模式</p>
+          </div>
+        </div>
+
+        <h3 id="feature3">3. 推进教学方式改革：从知识讲授走向任务驱动与实践导向</h3>
+        <p>强调任务驱动、案例驱动和真实问题导向，鼓励学生在应用场景中理解技术逻辑、在实践任务中掌握方法路径、在作品构建中实现能力内化。课程分享图书和实时智能体学习资料，激发学生主动学习与探索能力。</p>
+
+        <div class="image-gallery" style="margin-top: 20px;">
+          <div class="gallery-item">
+            <img src="../images/zhinengti.png" alt="智能体学习资料">
+            <p>智能体学习资料与知识库</p>
+          </div>
+        </div>
+
+        <h3 id="feature4">4. 推进考核方式改革：从结果评价走向过程性、多维度评价</h3>
+        <p>采用过程化考核方式（平时成绩 (30%)	期中成绩 (30%)	期末成绩 (40%)），将平时参智能体设计、课堂互动（读书分享）、实践表现与最终作品产出相结合，形成多维度课程评价体系。</p>
+
+        <div class="image-gallery" style="margin-top: 20px;">
+          <div class="gallery-item">
+            <img src="../images/dushu.jpg" alt="大模型案例场景应用课程读书分享">
+            <p>大模型案例场景应用课程读书分享</p>
+          </div>
+        </div>
+
+        <h3 id="feature5">5. 推进课程思政与专业能力培养协同融合</h3>
+        <p>将课程思政要求嵌入课程设计过程，在培养学生掌握大模型应用方法与智能体构建能力的同时，引导学生关注人工智能技术伦理、社会责任与应用规范。</p>
+
+        <h3 id="feature6">6. 形成学生智能体作品产出与应用示范</h3>
+        <p>学生围绕不同场景完成多项智能体设计作品，覆盖生活服务、就业指导、学术研究、舆情分析与平台内容分析等多个领域。</p>
+        <ul class="works-list">
+          <li><a href="https://mp.weixin.qq.com/s/vYCFMpYO8SpOK7b96p806Q" target="_blank">智能旅行规划助手</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/_c8Z17qoOM3VM13trArqPQ" target="_blank">求职智能体"职到"</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/BGBzpvE6BAqPGMmnylC6mA" target="_blank">智能文献检索与研究脉络生成助手</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/gHACdOD-Lfk-Y5Z5k_x1DA" target="_blank">新浪微博舆情大数据研判系统</a></li>
+          <li><a href="https://mp.weixin.qq.com/s/PaRMk7Mv0sk0UGWjEVjxiA" target="_blank">B站话题评论弹幕内容分析</a></li>
+        </ul>
+
+        <div class="feature-list">
+          <div class="feature-card">
+            <h4>课程体系成果</h4>
+            <p>完成课程整体设计并正式运行，形成面向研究生的大模型实践课程框架。</p>
+          </div>
+          <div class="feature-card">
+            <h4>平台支撑成果</h4>
+            <p>开发课程智能体并接入书卷侠平台，形成课程专属智能支持入口。</p>
+          </div>
+          <div class="feature-card">
+            <h4>知识库成果</h4>
+            <p>围绕课程内容建设多层级知识关联结构，支撑学生系统化学习。</p>
+          </div>
+          <div class="feature-card">
+            <h4>产出导向成果</h4>
+            <p>以智能体作品作为结课要求，推动学生完成真实可见的应用成果。</p>
+          </div>
+        </div>
+
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="innovation">
+        <h2>四、教改特色与创新点</h2>
+        <p>课程定位创新：围绕研究生能力培养需求，将大模型技术转化为可操作、可实践、可产出的学习过程，突出学生在应用中的理解、设计与创造。</p>
+        <p>教学模式创新：构建"课程教学—智能体辅助—知识库支撑"三位一体教学模式，提升教学的智能化水平和支持精度。</p>
+        <p>实施路径创新：强调"工具建设"与"教学改革"同步推进，将课程智能体真正嵌入课程运行、学习辅导与考核评价全过程。</p>
+        <p>评价方式创新：突出实践导向和产出导向，将智能体作品作为课程考核的重要组成部分，推动学生从"会用工具"走向"能构建应用"。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="effect">
+        <h2>五、建设成效</h2>
+        <p>课程建设、智能体开发、知识库搭建与教学运行等关键任务均已取得阶段性成果。课程已实现正式开设和平稳运行，平台支撑能力不断增强，课程资源建设持续推进。</p>
+        <p>有效提升了学生的大模型应用能力、智能体设计能力与真实问题解决能力，增强了课堂互动率、学习参与度和实践获得感。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="experience">
+        <h2>六、经验总结与推广价值</h2>
+        <p>建设经验：坚持以课程目标为牵引，将大模型能力培养与研究生课程建设深度结合；坚持"工具建设"与"教学改革"同步推进；坚持以学生实践为导向，强化学生的参与感与获得感。</p>
+        <p>推广价值：本项目已形成较为完整的人工智能赋能研究生课程改革样板，对高校开展研究生课程数字化建设、智能化教学支持和实践能力培养具有较强的借鉴意义。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="future">
+        <h2>七、下一步建设方向</h2>
+        <p>围绕课程资源丰富化、平台功能完善化与成果示范推广继续深化建设。持续补充视频学习资源，优化问答与资源模块，增强课程智能体的教学辅助能力。</p>
+        <p>持续扩充课程知识库，推动优秀学生作品进一步沉淀为案例库、作品库和教学示范资源，提升项目的长期应用价值与推广影响力。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <section class="section" id="closing">
+        <h2>八、结语</h2>
+        <p>《大模型实践与应用》项目已在课程建设、平台支撑、教学模式改革、评价创新与实践育人等方面取得了较为扎实的阶段性成果，形成了可见的课程与平台建设成果。</p>
+        <p>随着后续资源建设与平台功能的持续完善，本项目有望在研究生课程智能化建设、教学模式创新与人工智能赋能人才培养方面发挥更为突出的示范引领作用。</p>
+        <a class="top-link" href="#top">返回顶部 ↑</a>
+      </section>
+
+      <div class="footer">
+        本页面适用于课程结项展示、成果汇报，版权归中国传媒大学王小宁所有。
+      </div>
+    </main>
+  </div>
+</body>
+</html>
