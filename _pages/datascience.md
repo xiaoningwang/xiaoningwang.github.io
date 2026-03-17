@@ -73,7 +73,11 @@ author_profile: true
 - [2022数据科学导论优秀报告展示合集](https://mp.weixin.qq.com/s/Bx44Q8GzRDstYioOoqPA5Q)
 - [统计与真理视频合集](https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w)
 - [调查与计算广告分析报告合集](https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w)
-- [合集|数据科学导论课程报告展示](https://mp.weixin.qq.com/s?src=11&timestamp=1765266294&ver=6407&signature=McxNxjaX3AYOFXC9kML2YSDUc-YV7GfVjY0UtXDYBAgqai7MP*8z-U367u5gzIr2q0rm*m7l9T2hJu4vA0CdigbRC5MNczZYo9jM3gsn03WN-Uy9Y*RtLVc77g1I66qI&new=1)
+- [合集｜2025春季数据科学导论优秀作品](https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ)
+
+- [合集｜2024春季数据科学导论优秀作品](https://mp.weixin.qq.com/s/DxO-OvoTLsd2CQSiVVpHHg)
+
+
 
 ## 智能助教
 
@@ -82,6 +86,7 @@ author_profile: true
 ## 联系我们
 
 如果您对课程有任何问题或建议，欢迎联系课程负责人：
-- 王小宁 教授
-- 邮箱：sdwangxiaoning@foxmail.com
-- 办公地点：中国传媒大学
+
+- 王小宁 副教授
+- 邮箱：sdwangxiaoning@cuc.edu.cn
+- 办公地点：中国传媒大学 46-303
