@@ -25,6 +25,13 @@ layout: compress
       </footer>
     </div>
 
+    {% if page.url == "/" %}
+    <!-- ClustrMaps 访客地图 -->
+    <div style="text-align: center; margin: 20px 0;">
+      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YOUR_CLUSTRMAPS_ID"></script>
+    </div>
+    {% endif %}
+
     {% include scripts.html %}
 
   </body>
