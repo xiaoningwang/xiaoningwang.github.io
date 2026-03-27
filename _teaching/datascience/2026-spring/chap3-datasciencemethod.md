@@ -270,11 +270,11 @@ $$
 
 ## 模型评估与模型选择
 
-![Model selection](figure/MODEL.png){: width="70%" }
+![Model selection]({{ site.baseurl }}/teaching/datascience/2026-spring/figure/MODEL.png){: width="70%" }
 
 ## 模型评估与模型选择
 
-![Model selection](figure/MODEL2.png){: width="70%" }
+![Model selection]({{ site.baseurl }}/teaching/datascience/2026-spring/figure/MODEL2.png){: width="70%" }
 
 # 正则化与交叉验证
 

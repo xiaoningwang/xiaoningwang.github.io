@@ -25,18 +25,24 @@
 <!-- MathJax for LaTeX rendering -->
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-  MathJax = {
+  window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
-      processEnvironments: true
+      processEnvironments: true,
+      packages: ['base', 'ams']
     },
     svg: {
       fontCache: 'global'
     },
     startup: {
-      typeset: true
+      typeset: true,
+      ready: function() {
+        MathJax.startup.defaultReady();
+        // 强制重新渲染数学公式
+        MathJax.typeset();
+      }
     }
   };
 </script>
