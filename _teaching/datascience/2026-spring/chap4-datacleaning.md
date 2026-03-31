@@ -6,6 +6,19 @@ permalink: /teaching/datascience/chap4-datacleaning
 date: 2026-04-07
 ---
 
+<style>
+pre.r {
+  background-color: #f5f5f5;
+  border-left: 3px solid #3498db;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+</style>
+
 # 数据处理
 
 ## 为什么要学习数据处理
@@ -36,11 +49,7 @@ date: 2026-04-07
 
 ## 数据类型
 
-常见的数据类型包括：
-- 分类数据（Categorical Data）
-- 有序数据（Ordinal Data）
-- 区间数据（Interval Data）
-- 比例数据（Ratio Data）
+![常见的数据类型及其特征]({{ site.baseurl }}/teaching/datascience/2026-spring/figure/datas.png){: width="70%" }
 
 ## 数据分类
 
