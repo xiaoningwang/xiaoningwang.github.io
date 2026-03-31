@@ -31,7 +31,7 @@
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       processEnvironments: true,
-      packages: ['base', 'ams']
+      packages: ['base', 'ams', 'newcommand']
     },
     svg: {
       fontCache: 'global'
@@ -42,6 +42,11 @@
         MathJax.startup.defaultReady();
         // 强制重新渲染数学公式
         MathJax.typeset();
+        // 监听DOM变化，自动重新渲染
+        const observer = new MutationObserver(function() {
+          MathJax.typeset();
+        });
+        observer.observe(document.body, {childList: true, subtree: true});
       }
     }
   };
