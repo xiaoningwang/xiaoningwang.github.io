@@ -23,7 +23,6 @@
 {% include analytics.html %}
 
 <!-- MathJax for LaTeX rendering -->
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -31,7 +30,7 @@
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       processEscapes: true,
       processEnvironments: true,
-      packages: ['base', 'ams', 'newcommand']
+      packages: {'[+]': ['ams', 'newcommand', 'configmacros']}
     },
     svg: {
       fontCache: 'global'
@@ -40,14 +39,9 @@
       typeset: true,
       ready: function() {
         MathJax.startup.defaultReady();
-        // 强制重新渲染数学公式
         MathJax.typeset();
-        // 监听DOM变化，自动重新渲染
-        const observer = new MutationObserver(function() {
-          MathJax.typeset();
-        });
-        observer.observe(document.body, {childList: true, subtree: true});
       }
     }
   };
 </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
