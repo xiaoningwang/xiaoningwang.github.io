@@ -1,16 +1,23 @@
 ---
-title: "数据科学导论第7讲——分类方法"
-short-title: "普通分类方法与评估"
-author: "王小宁"
-institute: "中国传媒大学数据科学与智能媒体学院"
-date: "2024年04月24日"
-fontsize: 10pt
-output: beamer_presentation
+title: "第7讲：分类方法"
+collection: teaching
+type: "数据科学导论"
+permalink: /teaching/datascience/chap7-classification
+date: 2026-04-21
 ---
 
-## 目录
-
-\tableofcontents
+<style>
+pre.r {
+  background-color: #f5f5f5;
+  border-left: 3px solid #3498db;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+</style>
 
 # 分类问题的提出
 
