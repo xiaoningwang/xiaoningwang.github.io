@@ -3,7 +3,7 @@ title: "数据科学导论"
 collection: teaching
 type: "本科一年级下"
 permalink: /teaching/data-science
-venue: "数据科学与大数据技术（传媒大数据方向）、智能影响、计算广告专业"
+venue: "数据科学与大数据技术、计算广告专业"
 date: 2020-2026
 location: "Beijing, China"
 ---
