@@ -35,7 +35,7 @@ location: "Beijing, China"
 - [统计与真理视频合集](https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w)
 - [调查与计算广告分析报告合集](https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w)
 - [2025春季数据科学导论优秀作品](https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ)
-- [数据科学导论课程2024春季优秀报告展示](https://mp.weixin.qq.com/s/DxO-OvoTLsd2CQSiVVpHHg)
+- [合集 | 数据科学导论课程2024春季优秀报告展示](https://mp.weixin.qq.com/s/DxO-OvoTLsd2CQSiVVpHHg)
 - [学数据科学与大数据技术专业，我们最应该学些什么？](https://mp.weixin.qq.com/s/S2UUyhnntTChtunEzdyf1g)
 - [数据科学家能力素质模型](https://mp.weixin.qq.com/s/ls5JuoX7wWvZJcjLraYcbA)
 - [数据科学50年](https://mp.weixin.qq.com/s/s6dxiCMLhXrDc3pJJ_jupg)
