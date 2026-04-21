@@ -34,7 +34,7 @@ location: "Beijing, China"
 - [2022数据科学导论优秀报告展示合集](https://mp.weixin.qq.com/s/Bx44Q8GzRDstYioOoqPA5Q)
 - [统计与真理视频合集](https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w)
 - [调查与计算广告分析报告合集](https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w)
-- [合集|数据科学导论课程报告展示](https://mp.weixin.qq.com/s?src=11&timestamp=1765266294&ver=6407&signature=McxNxjaX3AYOFXC9kML2YSDUc-YV7GfVjY0UtXDYBAgqai7MP*8z-U367u5gzIr2q0rm*m7l9T2hJu4vA0CdigbRC5MNczZYo9jM3gsn03WN-Uy9Y*RtLVc77g1I66qI&new=1)
+- [数据科学导论课程报告展示](https://mp.weixin.qq.com/s?src=11&timestamp=1765266294&ver=6407&signature=McxNxjaX3AYOFXC9kML2YSDUc-YV7GfVjY0UtXDYBAgqai7MP*8z-U367u5gzIr2q0rm*m7l9T2hJu4vA0CdigbRC5MNczZYo9jM3gsn03WN-Uy9Y*RtLVc77g1I66qI&new=1)
 
 
 
