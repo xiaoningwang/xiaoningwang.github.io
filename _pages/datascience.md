@@ -74,7 +74,6 @@ author_profile: true
 - [统计与真理视频合集](https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w)
 - [调查与计算广告分析报告合集](https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w)
 - [合集｜2025春季数据科学导论优秀作品](https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ)
-
 - [合集｜2024春季数据科学导论优秀作品](https://mp.weixin.qq.com/s/DxO-OvoTLsd2CQSiVVpHHg)
 
 
