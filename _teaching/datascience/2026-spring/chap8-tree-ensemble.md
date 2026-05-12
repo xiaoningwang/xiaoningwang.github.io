@@ -6,6 +6,19 @@ permalink: /teaching/datascience/chap8-tree-ensemble
 date: 2026-05-05
 ---
 
+<style>
+pre.r {
+  background-color: #f5f5f5;
+  border-left: 3px solid #3498db;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+</style>
+
 # 导入：为什么要学习决策树与集成学习
 
 在前面的课程中，我们已经学习了回归方法和分类方法，知道很多统计学习问题都可以理解为：根据输入变量 $x$ 去预测输出变量 $y$。如果因变量是连续变量，我们通常考虑回归；如果因变量是离散变量，我们通常考虑分类。第8讲进一步讨论一类非常重要的方法：**决策树与集成学习**。
