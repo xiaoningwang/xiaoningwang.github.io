@@ -2,7 +2,6 @@
 title: "第8讲：决策树与集成学习"
 collection: teaching
 type: "数据科学导论"
-venue: "数据科学与大数据技术、计算广告专业"
 permalink: /teaching/datascience/chap8-tree-ensemble
 date: 2026-05-05
 ---
