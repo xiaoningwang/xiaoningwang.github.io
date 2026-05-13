@@ -121,6 +121,8 @@ include:
   - .htaccess
   - _pages
   - _teaching
+  - _teaching/datascience
+  - _teaching/datascience/2026-spring
   - files
 exclude:
   - "*.sublime-project"
