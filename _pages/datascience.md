@@ -57,6 +57,14 @@ author_profile: true
 
 ## 课程讲稿
 
+### 第8讲：决策树与集成学习
+<div style="margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
+  <h3><a href="{{ base_path }}/teaching/datascience/chap8-tree-ensemble">第8讲：决策树与集成学习</a></h3>
+  <p style="color: #666; margin-top: 5px;">2026年05月05日</p>
+  <p style="margin-top: 10px;">本讲围绕决策树与集成学习展开，介绍决策树的基本思想、分类树和回归树，以及 Bagging、随机森林、Boosting、GBDT、XGBoost 等组合学习方法。</p>
+  <a href="{{ base_path }}/teaching/datascience/chap8-tree-ensemble" style="display: inline-block; margin-top: 10px; padding: 5px 15px; background-color: #3498db; color: white; text-decoration: none; border-radius: 4px;">查看完整讲稿</a>
+</div>
+
 {% for post in site.teaching %}
 {% if post.type == "数据科学导论" %}
 <div style="margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px;">
