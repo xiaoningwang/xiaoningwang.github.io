@@ -152,7 +152,7 @@ author_profile: true
           <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
           <div class="course-meta">
             <span class="type">{{ post.type }}</span>
-            <span class="date">{{ post.date | date: "%Y" }}</span>
+            <span class="date">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y" }}{% endif %}</span>
           </div>
           {% if post.venue %}
             <div class="course-meta" style="margin-top: 5px;">{{ post.venue }}</div>
@@ -176,7 +176,7 @@ author_profile: true
         <div class="course-info">
           <strong>{{ post.type }}</strong> | 
           {{ post.venue }} | 
-          <span style="color: #999;">{{ post.date | date: "%Y年%m月" }}</span>
+          <span style="color: #999;">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y年%m月" }}{% endif %}</span>
         </div>
       </li>
     {% endfor %}

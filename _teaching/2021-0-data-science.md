@@ -4,7 +4,8 @@ collection: teaching
 type: "本科一年级下"
 permalink: /teaching/data-science
 venue: "数据科学与大数据技术、计算广告专业"
-date: 2020-2026
+date: 2022-02-22
+period: "2020-2026"
 location: "Beijing, China"
 ---
 
@@ -39,6 +40,5 @@ location: "Beijing, China"
 - [学数据科学与大数据技术专业，我们最应该学些什么？](https://mp.weixin.qq.com/s/S2UUyhnntTChtunEzdyf1g)
 - [数据科学家能力素质模型](https://mp.weixin.qq.com/s/ls5JuoX7wWvZJcjLraYcbA)
 - [数据科学50年](https://mp.weixin.qq.com/s/s6dxiCMLhXrDc3pJJ_jupg)
-
 
 
