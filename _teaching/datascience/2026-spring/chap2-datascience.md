@@ -4,6 +4,7 @@ collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap2-datascience
 date: 2026-03-17
+excerpt: "本讲介绍数据科学的基本方法体系，围绕监督学习、无监督学习、半监督学习、强化学习、统计学习与机器学习的关系展开，并说明 R 与 Python 在数据分析实践中的作用。"
 ---
 
 # 数据科学的主要方法

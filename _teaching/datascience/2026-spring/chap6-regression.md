@@ -4,6 +4,7 @@ collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap6-regression
 date: 2026-04-14
+excerpt: "本讲围绕回归分析展开，介绍一元与多元线性回归的建模思想、总体回归函数、最小二乘估计、模型假设、拟合优度、显著性检验、预测方法，以及 R 中的回归实现。"
 ---
 
 <style>
@@ -420,4 +421,3 @@ lines(sx, pred[,2], lty = 3); lines(sx, pred[,3], lty = 3)
 如果用一句话概括本讲内容，可以表述为：
 
 **回归分析的本质，就是利用样本数据去估计变量之间的数量关系，并在不确定性条件下实现解释、推断与预测。**
-

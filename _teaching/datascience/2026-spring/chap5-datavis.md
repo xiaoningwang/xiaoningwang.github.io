@@ -4,6 +4,7 @@ collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap5-datavis
 date: 2026-04-07
+excerpt: "本讲围绕数据可视化展开，介绍图形在探索、发现、验证和表达中的作用，讲解基础作图参数、常见图形类型、图形选择原则，以及 ggplot2 的基本思想和应用提醒。"
 ---
 
 <style>
@@ -392,4 +393,3 @@ xlab="Number of Cylinders", ylab="Miles Per Gallon")
 如果用一句话概括本讲内容，可以表述为：
 
 **数据可视化的本质，不只是把数据画出来，而是借助视觉表达把数据中的分布、关系、趋势和结构清晰地呈现出来。**
-

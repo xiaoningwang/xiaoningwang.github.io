@@ -4,6 +4,7 @@ collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap7-classification
 date: 2026-04-21
+excerpt: "本讲围绕分类方法展开，介绍二元分类问题、线性概率模型、Probit 与 Logistic 模型、判别分析、朴素贝叶斯、LDA、QDA，以及混淆矩阵、精确率、召回率、ROC 和 AUC 等评价指标。"
 ---
 
 <style>
@@ -538,4 +539,3 @@ plot(perf)
 如果用一句话概括本讲内容，可以写成：
 
 **分类方法的核心任务，是根据已知样本学习类别划分规则，并通过概率模型或判别函数，将新的观测值尽可能准确地分到正确类别中。**
-

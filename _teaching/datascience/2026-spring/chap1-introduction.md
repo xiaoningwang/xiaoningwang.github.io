@@ -4,6 +4,7 @@ collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap1-introduction
 date: 2026-03-10
+excerpt: "本讲围绕数据科学的发展脉络与研究问题展开，梳理统计学、数据挖掘、机器学习、大数据到数据科学的演进，说明数据科学如何围绕现实需求完成数据收集、清洗、建模、解释与决策支持。"
 ---
 
 # 数据科学的发展历史与数据科学研究的主要问题——演讲提纲

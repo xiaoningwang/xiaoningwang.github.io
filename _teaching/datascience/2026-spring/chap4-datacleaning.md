@@ -4,6 +4,7 @@ collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap4-datacleaning
 date: 2026-04-01
+excerpt: "本讲围绕数据处理与清洗展开，介绍结构化与非结构化数据、数据类型、缺失值处理、噪声与异常值识别、数据变换和标准化等内容，说明高质量数据是后续分析建模的基础。"
 ---
 
 <style>
