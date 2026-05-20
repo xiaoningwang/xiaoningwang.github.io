@@ -1058,3 +1058,226 @@ h2 + hr {
   color: $tech-indigo;
   text-decoration: underline;
 }
+
+/* Scoped blog index page */
+.blog-index {
+  margin-top: 1rem;
+}
+
+.blog-index__hero {
+  margin: 0 0 2rem;
+  padding: 1.5rem;
+  background: $body-color;
+  border: 1px solid mix(#fff, $border-color, 20%);
+  border-left: 4px solid $tech-blue;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.blog-index__eyebrow {
+  margin: 0 0 0.4rem;
+  color: $tech-blue;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.blog-index__intro {
+  max-width: 46rem;
+  margin: 0;
+  color: $dark-gray;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.blog-index__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.blog-index__stats span,
+.blog-index__stats a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.28rem 0.7rem;
+  color: $gray;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-decoration: none;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+.blog-index__stats a {
+  color: $tech-blue;
+  font-weight: 700;
+}
+
+.blog-index__stats a:hover {
+  color: $tech-indigo;
+  border-color: mix(#fff, $tech-blue, 45%);
+}
+
+.blog-year {
+  margin-top: 2rem;
+}
+
+.blog-year__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+  color: $dark-gray;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.blog-year__heading::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: $border-color;
+}
+
+.blog-post-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.blog-card {
+  margin: 0;
+}
+
+.blog-card__main {
+  display: grid;
+  grid-template-columns: 4.25rem minmax(0, 1fr) 1.25rem;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.1rem;
+  color: $text-color;
+  text-decoration: none !important;
+  background: $body-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card__main:hover {
+  color: $text-color;
+  text-decoration: none !important;
+  border-color: mix(#fff, $tech-blue, 35%);
+  box-shadow: 0 12px 22px rgba(37, 99, 235, 0.11);
+  transform: translateY(-2px);
+}
+
+.blog-card__date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  color: $tech-blue;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: mix(#fff, $tech-blue, 92%);
+  border: 1px solid mix(#fff, $tech-blue, 75%);
+  border-radius: 8px;
+}
+
+.blog-card__content {
+  min-width: 0;
+}
+
+.blog-card__kicker {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: mix(#000, $gray, 5%);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.blog-card__title {
+  display: block;
+  color: $dark-gray;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.blog-card__excerpt {
+  display: block;
+  margin-top: 0.45rem;
+  color: $gray;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.blog-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.blog-card__tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.65rem;
+  padding: 0.15rem 0.5rem;
+  color: mix(#000, $gray, 8%);
+  font-size: 0.76rem;
+  line-height: 1.2;
+  background: mix(#fff, #f59e0b, 90%);
+  border: 1px solid mix(#fff, #f59e0b, 70%);
+  border-radius: 8px;
+}
+
+.blog-card__arrow {
+  align-self: center;
+  color: mix(#fff, $gray, 15%);
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.blog-card__main:hover .blog-card__arrow {
+  color: $tech-blue;
+  transform: translateX(3px);
+}
+
+.blog-index__empty {
+  padding: 1rem;
+  color: $gray;
+  background: $body-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .blog-index__hero {
+    padding: 1.15rem;
+  }
+
+  .blog-card__main {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 1rem;
+  }
+
+  .blog-card__date {
+    justify-content: flex-start;
+    width: fit-content;
+    padding: 0 0.55rem;
+  }
+
+  .blog-card__arrow {
+    display: none;
+  }
+}

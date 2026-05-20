@@ -1,5 +1,5 @@
 ---
-title: 市调大赛|你的结论和建议写对了么？
+title: 市调大赛：你的结论和建议写对了么？
 date: 2025-04-07
 permalink: /posts/2025/04/jielunjianyi
 tags:
@@ -7,4 +7,3 @@ tags:
   - 数据分析
   - 调研报告
 ---
-
