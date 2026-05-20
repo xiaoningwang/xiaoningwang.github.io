@@ -74,6 +74,9 @@ My open-source projects, course examples, and website updates are maintained on 
       <li><strong>GitHub</strong>: <a href="https://github.com/xiaoningwang">@xiaoningwang</a></li>
       <li><strong>Email</strong>: sdwangxiaoning@foxmail.com</li>
       <li><strong>Scholar Hero</strong>: <a href="https://scholarhero.cn/">scholarhero.cn</a></li>
+      <li><strong>小红书</strong>: 教统计的小宁老师</li>
+      <li><strong>抖音</strong>: 教统计的小宁老师</li>
+      <li><strong>B站</strong>: <a href="https://space.bilibili.com/1091726673">抽样调查之家</a></li>
     </ul>
   </div>
   <div class="wechat-section">
