@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-I am an Associate Professor in the [School of Data Science and Media Intelligence](http://dsmi.cuc.edu.cn/main.htm) at the Communication University of China, focused on cultivating data-driven media talent. I earned my Ph.D. from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019 under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My teaching centers on building rigorous courses, guiding students through hands-on projects, and using intelligent tools to support collaborative learning.
+I am an Associate Professor in the [School of Data Science and Media Intelligence](https://dsmi.cuc.edu.cn/main.htm) at the Communication University of China, focused on cultivating data-driven media talent. I earned my Ph.D. from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019 under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My teaching centers on building rigorous courses, guiding students through hands-on projects, and using intelligent tools to support collaborative learning.
 
 Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM + Agent) that provides classroom demonstrations, coding guidance, and personalized feedback. Teachers and students are welcome to explore and share suggestions: [scholarhero.cn](https://scholarhero.cn/).
 
@@ -62,9 +62,9 @@ Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM 
   </div>
 </div>
 
-## 📊 GitHub Stats
+## GitHub
 
-![Xiaoning's GitHub stats](https://stats.quine.sh/xiaoningwang?theme=radical&show_icons=true)
+My open-source projects, course examples, and website updates are maintained on [GitHub @xiaoningwang](https://github.com/xiaoningwang).
 
 ## 🌐 Connect with Me
 
@@ -88,32 +88,30 @@ Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM 
 ## 📱 公众号文章
 
 <div class="wechat-articles">
-  <h3>抽样调查之家</h3>
+  <h3>课程与数据科学文章</h3>
   <div class="article-list">
-    <!-- 最新文章 -->
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/XHdrDFet6oMGQA2uDZc28w" class="article-title">2026年市调大赛备赛指南与技巧分享</a>
-      <span class="article-date">2026-03-10</span>
+      <a href="https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ" class="article-title">2025春季数据科学导论优秀作品</a>
+      <span class="article-date">2025</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/abc123" class="article-title">大模型时代的抽样调查方法创新</a>
-      <span class="article-date">2026-02-25</span>
+      <a href="https://mp.weixin.qq.com/s/DxO-OvoTLsd2CQSiVVpHHg" class="article-title">数据科学导论课程2024春季优秀报告展示</a>
+      <span class="article-date">2024</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/def456" class="article-title">2025年市调大赛获奖作品深度分析</a>
-      <span class="article-date">2026-01-15</span>
+      <a href="https://mp.weixin.qq.com/s/Bx44Q8GzRDstYioOoqPA5Q" class="article-title">2022数据科学导论优秀报告展示合集</a>
+      <span class="article-date">2022</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/ghi789" class="article-title">Scholar Hero在抽样调查教学中的应用</a>
-      <span class="article-date">2025-12-20</span>
+      <a href="https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w" class="article-title">统计与真理视频合集</a>
+      <span class="article-date">视频合集</span>
     </div>
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/jkl012" class="article-title">基于机器学习的抽样误差控制方法</a>
-      <span class="article-date">2025-11-10</span>
+      <a href="https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w" class="article-title">调查与计算广告分析报告合集</a>
+      <span class="article-date">案例合集</span>
     </div>
   </div>
   <div class="article-more">
-    <a href="https://mp.weixin.qq.com/" class="btn btn-primary" target="_blank">查看更多文章</a>
+    <a href="/teaching/datascience/" class="btn btn-primary">查看更多课程资源</a>
   </div>
 </div>
-
