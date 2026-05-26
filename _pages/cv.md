@@ -167,7 +167,9 @@ redirect_from:
     <div class="section-content">
       <ul class="teaching-list">
         {% for post in site.teaching %}
-          {% include archive-single-cv.html %}
+          {% unless post.path contains "_teaching/datascience/2026-spring/chap" %}
+            {% include archive-single-cv.html %}
+          {% endunless %}
         {% endfor %}
       </ul>
     </div>
@@ -632,4 +634,3 @@ redirect_from:
   }
 }
 </style>
-
