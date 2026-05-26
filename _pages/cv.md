@@ -167,7 +167,7 @@ redirect_from:
     <div class="section-content">
       <ul class="teaching-list">
         {% for post in site.teaching %}
-          {% unless post.path contains "_teaching/datascience/2026-spring/chap" %}
+          {% unless post.title contains "第" and post.title contains "讲" %}
             {% include archive-single-cv.html %}
           {% endunless %}
         {% endfor %}
