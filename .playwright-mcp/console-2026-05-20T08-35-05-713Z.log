@@ -1,0 +1,136 @@
+[  112373ms] [LOG] https://cwzb.cuc.edu.cn/wsyy/qrlogin?self,2849,enclosureUpload&,,2849,1,2,1,,,,&1779266218072 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-546c93d2.a96979b7.js:0
+[  193099ms] [LOG] https://cwzb.cuc.edu.cn/wsyy/qrlogin?self,2849,enclosureUpload&,,2849,1,2,1,,,,&1779266298807 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-546c93d2.a96979b7.js:0
+[  405840ms] [LOG] fpjInfoList [] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  405843ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  405843ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  405872ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  405872ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  405873ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  405873ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  406004ms] [LOG] 当前业务类型为： 22 ，当前设置劳务相关的业务类型有： [18, 1801, 1802, 1803] 当前单据是否为劳务相关： false @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425319ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425319ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425322ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425322ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425338ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425338ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425339ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425339ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425414ms] [LOG] ly {kmbh: 30240, type: null, typemc: null, comments: 税金及附加, isEdit: 1} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425414ms] [LOG] getJjflListByXmbh 方法：将返回格式为： {"JJFLKMBH":"30240","JJFLKMMC":"税金及附加","kmbh":"30240","isEdit":"1","MBBH":"25","BXLM":"01","BXLMMC":"税费","bxlxbh":"2501","search_zy":"报税金"} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425414ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425414ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425415ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425415ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425466ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425467ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425467ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  425467ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  486511ms] [LOG] undefined false undefined @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-546c93d2.a96979b7.js:0
+[  490014ms] [LOG] handleSelection: {dzfph: undefined, isok: undefined, fpdm: undefined, fphm: undefined, kprq: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-546c93d2.a96979b7.js:0
+[  490029ms] [LOG] handleSelectionChange [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-546c93d2.a96979b7.js:0
+[  491337ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491337ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491347ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491347ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491362ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491367ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491367ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491388ms] [LOG] fpxx [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491390ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491390ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491395ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491408ms] [LOG] ly {BXLMMC: 税费, JJFLKMBH: 30240, JJFLKMMC: 税金及附加, BXLM: 01, CCLASS: 02} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491408ms] [LOG] getJjflkmbhDefault 方法：将返回格式为： {"JJFLKMBH":"30240","JJFLKMMC":"税金及附加","CCLASS":"02","MBBH":"25","BXLM":"01","BXLMMC":"税费","bxlxbh":"2501","search_zy":"报税金"} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491410ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491410ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  491417ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  496579ms] [LOG] 重新获取合并单元格信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  501679ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  501679ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  501698ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  553158ms] [LOG] djeCeChangeHandle()：index主页获取到差额： -3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  566140ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  566140ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  566141ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  566141ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  572310ms] [LOG] 重新获取合并单元格信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  576412ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  576412ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  576414ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  576414ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  579778ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  579778ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  579783ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  579783ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  581470ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  581470ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  581475ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  581476ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  584879ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  584879ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  584881ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  584881ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  584901ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  586777ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  586777ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  586976ms] [LOG] 3200 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  592236ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  612199ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  612199ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  612211ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  612363ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625618ms] [LOG] fpjInfoList [] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625619ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625619ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625655ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625656ms] [LOG] fpjInfoList 0 {fpj: undefined, jjflkmbh: undefined, jjflkmmc: undefined, fjzs: undefined, jje: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625656ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625656ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625821ms] [LOG] 当前业务类型为： 22 ，当前设置劳务相关的业务类型有： [18, 1801, 1802, 1803] 当前单据是否为劳务相关： false @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625851ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625851ms] [LOG] fpjInfoList 0 {fpj: undefined, xmbh: undefined, jje: undefined, error-row: undefined, isfzr: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625853ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625853ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625861ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625862ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625875ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625875ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625882ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625882ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625973ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625973ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625973ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625990ms] [LOG] ly {kmbh: 30240, type: null, typemc: null, comments: 税金及附加, isEdit: 1} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625990ms] [LOG] getJjflListByXmbh 方法：将返回格式为： {"JJFLKMBH":"30240","JJFLKMMC":"税金及附加","kmbh":"30240","isEdit":"1","MBBH":"25","BXLM":"01","BXLMMC":"税费","bxlxbh":"2501","search_zy":"报税金"} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625990ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625990ms] [LOG] fpjInfoList 0 {fpj: undefined, xmbh: undefined, jje: undefined, error-row: undefined, isfzr: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625991ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  625991ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626010ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626010ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626012ms] [LOG] ly {BXLMMC: 税费, JJFLKMBH: 30240, JJFLKMMC: 税金及附加, BXLM: 01, CCLASS: 02} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626012ms] [LOG] getJjflList 方法：将返回格式为： {"JJFLKMBH":"30240","JJFLKMMC":"税金及附加","CCLASS":"02","MBBH":"25","BXLM":"01","BXLMMC":"税费","bxlxbh":"2501","search_zy":"报税金"} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626012ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626012ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626021ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626023ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626026ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626026ms] [LOG] fpjInfoList 0 {fpj: undefined, xmbh: undefined, jje: undefined, error-row: undefined, isfzr: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626026ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626026ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626042ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  626042ms] [LOG] djeCeChangeHandle()：index主页获取到差额： 3200 ，系统将重新计算对私支付的金额信息！ @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  634496ms] [LOG] fpjInfoList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  634496ms] [LOG] fpjInfoList 0 {fpj: undefined, xmbh: undefined, jje: undefined, error-row: undefined, isfzr: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  634501ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  634501ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  637564ms] [LOG] CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  637564ms] [LOG] 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-6a6b3a40.8dce96c4.js:0
+[  639140ms] [LOG] 当前单据绑定的申请单号：  @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  639140ms] [LOG] showPrintBxdBtn： false ；qyPrintBtnByZt： 5,3,2,20 ；ywlx： 22 ；zt：  ；spflag： 0 ；iswq： 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  639738ms] [LOG] showPrintBxdBtn： true ；qyPrintBtnByZt： 5,3,2,20 ；ywlx： 22 ；zt： 5 ；spflag： 0 ；iswq： 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  639739ms] [LOG] 系统参数启用独立报销封面，将设置为： cucTmp @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  639739ms] [LOG] 最终报销封面将启用： cucTmp ，当前单据业务类型为： 22 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  639763ms] [LOG] [1801, 1802, 1803, 1804] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  639763ms] [LOG] false @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0

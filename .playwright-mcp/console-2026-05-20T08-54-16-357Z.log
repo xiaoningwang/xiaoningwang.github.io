@@ -1,0 +1,12 @@
+[   49552ms] TypeError: Cannot read properties of undefined (reading 'val')
+    at https://cwsp.cuc.edu.cn/wscx6/jqwidgets/jqxgrid.edit.js:7:34348
+[   49565ms] TypeError: Cannot read properties of undefined (reading 'val')
+    at https://cwsp.cuc.edu.cn/wscx6/jqwidgets/jqxgrid.edit.js:7:34348
+[   79222ms] TypeError: Cannot read properties of undefined (reading 'val')
+    at https://cwsp.cuc.edu.cn/wscx6/jqwidgets/jqxgrid.edit.js:7:34348
+[   79224ms] TypeError: Cannot read properties of undefined (reading 'val')
+    at https://cwsp.cuc.edu.cn/wscx6/jqwidgets/jqxgrid.edit.js:7:34348
+[  209588ms] TypeError: Cannot read properties of undefined (reading 'val')
+    at https://cwsp.cuc.edu.cn/wscx6/jqwidgets/jqxgrid.edit.js:7:34348
+[  209589ms] TypeError: Cannot read properties of undefined (reading 'val')
+    at https://cwsp.cuc.edu.cn/wscx6/jqwidgets/jqxgrid.edit.js:7:34348

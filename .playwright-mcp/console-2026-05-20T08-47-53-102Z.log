@@ -1,0 +1,13 @@
+[   14142ms] [LOG] {fzr: undefined, bmbh: undefined, bmmc: undefined, xmbh: undefined, xmmc: undefined} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-546c93d2.a96979b7.js:1
+[   18632ms] [LOG] {msg: 操作成功, code: 1001, data: Object, words: null} @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-3bf0107e.11149968.js:1
+[  216030ms] [LOG] dwjc CUC @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-3105b11a.ba46f182.js:0
+[  216157ms] [LOG] ysyFpList [] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-15ea86ca.360cefff.js:0
+[  219150ms] [LOG] ysyFpList [Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-15ea86ca.360cefff.js:0
+[  224357ms] [LOG] ysyFpList [Object, Object] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-15ea86ca.360cefff.js:0
+[  232590ms] [LOG] 当前单据绑定的申请单号：  @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  232591ms] [LOG] showPrintBxdBtn： false ；qyPrintBtnByZt： 5,3,2,20 ；ywlx： 05 ；zt：  ；spflag： 0 ；iswq： 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  233291ms] [LOG] showPrintBxdBtn： true ；qyPrintBtnByZt： 5,3,2,20 ；ywlx： 05 ；zt： 5 ；spflag： 0 ；iswq： 0 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  233293ms] [LOG] 系统参数启用独立报销封面，将设置为： cucTmp @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  233293ms] [LOG] 最终报销封面将启用： cucTmp ，当前单据业务类型为： 05 @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  233320ms] [LOG] [1801, 1802, 1803, 1804] @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0
+[  233320ms] [LOG] false @ https://cwzb.cuc.edu.cn/wsyy/js/chunk-31802ad1.b9793055.js:0

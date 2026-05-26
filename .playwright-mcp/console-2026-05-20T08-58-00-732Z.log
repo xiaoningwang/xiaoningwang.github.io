@@ -1,0 +1,42 @@
+[     300ms] Unexpected token '<'
+[     344ms] Unexpected token '<'
+[    1297ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cwsp.cuc.edu.cn/UAP/Modules/JS/Eng/Eng.js:0
+[    1414ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Default.html?MKDM=SB&YWBH=gx&YWLSH=202605400851:0
+[    1626ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cwsp.cuc.edu.cn/UAP/Modules/JS/Eng/Eng.js:0
+[    1694ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEODQ1MjIlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[    1694ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEODQ1MjIlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[    1694ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEODQ1MjIlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[    2117ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2117ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2118ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2118ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2118ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2118ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2118ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[    2252ms] [LOG] [Array(1), Array(0), Array(0), Array(0), Array(1), Array(0)] @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:1041
+[    2339ms] [VERBOSE] [DOM] Multiple forms should be contained in their own form elements; break up complex forms into ones that represent a single action: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEODQ1MjIlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[    2495ms] [LOG] {fjPath: ../../UAPFJNR/6000002084265691.pdf, fjType: 4, fjlb: 其他附件, fjWjm: 202605400851-34262.pdf, fjSize: 3.4KB} @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2011
+[    2495ms] [LOG] 6000002084265691.pdf @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2036
+[    2496ms] [LOG] 附件图片显示成功 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2063
+[    5163ms] [LOG] ../../seals/getSealListByPerson.do @ https://cwsp.cuc.edu.cn/UAP/JS/qz/selectSeal.js?v=3:66
+[    5276ms] [LOG] 1 @ https://cwsp.cuc.edu.cn/UAP/JS/qz/selectSeal.js?v=3:79
+[   75316ms] [VERBOSE] [DOM] Multiple forms should be contained in their own form elements; break up complex forms into ones that represent a single action: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEODQ1MjIlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[   76227ms] [LOG] ../../seals/getSealListByPerson.do @ https://cwsp.cuc.edu.cn/UAP/JS/qz/selectSeal.js?v=3:66
+[   76317ms] [LOG] 1 @ https://cwsp.cuc.edu.cn/UAP/JS/qz/selectSeal.js?v=3:79
+[  160376ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cwsp.cuc.edu.cn/UAP/Modules/JS/Eng/Eng.js:0
+[  160457ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Default.html?MKDM=SB&YWBH=gx&YWLSH=202605400851:0
+[  160654ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cwsp.cuc.edu.cn/UAP/Modules/JS/Eng/Eng.js:0
+[  160728ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEMjY1ODMlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[  160728ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEMjY1ODMlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[  160728ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://cwsp.cuc.edu.cn/UAP/Modules/PC/Invoice.html?cmFuZG9tJTNEMjY1ODMlMjZNS0RNJTNEU0IlMjZZV0JIJTNEZ3glMjZZV0xTSCUzRDIwMjYwNTQwMDg1MQ==:0
+[  161143ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161144ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161144ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161144ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161144ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161144ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161144ms] [LOG] 中国传媒大学 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2423
+[  161263ms] [LOG] [Array(0), Array(1), Array(0), Array(0), Array(0), Array(0)] @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:1041
+[  161460ms] [LOG] {fjPath: ../../UAPFJNR/6000002084265691.pdf, fjType: 4, fjlb: 其他附件, fjWjm: 202605400851-34262.pdf, fjSize: 3.4KB} @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2011
+[  161460ms] [LOG] 6000002084265691.pdf @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2036
+[  161461ms] [LOG] 附件图片显示成功 @ https://cwsp.cuc.edu.cn/UAP/JS/PC/invoice.js?v=17:2063

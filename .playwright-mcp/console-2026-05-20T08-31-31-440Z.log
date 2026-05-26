@@ -1,0 +1,19 @@
+[     -10ms] [WARNING] Error parsing a meta element's content: ';' is not a valid key-value pair separator. Please use ',' instead. @ http://www.csrd.edu.cn/detail/64-723:3
+[      49ms] [LOG] Proxy(Object) getDetailData @ http://www.csrd.edu.cn/_nuxt/_id_.aa5c2d45.js:0
+[   62160ms] [WARNING] @babel/polyfill is loaded more than once on this page. This is probably not desirable/intended and may have consequences if different versions of the polyfills are applied sequentially. If you do need to load the polyfill more than once, use @babel/polyfill/noConflict instead to bypass the warning. @ https://i.cuc.edu.cn/js/polyfill.min.js:0
+[   67409ms] [INFO] [t, t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[   67410ms] [INFO] prev=undefined @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[   82407ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[  146717ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/execTemplateMethod:0
+[  146761ms] Error: Network Error
+    at e.exports (https://i.cuc.edu.cn/js/axios.min.js:2:8158)
+    at h.onerror (https://i.cuc.edu.cn/js/axios.min.js:2:7129)
+[  147408ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[  147410ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/casp-ioc//api/clientIp:0
+[  147410ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/casp-ioc//api/report?encode=false:0
+[  202306ms] [WARNING] @babel/polyfill is loaded more than once on this page. This is probably not desirable/intended and may have consequences if different versions of the polyfills are applied sequentially. If you do need to load the polyfill more than once, use @babel/polyfill/noConflict instead to bypass the warning. @ https://i.cuc.edu.cn/js/polyfill.min.js:0
+[  207509ms] [INFO] [t, t, t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[  207509ms] [INFO] prev=undefined @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[  972516ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 1103286ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 2003299ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0

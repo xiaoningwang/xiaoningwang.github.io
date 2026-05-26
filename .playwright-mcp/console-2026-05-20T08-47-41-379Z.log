@@ -1,0 +1,6 @@
+[     364ms] [WARNING] @babel/polyfill is loaded more than once on this page. This is probably not desirable/intended and may have consequences if different versions of the polyfills are applied sequentially. If you do need to load the polyfill more than once, use @babel/polyfill/noConflict instead to bypass the warning. @ https://i.cuc.edu.cn/js/polyfill.min.js:0
+[ 1562356ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ https://cn.bing.com/search?q=%E7%B4%AB%E9%87%91%E9%99%88&PC=U316&FORM=CHROMN&source=chrome.ob:8
+[ 1562356ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ https://cn.bing.com/search?q=%E7%B4%AB%E9%87%91%E9%99%88&PC=U316&FORM=CHROMN&source=chrome.ob:8
+[ 1562356ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ https://cn.bing.com/search?q=%E7%B4%AB%E9%87%91%E9%99%88&PC=U316&FORM=CHROMN&source=chrome.ob:8
+[ 1562357ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ https://cn.bing.com/search?q=%E7%B4%AB%E9%87%91%E9%99%88&PC=U316&FORM=CHROMN&source=chrome.ob:8
+[ 1562357ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ https://cn.bing.com/search?q=%E7%B4%AB%E9%87%91%E9%99%88&PC=U316&FORM=CHROMN&source=chrome.ob:8

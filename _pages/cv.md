@@ -36,7 +36,7 @@ redirect_from:
         <span class="tech-badge">文本挖掘</span>
       </div>
       <p>欢迎感兴趣的同学联系我，我的邮箱：<strong>sdwangxiaoning@foxmail.com</strong></p>
-      
+
       <div class="project-highlight">
         <h3>✨ 我们的智能助教项目</h3>
         <p>我们团队正在开发智能助教-书卷侠（Scholar Hero），感兴趣的老师同学欢迎体验并给予反馈意见：</p>
@@ -197,7 +197,7 @@ redirect_from:
       <h2 class="section-title">🎤 讲座经历</h2>
     </div>
     <div class="section-content">
-      <p>曾受邀为国家统计局申请民意调查中心、人力资源和社会保障部、教育部、民政部老龄科学中心、微众银行、中国商业统计学会、中国人民大学、首都经济贸易大学、暨南大学、中国知网、华东师范大学等多家政府单位和高校讲授数据分析、智能体、AI赋能教学、AI赋能科研的讲座。</p>
+      <p>曾受邀为国家统计局社情民意调查中心、人力资源和社会保障部、教育部、民政部老龄科学中心、微众银行、中国商业统计学会、中国人民大学、首都经济贸易大学、暨南大学、华东师范大学、华电党校、中国知网和中国专利信息中心等多家政府单位和高校讲授数据分析、智能体、AI赋能教学、AI赋能科研的讲座。</p>
     </div>
   </section>
 
@@ -611,24 +611,24 @@ redirect_from:
   .cv-container {
     padding: 10px;
   }
-  
+
   .section-content {
     padding: 20px;
   }
-  
+
   .section-header {
     padding: 15px 20px;
   }
-  
+
   .hero-content h1 {
     font-size: 2rem;
   }
-  
+
   .wechat-container {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .hobby-grid {
     grid-template-columns: 1fr;
   }

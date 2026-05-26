@@ -115,6 +115,6 @@ My open-source projects, course examples, and website updates are maintained on 
     </div>
   </div>
   <div class="article-more">
-    <a href="/teaching/datascience/" class="btn btn-primary">查看更多课程资源</a>
+    <a href="/teaching/" class="btn btn-primary">查看更多课程资源</a>
   </div>
 </div>

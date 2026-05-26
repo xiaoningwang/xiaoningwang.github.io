@@ -1,0 +1,63 @@
+[       5ms] ReferenceError: _d is not defined
+    at https://cn.bing.com/chrome/newtab:4:10
+[      27ms] ReferenceError: _d is not defined
+    at https://cn.bing.com/chrome/newtab:4:10
+[      27ms] ReferenceError: _d is not defined
+    at https://cn.bing.com/rp/8Suf3NRk-FUy9dWb2hkqEKB1N3w.br.js:1:1592
+    at https://cn.bing.com/rp/8Suf3NRk-FUy9dWb2hkqEKB1N3w.br.js:1:2979
+[     601ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://assets.msn.cn/bundles/v1/bingHomepage/latest/microsoft.2b05d332c2d75a387e4b.js:1
+[     601ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://assets.msn.cn/bundles/v1/bingHomepage/latest/microsoft.2b05d332c2d75a387e4b.js:1
+[    2934ms] Uncaught TypeError: Cannot set property Package of #<Object> which has only a getter
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13800)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at e.combineWithMathJax (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:14316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1156314)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173000)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173004)
+[    9694ms] Uncaught TypeError: Cannot set property Package of #<Object> which has only a getter
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13800)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at e.combineWithMathJax (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:14316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1156314)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173000)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173004)
+[   11785ms] Uncaught TypeError: Cannot set property Package of #<Object> which has only a getter
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13800)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at e.combineWithMathJax (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:14316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1156314)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173000)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173004)
+[   16000ms] Uncaught TypeError: Cannot set property Package of #<Object> which has only a getter
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13800)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at e.combineWithMathJax (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:14316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1156314)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173000)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173004)
+[   20249ms] Uncaught TypeError: Cannot set property Package of #<Object> which has only a getter
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13800)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at e.combineWithMathJax (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:14316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1156314)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173000)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173004)
+[   30707ms] Uncaught TypeError: Cannot set property Package of #<Object> which has only a getter
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13800)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at s (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:13807)
+    at e.combineWithMathJax (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:14316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1156314)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173000)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js:0:1173004)

@@ -1,0 +1,11 @@
+[     257ms] [WARNING] @babel/polyfill is loaded more than once on this page. This is probably not desirable/intended and may have consequences if different versions of the polyfills are applied sequentially. If you do need to load the polyfill more than once, use @babel/polyfill/noConflict instead to bypass the warning. @ https://i.cuc.edu.cn/js/polyfill.min.js:0
+[  446673ms] [LOG] 更多 @ :2
+[  463079ms] TypeError: Cannot read properties of undefined (reading 'init')
+    at https://srms.cuc.edu.cn/system/script/admui/themes/base/js/app.js:56:16
+    at https://srms.cuc.edu.cn/system/script/admui/themes/base/js/app.js:197:3
+[  466138ms] TypeError: Cannot read properties of undefined (reading 'init')
+    at https://srms.cuc.edu.cn/system/script/admui/themes/base/js/app.js:56:16
+    at https://srms.cuc.edu.cn/system/script/admui/themes/base/js/app.js:197:3
+[  470194ms] TypeError: Cannot read properties of undefined (reading 'init')
+    at https://srms.cuc.edu.cn/system/script/admui/themes/base/js/app.js:56:16
+    at https://srms.cuc.edu.cn/system/script/admui/themes/base/js/app.js:197:3

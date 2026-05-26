@@ -1,0 +1,20 @@
+[ 3560179ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 3560184ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/getLoginUser?_t=0.6004407037001418:0
+[ 3560184ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/casp-ioc//api/clientIp:0
+[ 3560187ms] Error: Network Error
+    at e.exports (https://i.cuc.edu.cn/js/axios.min.js:2:8158)
+    at h.onerror (https://i.cuc.edu.cn/js/axios.min.js:2:7129)
+[ 3560184ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/casp-ioc//api/report?encode=false:0
+[ 3560953ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/execCardMethod/12527203983994295/CUS_CARD_CUC_PERSONALDATA:0
+[ 3560954ms] [ERROR] Failed to load resource: net::ERR_PROXY_CONNECTION_FAILED @ https://i.cuc.edu.cn/execCardMethod/12527203983994295/CUS_CARD_CUC_PERSONALDATA:0
+[ 3560972ms] Error: Network Error
+    at e.exports (https://i.cuc.edu.cn/js/axios.min.js:2:8158)
+    at h.onerror (https://i.cuc.edu.cn/js/axios.min.js:2:7129)
+[ 3560972ms] Error: Network Error
+    at e.exports (https://i.cuc.edu.cn/js/axios.min.js:2:8158)
+    at h.onerror (https://i.cuc.edu.cn/js/axios.min.js:2:7129)
+[ 4460196ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 5360250ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 6197339ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 6202360ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
+[ 6260205ms] [INFO] [t] @ https://i.cuc.edu.cn/casp-ioc/track.min.js:0
