@@ -52,6 +52,9 @@ author_profile: true
 - [文本分析]({{ '/files/ch12-文本挖掘.pdf' | prepend: site.baseurl }})和[社交网络分析]({{ '/files/ch13-社交网络分析.pdf' | prepend: site.baseurl }})
 - [并行和分布式计算]({{ '/files/ch15-并行分布式和云计算.pdf' | prepend: site.baseurl }})
 
+### 课程讲稿快捷入口
+- [第11讲：文本挖掘与社交网络分析]({{ '/teaching/datascience/chap11-text-mining-social-network' | prepend: site.baseurl }})
+
 ### 学习资料
 - [数据科学的学习资料](https://xiaoningwang.github.io/links/)
 
