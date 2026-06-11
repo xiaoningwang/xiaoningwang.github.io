@@ -3,7 +3,7 @@ title: "第11讲：文本挖掘与社交网络分析"
 collection: teaching
 type: "数据科学导论"
 permalink: /teaching/datascience/chap11-text-mining-social-network
-date: 2026-05-26
+date: 2026-06-12
 excerpt: "本讲整理文本挖掘与社交网络分析两部分内容，介绍文本数据获取、分词、词袋模型、TF-IDF、特征选择、文本分类、文本聚类、LDA主题模型，以及网络基本概念、中心性、凝聚性、随机图模型、块模型和关联网络推断。"
 ---
 
