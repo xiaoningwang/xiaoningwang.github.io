@@ -52,9 +52,19 @@ author_profile: true
 - [文本分析]({{ '/files/ch12-文本挖掘.pdf' | prepend: site.baseurl }})和[社交网络分析]({{ '/files/ch13-社交网络分析.pdf' | prepend: site.baseurl }})
 - [并行和分布式计算]({{ '/files/ch15-并行分布式和云计算.pdf' | prepend: site.baseurl }})
 
-### 课程讲稿快捷入口
-- [第11讲：文本挖掘与社交网络分析]({{ '/teaching/datascience/chap11-text-mining-social-network' | prepend: site.baseurl }})
-- [第12讲：无监督学习与大数据计算方法]({{ '/teaching/datascience/chap12-unsupervised-and-computing' | prepend: site.baseurl }})
+### 课程讲稿快捷入口（第1-12讲）
+1. [第1讲：数据科学的发展历史与研究问题]({{ '/teaching/datascience/chap1-introduction' | prepend: site.baseurl }})
+2. [第2讲：数据科学的基本方法]({{ '/teaching/datascience/chap2-datascience' | prepend: site.baseurl }})
+3. [第3讲：统计学习的基本框架与模型评估]({{ '/teaching/datascience/chap3-datasciencemethod' | prepend: site.baseurl }})
+4. [第4讲：数据处理与清洗]({{ '/teaching/datascience/chap4-datacleaning' | prepend: site.baseurl }})
+5. [第5讲：数据可视化]({{ '/teaching/datascience/chap5-datavis' | prepend: site.baseurl }})
+6. [第6讲：回归分析]({{ '/teaching/datascience/chap6-regression' | prepend: site.baseurl }})
+7. [第7讲：分类方法]({{ '/teaching/datascience/chap7-classification' | prepend: site.baseurl }})
+8. [第8讲：决策树与集成学习]({{ '/teaching/datascience/chap8-tree-ensemble' | prepend: site.baseurl }})
+9. [第9讲：数据分析报告写作指南]({{ '/teaching/datascience/chap9-data-analysis-report-writing' | prepend: site.baseurl }})
+10. [第10讲：支持向量机与朴素贝叶斯、推荐算法]({{ '/teaching/datascience/chap10-svm-bayes-recommendation' | prepend: site.baseurl }})
+11. [第11讲：文本挖掘与社交网络分析]({{ '/teaching/datascience/chap11-text-mining-social-network' | prepend: site.baseurl }})
+12. [第12讲：无监督学习与大数据计算方法]({{ '/teaching/datascience/chap12-unsupervised-and-computing' | prepend: site.baseurl }})
 
 ### 学习资料
 - [数据科学的学习资料](https://xiaoningwang.github.io/links/)
