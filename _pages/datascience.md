@@ -54,6 +54,7 @@ author_profile: true
 
 ### 课程讲稿快捷入口
 - [第11讲：文本挖掘与社交网络分析]({{ '/teaching/datascience/chap11-text-mining-social-network' | prepend: site.baseurl }})
+- [第12讲：无监督学习与大数据计算方法]({{ '/teaching/datascience/chap12-unsupervised-and-computing' | prepend: site.baseurl }})
 
 ### 学习资料
 - [数据科学的学习资料](https://xiaoningwang.github.io/links/)
