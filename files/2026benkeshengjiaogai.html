@@ -6,18 +6,22 @@
   <title>《数据科学导论》本科生课程教改成果</title>
   <style>
     :root {
-      --ink: #1e2a25;
-      --muted: #63736b;
-      --paper: #fbfaf5;
-      --soft: #f1eadc;
-      --chalk: #f7f4e9;
-      --green: #24483c;
-      --green-2: #386656;
-      --gold: #b6843f;
-      --red: #9c4d3f;
-      --line: #d8cdbb;
-      --shadow: 0 18px 40px rgba(30, 42, 37, 0.12);
-      --radius: 8px;
+      --ink: #17241f;
+      --muted: #65756e;
+      --paper: #fbfaf4;
+      --paper-2: #f3efe4;
+      --soft: #eee6d5;
+      --chalk: #fffdf6;
+      --green: #203f35;
+      --green-2: #3b6d5c;
+      --gold: #b88943;
+      --gold-2: #d8b66f;
+      --red: #9b4b3f;
+      --line: #d8cdb9;
+      --hairline: rgba(32, 63, 53, 0.12);
+      --shadow: 0 22px 46px rgba(30, 42, 37, 0.14);
+      --soft-shadow: 0 12px 28px rgba(30, 42, 37, 0.08);
+      --radius: 10px;
     }
 
     * {
@@ -29,17 +33,35 @@
       margin: 0;
       font-family: "Songti SC", "STSong", "Noto Serif SC", "Microsoft YaHei", serif;
       background:
-        linear-gradient(90deg, rgba(36, 72, 60, 0.035) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(36, 72, 60, 0.035) 1px, transparent 1px),
+        radial-gradient(circle at 12% 0%, rgba(184, 137, 67, 0.13), transparent 28%),
+        linear-gradient(115deg, rgba(32, 63, 53, 0.08), transparent 36%),
+        linear-gradient(90deg, rgba(36, 72, 60, 0.032) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(36, 72, 60, 0.032) 1px, transparent 1px),
         var(--paper);
       background-size: 28px 28px;
       color: var(--ink);
       line-height: 1.72;
+      letter-spacing: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(23, 36, 31, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 36, 31, 0.018) 1px, transparent 1px);
+      background-size: 100% 56px, 56px 100%;
+      mix-blend-mode: multiply;
+      opacity: 0.55;
+      z-index: -1;
     }
 
     a {
       color: var(--green-2);
       text-decoration: none;
+      text-underline-offset: 4px;
     }
 
     a:hover {
@@ -49,11 +71,11 @@
 
     .layout {
       display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 28px;
-      width: min(1240px, calc(100% - 48px));
+      grid-template-columns: 286px minmax(0, 1fr);
+      gap: 30px;
+      width: min(1320px, calc(100% - 56px));
       margin: 0 auto;
-      padding: 28px 0 56px;
+      padding: 34px 0 64px;
     }
 
     .sidebar {
@@ -61,10 +83,12 @@
       top: 24px;
       align-self: start;
       border: 1px solid var(--line);
-      background: rgba(251, 250, 245, 0.92);
-      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 246, 0.94), rgba(246, 240, 225, 0.94));
+      box-shadow: var(--soft-shadow);
       border-radius: var(--radius);
-      padding: 20px 18px;
+      padding: 22px 18px 18px;
+      backdrop-filter: blur(10px);
     }
 
     .sidebar h2 {
@@ -72,45 +96,72 @@
       color: var(--green);
       font-size: 21px;
       letter-spacing: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar h2::before {
+      content: "";
+      width: 10px;
+      height: 30px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--green), var(--gold));
     }
 
     .sidebar a {
       display: block;
-      padding: 8px 10px;
+      padding: 9px 11px;
       margin: 4px 0;
       border-left: 3px solid transparent;
-      border-radius: 4px;
+      border-radius: 6px;
       color: var(--ink);
       font-size: 15px;
       line-height: 1.4;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
     }
 
     .sidebar a:hover {
       background: var(--soft);
       border-left-color: var(--gold);
       text-decoration: none;
+      transform: translateX(2px);
     }
 
     .hero {
-      min-height: 520px;
+      position: relative;
+      min-height: 560px;
       display: flex;
       align-items: end;
-      padding: 56px;
+      padding: 60px;
       color: #fff;
       background:
-        linear-gradient(180deg, rgba(19, 30, 26, 0.12) 0%, rgba(19, 30, 26, 0.86) 100%),
+        linear-gradient(90deg, rgba(12, 24, 20, 0.88) 0%, rgba(12, 24, 20, 0.52) 54%, rgba(12, 24, 20, 0.16) 100%),
+        linear-gradient(180deg, rgba(19, 30, 26, 0.08) 0%, rgba(19, 30, 26, 0.78) 100%),
         url("../images/2026benkeshengjiaogai/student-agent-report.jpg") center / cover;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: calc(var(--radius) - 2px);
+      pointer-events: none;
+      z-index: -1;
     }
 
     .hero h1 {
-      margin: 0 0 14px;
+      margin: 0 0 18px;
       font-size: clamp(34px, 5vw, 58px);
       line-height: 1.08;
       letter-spacing: 0;
       max-width: 900px;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
     }
 
     .hero p {
@@ -118,20 +169,68 @@
       max-width: 880px;
       font-size: 19px;
       color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 15px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      backdrop-filter: blur(8px);
     }
 
     .section {
-      margin-top: 28px;
-      padding: 40px;
-      background: rgba(251, 250, 245, 0.96);
+      position: relative;
+      margin-top: 30px;
+      padding: 42px;
+      background:
+        linear-gradient(180deg, rgba(255, 253, 246, 0.98), rgba(249, 245, 235, 0.98));
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: 0 10px 28px rgba(30, 42, 37, 0.08);
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--green), var(--gold), transparent);
     }
 
     .section h2 {
       margin: 0 0 24px;
-      font-size: 30px;
+      font-size: clamp(25px, 2.4vw, 32px);
       line-height: 1.28;
       color: var(--green);
     }
@@ -141,8 +240,9 @@
       display: block;
       width: 84px;
       height: 4px;
-      margin-top: 12px;
+      margin-top: 14px;
       background: linear-gradient(90deg, var(--green), var(--gold));
+      border-radius: 999px;
     }
 
     .section h3 {
@@ -167,8 +267,9 @@
       background: #fff8e8;
       padding: 18px 22px;
       margin: 22px 0;
-      border-radius: 4px;
+      border-radius: 8px;
       color: #4c4030;
+      box-shadow: inset 0 0 0 1px rgba(184, 137, 67, 0.15);
     }
 
     .stats {
@@ -180,9 +281,11 @@
 
     .stat {
       border: 1px solid var(--line);
-      background: #fffdf7;
+      background:
+        linear-gradient(180deg, #fffdf7, #faf4e8);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(30, 42, 37, 0.06);
     }
 
     .stat strong {
@@ -208,14 +311,24 @@
     .card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: #fffdf7;
-      padding: 22px;
+      background:
+        linear-gradient(180deg, #fffdf7, #fbf6eb);
+      padding: 24px;
+      box-shadow: 0 10px 22px rgba(30, 42, 37, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(184, 137, 67, 0.52);
+      box-shadow: 0 16px 30px rgba(30, 42, 37, 0.1);
     }
 
     .card h4 {
       margin: 0 0 10px;
       color: var(--green);
       font-size: 19px;
+      line-height: 1.38;
     }
 
     .card p {
@@ -236,10 +349,12 @@
     .step {
       position: relative;
       border-top: 4px solid var(--green);
-      background: #fffdf7;
+      background:
+        linear-gradient(180deg, #fffdf7, #fbf6eb);
       border-radius: 0 0 var(--radius) var(--radius);
       padding: 18px 16px;
       min-height: 150px;
+      box-shadow: 0 10px 22px rgba(30, 42, 37, 0.06);
     }
 
     .step::before {
@@ -254,6 +369,7 @@
       background: var(--green);
       color: #fff;
       font-weight: 700;
+      box-shadow: 0 6px 14px rgba(32, 63, 53, 0.22);
     }
 
     .step h4 {
@@ -282,6 +398,13 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       overflow: hidden;
+      box-shadow: 0 12px 24px rgba(30, 42, 37, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .figure:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(30, 42, 37, 0.12);
     }
 
     .figure img {
@@ -289,6 +412,7 @@
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      background: #e7dfd0;
     }
 
     .figure figcaption {
@@ -296,6 +420,7 @@
       color: var(--muted);
       font-size: 14.5px;
       line-height: 1.45;
+      background: linear-gradient(180deg, #fffdf7, #faf5ea);
     }
 
     .wide {
@@ -311,6 +436,7 @@
       margin: 24px 0;
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      box-shadow: 0 12px 24px rgba(30, 42, 37, 0.06);
     }
 
     table {
@@ -331,8 +457,12 @@
 
     th {
       color: #fff;
-      background: var(--green);
+      background: linear-gradient(90deg, var(--green), #2f5a4c);
       font-weight: 700;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: rgba(238, 230, 213, 0.34);
     }
 
     tr:last-child td {
@@ -353,10 +483,11 @@
       margin-top: 18px;
       color: var(--green-2);
       font-size: 14px;
+      font-weight: 700;
     }
 
     .footer {
-      padding: 28px 0 0;
+      padding: 30px 0 0;
       color: var(--muted);
       text-align: center;
       font-size: 14px;
@@ -419,8 +550,16 @@
     <main>
       <section class="hero">
         <div>
+          <div class="kicker">本科未来课堂建设成果展示</div>
           <h1>《数据科学导论》本科生课程教改成果</h1>
           <p>围绕“未来课堂”建设要求，以全程板书、项目制学习、课程讨论、课中作业随讲解决、Trae 辅助数据分析和书卷侠课后问答为主线，推动本科生从理解数据科学概念走向完成真实数据分析任务。</p>
+          <div class="hero-meta" aria-label="课程改革关键词">
+            <span>全程板书</span>
+            <span>课中作业随讲解决</span>
+            <span>Trae 数据分析</span>
+            <span>书卷侠课后问答</span>
+            <span>项目制学习</span>
+          </div>
         </div>
       </section>
 
