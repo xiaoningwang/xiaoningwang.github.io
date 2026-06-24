@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《数据科学导论》本科生课程教改成果</title>
+  <style>
+    :root {
+      --ink: #1e2a25;
+      --muted: #63736b;
+      --paper: #fbfaf5;
+      --soft: #f1eadc;
+      --chalk: #f7f4e9;
+      --green: #24483c;
+      --green-2: #386656;
+      --gold: #b6843f;
+      --red: #9c4d3f;
+      --line: #d8cdbb;
+      --shadow: 0 18px 40px rgba(30, 42, 37, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "Noto Serif SC", "Microsoft YaHei", serif;
+      background:
+        linear-gradient(90deg, rgba(36, 72, 60, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(36, 72, 60, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      color: var(--ink);
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--green-2);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 28px;
+      width: min(1240px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      border: 1px solid var(--line);
+      background: rgba(251, 250, 245, 0.92);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+    }
+
+    .sidebar h2 {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 21px;
+      letter-spacing: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 8px 10px;
+      margin: 4px 0;
+      border-left: 3px solid transparent;
+      border-radius: 4px;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .sidebar a:hover {
+      background: var(--soft);
+      border-left-color: var(--gold);
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: end;
+      padding: 56px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(19, 30, 26, 0.12) 0%, rgba(19, 30, 26, 0.86) 100%),
+        url("../images/2026benkeshengjiaogai/student-agent-report.jpg") center / cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      max-width: 900px;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 880px;
+      font-size: 19px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .section {
+      margin-top: 28px;
+      padding: 40px;
+      background: rgba(251, 250, 245, 0.96);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(30, 42, 37, 0.08);
+    }
+
+    .section h2 {
+      margin: 0 0 24px;
+      font-size: 30px;
+      line-height: 1.28;
+      color: var(--green);
+    }
+
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 84px;
+      height: 4px;
+      margin-top: 12px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+    }
+
+    .section h3 {
+      margin: 34px 0 14px;
+      font-size: 22px;
+      color: var(--red);
+    }
+
+    .section p {
+      margin: 14px 0;
+      font-size: 17px;
+      text-align: justify;
+    }
+
+    .lead {
+      font-size: 19px;
+      color: var(--ink);
+    }
+
+    .note {
+      border-left: 5px solid var(--gold);
+      background: #fff8e8;
+      padding: 18px 22px;
+      margin: 22px 0;
+      border-radius: 4px;
+      color: #4c4030;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 26px 0 8px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      background: #fffdf7;
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fffdf7;
+      padding: 22px;
+    }
+
+    .card h4 {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      text-align: left;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      border-top: 4px solid var(--green);
+      background: #fffdf7;
+      border-radius: 0 0 var(--radius) var(--radius);
+      padding: 18px 16px;
+      min-height: 150px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .step h4 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      color: var(--ink);
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 28px 0 8px;
+    }
+
+    .figure {
+      margin: 0;
+      background: #fffdf7;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .figure figcaption {
+      padding: 13px 15px 15px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.45;
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    .wide img {
+      aspect-ratio: 8 / 3.7;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fffdf7;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 15.5px;
+    }
+
+    th {
+      color: #fff;
+      background: var(--green);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .works-list {
+      padding-left: 22px;
+      margin: 16px 0;
+    }
+
+    .works-list li {
+      margin: 8px 0;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--green-2);
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 28px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+        width: min(100% - 28px, 900px);
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+
+      .hero {
+        min-height: 460px;
+        padding: 36px 28px;
+      }
+
+      .section {
+        padding: 28px 22px;
+      }
+
+      .stats,
+      .grid,
+      .timeline,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        grid-column: span 1;
+      }
+
+      .wide img {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout" id="top">
+    <aside class="sidebar">
+      <h2>目录导航</h2>
+      <a href="#overview">一、项目概况</a>
+      <a href="#requirements">二、建设要求对照</a>
+      <a href="#path">三、改革路径</a>
+      <a href="#achievements">四、主要成果</a>
+      <a href="#classroom">五、课堂实施证据</a>
+      <a href="#ai-practice">六、AI 数据分析实践</a>
+      <a href="#student-share">七、中学生智能体分享</a>
+      <a href="#assessment">八、评价方式</a>
+      <a href="#effect">九、建设成效</a>
+      <a href="#future">十、下一步计划</a>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>《数据科学导论》本科生课程教改成果</h1>
+          <p>围绕“未来课堂”建设要求，以全程板书、项目制学习、课程讨论、课下作业和 Trae 辅助数据分析为主线，推动本科生从理解数据科学概念走向完成真实数据分析任务。</p>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <h2>一、项目概况</h2>
+        <p class="lead">《数据科学导论》面向数据科学与大数据技术、计算广告等本科专业开设，是低年级学生进入传媒数据分析、统计学习、文本挖掘和智能应用的重要基础课程。</p>
+        <p>课程以“传媒数据问题”为牵引，帮助学生理解数据科学的基本框架、数据清洗与可视化方法、监督学习与无监督学习思想、文本分析和推荐算法等内容，并通过期末数据分析报告完成综合应用训练。</p>
+        <div class="stats">
+          <div class="stat">
+            <strong>大一</strong>
+            <span>第 2 学期面向本科生开设</span>
+          </div>
+          <div class="stat">
+            <strong>32</strong>
+            <span>学时覆盖导论、统计学习、文本分析、可视化与报告写作</span>
+          </div>
+          <div class="stat">
+            <strong>5-6</strong>
+            <span>围绕真实数据任务准备项目制学习主题</span>
+          </div>
+          <div class="stat">
+            <strong>全程</strong>
+            <span>板书推导、课堂讨论、课下作业和项目实践贯穿教学</span>
+          </div>
+        </div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="requirements">
+        <h2>二、建设要求对照</h2>
+        <p>根据“未来课堂”建设材料，课程建设需要回应技术赋能、范式转换、价值回归和学习场景拓展四个方向，并落实到本科课堂中的目标、内容、方法和评价改革。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>建设要求</th>
+                <th>课程回应</th>
+                <th>成果体现</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>理解传媒大数据的特征、原理、构成和类型</td>
+                <td>通过全程板书梳理“数据科学 Jeff Wu 框架”“统计学与机器学习关系”“传媒数据任务场景”等基础结构。</td>
+                <td>学生能够从数据来源、变量、模型、应用场景四个层面说明数据科学问题。</td>
+              </tr>
+              <tr>
+                <td>掌握数据分析方法和数据可视化技术</td>
+                <td>课堂围绕 ggplot2、图表类型、可视化要素、模型评估和报告表达展开推导与讨论。</td>
+                <td>形成“探索数据、发现规律、分析结果、沟通表达、辅助决策”的可视化训练路径。</td>
+              </tr>
+              <tr>
+                <td>综合运用数据清洗、机器学习、推荐算法、文本挖掘等方法解决具体问题</td>
+                <td>以项目制学习和课下作业为载体，引导学生使用 Trae 完成数据处理、建模、可视化和报告生成任务。</td>
+                <td>期末报告从单点知识考查转向完整数据分析项目，强调问题、数据、方法、结论和建议的闭环。</td>
+              </tr>
+              <tr>
+                <td>范式转换：教师从知识传授者转向学习引导者</td>
+                <td>课堂不只演示代码，而是通过板书推导、讨论提问、任务拆解和项目反馈组织学习。</td>
+                <td>学生在讨论、作业、项目和分享中主动建构知识，形成可迁移的数据分析能力。</td>
+              </tr>
+              <tr>
+                <td>多元评价：过程表现、项目成果和课堂参与共同评价</td>
+                <td>平时作业、课程讨论、项目进展、期中考试与期末报告共同支撑评价。</td>
+                <td>评价重点从“记住概念”拓展到“能否完成真实数据分析任务”。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">课程改革的核心判断：AI 不是替代基础教学，而是要求教师把概念推导、问题讨论、项目实践和工具使用组织成更清晰的学习链条。</div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="path">
+        <h2>三、改革路径</h2>
+        <p>本科生课程改革围绕“板书建构概念、讨论形成问题、作业巩固方法、项目整合能力、AI 工具提升效率”展开，避免学生只停留在概念记忆或代码复制层面。</p>
+        <div class="timeline">
+          <div class="step">
+            <h4>全程板书</h4>
+            <p>用黑板呈现统计学习、优化、文本向量化、可视化和报告逻辑，帮助学生看到知识之间的结构关系。</p>
+          </div>
+          <div class="step">
+            <h4>课程讨论</h4>
+            <p>围绕“数据科学为什么发生”“模型为什么有效”“图表如何服务表达”等问题组织课堂互动。</p>
+          </div>
+          <div class="step">
+            <h4>课下作业</h4>
+            <p>将数据清洗、图表制作、模型训练、文本分析和报告写作拆解为阶段性任务。</p>
+          </div>
+          <div class="step">
+            <h4>项目制学习</h4>
+            <p>提前准备多个项目主题，引导学生围绕真实传媒数据完成完整分析报告。</p>
+          </div>
+          <div class="step">
+            <h4>Trae 实践</h4>
+            <p>利用 AI 原生 IDE 辅助代码生成、调试、数据清洗、模型实现和结果解释。</p>
+          </div>
+        </div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="achievements">
+        <h2>四、主要教改成果</h2>
+        <div class="grid">
+          <div class="card">
+            <h4>1. 建立低年级本科生可进入的数据科学知识框架</h4>
+            <p>从统计学、数据挖掘、机器学习和传媒应用切入，将抽象方法组织成“问题—数据—模型—应用—报告”的学习框架。</p>
+          </div>
+          <div class="card">
+            <h4>2. 形成全程板书支撑的概念建构课堂</h4>
+            <p>保留黑板推导和结构化板书，帮助学生理解公式、算法、损失函数、可视化原则和报告逻辑，而不是只看幻灯片。</p>
+          </div>
+          <div class="card">
+            <h4>3. 推进项目制学习和真实任务训练</h4>
+            <p>围绕文本分析、社交网络、推荐、可视化、机器学习和报告写作设置项目任务，促使学生在实践中综合运用知识。</p>
+          </div>
+          <div class="card">
+            <h4>4. 引入 Trae 完成数据分析任务</h4>
+            <p>指导学生使用 Trae 辅助完成数据读取、清洗、建模、可视化、错误调试和报告整理，提升完成复杂任务的效率。</p>
+          </div>
+          <div class="card">
+            <h4>5. 形成课堂讨论与课下作业联动机制</h4>
+            <p>课堂讨论用于激活问题意识，课下作业用于巩固方法训练，期末报告用于检验完整数据分析能力。</p>
+          </div>
+          <div class="card">
+            <h4>6. 拓展跨学段智能体学习场景</h4>
+            <p>邀请北京中学八年级学生分享智能体开发进展，使本科生看到更开放的 AI 实践生态和更低门槛的创新路径。</p>
+          </div>
+        </div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="classroom">
+        <h2>五、课堂实施证据</h2>
+        <p>课程现场以黑板为中心组织知识结构，通过板书持续展示统计学习、数据可视化、文本挖掘、网络分析和大数据计算之间的关系。学生在课堂上既能看到公式与算法的推导，也能看到方法如何落到数据分析报告和项目任务中。</p>
+        <div class="gallery">
+          <figure class="figure wide">
+            <img src="../images/2026benkeshengjiaogai/blackboard-data-science-flow.jpg" alt="数据科学框架与研究内容板书">
+            <figcaption>围绕数据科学发展、统计学、机器学习、数据挖掘和应用场景建立课程总框架。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/blackboard-method-framework.jpg" alt="统计学习与方法框架板书">
+            <figcaption>通过板书展开监督学习、回归、分类、机器学习和学习方式之间的关系。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/blackboard-optimization.jpg" alt="统计学习优化与损失函数板书">
+            <figcaption>围绕损失函数、经验风险、结构风险、训练集和测试集讲解模型求解逻辑。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/blackboard-visualization.jpg" alt="数据可视化原则板书">
+            <figcaption>从图形分类、适用场景、颜色、文本、坐标和可视化目的讲解图表设计。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/blackboard-report-visualization.jpg" alt="报告写作与可视化板书">
+            <figcaption>将可视化和报告写作连接起来，强调探索数据、发现规律、分析结果和沟通表达。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/blackboard-text-network.jpg" alt="文本挖掘与社交网络分析板书">
+            <figcaption>围绕小世界网络、文本向量化、分词、主题模型和 TF-IDF 建立非结构化数据分析框架。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/blackboard-computing-models.jpg" alt="大数据计算和机器学习板书">
+            <figcaption>讲解 Hadoop、HDFS、MapReduce、Hive、HBase 与统计学习、无监督学习之间的联系。</figcaption>
+          </figure>
+        </div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="ai-practice">
+        <h2>六、AI 数据分析实践：利用 Trae 完成数据任务</h2>
+        <p>课程将 Trae 作为本科生完成数据分析任务的实践工具，而不是单纯作为代码生成器。教学中强调学生先理解问题、变量、方法和评价标准，再借助 Trae 进行代码实现、错误定位和结果整理。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>任务环节</th>
+                <th>学生训练内容</th>
+                <th>Trae 辅助方式</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>数据读取与清洗</td>
+                <td>识别变量类型、缺失值、异常值、重复记录和编码问题。</td>
+                <td>生成清洗脚本、解释报错原因、辅助检查数据口径。</td>
+              </tr>
+              <tr>
+                <td>可视化探索</td>
+                <td>根据数据类型选择条形图、散点图、箱线图、折线图、热力图等。</td>
+                <td>辅助实现 ggplot2 / Python 可视化代码，并根据图表目标修改样式。</td>
+              </tr>
+              <tr>
+                <td>统计建模</td>
+                <td>完成回归、分类、聚类、文本挖掘或推荐算法等任务。</td>
+                <td>辅助搭建模型流程、调试运行错误、解释关键输出。</td>
+              </tr>
+              <tr>
+                <td>报告写作</td>
+                <td>围绕问题、数据、方法、结果、发现、建议组织报告。</td>
+                <td>辅助整理图表说明、方法说明和结论表达，但要求学生进行事实核验和独立判断。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">实践原则：AI 可以提升实现效率，但不能替代学生对数据、方法和结论的理解。课程要求学生对每一段代码、每一个图表和每一条结论负责。</div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="student-share">
+        <h2>七、邀请北京中学八年级学生分享智能体开发进展</h2>
+        <p>课程邀请北京中学八年级学生进入本科课堂，分享智能体开发的学习路径与项目进展。分享内容强调“这不是概念介绍，而是一份变化报告”，展示年轻学习者如何通过记忆、规划、工具调用等机制理解智能体，并进入真实项目现场。</p>
+        <p>这一环节具有两方面意义：一是打破本科生对 AI 实践门槛的刻板印象，让学生看到低年级学习者也能通过持续实践完成智能体开发；二是把课堂讨论从“技术概念是什么”推进到“如何开始实践、如何持续迭代、如何形成作品”。</p>
+        <div class="gallery">
+          <figure class="figure wide">
+            <img src="../images/2026benkeshengjiaogai/student-agent-report.jpg" alt="北京中学八年级学生分享智能体开发进展">
+            <figcaption>北京中学八年级学生分享智能体开发进展，展示从学习路径到项目实践的变化过程。</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="../images/2026benkeshengjiaogai/agent-share-overview.jpg" alt="智能体记忆规划和工具调用分享">
+            <figcaption>围绕记忆、规划和工具调用讲解智能体为什么能够执行复杂任务。</figcaption>
+          </figure>
+        </div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="assessment">
+        <h2>八、评价方式：从考试评价走向过程性、多元评价</h2>
+        <p>课程保留必要的基础知识考查，同时将课堂参与、作业完成、项目进展、工具使用能力和期末报告纳入综合评价，回应未来课堂关于学生主体性和多元评价体系的要求。</p>
+        <div class="grid">
+          <div class="card">
+            <h4>期中考试</h4>
+            <p>考查学生对数据科学基础概念、传媒数据分析原理、统计学习框架和可视化基础的理解。</p>
+          </div>
+          <div class="card">
+            <h4>课下作业</h4>
+            <p>围绕数据清洗、图表制作、模型训练、文本处理和报告片段写作进行阶段性训练。</p>
+          </div>
+          <div class="card">
+            <h4>课堂讨论</h4>
+            <p>评价学生是否能够提出问题、解释模型、比较方法，并将课堂知识迁移到实际场景。</p>
+          </div>
+          <div class="card">
+            <h4>期末报告</h4>
+            <p>要求学生综合运用所学方法解决具体传媒数据问题，形成有数据、有方法、有图表、有结论的分析报告。</p>
+          </div>
+        </div>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="effect">
+        <h2>九、建设成效</h2>
+        <p>通过本轮教改，《数据科学导论》从以讲授和演示为主的课程，逐步转向“板书建构—任务驱动—项目实践—AI 辅助—报告产出”的本科未来课堂样态。</p>
+        <p>课程建设在以下方面形成了阶段性成效：学生对数据科学整体框架的理解更加清晰；课堂讨论和课下作业增强了学习连续性；Trae 的引入降低了代码实现和调试门槛；项目制学习提升了学生综合处理传媒数据问题的能力；中学生智能体分享扩展了课堂边界，增强了学生对 AI 创新实践的现实感。</p>
+        <ul class="works-list">
+          <li>从“听懂概念”推进到“能够解释方法为什么适用于具体问题”。</li>
+          <li>从“照着代码运行”推进到“能够利用 AI 工具完成清洗、建模和可视化任务”。</li>
+          <li>从“完成一次考试”推进到“完成一份可展示的数据分析报告”。</li>
+          <li>从“单一课堂学习”推进到“跨学段、跨场景、跨工具的开放学习”。</li>
+        </ul>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <section class="section" id="future">
+        <h2>十、下一步建设方向</h2>
+        <p>后续课程将继续围绕未来课堂建设要求推进三方面工作：一是进一步细化 5-6 个项目制学习主题，形成可复用的数据、任务说明、评价标准和优秀案例；二是完善 Trae 辅助数据分析的课堂规范，明确 AI 使用边界、代码核验要求和报告引用规范；三是持续扩展课堂讨论与跨学段分享机制，形成更开放的数据科学学习共同体。</p>
+        <p>未来将继续探索“小班化编程训练、项目制学习、多元评价、以赛促学”的本科数据科学教学路径，使学生在真实数据任务和智能工具环境中形成面向传媒行业的数据分析能力。</p>
+        <a class="top-link" href="#top">返回顶部</a>
+      </section>
+
+      <div class="footer">
+        本页面适用于本科课程教改成果展示与未来课堂建设汇报，版权归中国传媒大学王小宁所有。
+      </div>
+    </main>
+  </div>
+</body>
+</html>
