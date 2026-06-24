@@ -53,6 +53,8 @@ author_profile: true
 - [并行和分布式计算]({{ '/files/ch15-并行分布式和云计算.pdf' | prepend: site.baseurl }})
 
 ### 课程讲稿快捷入口（第1-12讲）
+- [第1-12讲课程讲稿汇总]({{ '/teaching/datascience/chap1-12-summary' | prepend: site.baseurl }})
+
 1. [第1讲：数据科学的发展历史与研究问题]({{ '/teaching/datascience/chap1-introduction' | prepend: site.baseurl }})
 2. [第2讲：数据科学的基本方法]({{ '/teaching/datascience/chap2-datascience' | prepend: site.baseurl }})
 3. [第3讲：统计学习的基本框架与模型评估]({{ '/teaching/datascience/chap3-datasciencemethod' | prepend: site.baseurl }})
