@@ -59,9 +59,23 @@
 }
 
 .page__footer-visitors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35em;
   margin: 0.5em 0;
   font-family: $global-font-family;
   font-size: $type-size-5;
+
+  .statcounter {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .page__footer-visitors-link {
+    margin-left: 0.35em;
+    font-size: $type-size-7;
+  }
 }
 
 .page__footer-follow {
