@@ -1,7 +1,11 @@
 ---
-layout: single
 title: "第一章 新闻与舆情问题定义"
-permalink: /teaching/NewsandPublicSentimentDataAnalysis/
+collection: teaching
+type: "传媒大数据专业，大三上"
+permalink: /teaching/publicopinion/chapt1-news-and-public-opinion/
+venue: "新闻与舆情数据学"
+date: 2026-09-01
+location: "北京市，中国"
 author_profile: true
 toc: true
 toc_label: "本章目录"
@@ -9,6 +13,8 @@ toc_sticky: true
 classes: wide
 excerpt: "本章从新闻事实、新闻报道、公众表达、平台传播和回应行动出发，建立新闻与舆情数据分析的问题框架与证据标准。"
 ---
+
+[← 返回《新闻与舆情数据学》课程主页]({{ '/teaching/publicopinion/' | relative_url }})
 
 ## 本章导读
 
@@ -322,5 +328,3 @@ excerpt: "本章从新闻事实、新闻报道、公众表达、平台传播和�
 6. “模型将 62% 评论判为负面”属于哪一层证据？还需要哪些信息才能解释？
 7. 大模型生成的来源链接能够打开，是否意味着其结论已经得到支持？为什么？
 8. 哪些数据不应直接上传到公共大模型？
-
-
