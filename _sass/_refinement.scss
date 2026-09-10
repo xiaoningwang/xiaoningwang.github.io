@@ -1,0 +1,76 @@
+/* Shared editorial theme for profile, archives and teaching pages. */
+:root {
+  --paper: #faf9f5;
+  --ink: #263b36;
+  --muted: #66736c;
+  --accent: #246653;
+  --rule: #dce2d9;
+}
+body { background: var(--paper); color: var(--ink); line-height: 1.85; }
+::selection { background: #dceade; color: #163c30; }
+a { color: var(--accent); }
+a:hover { color: #143f31; }
+a:focus-visible, button:focus-visible { outline: 3px solid #a16b30; outline-offset: 4px; }
+h1, h2, h3, .author__name { color: var(--ink); font-family: Georgia, 'Songti SC', 'Noto Serif CJK SC', serif; }
+.masthead { background: var(--paper); border-bottom: 1px solid var(--rule); }
+.masthead__inner-wrap { padding-top: .8em; padding-bottom: .8em; }
+.greedy-nav { background: var(--paper); }
+.greedy-nav a { color: var(--ink); }
+.greedy-nav .visible-links a:before { background: var(--accent); height: 2px; }
+.greedy-nav button { background: var(--accent); }
+.greedy-nav .hidden-links { border-color: var(--rule); background: var(--paper); }
+#main { margin-top: 3.2em; }
+.page__title { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.18; letter-spacing: -.035em; margin-bottom: .8em; }
+.page__content { overflow-wrap: break-word; }
+.page__content h2 { margin-top: 2.4em; padding-bottom: .65em; border-color: var(--rule); font-size: 1.35em; letter-spacing: .015em; }
+.page__content h3 { line-height: 1.5; }
+.page__content p, .page__content li { line-height: 1.9; }
+.page__content li { margin-bottom: .6em; }
+.page__content a { text-decoration-color: #a2bbae; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+.page__content strong { color: #213e33; }
+.page__date, .page__meta, .archive__item-excerpt, .author__bio { color: var(--muted); }
+.author__avatar img { border-radius: 20px; padding: 0; border: 1px solid var(--rule); }
+.author__name { font-size: 1.3em; margin-top: 1em; }
+.author__urls a { color: var(--muted); }
+.author__urls a:hover { color: var(--accent); }
+.archive__item { padding: 1.25em 0; border-bottom: 1px solid var(--rule); }
+.archive__item-title { margin-top: 0; line-height: 1.45; }
+.archive__item-title a { text-decoration: none; }
+.tech-stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5em 0 2em; }
+.tech-item { padding: 1.3em; border: 1px solid var(--rule); border-top: 3px solid #6b8d78; background: #fffefa; border-radius: 4px; }
+.tech-item small { display: inline-block; margin-top: .5em; font-size: .8em; color: var(--muted); line-height: 1.65; }
+.connect-section { display: flex; gap: 2em; align-items: flex-start; padding: 1.5em; background: #eef2ea; border-radius: 8px; }
+.connect-info { flex: 1; min-width: 0; }
+.connect-list { padding-left: 0; list-style: none; margin: 0; }
+.wechat-section { flex: 0 0 170px; text-align: center; }
+.wechat-section h4 { margin-top: 0; font-size: .9em; }
+.wechat-qrcode img { border-radius: 6px; }
+.wechat-desc { font-size: .7em !important; color: var(--muted); }
+.article-item { display: flex; gap: 1em; justify-content: space-between; padding: 1em 0; border-bottom: 1px solid var(--rule); }
+.article-date { flex-shrink: 0; color: var(--muted); font-size: .8em; }
+.article-more { margin-top: 1.5em; }
+.btn, .btn--primary, .btn-primary { background: #246653; border-radius: 5px; color: white; }
+.page__content a.btn { color: white; text-decoration: none; }
+.btn:hover { background: #194936; }
+blockquote { border-left: 3px solid #6b8d78; background: #eef2ea; padding: 1em 1.3em; font-style: normal; }
+table { border-color: var(--rule); }
+th { background: #eaf0e6; }
+.page__footer { background: #edf0e8; color: var(--muted); border-top: 1px solid var(--rule); }
+@media (min-width: 1024px) {
+  #main { max-width: 1240px; }
+  .sidebar { padding-top: 0; height: auto; max-height: calc(100vh - 130px); width: 220px; padding-right: 24px; }
+  .page, .archive { width: calc(100% - 270px); padding-left: 0; padding-right: 30px; }
+}
+@media (max-width: 767px) {
+  #main { margin-top: 1.6em; padding-left: 1.2em; padding-right: 1.2em; }
+  .page__title { margin-top: .6em; }
+  .sidebar { padding-bottom: 1.2em; border-bottom: 1px solid var(--rule); }
+  .author__avatar img { border-radius: 12px; }
+  .tech-stack { grid-template-columns: 1fr; }
+  .connect-section { flex-direction: column; gap: 1em; padding: 1.2em; }
+  .wechat-section { flex-basis: auto; align-self: center; max-width: 230px; }
+  .article-item { flex-direction: column; gap: .25em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
