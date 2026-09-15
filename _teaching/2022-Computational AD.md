@@ -2,11 +2,22 @@
 title: "计算广告学"
 collection: teaching
 type: "传媒大数据专业，大四上"
-permalink: /teaching/2021-3-ComAD
+permalink: /teaching/ComAD
+redirect_from:
+  - /teaching/2021-3-ComAD
+  - /teaching/2021-3-ComAD/
 venue: "掌握基本的计算广告的技术和分析方法"
 date: 2022-09-5
 location: "北京市，中国"
 ---
+
+## 因果推断课堂讲义
+
+以下讲义为 Markdown 格式，可下载后使用支持数学公式与 Mermaid 图表的阅读器打开。
+
+1. [第一讲：因果推断的基本框架]({{ '/files/ComAD/lecture-01.md' | relative_url }})
+2. [第二讲：因果效应的识别与估计]({{ '/files/ComAD/lecture-02.md' | relative_url }})
+3. [第三讲：因果发现与方向识别]({{ '/files/ComAD/lecture-03.md' | relative_url }})
 
 课前推荐阅读材料：
 
