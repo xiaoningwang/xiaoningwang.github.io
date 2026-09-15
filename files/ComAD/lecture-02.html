@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>第二讲：因果效应的识别与估计</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html{color:#243445;background:#f4f6f8;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;line-height:1.85}body{max-width:960px;margin:32px auto;padding:32px;background:white}h1,h2,h3{line-height:1.4}h2{border-bottom:1px solid #ddd;padding-bottom:.4em;margin-top:2em}a{color:#176899}pre{overflow:auto;background:#f4f6f8;padding:16px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ddd;padding:8px 12px}blockquote{border-left:4px solid #8aa6bd;padding-left:20px;color:#536475}.math.display{display:block;overflow:auto}nav{border-bottom:1px solid #ddd;padding-bottom:16px}.mermaid{overflow:auto}@media(max-width:640px){body{margin:0;padding:20px}}@media print{body{max-width:none;margin:0;padding:0}nav{display:none}}
+  </style>
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  for (const code of document.querySelectorAll('pre.mermaid > code')) {
+    code.parentElement.textContent = code.textContent;
+  }
+  mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<nav aria-label="讲义导航"><a href="/teaching/ComAD">返回计算广告学</a> · <a href="lecture-01.html">第一讲</a> · <a href="lecture-02.html">第二讲</a> · <a href="lecture-03.html">第三讲</a></nav>
+<header id="title-block-header">
+<h1 class="title">第二讲：因果效应的识别与估计</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#第二讲因果效应的识别与估计"
+id="toc-第二讲因果效应的识别与估计">第二讲：因果效应的识别与估计</a>
+<ul>
+<li><a href="#一学习目标" id="toc-一学习目标">一、学习目标</a></li>
+<li><a href="#二先确定估计目标再选择方法"
+id="toc-二先确定估计目标再选择方法">二、先确定估计目标，再选择方法</a></li>
+<li><a href="#三标准化识别公式"
+id="toc-三标准化识别公式">三、标准化识别公式</a></li>
+<li><a href="#四回归调整与结果标准化"
+id="toc-四回归调整与结果标准化">四、回归调整与结果标准化</a></li>
+<li><a href="#五倾向评分与匹配"
+id="toc-五倾向评分与匹配">五、倾向评分与匹配</a></li>
+<li><a href="#六逆概率加权-ipw" id="toc-六逆概率加权-ipw">六、逆概率加权
+IPW</a></li>
+<li><a href="#七双重稳健估计-aipw"
+id="toc-七双重稳健估计-aipw">七、双重稳健估计 AIPW</a></li>
+<li><a href="#八图上的识别后门与前门"
+id="toc-八图上的识别后门与前门">八、图上的识别：后门与前门</a></li>
+<li><a href="#九工具变量-iv利用外生变化"
+id="toc-九工具变量-iv利用外生变化">九、工具变量
+IV：利用外生变化</a></li>
+<li><a href="#十双重差分-did利用变化的比较"
+id="toc-十双重差分-did利用变化的比较">十、双重差分
+DID：利用变化的比较</a></li>
+<li><a href="#十一断点回归-rdd利用阈值附近的比较"
+id="toc-十一断点回归-rdd利用阈值附近的比较">十一、断点回归
+RDD：利用阈值附近的比较</a></li>
+<li><a href="#十二估计不确定性与稳健性"
+id="toc-十二估计不确定性与稳健性">十二、估计不确定性与稳健性</a></li>
+<li><a href="#十三方法比较与上机任务"
+id="toc-十三方法比较与上机任务">十三、方法比较与上机任务</a></li>
+<li><a href="#十四习题与参考答案"
+id="toc-十四习题与参考答案">十四、习题与参考答案</a></li>
+<li><a href="#十五阅读指引与结果报告模板"
+id="toc-十五阅读指引与结果报告模板">十五、阅读指引与结果报告模板</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="第二讲因果效应的识别与估计">第二讲：因果效应的识别与估计</h1>
+<blockquote>
+<p>前置知识：第一讲的潜在结果、条件可交换性、因果图及条件期望。<br />
+核心问题：目标效应在什么条件下可以从数据中得到，又应如何计算？</p>
+</blockquote>
+<h2 id="一学习目标">一、学习目标</h2>
+<p>完成本讲后，应能够：</p>
+<ol type="1">
+<li>为目标效应列出识别条件，并区分条件本身与可观察的诊断。</li>
+<li>推导标准化公式和逆概率加权公式。</li>
+<li>解释回归调整、倾向评分匹配、IPW 与 AIPW 的异同。</li>
+<li>说明后门、前门、工具变量、双重差分和断点回归分别利用什么信息识别效应。</li>
+<li>完成一份包含目标人群、估计值、不确定性和假设限制的分析报告。</li>
+</ol>
+<p>本讲统一使用 <span class="math inline">\(A\)</span> 表示处理、<span
+class="math inline">\(Y\)</span> 表示结果、<span
+class="math inline">\(X\)</span>
+表示处理前协变量。默认讨论二值处理和平均处理效应，其他目标会明确说明。</p>
+<h2 id="二先确定估计目标再选择方法">二、先确定估计目标，再选择方法</h2>
+<h3 id="一份分析方案的最小组成">2.1 一份分析方案的最小组成</h3>
+<p>在选择软件或模型之前，应回答：</p>
+<ol type="1">
+<li>处理是什么，与对照之间具体差在哪里？</li>
+<li>结果在什么时间测量？</li>
+<li>目标人群是谁？</li>
+<li>希望估计 ATE、ATT、某个阈值处的局部效应，还是依从者效应？</li>
+<li>处理如何分配？有哪些支持因果解释的设计信息？</li>
+<li>哪些假设依赖领域知识，哪些可以用数据检查其可观察含义？</li>
+</ol>
+<p>同一数据上的不同方法可能估计不同目标，不能直接把数值差异解释为算法优劣。</p>
+<h3 id="方法地图">2.2 方法地图</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[明确目标效应与处理机制] --&gt; B{识别依据}
+    B --&gt; C[随机分配]
+    C --&gt; C1[组间比较或设计相符的加权]
+    B --&gt; D[给定基线信息可交换]
+    D --&gt; D1[标准化、匹配、IPW、AIPW]
+    B --&gt; E[存在额外设计或结构]
+    E --&gt; E1[工具变量]
+    E --&gt; E2[前后变化与平行趋势]
+    E --&gt; E3[阈值分配与连续性]
+    E --&gt; E4[前门中介结构]</code></pre>
+<p>这不是从上到下“越复杂越好”的排序。适用方法取决于研究设计与可辩护的假设。</p>
+<h2 id="三标准化识别公式">三、标准化识别公式</h2>
+<h3 id="基本条件">3.1 基本条件</h3>
+<p>考虑总体平均处理效应：</p>
+<p><span class="math display">\[
+\tau=E\{Y(1)-Y(0)\}.
+\]</span></p>
+<p>常用识别条件包括：</p>
+<ul>
+<li>一致性：实际接受 <span class="math inline">\(a\)</span> 时，<span
+class="math inline">\(Y=Y(a)\)</span>。</li>
+<li>条件可交换性：<span class="math inline">\(Y(a)\perp A\mid
+X\)</span>，对 <span class="math inline">\(a=0,1\)</span> 成立。</li>
+<li>正值性：目标总体中需要比较的协变量取值处，<span
+class="math inline">\(0&lt;e(X)&lt;1\)</span>。</li>
+<li>处理与结果定义符合研究问题，包括恰当处理干扰、失访等问题。</li>
+</ul>
+<h3 id="逐步推导">3.2 逐步推导</h3>
+<p>对任意 <span class="math inline">\(a\in\{0,1\}\)</span>：</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\{Y(a)\}
+&amp;=E_X[E\{Y(a)\mid X\}] &amp;&amp;\text{全期望公式}\\
+&amp;=E_X[E\{Y(a)\mid A=a,X\}] &amp;&amp;\text{条件可交换性}\\
+&amp;=E_X[E(Y\mid A=a,X)] &amp;&amp;\text{一致性}.
+\end{aligned}
+\]</span></p>
+<p>因此：</p>
+<p><span class="math display">\[
+\boxed{\tau=E_X\{m_1(X)-m_0(X)\}},\qquad m_a(X)=E(Y\mid A=a,X).
+\]</span></p>
+<p>离散 <span class="math inline">\(X\)</span>
+时，外层期望写为求和；连续 <span class="math inline">\(X\)</span>
+时写为积分。正值性使需要的条件均值有相应观测支持。</p>
+<h3 id="课堂计算为什么原始差异会反向">3.3
+课堂计算：为什么原始差异会反向？</h3>
+<p>以下为构造数据。假设给定基线水平后可交换，并以这 200
+个广告投放单元的协变量构成为标准化目标。</p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>历史转化水平 <span class="math inline">\(X\)</span></th>
+<th style="text-align: right;">新策略单元数</th>
+<th style="text-align: right;">新策略平均转化效率</th>
+<th style="text-align: right;">原策略单元数</th>
+<th style="text-align: right;">原策略平均转化效率</th>
+<th style="text-align: right;">该层单元总数</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>历史转化水平较低</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td>历史转化水平较高</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<p>转化效率沿用第一讲的定义，单位为次/千人；各投放单元采用相同预算和评估口径。</p>
+<p>原始均值差：</p>
+<p><span class="math display">\[
+\bar Y_1=\frac{80\times65+20\times85}{100}=69,
+\]</span></p>
+<p><span class="math display">\[
+\bar Y_0=\frac{20\times60+80\times80}{100}=76.
+\]</span></p>
+<p>所以未经调整的差异是 <span class="math inline">\(69-76=-7\)</span>
+次/千人。</p>
+<p>标准化后：</p>
+<p><span class="math display">\[
+\widehat{E\{Y(1)\}}=0.5\times65+0.5\times85=75,
+\]</span></p>
+<p><span class="math display">\[
+\widehat{E\{Y(0)\}}=0.5\times60+0.5\times80=70.
+\]</span></p>
+<p>得到平均效应 <span class="math inline">\(75-70=5\)</span>
+次/千人。反向的原始差异来自两组基线构成不同。此计算的因果解释仍依赖给定基线后的可交换性等假设。</p>
+<h2 id="四回归调整与结果标准化">四、回归调整与结果标准化</h2>
+<h3 id="操作步骤">4.1 操作步骤</h3>
+<ol type="1">
+<li>拟合结果模型 <span class="math inline">\(\widehat
+m(a,x)\)</span>。</li>
+<li>对目标样本中的每个人，分别预测 <span
+class="math inline">\(A=1\)</span> 和 <span
+class="math inline">\(A=0\)</span> 的结果。</li>
+<li>计算每个人的预测差异。</li>
+<li>在目标人群中取平均。</li>
+</ol>
+<p><span class="math display">\[
+\widehat\tau_{reg}=\frac1n\sum_{i=1}^n\{\widehat m(1,X_i)-\widehat
+m(0,X_i)\}.
+\]</span></p>
+<p>计算中每个投放单元都贡献两个预测值，不能只在实际处理组预测 <span
+class="math inline">\(Y(1)\)</span>、在实际对照组预测 <span
+class="math inline">\(Y(0)\)</span>
+后比较，否则两边仍可能使用不同的协变量分布。</p>
+<h3 id="处理系数何时等于平均效应">4.2 处理系数何时等于平均效应？</h3>
+<p>若采用无交互的线性模型：</p>
+<p><span class="math display">\[
+m(a,x)=\beta_0+\beta_Aa+\beta_X^\top x,
+\]</span></p>
+<p>则预测差恒为 <span
+class="math inline">\(\beta_A\)</span>。在模型正确且识别条件成立时，处理系数可以对应
+ATE。</p>
+<p>若有交互：</p>
+<p><span class="math display">\[
+m(a,x)=\beta_0+\beta_Aa+\beta_Xx+\beta_{AX}ax,
+\]</span></p>
+<p>则：</p>
+<p><span class="math display">\[
+\tau(x)=\beta_A+\beta_{AX}x,\qquad
+\tau=\beta_A+\beta_{AX}E(X).
+\]</span></p>
+<p>这时 <span class="math inline">\(\beta_A\)</span> 只对应 <span
+class="math inline">\(X=0\)</span> 的差异。对于 logistic
+回归，处理系数属于对数优势比尺度，也不能直接当作平均风险差。</p>
+<h3 id="优点与风险">4.3 优点与风险</h3>
+<p>回归标准化容易表达非线性和效应异质性，但依赖结果模型。诊断应关注处理组与对照组的预测支持范围，以及重要交互和非线性是否被忽略。</p>
+<h2 id="五倾向评分与匹配">五、倾向评分与匹配</h2>
+<h3 id="定义和作用">5.1 定义和作用</h3>
+<p>倾向评分为：</p>
+<p><span class="math display">\[
+e(X)=P(A=1\mid X).
+\]</span></p>
+<p>它预测的是处理分配，不是结果。真实倾向评分具有平衡性质：</p>
+<p><span class="math display">\[
+A\perp X\mid e(X).
+\]</span></p>
+<p>在给定 <span class="math inline">\(X\)</span>
+可交换及相应支持条件下，可以通过倾向评分进行分层、匹配或加权，降低直接处理高维协变量的难度。</p>
+<p><strong>平衡已测变量不等于消除未测混杂。</strong>倾向评分模型的预测准确率也不是因果分析质量的唯一标准；如果几乎完美预测处理，反而可能意味着缺少可比较对象。</p>
+<h3 id="匹配的基本流程">5.2 匹配的基本流程</h3>
+<ol type="1">
+<li>根据领域知识和测量时间选择基线变量。</li>
+<li>估计倾向评分并检查两组重叠。</li>
+<li>指定匹配比例、是否允许重复使用对照、距离度量和卡钳。</li>
+<li>匹配后检查协变量平衡。</li>
+<li>依据匹配后的目标人群与权重估计效应。</li>
+<li>使用与匹配机制相符的不确定性估计。</li>
+</ol>
+<p>一名处理者匹配 <span class="math inline">\(K\)</span> 名对照时，ATT
+的简单表达为：</p>
+<p><span class="math display">\[
+\widehat\tau_{ATT}=\frac1{n_1}\sum_{i:A_i=1}\left(Y_i-\frac1K\sum_{j\in
+J(i)}Y_j\right).
+\]</span></p>
+<p>若某些处理者无法匹配而被删除，估计目标可能变为“能够匹配的处理者”的平均效应，不能仍不加说明地称为原总体
+ATT。</p>
+<h3 id="平衡检查">5.3 平衡检查</h3>
+<p>连续变量的一种标准化均值差为：</p>
+<p><span class="math display">\[
+SMD=\frac{\bar X_1-\bar X_0}{\sqrt{(s_1^2+s_0^2)/2}}.
+\]</span></p>
+<p>加权分析应使用与分析一致的加权均值，并说明标准化分母的约定。绝对 SMD
+小于 0.1 常作为经验性参考，但不是可交换性成立的证明。</p>
+<p>还应检查分布形状、关键交互、极端值和共同支持；仅比较匹配前后的显著性检验
+<span class="math inline">\(p\)</span> 值可能受到样本量变化干扰。</p>
+<h2 id="六逆概率加权-ipw">六、逆概率加权 IPW</h2>
+<h3 id="从-horvitzthompson-思想到处理权重">6.1 从 Horvitz–Thompson
+思想到处理权重</h3>
+<p>抽样理论中，一个个体被纳入样本的概率越低，其代表的总体部分越多，所以使用纳入概率的倒数加权。因果分析借用这一思想，对实际处理状态出现的概率取倒数。</p>
+<p>对处理潜在结果：</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left\{\frac{AY}{e(X)}\mid X\right\}
+&amp;=\frac{P(A=1\mid X)E(Y\mid A=1,X)}{e(X)}\\
+&amp;=m_1(X).
+\end{aligned}
+\]</span></p>
+<p>结合标准化识别公式：</p>
+<p><span class="math display">\[
+\boxed{\tau=E\left\{\frac{AY}{e(X)}-\frac{(1-A)Y}{1-e(X)}\right\}}.
+\]</span></p>
+<p>因此 HT 形式的估计量为：</p>
+<p><span class="math display">\[
+\widehat\tau_{IPW}=\frac1n\sum_{i=1}^n\left\{\frac{A_iY_i}{\widehat
+e(X_i)}-\frac{(1-A_i)Y_i}{1-\widehat e(X_i)}\right\}.
+\]</span></p>
+<p>若使用真实已知分配概率并满足相应设计条件，可获得设计无偏等性质；把估计倾向评分代入后，不能笼统宣称有限样本严格无偏。</p>
+<h3 id="手算前面的例子">6.2 手算前面的例子</h3>
+<p>历史转化水平较低层 <span
+class="math inline">\(e=0.8\)</span>，历史转化水平较高层 <span
+class="math inline">\(e=0.2\)</span>。</p>
+<p><span class="math display">\[
+\widehat\mu_1=\frac1{200}\left(\frac{80\times65}{0.8}+\frac{20\times85}{0.2}\right)=75,
+\]</span></p>
+<p><span class="math display">\[
+\widehat\mu_0=\frac1{200}\left(\frac{20\times60}{0.2}+\frac{80\times80}{0.8}\right)=70.
+\]</span></p>
+<p>IPW 同样得到 5 次/千人。每个基线层被重新赋予目标总体中的代表性。</p>
+<h3 id="归一化形式">6.3 归一化形式</h3>
+<p>Hájek 形式分别归一化两组权重：</p>
+<p><span class="math display">\[
+\widehat\mu_1^H=\frac{\sum_iA_iY_i/\widehat e_i}{\sum_iA_i/\widehat
+e_i},\qquad
+\widehat\mu_0^H=\frac{\sum_i(1-A_i)Y_i/(1-\widehat
+e_i)}{\sum_i(1-A_i)/(1-\widehat e_i)}.
+\]</span></p>
+<p>以两者之差估计效应。它在有限样本中一般不同于 HT
+形式，常具有较好的数值稳定性，但“归一化”不等于消除了模型偏差。</p>
+<h3 id="ate-与-att-的权重不同">6.4 ATE 与 ATT 的权重不同</h3>
+<table>
+<thead>
+<tr class="header">
+<th>目标</th>
+<th>处理者权重</th>
+<th>对照者权重</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ATE</td>
+<td><span class="math inline">\(1/e(X)\)</span></td>
+<td><span class="math inline">\(1/\{1-e(X)\}\)</span></td>
+</tr>
+<tr class="even">
+<td>ATT</td>
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(e(X)/\{1-e(X)\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>ATT
+加权让对照组代表处理组的协变量分布。因此选择权重之前必须确定目标。</p>
+<h3 id="权重诊断">6.5 权重诊断</h3>
+<p>应检查权重分位数、最大值、两组倾向评分分布、加权后平衡，以及有效样本量：</p>
+<p><span class="math display">\[
+ESS=\frac{(\sum_iw_i)^2}{\sum_iw_i^2}.
+\]</span></p>
+<p>建议分别报告处理组和对照组
+ESS。极端权重意味着结果可能被少量个体主导。截断权重可减小方差，却可能引入偏差；删除不重叠样本还可能改变目标人群，均应明确报告。</p>
+<h2 id="七双重稳健估计-aipw">七、双重稳健估计 AIPW</h2>
+<h3 id="估计量">7.1 估计量</h3>
+<p>把结果模型和处理模型结合：</p>
+<p><span class="math display">\[
+\widehat\tau_{AIPW}=\frac1n\sum_{i=1}^n\left[
+\widehat m_1(X_i)-\widehat m_0(X_i)
++\frac{A_i\{Y_i-\widehat m_1(X_i)\}}{\widehat e(X_i)}
+-\frac{(1-A_i)\{Y_i-\widehat m_0(X_i)\}}{1-\widehat e(X_i)}
+\right].
+\]</span></p>
+<p>前两项是结果标准化，后两项用观测残差进行加权修正。</p>
+<h3 id="为什么具有双重稳健性">7.2 为什么具有双重稳健性？</h3>
+<p>先看 <span
+class="math inline">\(\mu_1=E\{Y(1)\}\)</span>，令可能错设的模型极限为
+<span class="math inline">\(\widetilde m_1\)</span> 和 <span
+class="math inline">\(\widetilde e\)</span>。其条件期望为：</p>
+<p><span class="math display">\[
+\widetilde m_1(X)+\frac{e(X)}{\widetilde e(X)}\{m_1(X)-\widetilde
+m_1(X)\}.
+\]</span></p>
+<ul>
+<li>若 <span class="math inline">\(\widetilde e=e\)</span>，上式化为
+<span class="math inline">\(m_1(X)\)</span>，不要求结果模型正确。</li>
+<li>若 <span class="math inline">\(\widetilde
+m_1=m_1\)</span>，修正项为零，不要求处理模型正确。</li>
+</ul>
+<p>对 <span class="math inline">\(\mu_0\)</span>
+同理。在识别条件及适当正则条件成立时，正确的倾向评分模型，或者正确的两组结果均值模型，可支持
+ATE 估计的一致性。</p>
+<p>课堂中还可使用残差均值诊断来扩展这一结论：即使两个模型都错，只要处理组与对照组的样本残差均值分别为零，AIPW
+的纠偏项就会抵消，估计量仍然一致。因此，带截距的组内回归常可提供额外的双重稳健保障。</p>
+<h3 id="双重稳健不代表什么">7.3 双重稳健不代表什么？</h3>
+<ul>
+<li>不代表可以忽略未测混杂。</li>
+<li>不代表小样本一定优于其他方法。</li>
+<li>不代表极端倾向评分不会导致不稳定。</li>
+<li>不代表任何复杂机器学习模型都自动给出有效置信区间。</li>
+</ul>
+<h3 id="交叉拟合拓展">7.4 交叉拟合：拓展</h3>
+<p>把样本分成若干折，在其他折训练 <span class="math inline">\(\widehat
+e\)</span> 和 <span class="math inline">\(\widehat
+m_a\)</span>，在留出折上计算每个人的 AIPW
+项，再汇总。这样可以减轻同一样本同时拟合与评估引起的过拟合问题。</p>
+<p>要得到常见的渐近正态推断，还需要合适的误差收敛速度、矩条件和支持条件等。交叉拟合改善估计过程，不会创造缺失的因果识别依据。</p>
+<h2 id="八图上的识别后门与前门">八、图上的识别：后门与前门</h2>
+<h3 id="后门准则">8.1 后门准则</h3>
+<p>对处理 <span class="math inline">\(A\)</span> 和结果 <span
+class="math inline">\(Y\)</span>，经典后门准则要求调整集合 <span
+class="math inline">\(X\)</span>：</p>
+<ol type="1">
+<li>不包含 <span class="math inline">\(A\)</span> 的后代。</li>
+<li>阻断所有从进入 <span class="math inline">\(A\)</span>
+的箭头开始、连接 <span class="math inline">\(A\)</span> 与 <span
+class="math inline">\(Y\)</span> 的路径。</li>
+</ol>
+<p>满足相应图模型条件时，可用：</p>
+<p><span class="math display">\[
+P(y\mid do(a))=\sum_xP(y\mid a,x)P(x).
+\]</span></p>
+<p>后门准则是一个易用的充分条件；更一般的调整准则可处理更多结构。本讲不把“某变量同时与处理和结果相关”当作充分的调整依据。</p>
+<h3 id="前门结构">8.2 前门结构</h3>
+<pre class="mermaid"><code>flowchart LR
+    U[未测共同原因 U] --&gt; A[处理 A]
+    U --&gt; Y[结果 Y]
+    A --&gt; M[中介 M]
+    M --&gt; Y</code></pre>
+<p>经典前门条件包括：</p>
+<ul>
+<li><span class="math inline">\(M\)</span> 截断从 <span
+class="math inline">\(A\)</span> 到 <span
+class="math inline">\(Y\)</span> 的所有有向路径。</li>
+<li><span class="math inline">\(A\)</span> 到 <span
+class="math inline">\(M\)</span> 不存在未阻断的后门路径。</li>
+<li><span class="math inline">\(M\)</span> 到 <span
+class="math inline">\(Y\)</span> 的所有后门路径可由 <span
+class="math inline">\(A\)</span> 阻断。</li>
+<li>需要的条件分布具有相应支持。</li>
+</ul>
+<p>识别公式为：</p>
+<p><span class="math display">\[
+P(y\mid do(a))=\sum_mP(m\mid a)\sum_{a&#39;}P(y\mid m,a&#39;)P(a&#39;).
+\]</span></p>
+<p>直观上，先识别 <span class="math inline">\(A\)</span> 如何改变 <span
+class="math inline">\(M\)</span>，再识别干预 <span
+class="math inline">\(M\)</span> 如何改变 <span
+class="math inline">\(Y\)</span>，最后组合起来。并非“测量到中介就可以用前门”；例如存在
+<span class="math inline">\(A\to Y\)</span>
+直接路径时，上述经典结构不再满足。</p>
+<h3 id="前门手算">8.3 前门手算</h3>
+<p>假设 <span class="math inline">\(P(A=1)=0.5\)</span>，<span
+class="math inline">\(P(M=1\mid A=1)=0.8\)</span>，<span
+class="math inline">\(P(M=1\mid A=0)=0.2\)</span>。四个条件均值为：</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;"><span
+class="math inline">\(A=0\)</span></th>
+<th style="text-align: right;"><span
+class="math inline">\(A=1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(M=0\)</span></td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M=1\)</span></td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+<p>先按 <span class="math inline">\(P(A)\)</span> 调整：<span
+class="math inline">\(g(0)=55\)</span>，<span
+class="math inline">\(g(1)=75\)</span>。</p>
+<p>于是 <span class="math inline">\(E\{Y\mid
+do(A=1)\}=0.2\times55+0.8\times75=71\)</span>； <span
+class="math inline">\(E\{Y\mid
+do(A=0)\}=0.8\times55+0.2\times75=59\)</span>。</p>
+<p>效应为 12。数字是教学构造，结论以经典前门条件成立为前提。</p>
+<h2 id="九工具变量-iv利用外生变化">九、工具变量 IV：利用外生变化</h2>
+<h3 id="例子随机新策略试用邀请">9.1 例子：随机新策略试用邀请</h3>
+<p>平台向投放单元随机发放新策略试用邀请 <span
+class="math inline">\(Z\)</span>，但不是每个受邀单元都采用。实际采用新策略
+<span class="math inline">\(A\)</span> 仍可能受广告主运营能力影响。</p>
+<p>工具变量需要相关性、独立性及排除限制：</p>
+<ul>
+<li>相关性：<span class="math inline">\(Z\)</span>
+改变接受处理的概率。</li>
+<li>独立性：<span class="math inline">\(Z\)</span>
+与影响潜在结果的未测因素具有所需独立关系。</li>
+<li>排除限制：<span class="math inline">\(Z\)</span>
+不通过实际处理以外的路径影响结果。</li>
+</ul>
+<p>若邀请附带通用投放建议，即使未采用新策略也改善转化效率，排除限制就可能被破坏。</p>
+<h3 id="wald-比值与-late">9.2 Wald 比值与 LATE</h3>
+<p>对二值工具和二值处理，加入一致性、适当随机性及单调性 <span
+class="math inline">\(A(1)\ge A(0)\)</span> 等条件，Wald
+比值识别依从者局部平均效应：</p>
+<p><span class="math display">\[
+\tau_{LATE}=\frac{E(Y\mid Z=1)-E(Y\mid Z=0)}{E(A\mid Z=1)-E(A\mid Z=0)}.
+\]</span></p>
+<p>例如邀请使平均转化效率增加 3 次/千人，使采用概率增加 0.30，则 LATE 为
+<span class="math inline">\(3/0.30=10\)</span>
+次/千人。分子是邀请的意向处理效应，比例调整后是邀请改变了采用状态的人群的平均处理效应。</p>
+<p>不能不加假设地把这个 10 次/千人推广为所有目标投放单元的 ATE。</p>
+<h3 id="两阶段最小二乘">9.3 两阶段最小二乘</h3>
+<p>线性设定中，第一阶段用 <span class="math inline">\(Z\)</span> 和基线
+<span class="math inline">\(X\)</span> 解释 <span
+class="math inline">\(A\)</span>；第二阶段用第一阶段预测的 <span
+class="math inline">\(A\)</span> 和 <span
+class="math inline">\(X\)</span> 解释 <span
+class="math inline">\(Y\)</span>。应使用正式 IV/2SLS
+推断，不能把第二阶段当作普通回归直接读取标准误。</p>
+<p>弱工具会使估计不稳定。第一阶段相关性的统计证据不能证明排除限制和独立性成立。</p>
+<h2 id="十双重差分-did利用变化的比较">十、双重差分
+DID：利用变化的比较</h2>
+<h3 id="两组两期">10.1 两组两期</h3>
+<p>令 <span class="math inline">\(G=1\)</span> 为政策实施组，<span
+class="math inline">\(G=0\)</span> 为对照组，<span
+class="math inline">\(t=0,1\)</span> 为实施前后：</p>
+<p><span class="math display">\[
+\widehat\tau_{DID}=(\bar Y_{1,1}-\bar Y_{1,0})-(\bar Y_{0,1}-\bar
+Y_{0,0}).
+\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th>组别</th>
+<th style="text-align: right;">政策前</th>
+<th style="text-align: right;">政策后</th>
+<th style="text-align: right;">变化</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>实施组</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td>对照组</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+<p>估计效应为 <span class="math inline">\(10-6=4\)</span> 次/千人。</p>
+<h3 id="平行趋势的对象">10.2 平行趋势的对象</h3>
+<p>关键假设涉及未处理潜在结果：</p>
+<p><span class="math display">\[
+E\{Y_1(0)-Y_0(0)\mid G=1\}=E\{Y_1(0)-Y_0(0)\mid G=0\}.
+\]</span></p>
+<p>它不要求两组政策前水平相同，而要求若没有政策，两组平均变化相同。还需无提前反应、恰当处理溢出效应及样本组成变化等问题。</p>
+<p>多个政策前时期有助于检查趋势是否明显冲突，但政策前趋势检验未拒绝不能证明政策后的反事实趋势成立。</p>
+<p>两组两期的直观结论不应直接推广到不同时间接受政策的多组设计。效应异质时，传统双向固定效应系数可能组合了难以解释的比较，应重新明确组别、时间及目标参数。</p>
+<h2 id="十一断点回归-rdd利用阈值附近的比较">十一、断点回归
+RDD：利用阈值附近的比较</h2>
+<h3 id="锐断点设计">11.1 锐断点设计</h3>
+<p>设运行变量为 <span class="math inline">\(R\)</span>，阈值为 <span
+class="math inline">\(c\)</span>，处理规则为 <span
+class="math inline">\(A=1(R\ge
+c)\)</span>。如果阈值两侧未处理和处理潜在结果的条件均值连续，则：</p>
+<p><span class="math display">\[
+\tau_{RDD}=\lim_{r\downarrow c}E(Y\mid R=r)-\lim_{r\uparrow c}E(Y\mid
+R=r).
+\]</span></p>
+<p>第一项表示从右侧接近阈值，第二项表示从左侧接近。它识别阈值附近的局部效应，不是全体人的平均效应。</p>
+<h3 id="实际分析">11.2 实际分析</h3>
+<ul>
+<li>画出运行变量与结果的关系。</li>
+<li>使用阈值两侧局部拟合，检查带宽选择的影响。</li>
+<li>检查是否存在对运行变量的精确操纵。</li>
+<li>检查基线变量在阈值处是否出现不合理跳跃。</li>
+<li>说明阈值处是否同时发生了其他政策变化。</li>
+</ul>
+<p>若资格跨过阈值只提高处理概率，并非完全决定处理，则属于模糊断点。结果跳跃除以处理概率跳跃，在额外工具变量式条件下识别局部依从者效应。</p>
+<h2 id="十二估计不确定性与稳健性">十二、估计不确定性与稳健性</h2>
+<h3 id="标准误要与设计一致">12.1 标准误要与设计一致</h3>
+<p>独立样本、配对样本、班级整群随机化和按地区实施政策的数据，不能一律使用相同标准误。聚类通常应考虑处理分配或误差相关的层级；聚类数较少时尤其需要合适的小样本处理。</p>
+<p>匹配估计的推断需考虑匹配结构与对照重复使用；固定近邻匹配下，普通非参数
+bootstrap 并非总有效。加权和双重稳健估计还应考虑模型估计的不确定性。</p>
+<h3 id="aipw-的简化推断表达">12.2 AIPW 的简化推断表达</h3>
+<p>在独立同分布、识别与正则条件成立且采用合适交叉拟合等条件下，令 <span
+class="math inline">\(Q_i\)</span> 为 AIPW 方括号内的个体项，可用：</p>
+<p><span class="math display">\[
+\widehat\phi_i=Q_i-\widehat\tau,\qquad
+\widehat{SE}(\widehat\tau)=\sqrt{\frac{1}{n(n-1)}\sum_i\widehat\phi_i^2}.
+\]</span></p>
+<p>大样本正态近似区间为 <span
+class="math inline">\(\widehat\tau\pm1.96\widehat{SE}\)</span>。这一公式不应直接用于具有复杂聚类或未满足收敛条件的数据。</p>
+<h3 id="敏感性分析">12.3 敏感性分析</h3>
+<p>敏感性分析问的是：“某个无法直接验证的假设偏离到什么程度，会改变当前结论？”</p>
+<p>可围绕未测混杂、权重截断、匹配规则、结果模型、失访机制、DID 比较组或
+RDD
+带宽开展。不同分析应保持目标明确，不能把更换了目标总体后的结果一致当作同一效应的重复验证。</p>
+<h2 id="十三方法比较与上机任务">十三、方法比较与上机任务</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>方法</th>
+<th>主要识别依据</th>
+<th>常见目标</th>
+<th>核心诊断</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>随机化试验</td>
+<td>已知分配机制</td>
+<td>分配效应或依从条件下处理效应</td>
+<td>随机化执行、失访、依从性</td>
+</tr>
+<tr class="even">
+<td>回归标准化</td>
+<td>给定基线可交换</td>
+<td>ATE、ATT 等</td>
+<td>模型、支持与目标分布</td>
+</tr>
+<tr class="odd">
+<td>匹配</td>
+<td>给定基线可交换</td>
+<td>常为 ATT</td>
+<td>平衡、匹配损失、重叠</td>
+</tr>
+<tr class="even">
+<td>IPW/AIPW</td>
+<td>给定基线可交换</td>
+<td>ATE、ATT 等</td>
+<td>极端权重、ESS、平衡</td>
+</tr>
+<tr class="odd">
+<td>前门</td>
+<td>特定中介图结构</td>
+<td>干预分布或总效应</td>
+<td>三项图条件及支持</td>
+</tr>
+<tr class="even">
+<td>IV</td>
+<td>外生工具与额外条件</td>
+<td>LATE 或结构参数</td>
+<td>第一阶段与工具的实质依据</td>
+</tr>
+<tr class="odd">
+<td>DID</td>
+<td>未处理潜在结果平行趋势</td>
+<td>实施组的政策效应</td>
+<td>预趋势、提前反应、比较组</td>
+</tr>
+<tr class="even">
+<td>RDD</td>
+<td>阈值处连续性与分配规则</td>
+<td>阈值局部效应</td>
+<td>操纵、带宽、其他跳跃</td>
+</tr>
+</tbody>
+</table>
+<h3 id="上机任务">上机任务</h3>
+<p>构造处理前变量 <span class="math inline">\(X\)</span>、处理 <span
+class="math inline">\(A\)</span> 和结果 <span
+class="math inline">\(Y\)</span>，令真实效应为 5。让 <span
+class="math inline">\(X\)</span> 同时影响处理与结果。</p>
+<ol type="1">
+<li>比较原始均值差、回归标准化、IPW 和 AIPW。</li>
+<li>分别让结果模型正确、处理模型正确、两者都正确、两者都错。</li>
+<li>多次重复模拟，报告平均偏差、经验标准差和区间覆盖率。</li>
+<li>增强处理选择，使倾向评分接近 0 或 1，观察 ESS 和估计分布。</li>
+<li>加入未观测混杂，说明为什么模型拟合良好仍可能有因果偏差。</li>
+</ol>
+<p><strong>提交要求：</strong>明确的数据生成式、一张方法比较表、权重与平衡诊断、约
+500 字结果解释。单次模拟接近真值不能作为方法有效性的证明。</p>
+<h2 id="十四习题与参考答案">十四、习题与参考答案</h2>
+<h3 id="题-1交互项">题 1：交互项</h3>
+<p><span class="math inline">\(m(a,x)=50+3a+2x+ax\)</span>，目标总体
+<span class="math inline">\(E(X)=4\)</span>。ATE 是多少？</p>
+<p><strong>答案：</strong><span
+class="math inline">\(m(1,x)-m(0,x)=3+x\)</span>，所以 ATE 为
+7。处理系数 3 只对应 <span class="math inline">\(X=0\)</span>。</p>
+<h3 id="题-2加权目标">题 2：加权目标</h3>
+<p>处理组权重为 1，对照组权重为 <span
+class="math inline">\(e(X)/(1-e(X))\)</span>，主要针对什么目标？</p>
+<p><strong>答案：</strong>ATT。加权对照组用于表示处理组的反事实结果。</p>
+<h3 id="题-3平衡与混杂">题 3：平衡与混杂</h3>
+<p>匹配后所有已测变量 SMD 小于 0.1，能否宣称因果效应已经识别？</p>
+<p><strong>答案：</strong>不能。它提供已测协变量平衡的诊断，不证明没有未测混杂，也不替代一致性和支持条件。</p>
+<h3 id="题-4双重稳健">题 4：双重稳健</h3>
+<p>两个模型都错，但分别带截距拟合两组结果，组内残差均值为零。AIPW
+是否仍有一致性保障？</p>
+<p><strong>答案：</strong>有。组内残差均值为零使 AIPW
+纠偏项平均抵消，从而保证双模型错设时仍能恢复目标均值。这说明残差均值检查可作为双重稳健之外的一项充分诊断。</p>
+<h3 id="题-5工具变量">题 5：工具变量</h3>
+<p>随机邀请提高采用率 0.2，平均转化效率提高 1.4 次/千人。条件成立时 Wald
+估计是多少、对应谁？</p>
+<p><strong>答案：</strong><span class="math inline">\(1.4/0.2=7\)</span>
+次/千人，对应被邀请改变了实际采用状态的依从者。</p>
+<h3 id="题-6did">题 6：DID</h3>
+<p>实施组政策前后从 60 变为 75，对照组从 65 变为 72，DID 为多少？</p>
+<p><strong>答案：</strong><span
+class="math inline">\((75-60)-(72-65)=8\)</span>。因果解释依赖未处理潜在结果的平行趋势等条件。</p>
+<h3 id="题-7rdd-外推">题 7：RDD 外推</h3>
+<p>阈值处估计效应为 4 次/千人，能否认为所有目标投放单元平均提高 4
+次/千人？</p>
+<p><strong>答案：</strong>不能。断点效应针对阈值附近人群，向远离阈值的投放单元推广需要额外假设。</p>
+<h2 id="十五阅读指引与结果报告模板">十五、阅读指引与结果报告模板</h2>
+<p><strong>主读：</strong>苗旺等《因果推断的统计方法》第 3 节、第 4.1
+节和第 6.1 节；Pearl 综述的识别、后门与前门部分。</p>
+<p><strong>方法补充：</strong>《Horvitz–Thompson
+estimation》用于理解倒概率加权的抽样理论基础；《倾向值分析：统计方法与应用》用于匹配设计与诊断；《基本无害的计量经济学》作为
+IV、DID、RDD 的延伸阅读。本讲例题是教学构造，不是书中实证结果。</p>
+<ul>
+<li>苗旺等：因果推断的统计方法（参考文献）</li>
+<li>Pearl 综述（参考文献）</li>
+<li>Horvitz–Thompson estimation（参考文献）</li>
+<li>Part2 配套教材目录（参考文献）</li>
+</ul>
+<h3 id="报告模板">报告模板</h3>
+<blockquote>
+<p>本研究估计【目标人群】接受【明确定义的处理】相对于【对照】对【结果及测量时间】的【效应类型】。依据【研究设计或识别条件】，使用【估计方法】得到效应为【数值及单位】，相应区间为【区间】。分析检查了【关键诊断】。解释依赖【不能完全验证的假设】，结果适用于【人群和情境】，对【外推或模型限制】仍存在不确定性。</p>
+</blockquote>
+<p><strong>导航：</strong><a href="lecture-01.html">第一讲</a> · <a
+href="lecture-03.html">第三讲：因果发现与方向识别</a>。</p>
+</body>
+</html>

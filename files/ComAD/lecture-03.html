@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>第三讲：因果发现与方向识别</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html{color:#243445;background:#f4f6f8;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;line-height:1.85}body{max-width:960px;margin:32px auto;padding:32px;background:white}h1,h2,h3{line-height:1.4}h2{border-bottom:1px solid #ddd;padding-bottom:.4em;margin-top:2em}a{color:#176899}pre{overflow:auto;background:#f4f6f8;padding:16px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ddd;padding:8px 12px}blockquote{border-left:4px solid #8aa6bd;padding-left:20px;color:#536475}.math.display{display:block;overflow:auto}nav{border-bottom:1px solid #ddd;padding-bottom:16px}.mermaid{overflow:auto}@media(max-width:640px){body{margin:0;padding:20px}}@media print{body{max-width:none;margin:0;padding:0}nav{display:none}}
+  </style>
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  for (const code of document.querySelectorAll('pre.mermaid > code')) {
+    code.parentElement.textContent = code.textContent;
+  }
+  mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<nav aria-label="讲义导航"><a href="/teaching/ComAD">返回计算广告学</a> · <a href="lecture-01.html">第一讲</a> · <a href="lecture-02.html">第二讲</a> · <a href="lecture-03.html">第三讲</a></nav>
+<header id="title-block-header">
+<h1 class="title">第三讲：因果发现与方向识别</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#第三讲因果发现与方向识别"
+id="toc-第三讲因果发现与方向识别">第三讲：因果发现与方向识别</a>
+<ul>
+<li><a href="#一学习目标" id="toc-一学习目标">一、学习目标</a></li>
+<li><a href="#二因果发现究竟要发现什么"
+id="toc-二因果发现究竟要发现什么">二、因果发现究竟要发现什么？</a></li>
+<li><a href="#三从图到分布三项基础假设"
+id="toc-三从图到分布三项基础假设">三、从图到分布：三项基础假设</a></li>
+<li><a href="#四markov-等价为什么观测独立信息不能确定所有方向"
+id="toc-四markov-等价为什么观测独立信息不能确定所有方向">四、Markov
+等价：为什么观测独立信息不能确定所有方向？</a></li>
+<li><a href="#五基于约束的方法pc-算法"
+id="toc-五基于约束的方法pc-算法">五、基于约束的方法：PC 算法</a></li>
+<li><a href="#六基于评分的方法搜索更合适的结构"
+id="toc-六基于评分的方法搜索更合适的结构">六、基于评分的方法：搜索更合适的结构</a></li>
+<li><a href="#七函数型因果模型通过机制不对称性定向"
+id="toc-七函数型因果模型通过机制不对称性定向">七、函数型因果模型：通过机制不对称性定向</a></li>
+<li><a href="#八ica-与-lingam" id="toc-八ica-与-lingam">八、ICA 与
+LiNGAM</a></li>
+<li><a href="#九加性噪声模型-anm"
+id="toc-九加性噪声模型-anm">九、加性噪声模型 ANM</a></li>
+<li><a href="#十后非线性模型-pnl"
+id="toc-十后非线性模型-pnl">十、后非线性模型 PNL</a></li>
+<li><a href="#十一模拟实验让学生看到成功与失败"
+id="toc-十一模拟实验让学生看到成功与失败">十一、模拟实验：让学生看到成功与失败</a></li>
+<li><a href="#十二如何结合领域知识和干预数据"
+id="toc-十二如何结合领域知识和干预数据">十二、如何结合领域知识和干预数据？</a></li>
+<li><a href="#十三从发现的图返回效应估计"
+id="toc-十三从发现的图返回效应估计">十三、从发现的图返回效应估计</a></li>
+<li><a href="#十四常见误区与纠正"
+id="toc-十四常见误区与纠正">十四、常见误区与纠正</a></li>
+<li><a href="#十五习题与参考答案"
+id="toc-十五习题与参考答案">十五、习题与参考答案</a></li>
+<li><a href="#十六阅读指引"
+id="toc-十六阅读指引">十六、阅读指引</a></li>
+<li><a href="#十七综合作业从一张图到一份研究报告"
+id="toc-十七综合作业从一张图到一份研究报告">十七、综合作业：从一张图到一份研究报告</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="第三讲因果发现与方向识别">第三讲：因果发现与方向识别</h1>
+<blockquote>
+<p>前置知识：条件独立、DAG、线性回归、第一讲的干预概念；了解矩阵运算有助于理解
+LiNGAM。<br />
+核心问题：当因果图未知时，观测数据能够告诉我们哪些结构信息？为什么有些方向可识别，有些不能？</p>
+</blockquote>
+<h2 id="一学习目标">一、学习目标</h2>
+<p>完成本讲后，应能够：</p>
+<ol type="1">
+<li>区分因果效应估计与因果结构发现。</li>
+<li>解释因果 Markov 条件、忠实性和因果充分性。</li>
+<li>判断简单 DAG 是否 Markov 等价，理解等价类的含义。</li>
+<li>叙述 PC 算法与评分搜索的基本步骤及输出边界。</li>
+<li>解释 ICA 与 LiNGAM 的联系，说明非高斯噪声为什么有助于定向。</li>
+<li>运用加性噪声与后非线性模型的思路讨论方向，并正确处理“不确定”的结果。</li>
+</ol>
+<h2 id="二因果发现究竟要发现什么">二、因果发现究竟要发现什么？</h2>
+<p>第二讲通常先给定足够的结构或设计知识，再估计某条干预的后果。本讲把结构本身作为未知对象。</p>
+<p>可能的目标包括：</p>
+<ul>
+<li><strong>骨架：</strong>哪些变量之间存在直接连接？</li>
+<li><strong>方向：</strong>哪些连接可以定向为原因指向结果？</li>
+<li><strong>局部结构：</strong>某个目标变量有哪些直接原因和直接后果？</li>
+<li><strong>等价类：</strong>哪些不同结构仍与同一观测分布相容？</li>
+<li><strong>潜变量信息：</strong>是否存在与未测共同原因相容的结构线索？</li>
+</ul>
+<p>因果发现的输出不一定是一张完全定向的
+DAG。输出部分方向，或者明确无法定向，往往比强行选一张图更符合现有证据。</p>
+<h3 id="贯穿案例的扩展">贯穿案例的扩展</h3>
+<p>若只知道“新广告策略、落地页互动程度、转化效率”三者相关，我们可能考虑：</p>
+<pre class="text"><code>新广告策略 → 落地页互动程度 → 转化效率
+新广告策略 ← 落地页互动程度 → 转化效率
+新广告策略 ← 落地页互动程度 ← 转化效率</code></pre>
+<p>第三种结构若涉及评估期末的转化效率影响此前新广告策略，与明确时间顺序冲突，可被领域知识排除；但若变量测量跨期混杂，不能仅凭变量名称判断。</p>
+<p>本讲先讨论一般节点 <span
+class="math inline">\(V_1,V_2,V_3\)</span>，再把时间顺序和领域知识作为额外信息加入。</p>
+<h2 id="三从图到分布三项基础假设">三、从图到分布：三项基础假设</h2>
+<h3 id="因果-markov-条件">3.1 因果 Markov 条件</h3>
+<p>给定
+DAG，每个变量在给定其父节点后，与其非后代中的其他节点条件独立。相应联合分布可按图分解：</p>
+<p><span class="math display">\[
+p(v_1,\ldots,v_p)=\prod_{j=1}^pp(v_j\mid pa_j).
+\]</span></p>
+<p>结合
+d-分离，可以从图推导条件独立关系。该方向是“结构约束分布”，但任意一个统计分解本身并不自动赋予因果含义。</p>
+<h3 id="忠实性">3.2 忠实性</h3>
+<p>忠实性要求数据中的独立关系能够由图上的
+d-分离解释，不是不同因果路径恰好相互抵消产生的额外独立。</p>
+<p>考虑：</p>
+<p><span class="math display">\[
+V_2=aV_1+\varepsilon_2,\qquad
+V_3=bV_1+cV_2+\varepsilon_3.
+\]</span></p>
+<p>代入后得到：</p>
+<p><span class="math display">\[
+V_3=(b+ca)V_1+c\varepsilon_2+\varepsilon_3.
+\]</span></p>
+<p>如果 <span
+class="math inline">\(b=-ca\)</span>，两条效应路径抵消；在适当独立噪声条件下，<span
+class="math inline">\(V_1\)</span> 与 <span
+class="math inline">\(V_3\)</span>
+可以独立，但图上仍有相连路径。此时仅凭独立检验可能漏掉真实结构。</p>
+<p>近似抵消也会造成小样本中的困难。忠实性属于机制假设，不能通过一次拟合优度检验完全确认。</p>
+<h3 id="因果充分性">3.3 因果充分性</h3>
+<p>经典 PC
+分析常假设观测变量集合已包含相关的共同原因，也就是没有未观测混杂。在实际应用中，这可能很强。</p>
+<p>此外，通常需要明确是否无环、样本是否来自稳定机制、是否独立同分布以及是否存在选择偏差。针对时间序列、潜变量或反馈系统，需要采用与之相符的方法。</p>
+<h2 id="四markov-等价为什么观测独立信息不能确定所有方向">四、Markov
+等价：为什么观测独立信息不能确定所有方向？</h2>
+<h3 id="两个变量时的困难">4.1 两个变量时的困难</h3>
+<p>单凭任意联合分布，可以同时写成：</p>
+<p><span class="math display">\[
+p(v_1,v_2)=p(v_1)p(v_2\mid v_1)=p(v_2)p(v_1\mid v_2).
+\]</span></p>
+<p>因此，“能够拟合某方向的条件分布”不证明该方向就是因果方向。需要进一步限制模型类别、引入时间知识或获取干预信息。</p>
+<h3 id="三节点示例">4.2 三节点示例</h3>
+<p>以下三个图具有相同的条件独立信息：</p>
+<pre class="text"><code>G1：V1 → V2 → V3
+G2：V1 ← V2 → V3
+G3：V1 ← V2 ← V3</code></pre>
+<p>三者都蕴含：</p>
+<p><span class="math display">\[
+V_1\perp V_3\mid V_2.
+\]</span></p>
+<p>如果没有额外信息，条件独立方法一般不能在三者之间唯一选择。</p>
+<p>与它们不同的是碰撞结构：</p>
+<pre class="text"><code>G4：V1 → V2 ← V3</code></pre>
+<p>它通常表现为 <span class="math inline">\(V_1\perp
+V_3\)</span>，而给定 <span class="math inline">\(V_2\)</span>
+后两端相关。</p>
+<h3 id="等价判据">4.3 等价判据</h3>
+<p>对于 DAG 的 Markov
+等价，两个图具有相同骨架和相同的无屏蔽碰撞结构，当且仅当它们蕴含相同的条件独立关系。</p>
+<p>“无屏蔽”指碰撞点的两端节点不相邻。例如 <span
+class="math inline">\(V_1\to V_2\leftarrow V_3\)</span> 中，<span
+class="math inline">\(V_1\)</span> 与 <span
+class="math inline">\(V_3\)</span> 之间没有边。</p>
+<p>注意：Markov
+等价针对观测条件独立信息，并不意味着图中的干预效果也相同。对某个变量进行干预，可能区分原先等价的结构。</p>
+<h3 id="cpdag-表达什么">4.4 CPDAG 表达什么？</h3>
+<p>CPDAG
+用有向边表达等价类中共同确定的方向，用无向边表达仍可在成员图之间变化的方向。</p>
+<p>例如三节点非碰撞链的等价类可表示为：</p>
+<pre class="text"><code>V1 — V2 — V3</code></pre>
+<p>这不表示三个变量没有因果方向，只表示当前假设与观测独立信息还不足以确定方向。无向边也不表示两个方向可以任意独立选择，选择时仍必须避免产生不属于该等价类的结构。</p>
+<h2 id="五基于约束的方法pc-算法">五、基于约束的方法：PC 算法</h2>
+<h3 id="基本思想">5.1 基本思想</h3>
+<p>从完全无向图开始，通过条件独立检验删除不需要的边，随后利用分离集合识别碰撞结构，再传播能够确定的方向。</p>
+<p>课堂伪代码：</p>
+<pre class="text"><code>输入：观测数据、条件独立检验、显著性阈值
+1. 建立完全无向图。
+2. 从空条件集合开始，逐步增加条件集合大小。
+3. 若某对节点在给定某集合后独立：
+   删除两者之间的边，并记录分离集合。
+4. 根据无屏蔽三元组和分离集合确定碰撞结构。
+5. 运用定向规则传播方向，避免有向环和不允许的新碰撞结构。
+输出：部分定向图；在理想假设和适当实现下表示 Markov 等价类。</code></pre>
+<p>实际 PC 实现使用邻接集缩小条件集合搜索空间。PC-stable
+等改进用于减轻有限样本结果对变量处理顺序的依赖。</p>
+<h3 id="条件独立检验如何选择">5.2 条件独立检验如何选择？</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>数据与模型</th>
+<th>可考虑的检验</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>联合高斯连续变量</td>
+<td>偏相关检验</td>
+<td>零偏相关与条件独立的等价依赖高斯条件</td>
+</tr>
+<tr class="even">
+<td>离散变量</td>
+<td>条件列联表检验</td>
+<td>高维条件集容易使单元格稀疏</td>
+</tr>
+<tr class="odd">
+<td>一般连续非线性变量</td>
+<td>核或其他非参数检验</td>
+<td>需要足够样本，计算和调参更复杂</td>
+</tr>
+</tbody>
+</table>
+<p>未拒绝独立原假设不等于证明独立，尤其在条件集合较大时。早期误删一条边可能影响后续定向。</p>
+<h3 id="手工例子三节点链">5.3 手工例子：三节点链</h3>
+<p>假设检验发现：</p>
+<ul>
+<li>三对变量边际上都相关。</li>
+<li><span class="math inline">\(V_1\perp V_3\mid V_2\)</span>。</li>
+</ul>
+<p>先删除 <span class="math inline">\(V_1-V_3\)</span>，记录 <span
+class="math inline">\(Sep(V_1,V_3)=\{V_2\}\)</span>，留下骨架 <span
+class="math inline">\(V_1-V_2-V_3\)</span>。</p>
+<p>对无屏蔽三元组，课堂使用如下定向规则：如果中间节点属于两端的分离集合，就把两个箭头指向中间节点。理由是条件化中间节点消除了两端依赖，说明两端共同汇入该节点。</p>
+<p>因此，本例的输出为：</p>
+<pre class="text"><code>V1 → V2 ← V3</code></pre>
+<p>该规则把条件独立信息直接转换为方向，是手工练习中需要掌握的关键步骤。</p>
+<h3 id="一个方向传播规则">5.4 一个方向传播规则</h3>
+<p>若已有 <span class="math inline">\(V_1\to V_2-V_3\)</span>，且 <span
+class="math inline">\(V_1,V_3\)</span>
+不相邻，为避免引入新的无屏蔽碰撞结构，应定向 <span
+class="math inline">\(V_2\to V_3\)</span>。</p>
+<p>若已有一条从 <span class="math inline">\(V_1\)</span> 指向 <span
+class="math inline">\(V_3\)</span> 的有向路径，并存在未定向边 <span
+class="math inline">\(V_1-V_3\)</span>，则不能把这条边定为 <span
+class="math inline">\(V_3\to V_1\)</span>，否则产生有向环。</p>
+<p>完整实现应使用系统化定向规则。课堂示例用于说明原理，不能替代成熟算法的全部规则。</p>
+<h3 id="允许潜在混杂fci-的位置">5.5 允许潜在混杂：FCI 的位置</h3>
+<p>当可能存在未测共同原因或选择偏差时，可以考虑 FCI
+类算法，其输出通常是部分祖先图 PAG，而不是普通 CPDAG。</p>
+<p>PAG 端点含义与普通箭头不同，圆圈表示端点尚未确定。把 PAG
+强行画成一张无潜变量 DAG 会丢失或扭曲结论。FCI 也依赖适当的
+Markov、忠实性和检验条件，并非能无条件解决隐藏变量问题。</p>
+<h2
+id="六基于评分的方法搜索更合适的结构">六、基于评分的方法：搜索更合适的结构</h2>
+<h3 id="评分的构成">6.1 评分的构成</h3>
+<p>对候选 DAG <span
+class="math inline">\(G\)</span>，一种常用评分形式为：</p>
+<p><span class="math display">\[
+Score(G)=\log L(\widehat\theta_G;D)-\frac{k_G}{2}\log n.
+\]</span></p>
+<p>这里使用“对数似然减惩罚、越大越好”的 BIC 等价表达；有些软件输出 <span
+class="math inline">\(-2\log L+k\log
+n\)</span>，则越小越好。比较时需先确认符号约定。</p>
+<p>拟合项鼓励解释数据，惩罚项限制过于复杂的图。可分解评分允许根据局部父节点集合计算节点分数，减少搜索成本。</p>
+<h3 id="搜索方法">6.2 搜索方法</h3>
+<ul>
+<li>贪心爬山：考虑加边、删边、翻转边等局部操作。</li>
+<li>GES：在等价类空间中进行前向和后向搜索，利用评分等价性。</li>
+<li>混合方法：先通过独立检验限制候选骨架，再用评分搜索方向或结构。</li>
+</ul>
+<p>局部最优、评分设定和有限样本误差都会影响输出。算法给出一张
+DAG，不代表其中每个方向都已经获得独立的因果证据。</p>
+<h3 id="评分等价的含义">6.3 评分等价的含义</h3>
+<p>如果评分对 Markov
+等价图相同，它就不会仅凭分数区分这些图。要进一步定向，仍需额外结构假设、领域知识或干预。</p>
+<p>因此“得分最高”与“因果方向已唯一识别”是不同结论。评分方法和约束方法可能利用不同统计信息，但都必须解释自身假设。</p>
+<h2
+id="七函数型因果模型通过机制不对称性定向">七、函数型因果模型：通过机制不对称性定向</h2>
+<p>一般形式为：</p>
+<p><span class="math display">\[
+V_j=f_j(Pa_j,N_j).
+\]</span></p>
+<p>在相应因果充分性设定下，噪声项彼此独立，且与节点的原因满足必要独立关系。</p>
+<p>若允许任意函数和任意噪声表示，正反两个方向都可能解释数据。方向识别的关键在于对函数或噪声施加有意义的限制，使两个方向不再对称。</p>
+<table>
+<thead>
+<tr class="header">
+<th>方法</th>
+<th>主要限制</th>
+<th>方向信息来自哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LiNGAM</td>
+<td>线性、无环、独立非高斯噪声</td>
+<td>非高斯独立分量的结构</td>
+</tr>
+<tr class="even">
+<td>ANM</td>
+<td>原因函数加独立噪声</td>
+<td>正反方向的残差独立性不对称</td>
+</tr>
+<tr class="odd">
+<td>PNL</td>
+<td>可逆外层变换加内部加性噪声</td>
+<td>变换后独立噪声表示的非对称性</td>
+</tr>
+</tbody>
+</table>
+<h2 id="八ica-与-lingam">八、ICA 与 LiNGAM</h2>
+<h3 id="ica-的直观含义">8.1 ICA 的直观含义</h3>
+<p>独立成分分析 ICA 考虑：</p>
+<p><span class="math display">\[
+\mathbf V=C\mathbf N,
+\]</span></p>
+<p>观测信号是若干相互独立源信号的线性混合。ICA
+尝试恢复混合矩阵及独立源。典型直观例子是多个麦克风接收到多个独立声源的混合。</p>
+<p>在通常的线性 ICA
+条件下，非高斯性帮助排除大量同样不相关但并不独立的旋转。仅有协方差信息通常不足以唯一恢复独立源；结果还存在排列和尺度的不确定性。</p>
+<h3 id="lingam-的结构方程">8.2 LiNGAM 的结构方程</h3>
+<p>对中心化变量，设：</p>
+<p><span class="math display">\[
+\mathbf V=B\mathbf V+\boldsymbol\varepsilon.
+\]</span></p>
+<p><span class="math inline">\(B_{jk}\)</span> 表示节点 <span
+class="math inline">\(V_k\)</span> 对 <span
+class="math inline">\(V_j\)</span> 的直接线性作用，故 <span
+class="math inline">\(B\)</span> 的行对应结果、列对应原因。</p>
+<p>整理后：</p>
+<p><span class="math display">\[
+\mathbf V=(I-B)^{-1}\boldsymbol\varepsilon=C\boldsymbol\varepsilon.
+\]</span></p>
+<p>这就是 ICA 混合模型。无环性意味着经适当变量排列后，<span
+class="math inline">\(B\)</span> 可以写成严格三角矩阵。</p>
+<h3 id="识别条件与算法思路">8.3 识别条件与算法思路</h3>
+<p>经典 LiNGAM 主要假设：</p>
+<ol type="1">
+<li>变量之间是线性关系。</li>
+<li>不存在有向环。</li>
+<li>不存在未测共同原因。</li>
+<li>扰动相互独立、具有非高斯分布和非零方差。</li>
+</ol>
+<p>原始 ICA 路线的思路是：</p>
+<ol type="1">
+<li>用 ICA 估计解混矩阵。</li>
+<li>处理独立成分排列的不确定性，使其对应于节点扰动。</li>
+<li>利用对角线归一化处理尺度不确定性。</li>
+<li>恢复 <span
+class="math inline">\(B\)</span>，结合无环约束排列与修剪边。</li>
+</ol>
+<p>“调用
+ICA”本身并不等于完成因果发现。把源信号映射回结构方程需要模型约束，且有限样本中估计和数值优化可能失败。</p>
+<h3 id="三变量手算">8.4 三变量手算</h3>
+<p>设：</p>
+<p><span class="math display">\[
+V_1=\varepsilon_1,\qquad
+V_2=0.8V_1+\varepsilon_2,\qquad
+V_3=-0.5V_1+1.2V_2+\varepsilon_3.
+\]</span></p>
+<p>则：</p>
+<p><span class="math display">\[
+B=\begin{pmatrix}
+0&amp;0&amp;0\\
+0.8&amp;0&amp;0\\
+-0.5&amp;1.2&amp;0
+\end{pmatrix}.
+\]</span></p>
+<p>代入得到：</p>
+<p><span class="math display">\[
+V_3=0.46\varepsilon_1+1.2\varepsilon_2+\varepsilon_3,
+\]</span></p>
+<p>所以：</p>
+<p><span class="math display">\[
+C=(I-B)^{-1}=\begin{pmatrix}
+1&amp;0&amp;0\\
+0.8&amp;1&amp;0\\
+0.46&amp;1.2&amp;1
+\end{pmatrix}.
+\]</span></p>
+<p><span class="math inline">\(V_1\)</span> 对 <span
+class="math inline">\(V_3\)</span> 的直接效应是 <span
+class="math inline">\(-0.5\)</span>，经 <span
+class="math inline">\(V_2\)</span> 的间接效应是 <span
+class="math inline">\(0.8\times1.2=0.96\)</span>，总效应是
+0.46。识别图后仍要区分直接与总效应。</p>
+<h3 id="directlingam-的直觉">8.5 DirectLiNGAM 的直觉</h3>
+<p>若某变量是外生节点，把其他变量对它回归后，适当条件下残差与它独立。DirectLiNGAM
+逐步利用这种性质寻找外生节点，并在残差系统中继续寻找因果顺序。</p>
+<p>这里需要的是独立性，不能只检查线性不相关。非高斯性与其他结构条件失效时，定向依据也可能失效。</p>
+<h2 id="九加性噪声模型-anm">九、加性噪声模型 ANM</h2>
+<h3 id="模型与识别思路">9.1 模型与识别思路</h3>
+<p>正向模型：</p>
+<p><span class="math display">\[
+Y=f(X)+N_Y,\qquad N_Y\perp X.
+\]</span></p>
+<p>这里的 <span class="math inline">\(X\)</span>
+是一般原因变量，不再专指第一、二讲中的基线协变量。</p>
+<p>尝试反向模型：</p>
+<p><span class="math display">\[
+X=g(Y)+N_X,\qquad N_X\perp Y.
+\]</span></p>
+<p>很多非线性机制只允许一个方向具有“函数加独立噪声”的形式，因此可以利用这种不对称性定向。</p>
+<h3 id="一个直观例子">9.2 一个直观例子</h3>
+<p>设：</p>
+<p><span class="math display">\[
+X\sim N(0,1),\qquad N_Y\sim N(0,\sigma^2),\qquad Y=X+X^3+N_Y,
+\]</span></p>
+<p>且 <span class="math inline">\(X,N_Y\)</span> 独立。正向条件分布随
+<span class="math inline">\(X\)</span> 改变只是围绕 <span
+class="math inline">\(f(X)\)</span> 平移；反向条件分布的形状通常随 <span
+class="math inline">\(Y\)</span>
+改变，难以表示为一个固定分布的独立加性噪声。</p>
+<p>这个例子说明非线性为何可能带来方向信息，不意味着所有非线性模型都能唯一识别。</p>
+<h3 id="为什么线性高斯情形不能这样定向">9.3
+为什么线性高斯情形不能这样定向？</h3>
+<p>若：</p>
+<p><span class="math display">\[
+X\sim N(0,\sigma_X^2),\qquad Y=bX+N_Y,
+\]</span></p>
+<p>且 <span class="math inline">\(N_Y\)</span> 为独立高斯噪声，则 <span
+class="math inline">\((X,Y)\)</span> 联合高斯。</p>
+<p>反向线性回归系数为：</p>
+<p><span class="math display">\[
+\gamma=\frac{Cov(X,Y)}{Var(Y)}.
+\]</span></p>
+<p>定义 <span class="math inline">\(N_X=X-\gamma Y\)</span>，有 <span
+class="math inline">\(Cov(N_X,Y)=0\)</span>。由于联合高斯，不相关进一步推出独立，因此两个方向都存在独立加性噪声表示。</p>
+<p>这不是算法没有调好，而是当前模型类别下的方向识别限制。</p>
+<h3 id="实际操作">9.4 实际操作</h3>
+<ol type="1">
+<li>划分训练集和检验集，或采用适当交叉拟合。</li>
+<li>训练 <span class="math inline">\(\widehat
+f\)</span>，在留出数据上计算 <span class="math inline">\(\widehat
+N_Y=Y-\widehat f(X)\)</span>。</li>
+<li>检验 <span class="math inline">\(X\)</span> 与 <span
+class="math inline">\(\widehat N_Y\)</span> 的独立性。</li>
+<li>反向拟合 <span class="math inline">\(\widehat g\)</span> 并检验
+<span class="math inline">\(Y\)</span> 与 <span
+class="math inline">\(\widehat N_X\)</span> 的独立性。</li>
+<li>综合两边结果、拟合质量与结构假设解释方向。</li>
+</ol>
+<p>可采用核独立性检验等工具；检验方式应与残差估计、样本依赖及置换方案匹配。</p>
+<h3 id="四种输出情形">9.5 四种输出情形</h3>
+<table>
+<thead>
+<tr class="header">
+<th>正向残差独立性</th>
+<th>反向残差独立性</th>
+<th>合理解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>未拒绝</td>
+<td>拒绝</td>
+<td>在 ANM 假设与检验有效条件下支持正向</td>
+</tr>
+<tr class="even">
+<td>拒绝</td>
+<td>未拒绝</td>
+<td>在相应条件下支持反向</td>
+</tr>
+<tr class="odd">
+<td>未拒绝</td>
+<td>未拒绝</td>
+<td>可能不可识别或检验功效不足，保留不确定</td>
+</tr>
+<tr class="even">
+<td>拒绝</td>
+<td>拒绝</td>
+<td>可能模型错设、潜在混杂、测量误差或拟合不足</td>
+</tr>
+</tbody>
+</table>
+<p>不能简单选择独立检验 <span class="math inline">\(p\)</span>
+值较大的方向并宣称已经证明因果关系。独立性未被拒绝只是当前检验未发现足够的违背证据。</p>
+<h3 id="为什么预测误差不能直接定向">9.6
+为什么预测误差不能直接定向？</h3>
+<p>正反方向的结果变量不同，其单位、方差和噪声水平也不同。把转化效率从“每千人转化数”改成百分比，就会改变原始均方误差的大小。</p>
+<p>即使先标准化，预测表现仍不是 ANM
+的核心识别条件。关键是给定模型类别下原因与噪声的独立结构，而不是哪一个方向的回归更好预测。</p>
+<h2 id="十后非线性模型-pnl">十、后非线性模型 PNL</h2>
+<h3 id="模型形式">10.1 模型形式</h3>
+<p><span class="math display">\[
+Y=f_2\{f_1(X)+N_Y\},\qquad N_Y\perp X,
+\]</span></p>
+<p>其中 <span class="math inline">\(f_2\)</span> 可逆。</p>
+<ul>
+<li><span class="math inline">\(f_1\)</span>
+表达原因对结果内部机制的作用。</li>
+<li><span class="math inline">\(N_Y\)</span> 表达内部噪声。</li>
+<li><span class="math inline">\(f_2\)</span>
+表达可逆的外层非线性变换，例如测量尺度变换。</li>
+</ul>
+<p>若 <span class="math inline">\(f_2\)</span> 为恒等函数，就退化为
+ANM。若它不是恒等函数，直接对 <span class="math inline">\(Y\)</span>
+拟合加性噪声可能不合适。</p>
+<h3 id="残差应在哪里计算">10.2 残差应在哪里计算？</h3>
+<p>估计相应变换后，内部残差形式为：</p>
+<p><span class="math display">\[
+\widehat N_Y=\widehat f_2^{-1}(Y)-\widehat f_1(X).
+\]</span></p>
+<p>需要检验该残差与原因变量的独立性，而不是直接把 <span
+class="math inline">\(Y-\widehat f_1(X)\)</span> 当作噪声。</p>
+<h3 id="识别边界">10.3 识别边界</h3>
+<p>PNL
+在较广的函数与分布条件下可识别，但存在特殊不可识别情形，并非任意非线性变换都允许唯一因果定向。</p>
+<p>可逆外层变换也不同于任意测量误差。如果观测值被离散化、截断或加入额外随机测量噪声，可能已经超出基本
+PNL 模型。更灵活的模型还会增加估计难度与样本需求。</p>
+<h2
+id="十一模拟实验让学生看到成功与失败">十一、模拟实验：让学生看到成功与失败</h2>
+<p>以下方案是实验设计，不是已经运行得到的实证结果。每种情形使用多个随机种子，比较不同样本量，例如
+300、1000 和 3000。</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>场景</th>
+<th>数据生成方式</th>
+<th>学习重点</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A：线性高斯</td>
+<td><span class="math inline">\(Y=0.8X+N\)</span>，<span
+class="math inline">\(X,N\)</span> 独立高斯</td>
+<td>双向独立噪声表示可能成立</td>
+</tr>
+<tr class="even">
+<td>B：线性非高斯</td>
+<td><span class="math inline">\(Y=0.8X+N\)</span>，<span
+class="math inline">\(X,N\)</span> 独立 Laplace</td>
+<td>非高斯性带来的定向信息</td>
+</tr>
+<tr class="odd">
+<td>C：非线性 ANM</td>
+<td><span class="math inline">\(Y=X+X^3+N\)</span>，独立噪声</td>
+<td>非线性机制的不对称性</td>
+</tr>
+<tr class="even">
+<td>D：未测混杂</td>
+<td><span class="math inline">\(X=U+N_X, Y=U+N_Y\)</span></td>
+<td>相关不意味着存在直接边</td>
+</tr>
+<tr class="odd">
+<td>E：近忠实性违背</td>
+<td>两条路径的系数近似抵消</td>
+<td>独立检验漏边与不稳定性</td>
+</tr>
+<tr class="even">
+<td>F：PNL</td>
+<td><span class="math inline">\(Y=\exp\{f(X)+N\}\)</span></td>
+<td>需要在变换后检查独立噪声</td>
+</tr>
+</tbody>
+</table>
+<h3 id="需要提交的结果">11.1 需要提交的结果</h3>
+<ol type="1">
+<li>数据生成式、噪声分布与随机种子。</li>
+<li>数据散点图和正反向残差图。</li>
+<li>条件独立或残差独立检验的设定。</li>
+<li>各方法输出的图或方向及无法定向比例。</li>
+<li>正确方向率、错误方向率、未定向率，并说明分母。</li>
+<li>针对模型假设违背的解释。</li>
+</ol>
+<p>必须把“未定向”单独统计。只在成功定向的样本中报告正确率，会掩盖方法经常无法作出判断的事实。</p>
+<h3 id="图结构评价">11.2 图结构评价</h3>
+<p>可以报告骨架边的精确率与召回率、可识别方向的正确率以及结构 Hamming
+距离。但应明确对未定向边、反向边和等价类如何计分。</p>
+<p>评价 CPDAG
+时，应与真实等价类或其可识别部分相比较，不能因为算法保留一个理论上不可定向的边就简单算作算法失败。</p>
+<h3 id="稳定性分析">11.3 稳定性分析</h3>
+<p>改变样本划分、检验阈值、变量顺序和回归复杂度，观察边与方向是否稳定。重复抽样得到的边出现频率是算法稳定性指标，不自动等于某条因果边为真的概率。</p>
+<h2
+id="十二如何结合领域知识和干预数据">十二、如何结合领域知识和干预数据？</h2>
+<h3 id="时间顺序">12.1 时间顺序</h3>
+<p>明确发生在处理之后的变量不能作为处理之前的原因，但同一时间窗汇总的数据可能掩盖反馈。时间先后可以排除部分方向，却不能排除共同原因。</p>
+<h3 id="背景约束">12.2 背景约束</h3>
+<p>可以把可信知识作为禁止边、必须边或时间层级约束加入搜索。报告时应区分：</p>
+<ul>
+<li>由数据和算法支持的结构。</li>
+<li>由先验约束固定的结构。</li>
+<li>两者均不能确定的结构。</li>
+</ul>
+<h3 id="干预如何打破等价">12.3 干预如何打破等价？</h3>
+<p>对于 <span class="math inline">\(X\to Y\)</span> 与 <span
+class="math inline">\(X\leftarrow Y\)</span> 两种候选结构，若能真正干预
+<span
+class="math inline">\(X\)</span>，在其他机制稳定且设计合适时，<span
+class="math inline">\(Y\)</span> 是否随之改变可以提供方向信息。</p>
+<p>但未观察到变化也可能来自效应小、干预执行不足、统计功效不足或效应抵消。实验结果仍需结合具体设计解释。</p>
+<h2 id="十三从发现的图返回效应估计">十三、从发现的图返回效应估计</h2>
+<p>拿到候选图后，可以针对每个与证据相容的结构检查目标效应是否识别，再比较相应估计或可能范围。</p>
+<p>例如，某等价类中部分图认为 <span class="math inline">\(A\)</span> 是
+<span class="math inline">\(Y\)</span> 的原因，部分图认为 <span
+class="math inline">\(Y\)</span> 是 <span
+class="math inline">\(A\)</span>
+的原因，则不能随意选一张图后只报告一个确定的干预效应。</p>
+<p>推荐流程：</p>
+<pre class="mermaid"><code>flowchart TD
+    A[领域知识与数据] --&gt; B[学习候选图或等价类]
+    B --&gt; C[检查模型假设与稳定性]
+    C --&gt; D[针对目标处理与结果检查识别]
+    D --&gt; E{各候选结构是否给出相同结论}
+    E --&gt;|基本一致| F[报告条件化的效应结论]
+    E --&gt;|不同| G[报告可能范围与所需额外信息]</code></pre>
+<p>用同一数据选择图再估计效应，还会带来结构选择的不确定性。只计算固定图下的标准误，可能低估整个流程的误差。</p>
+<h2 id="十四常见误区与纠正">十四、常见误区与纠正</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>误区</th>
+<th>纠正</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>软件画出的箭头都是已证实因果</td>
+<td>先确认输出类型、假设和定向依据</td>
+</tr>
+<tr class="even">
+<td>Markov 等价图有相同干预效果</td>
+<td>等价针对观测独立信息，干预结果可不同</td>
+</tr>
+<tr class="odd">
+<td>非高斯观测变量足以使用 LiNGAM</td>
+<td>关键还包括扰动独立、非高斯、线性、无环、无潜在混杂等</td>
+</tr>
+<tr class="even">
+<td>残差零相关就是独立</td>
+<td>非高斯和非线性情形下通常不成立</td>
+</tr>
+<tr class="odd">
+<td>任意非线性都能定向</td>
+<td>ANM 和 PNL 均有不可识别或假设不适用的情形</td>
+</tr>
+<tr class="even">
+<td>正向预测误差更小就选正向</td>
+<td>预测误差不是通用因果定向准则</td>
+</tr>
+<tr class="odd">
+<td>FCI 可以无条件发现所有潜变量</td>
+<td>FCI 输出的是相应假设下的部分结构信息</td>
+</tr>
+<tr class="even">
+<td>多次抽样出现率就是因果概率</td>
+<td>稳定性频率不是自动校准的因果后验概率</td>
+</tr>
+</tbody>
+</table>
+<h2 id="十五习题与参考答案">十五、习题与参考答案</h2>
+<h3 id="题-1markov-等价">题 1：Markov 等价</h3>
+<p>比较 <span class="math inline">\(X\to M\to Y\)</span> 与 <span
+class="math inline">\(X\leftarrow M\to
+Y\)</span>。仅依赖条件独立信息能否区分？</p>
+<p><strong>答案：</strong>一般不能。二者有相同骨架和无屏蔽碰撞结构，均蕴含
+<span class="math inline">\(X\perp Y\mid M\)</span>，属于同一 Markov
+等价类。</p>
+<h3 id="题-2pc-定向">题 2：PC 定向</h3>
+<p>骨架为 <span class="math inline">\(X-M-Y\)</span>，<span
+class="math inline">\(X,Y\)</span> 不相邻，记录分离集合 <span
+class="math inline">\(Sep(X,Y)=\{M\}\)</span>。应如何定向？</p>
+<p><strong>答案：</strong>由于中间节点 <span
+class="math inline">\(M\)</span> 属于分离集合，应定为 <span
+class="math inline">\(X\to M\leftarrow Y\)</span>；条件化 <span
+class="math inline">\(M\)</span>
+消除了两端依赖，因此它是两端共同汇入的碰撞点。</p>
+<h3 id="题-3不相关与独立">题 3：不相关与独立</h3>
+<p><span class="math inline">\(X\)</span> 关于零对称，<span
+class="math inline">\(Y=X^2\)</span>。为什么只用 Pearson
+相关检查独立性可能失败？</p>
+<p><strong>答案：</strong>在适当矩存在时 <span
+class="math inline">\(E(X^3)=0\)</span>，从而 <span
+class="math inline">\(Cov(X,X^2)=0\)</span>，但 <span
+class="math inline">\(Y\)</span> 完全由 <span
+class="math inline">\(X\)</span> 决定，二者显然不独立。</p>
+<h3 id="题-4lingam-矩阵方向">题 4：LiNGAM 矩阵方向</h3>
+<p>在 <span class="math inline">\(\mathbf V=B\mathbf
+V+\varepsilon\)</span> 中，<span
+class="math inline">\(B_{32}=1.2\)</span> 表示什么？</p>
+<p><strong>答案：</strong><span class="math inline">\(V_2\)</span> 对
+<span class="math inline">\(V_3\)</span> 的直接线性效应为
+1.2。不要把矩阵行列对应的方向反过来。</p>
+<h3 id="题-5总效应">题 5：总效应</h3>
+<p><span class="math inline">\(V_2=0.8V_1+\varepsilon_2\)</span>，<span
+class="math inline">\(V_3=-0.5V_1+1.2V_2+\varepsilon_3\)</span>。<span
+class="math inline">\(V_1\)</span> 对 <span
+class="math inline">\(V_3\)</span> 的总效应？</p>
+<p><strong>答案：</strong><span
+class="math inline">\(-0.5+0.8\times1.2=0.46\)</span>。直接与间接效应符号相反。</p>
+<h3 id="题-6anm-双向未拒绝">题 6：ANM 双向未拒绝</h3>
+<p>正反向独立性检验都未拒绝，是否可以选 <span
+class="math inline">\(p\)</span> 值更大的方向？</p>
+<p><strong>答案：</strong>不能据此给出确定方向。可能处于不可识别模型、独立关系或检验功效不足，应报告当前信息不足，并考虑额外知识或干预。</p>
+<h3 id="题-7模型失配">题 7：模型失配</h3>
+<p>正反向 ANM 都拒绝残差独立，至少提出三种解释。</p>
+<p><strong>答案：</strong>可能有未测混杂，真实机制属于非加性模型，存在测量误差，回归拟合不足，或者检验与数据依赖结构不匹配。不能直接断言二者没有因果关系。</p>
+<h3 id="题-8pnl">题 8：PNL</h3>
+<p><span class="math inline">\(Y=\exp(X^3+N)\)</span> 且 <span
+class="math inline">\(N\perp X\)</span>。应在哪个尺度考察加性噪声？</p>
+<p><strong>答案：</strong>在 <span class="math inline">\(\log
+Y=X^3+N\)</span> 的内部尺度上考察残差与 <span
+class="math inline">\(X\)</span> 的独立性，并说明 <span
+class="math inline">\(Y&gt;0\)</span> 和外层变换可逆的条件。</p>
+<h2 id="十六阅读指引">十六、阅读指引</h2>
+<p>按“等价类→结构学习→函数模型”的顺序阅读。</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>材料</th>
+<th>重点</th>
+<th>带着什么问题阅读</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verma 与 Pearl，Equivalence and Synthesis of Causal Models</td>
+<td>等价关系与图判据</td>
+<td>为什么同样的独立信息对应多张图？</td>
+</tr>
+<tr class="even">
+<td>Spirtes、Glymour、Scheines，Causation, Prediction, and Search</td>
+<td>条件独立与结构搜索</td>
+<td>算法需要哪些假设，输出什么？</td>
+</tr>
+<tr class="odd">
+<td>ICA 教程</td>
+<td>独立源、混合与非高斯性</td>
+<td>不相关与独立有什么差别？</td>
+</tr>
+<tr class="even">
+<td>Shimizu 等，2006 LiNGAM</td>
+<td>线性非高斯无环模型</td>
+<td>如何把 ICA 结果转成结构矩阵？</td>
+</tr>
+<tr class="odd">
+<td>Hoyer 等，Nonlinear causal discovery with additive noise models</td>
+<td>独立加性噪声和不可逆性</td>
+<td>哪些正反向模型可以同时成立？</td>
+</tr>
+<tr class="even">
+<td>Zhang 与 Hyvärinen，2009 PNL</td>
+<td>后非线性结构及可识别性</td>
+<td>可逆外层变换如何改变建模方式？</td>
+</tr>
+</tbody>
+</table>
+<p>本讲只给出识别直觉与教学级推导，不展开 ANM/PNL
+可识别性的微分方程证明。有关“通常可识别”的说法均以论文给定的模型和正则条件为背景。</p>
+<ul>
+<li>等价类原始论文（参考文献）</li>
+<li>结构发现教材目录（参考文献）</li>
+<li>ICA 教程（参考文献）</li>
+<li>LiNGAM 原始论文（参考文献）</li>
+<li>ANM 原始论文（参考文献）</li>
+<li>PNL 原始论文（参考文献）</li>
+</ul>
+<h2
+id="十七综合作业从一张图到一份研究报告">十七、综合作业：从一张图到一份研究报告</h2>
+<p>选择一个教育或社会科学问题，提交 3—5 页报告，内容包括：</p>
+<ol type="1">
+<li>变量定义、测量时间与数据来源。</li>
+<li>领域知识支持的候选 DAG。</li>
+<li>一种结构学习方法及其假设。</li>
+<li>算法输出与无法确定的方向。</li>
+<li>针对一个具体干预目标的识别与估计方案。</li>
+<li>对未测混杂、模型失配和外推的讨论。</li>
+<li>能够进一步区分候选结构的一项数据收集或实验建议。</li>
+</ol>
+<p><strong>建议评分：</strong>研究问题与变量定义 20%，假设论证
+25%，方法实施 20%，结果解释 20%，局限与后续设计
+15%。不以“发现的箭头更多”作为评分标准。</p>
+<p><strong>三讲总结：</strong>先把因果问题定义清楚，再说明识别依赖的假设，最后用与目标一致的方法估计或学习结构。把无法由当前证据确定的部分明确留下，是完整结论的一部分。</p>
+<p><strong>导航：</strong><a href="lecture-01.html">第一讲</a> · <a
+href="lecture-02.html">第二讲</a>。</p>
+</body>
+</html>

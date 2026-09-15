@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>第一讲：因果推断的基本框架</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <style>
+  html{color:#243445;background:#f4f6f8;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;line-height:1.85}body{max-width:960px;margin:32px auto;padding:32px;background:white}h1,h2,h3{line-height:1.4}h2{border-bottom:1px solid #ddd;padding-bottom:.4em;margin-top:2em}a{color:#176899}pre{overflow:auto;background:#f4f6f8;padding:16px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #ddd;padding:8px 12px}blockquote{border-left:4px solid #8aa6bd;padding-left:20px;color:#536475}.math.display{display:block;overflow:auto}nav{border-bottom:1px solid #ddd;padding-bottom:16px}.mermaid{overflow:auto}@media(max-width:640px){body{margin:0;padding:20px}}@media print{body{max-width:none;margin:0;padding:0}nav{display:none}}
+  </style>
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  for (const code of document.querySelectorAll('pre.mermaid > code')) {
+    code.parentElement.textContent = code.textContent;
+  }
+  mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});
+  </script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<nav aria-label="讲义导航"><a href="/teaching/ComAD">返回计算广告学</a> · <a href="lecture-01.html">第一讲</a> · <a href="lecture-02.html">第二讲</a> · <a href="lecture-03.html">第三讲</a></nav>
+<header id="title-block-header">
+<h1 class="title">第一讲：因果推断的基本框架</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#第一讲因果推断的基本框架"
+id="toc-第一讲因果推断的基本框架">第一讲：因果推断的基本框架</a>
+<ul>
+<li><a href="#一学习目标与课程地图"
+id="toc-一学习目标与课程地图">一、学习目标与课程地图</a></li>
+<li><a href="#二贯穿案例新广告策略是否提升转化效率"
+id="toc-二贯穿案例新广告策略是否提升转化效率">二、贯穿案例：新广告策略是否提升转化效率？</a></li>
+<li><a href="#三统一符号" id="toc-三统一符号">三、统一符号</a></li>
+<li><a href="#四潜在结果框架"
+id="toc-四潜在结果框架">四、潜在结果框架</a></li>
+<li><a href="#五从观测差异到因果效应识别需要什么"
+id="toc-五从观测差异到因果效应识别需要什么">五、从观测差异到因果效应：识别需要什么？</a></li>
+<li><a href="#六结构因果模型把机制写出来"
+id="toc-六结构因果模型把机制写出来">六、结构因果模型：把机制写出来</a></li>
+<li><a href="#七条件化与干预为什么不同"
+id="toc-七条件化与干预为什么不同">七、条件化与干预为什么不同？</a></li>
+<li><a href="#八因果图中的三种基本结构"
+id="toc-八因果图中的三种基本结构">八、因果图中的三种基本结构</a></li>
+<li><a href="#九两种框架如何配合"
+id="toc-九两种框架如何配合">九、两种框架如何配合？</a></li>
+<li><a href="#十课堂活动从问题到方案"
+id="toc-十课堂活动从问题到方案">十、课堂活动：从问题到方案</a></li>
+<li><a href="#十一常见误区"
+id="toc-十一常见误区">十一、常见误区</a></li>
+<li><a href="#十二习题与参考答案"
+id="toc-十二习题与参考答案">十二、习题与参考答案</a></li>
+<li><a href="#十三阅读指引"
+id="toc-十三阅读指引">十三、阅读指引</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="第一讲因果推断的基本框架">第一讲：因果推断的基本框架</h1>
+<blockquote>
+<p>课程定位：高级统计学方法；适用于具备概率、条件期望与回归分析基础的学生。<br />
+核心问题：我们如何把“如果采取另一种行动，结果会怎样”写成可以分析的统计问题？</p>
+</blockquote>
+<h2 id="一学习目标与课程地图">一、学习目标与课程地图</h2>
+<p>完成本讲后，应能够：</p>
+<ol type="1">
+<li>区分相关、预测、干预和反事实问题。</li>
+<li>用潜在结果定义个体效应、总体平均效应和处理组平均效应。</li>
+<li>用结构方程和有向无环图表达数据生成机制。</li>
+<li>区分混杂变量、中介变量和碰撞变量，解释为什么控制变量并非越多越好。</li>
+<li>区分因果效应的定义、识别和估计，并为一个研究问题写出基本假设。</li>
+</ol>
+<p>三讲之间的关系：</p>
+<pre class="mermaid"><code>flowchart LR
+    A[第一讲：定义问题与表达假设] --&gt; B[第二讲：识别与估计效应]
+    A --&gt; C[第三讲：发现结构与识别方向]
+    C --&gt; D[形成候选因果图]
+    D --&gt; B
+    B --&gt; E[在假设范围内解释干预后果]</code></pre>
+<p>因果发现并不是每个效应估计项目的必要前置步骤。若研究设计和领域知识足以支持相关结构，就可以直接研究目标效应的识别。</p>
+<h2
+id="二贯穿案例新广告策略是否提升转化效率">二、贯穿案例：新广告策略是否提升转化效率？</h2>
+<p>某广告平台观察到，采用新广告策略的投放单元平均每千名受众产生 82
+次转化，沿用原策略的投放单元为 76 次。</p>
+<p>本案例将“转化效率”定义为固定评估期内每千名预先纳入受众的转化人数，记为
+<span
+class="math inline">\(Y\)</span>，单位为“次/千人”；每人最多计一次转化。受众集合在策略实施前确定，两种策略采用相同预算、评估期和转化归因规则，避免分母随策略变化。以下数字均为教学构造。</p>
+<p>直接计算得到 6 次/千人的差异，但它可能来自：</p>
+<ul>
+<li>新广告策略本身提升了转化效率。</li>
+<li>受众购买意愿较强的投放单元更倾向采用新策略，本来也更容易转化。</li>
+<li>广告主运营能力同时影响策略采用和转化表现。</li>
+<li>历史转化效率较低的投放单元更可能尝试新策略，使处理组原本的转化水平更低。</li>
+</ul>
+<p>因此，“两组相差 6 次/千人”和“让同一组投放单元采用新策略能提高 6
+次/千人”是不同的陈述。</p>
+<h3 id="先写清研究问题">2.1 先写清研究问题</h3>
+<p>一个可以开展的研究至少需要说明以下内容。</p>
+<table>
+<thead>
+<tr class="header">
+<th>要素</th>
+<th>本讲示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>目标人群</td>
+<td>本平台本期所有符合投放条件的广告投放单元</td>
+</tr>
+<tr class="even">
+<td>处理</td>
+<td>采用预先确定的新广告策略版本，持续两周</td>
+</tr>
+<tr class="odd">
+<td>对照</td>
+<td>沿用原广告策略，预算与评估期保持一致</td>
+</tr>
+<tr class="even">
+<td>结果</td>
+<td>两周内每千名预先纳入受众的转化人数</td>
+</tr>
+<tr class="odd">
+<td>基线信息</td>
+<td>策略实施前的转化水平、广告主运营能力、受众购买意愿等</td>
+</tr>
+<tr class="even">
+<td>目标效应</td>
+<td>在目标投放单元中采用新策略的平均转化效率变化</td>
+</tr>
+</tbody>
+</table>
+<p>“新广告策略”若同时包含不同素材、不同出价规则、不同定向方式，应先明确这些版本是否属于同一个处理。否则，讨论的干预本身就可能不够清楚。</p>
+<h3 id="四类问题">2.2 四类问题</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>类型</th>
+<th>示例</th>
+<th>需要的核心信息</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>相关</td>
+<td>新广告策略与转化效率是否相关？</td>
+<td>观测联合分布</td>
+</tr>
+<tr class="even">
+<td>预测</td>
+<td>已知是否采用新策略，能否更准确预测转化效率？</td>
+<td>可用于预测的新样本分布</td>
+</tr>
+<tr class="odd">
+<td>干预</td>
+<td>如果让目标投放单元都采用新策略，转化效率会怎样？</td>
+<td>数据与干预机制假设</td>
+</tr>
+<tr class="even">
+<td>反事实</td>
+<td>某投放单元已采用新策略，转化效率为 85
+次/千人，若沿用原策略会是多少？</td>
+<td>对个体机制和未观测量更强的约束</td>
+</tr>
+</tbody>
+</table>
+<p>预测模型可以利用结果的代理变量或后果变量提高准确率，而这些变量未必适合用于估计干预效应。预测性能不是因果解释的充分条件。</p>
+<h2 id="三统一符号">三、统一符号</h2>
+<p>三份讲义共同使用下列记号。</p>
+<table>
+<thead>
+<tr class="header">
+<th>记号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A\in\{0,1\}\)</span></td>
+<td>是否接受处理</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Y\)</span></td>
+<td>实际观察的结果</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X\)</span></td>
+<td>处理之前测量的协变量，可以是向量</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(U\)</span></td>
+<td>未观测的因素或外生扰动，具体含义由模型说明</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(M\)</span></td>
+<td>处理中介变量</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S\)</span></td>
+<td>选择变量或碰撞变量</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Z\)</span></td>
+<td>工具变量，第二讲使用</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Y(a)\)</span></td>
+<td>若接受处理 <span class="math inline">\(a\)</span> 时的潜在结果</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(e(X)\)</span></td>
+<td>倾向评分 <span class="math inline">\(P(A=1\mid X)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m_a(X)\)</span></td>
+<td>结果回归 <span class="math inline">\(E(Y\mid A=a,X)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>第三讲在讨论一般网络时使用 <span
+class="math inline">\(V_1,\ldots,V_p\)</span>
+表示节点，以免与处理变量和协变量混淆。</p>
+<h2 id="四潜在结果框架">四、潜在结果框架</h2>
+<h3 id="从同一个体的比较定义效应">4.1 从同一个体的比较定义效应</h3>
+<p>对投放单元 <span class="math inline">\(i\)</span>，定义：</p>
+<p><span class="math display">\[
+Y_i(1)=\text{该投放单元采用新策略时的转化效率},\qquad
+Y_i(0)=\text{该投放单元沿用原策略时的转化效率}.
+\]</span></p>
+<p>个体处理效应为：</p>
+<p><span class="math display">\[
+\tau_i=Y_i(1)-Y_i(0).
+\]</span></p>
+<p>这一定义比较的是同一个投放单元在两个干预状态下的结果，因而不会把投放单元之间原本存在的差异直接当作新广告策略效应。</p>
+<h3 id="因果推断的基本困难">4.2 因果推断的基本困难</h3>
+<p>通常只能观察到两个潜在结果之一：</p>
+<p><span class="math display">\[
+Y_i=A_iY_i(1)+(1-A_i)Y_i(0).
+\]</span></p>
+<p>以下数字是为说明概念而构造的完整潜在结果，不代表真实研究中可以同时观测。</p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>投放单元</th>
+<th style="text-align: right;"><span
+class="math inline">\(Y_i(0)\)</span></th>
+<th style="text-align: right;"><span
+class="math inline">\(Y_i(1)\)</span></th>
+<th style="text-align: right;">个体效应</th>
+<th style="text-align: right;">实际处理 <span
+class="math inline">\(A_i\)</span></th>
+<th style="text-align: right;">实际观察 <span
+class="math inline">\(Y_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>甲</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr class="even">
+<td>乙</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr class="odd">
+<td>丙</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">82</td>
+</tr>
+<tr class="even">
+<td>丁</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">90</td>
+</tr>
+</tbody>
+</table>
+<p>四个投放单元的平均效应为：</p>
+<p><span class="math display">\[
+\frac{10+4+2-2}{4}=3.5.
+\]</span></p>
+<p>但实际处理组均值是 76，对照组均值是 80，观测差异为 <span
+class="math inline">\(-4\)</span>。这说明组间观测差异可能与平均因果效应不同，甚至符号相反。</p>
+<p>即使处理经过随机分配，有限样本中的一次分配仍可能不平衡。随机化保证的是分配机制下的可比性及相应估计性质，不保证每一次实验的样本差异都恰好等于真实效应。</p>
+<h3 id="三种常用目标效应">4.3 三种常用目标效应</h3>
+<p><strong>总体平均处理效应 ATE：</strong></p>
+<p><span class="math display">\[
+\tau_{ATE}=E\{Y(1)-Y(0)\}.
+\]</span></p>
+<p><strong>处理组平均处理效应 ATT：</strong></p>
+<p><span class="math display">\[
+\tau_{ATT}=E\{Y(1)-Y(0)\mid A=1\}.
+\]</span></p>
+<p><strong>条件平均处理效应 CATE：</strong></p>
+<p><span class="math display">\[
+\tau(x)=E\{Y(1)-Y(0)\mid X=x\}.
+\]</span></p>
+<p>ATE 关注目标总体，ATT 关注实际接受处理的人群，CATE
+关注某类具有共同特征的人。它们一般不相等；CATE
+也不是每个个体不可观测效应的直接测量。</p>
+<p>例如，新策略对历史转化水平较低的投放单元帮助较大，而这类单元更经常采用新策略，则
+ATT 可能高于 ATE。报告结果时必须同时报告目标人群。</p>
+<h2
+id="五从观测差异到因果效应识别需要什么">五、从观测差异到因果效应：识别需要什么？</h2>
+<h3 id="一致性无干扰与处理版本">5.1 一致性、无干扰与处理版本</h3>
+<p>一致性要求：若投放单元实际接受处理 <span
+class="math inline">\(A=a\)</span>，则观察结果等于相应潜在结果 <span
+class="math inline">\(Y(a)\)</span>。</p>
+<p>无干扰要求：某投放单元的结果不受其他投放单元策略状态的影响。若不同单元争夺同一广告位或受众，新策略可能改变对照单元的竞价成本或曝光机会，该条件就可能失效，应考虑相互隔离的受众分组或市场层面的分组实验。</p>
+<p>通常所说的 SUTVA
+包括无个体间干扰及不存在未明确区分的处理版本。教材对一致性与 SUTVA
+的组织方式可能不同，研究中应直接说明具体要求，避免只写缩写。</p>
+<h3 id="可交换性">5.2 可交换性</h3>
+<p>随机化试验理想情况下具有：</p>
+<p><span class="math display">\[
+\{Y(1),Y(0)\}\perp A.
+\]</span></p>
+<p>观察性研究常假设条件可交换性：</p>
+<p><span class="math display">\[
+\{Y(1),Y(0)\}\perp A\mid X.
+\]</span></p>
+<p>其含义是：在给定 <span class="math inline">\(X\)</span>
+的人群中，是否接受处理不再携带关于潜在结果的额外信息。它并不要求两组观察结果相同；处理本身仍可改变结果。</p>
+<p>该条件通常不能仅凭观测数据完全检验。例如，未记录的受众购买意愿仍可能同时影响新广告策略选择和转化效率。</p>
+<h3 id="正值性与共同支持">5.3 正值性与共同支持</h3>
+<p>常用表达为：</p>
+<p><span class="math display">\[
+0&lt;P(A=1\mid X=x)&lt;1.
+\]</span></p>
+<p>直观上，需要有可比较的处理与对照观测。课堂实施时，可以把这一条件简化为总体层面的
+<span
+class="math inline">\(0&lt;P(A=1)&lt;1\)</span>：只要样本同时包含处理者与未处理者，缺少某些协变量层内的对照不会破坏识别，因为结果回归可以补齐这些层的反事实均值。</p>
+<p>这一区分提示我们，分层样本不足主要是估计精度问题，可通过更灵活的预测模型改善。</p>
+<h3 id="组间差异的偏差分解">5.4 组间差异的偏差分解</h3>
+<p>利用一致性，可写出：</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(Y\mid A=1)-E(Y\mid A=0)
+&amp;=E\{Y(1)\mid A=1\}-E\{Y(0)\mid A=0\}\\
+&amp;=\underbrace{E\{Y(1)-Y(0)\mid A=1\}}_{ATT}\\
+&amp;\quad+\underbrace{E\{Y(0)\mid A=1\}-E\{Y(0)\mid A=0\}}_{选择偏差}.
+\end{aligned}
+\]</span></p>
+<p>第二项回答：“即使都沿用原策略，两组投放单元本来会不会不同？”只要这一项不为零，原始均值差就不能直接解释为
+ATT。</p>
+<h3 id="识别与估计是两个问题">5.5 识别与估计是两个问题</h3>
+<p><strong>识别</strong>研究：给定假设，即使知道完整观测分布，目标效应能否被唯一确定？</p>
+<p><strong>估计</strong>研究：在目标已识别的前提下，如何用有限样本计算它，并量化不确定性？</p>
+<p>不可识别不是简单的“样本不够大”。两个不同的数据生成机制可能产生相同观测分布，却给出不同干预效应。仅增加相同类型的数据未必能区分它们。</p>
+<h2 id="六结构因果模型把机制写出来">六、结构因果模型：把机制写出来</h2>
+<h3 id="结构方程">6.1 结构方程</h3>
+<p>以历史转化水平 <span class="math inline">\(X\)</span>、是否采用新策略
+<span class="math inline">\(A\)</span>、转化效率 <span
+class="math inline">\(Y\)</span> 为例：</p>
+<p><span class="math display">\[
+X=f_X(U_X),\qquad
+A=f_A(X,U_A),\qquad
+Y=f_Y(A,X,U_Y).
+\]</span></p>
+<p>结构方程不仅描述条件均值，还表达变量如何产生，以及干预发生时哪些机制被替换。</p>
+<p>外生变量之间若存在依赖，需要在模型中说明其含义；在观测变量图中，它可能对应未测共同原因。不能仅凭写出几条回归方程就宣称已经获得了可信的因果模型。</p>
+<h3 id="有向无环图-dag">6.2 有向无环图 DAG</h3>
+<pre class="mermaid"><code>flowchart LR
+    X[历史转化水平 X] --&gt; A[新广告策略 A]
+    X --&gt; Y[转化效率 Y]
+    A --&gt; Y</code></pre>
+<p>节点表示变量，箭头表示假设中的直接因果影响。直接是相对于图中纳入的变量而言的。若补充了中间机制，原先的一条箭头可能被拆成多条路径。</p>
+<p>“无环”指不存在沿箭头方向返回起点的路径。现实中若有反馈，可以在有依据时展开时间顺序，如“第一周广告投入→第二周转化表现→第三周广告投入”，不能把同一时间点的反馈直接塞进
+DAG。</p>
+<h2 id="七条件化与干预为什么不同">七、条件化与干预为什么不同？</h2>
+<h3 id="观察到采用新策略">7.1 观察到采用新策略</h3>
+<p>条件分布</p>
+<p><span class="math display">\[
+P(Y\mid A=1)
+\]</span></p>
+<p>描述的是自然选择下已经采用新策略的投放单元。这些单元的历史转化水平和广告主运营能力分布可能不同于总体。</p>
+<h3 id="强制设置新广告策略状态">7.2 强制设置新广告策略状态</h3>
+<p>干预分布</p>
+<p><span class="math display">\[
+P\{Y\mid do(A=1)\}
+\]</span></p>
+<p>描述的是把目标投放单元的新广告策略状态设为 1
+后的转化效率分布。结构模型中用 <span class="math inline">\(A:=1\)</span>
+替换原来的 <span class="math inline">\(A=f_A(X,U_A)\)</span>。</p>
+<p>图上应删除进入 <span class="math inline">\(A\)</span> 的箭头，保留从
+<span class="math inline">\(A\)</span> 指向后续变量的箭头。</p>
+<pre class="mermaid"><code>flowchart LR
+    X[历史转化水平 X] --&gt; Y[转化效率 Y]
+    A[设定 A=1] --&gt; Y</code></pre>
+<p>在完整观测、相应机制假设成立的简单图中：</p>
+<p><span class="math display">\[
+P\{Y=y\mid do(A=a)\}=\sum_xP(Y=y\mid A=a,X=x)P(X=x).
+\]</span></p>
+<p>而观测条件分布为：</p>
+<p><span class="math display">\[
+P(Y=y\mid A=a)=\sum_xP(Y=y\mid A=a,X=x)P(X=x\mid A=a).
+\]</span></p>
+<p>两者的区别是使用总体的 <span class="math inline">\(X\)</span>
+次/千人布，还是实际处理组的 <span class="math inline">\(X\)</span>
+次/千人布。这也说明标准化为什么要先确定目标人群。</p>
+<h2 id="八因果图中的三种基本结构">八、因果图中的三种基本结构</h2>
+<h3 id="共同原因混杂路径">8.1 共同原因：混杂路径</h3>
+<pre class="text"><code>A ← X → Y</code></pre>
+<p><span class="math inline">\(X\)</span> 同时影响处理与结果，使 <span
+class="math inline">\(A\)</span> 和 <span
+class="math inline">\(Y\)</span> 即使没有直接因果联系也可能相关。对
+<span class="math inline">\(X\)</span> 条件化可以阻断这条路径。</p>
+<h3 id="链式结构中介路径">8.2 链式结构：中介路径</h3>
+<pre class="text"><code>A → M → Y</code></pre>
+<p>例如“新广告策略→落地页互动增加→转化效率提升”。若目标是总效应，直接控制
+<span class="math inline">\(M\)</span>
+会阻断这条机制。直接效应或中介效应是不同的目标，需要另外定义并论证识别条件。</p>
+<p>回归中加入中介变量后，<span class="math inline">\(A\)</span>
+的系数不自动等于某一种有明确因果定义的直接效应。</p>
+<h3 id="碰撞结构控制可能引入偏差">8.3 碰撞结构：控制可能引入偏差</h3>
+<pre class="text"><code>A → S ← U → Y</code></pre>
+<p>例如新广告策略和受众购买意愿都会影响是否进入某个“高互动投放单元样本”
+<span class="math inline">\(S\)</span>。在总体中，路径在碰撞点 <span
+class="math inline">\(S\)</span> 处被阻断；只分析入选者，相当于条件化
+<span class="math inline">\(S\)</span>，可能打开非因果路径。</p>
+<h3 id="d-分离的操作规则">8.4 d-分离的操作规则</h3>
+<p>给定条件集合 <span
+class="math inline">\(C\)</span>，一条路径开放需要满足：</p>
+<ol type="1">
+<li>路径上的每个非碰撞节点都不在 <span class="math inline">\(C\)</span>
+中。</li>
+<li>路径上的每个碰撞节点本身或其某个后代在 <span
+class="math inline">\(C\)</span> 中。</li>
+</ol>
+<p>如果所有路径均被阻断，两个节点集合在图上 d-分离。在因果 Markov
+条件下，d-分离蕴含条件独立。</p>
+<p>这里的路径可以逆着箭头走；判断某节点是否为碰撞点，要看它在当前路径上的两个相邻箭头是否都指向该节点。</p>
+<h2 id="九两种框架如何配合">九、两种框架如何配合？</h2>
+<table>
+<thead>
+<tr class="header">
+<th>任务</th>
+<th>潜在结果语言</th>
+<th>结构模型与图语言</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>定义处理效应</td>
+<td><span class="math inline">\(E\{Y(1)-Y(0)\}\)</span></td>
+<td>比较两种干预下的结果均值</td>
+</tr>
+<tr class="even">
+<td>表达可比性</td>
+<td><span class="math inline">\(Y(a)\perp A\mid X\)</span></td>
+<td>选择能阻断非因果路径的调整集</td>
+</tr>
+<tr class="odd">
+<td>解释干预</td>
+<td>将潜在结果状态设为 <span class="math inline">\(a\)</span></td>
+<td>替换 <span class="math inline">\(A\)</span> 的结构方程</td>
+</tr>
+<tr class="even">
+<td>说明研究限制</td>
+<td>潜在结果缺失与不可交换</td>
+<td>未测混杂、错误结构或开放路径</td>
+</tr>
+</tbody>
+</table>
+<p>在同一套一致的模型假设下，可以把 <span
+class="math inline">\(Y(a)\)</span> 理解为结构模型执行 <span
+class="math inline">\(do(A=a)\)</span>
+后得到的结果。两种语言可以相互帮助，但画图不能免除对箭头来源的论证，潜在结果记号也不能代替识别假设。</p>
+<h3 id="反事实的三个步骤拓展阅读">反事实的三个步骤：拓展阅读</h3>
+<p>结构模型中的个体反事实通常按照“推断外生状态—修改处理机制—预测新结果”分析。</p>
+<p>例如假定 <span class="math inline">\(Y=50+5A+U\)</span>，某投放单元在
+<span class="math inline">\(A=1\)</span> 时转化效率为 80
+次/千人，则可推断 <span class="math inline">\(U=25\)</span>；再设置
+<span class="math inline">\(A=0\)</span>，得到反事实转化效率为 75
+次/千人。这一结论依赖整个确定性结构与个体扰动不变的假设，不能仅凭普通回归拟合直接成立。</p>
+<h2 id="十课堂活动从问题到方案">十、课堂活动：从问题到方案</h2>
+<p>四人一组，为新广告策略案例完成以下任务。</p>
+<ol type="1">
+<li>明确处理版本、观察时间和目标总体。</li>
+<li>至少画出两个不同的合理 DAG。</li>
+<li>为各图列出建议收集的基线变量。</li>
+<li>标记一个不应为了估计总效应而直接控制的变量。</li>
+<li>说明如果缺少受众购买意愿，哪一步论证会变弱。</li>
+<li>分别写出 ATE 和 ATT，解释平台当前决策更关注哪一个。</li>
+</ol>
+<p><strong>提交成果：</strong>一页研究问题说明、一张带变量解释的
+DAG，以及不超过 200 字的假设说明。</p>
+<h2 id="十一常见误区">十一、常见误区</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>说法</th>
+<th>需要怎样修正</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>显著相关就是存在因果效应</td>
+<td>显著性只涉及模型下的统计证据，不提供完整识别依据</td>
+</tr>
+<tr class="even">
+<td>控制越多变量越好</td>
+<td>需判断变量在图中的角色及测量时间</td>
+</tr>
+<tr class="odd">
+<td>随机化后两组每个变量一定相同</td>
+<td>有限样本仍会随机不平衡</td>
+</tr>
+<tr class="even">
+<td>个体的 CATE 就是其真实效应</td>
+<td>CATE 是同类人群平均效应</td>
+</tr>
+<tr class="odd">
+<td>画出 DAG 就证明了结构</td>
+<td>DAG 表达需要论证的假设</td>
+</tr>
+<tr class="even">
+<td>增大样本一定消除混杂</td>
+<td>样本量不自动解决设计和识别问题</td>
+</tr>
+</tbody>
+</table>
+<h2 id="十二习题与参考答案">十二、习题与参考答案</h2>
+<h3 id="题-1区分目标">题 1：区分目标</h3>
+<p>平台考虑是否让所有目标投放单元采用新策略；另一个部门只想评价已经采用者获益多少。两者分别对应什么目标？</p>
+<p><strong>答案：</strong>前者通常对应目标投放单元总体的 ATE，后者对应
+ATT。若“开放策略使用资格”与“实际采用策略”不同，还需要重新区分分配效应与接受处理效应。</p>
+<h3 id="题-2偏差分解">题 2：偏差分解</h3>
+<p>观测转化效率差为 6 次/千人，已知未处理潜在结果的选择偏差为 4
+次/千人。ATT 是多少？</p>
+<p><strong>答案：</strong>由观测差异 <span
+class="math inline">\(=ATT+选择偏差\)</span>，得到 <span
+class="math inline">\(ATT=6-4=2\)</span>
+次/千人。这里的选择偏差在真实数据中通常不可直接观察。</p>
+<h3 id="题-3处理后变量">题 3：处理后变量</h3>
+<p>研究新广告策略总效应时，是否应控制新广告策略后的落地页互动程度？</p>
+<p><strong>答案：</strong>不能仅因它预测转化效率就纳入。若落地页互动程度是新广告策略产生作用的中介，控制它会改变目标路径；若还有未测共同原因，还可能带来额外偏差。</p>
+<h3 id="题-4碰撞点">题 4：碰撞点</h3>
+<p>在 <span class="math inline">\(A\to S\leftarrow U\to Y\)</span>
+中，原路径是否开放？控制 <span class="math inline">\(S\)</span>
+后呢？</p>
+<p><strong>答案：</strong>未控制 <span class="math inline">\(S\)</span>
+或其后代时，路径在 <span class="math inline">\(S\)</span> 处阻断；控制
+<span class="math inline">\(S\)</span>
+后该路径可能开放，使处理和结果之间出现非因果关联。</p>
+<h3 id="题-5共同支持">题 5：共同支持</h3>
+<p>总体包含处理和对照，但所有历史转化水平较低的投放单元都采用了新策略。能否通过回归识别历史转化水平较低的投放单元的平均效应？</p>
+<p><strong>答案：</strong>可以。总体中两种处理都出现已经满足正值性的实际要求；对历史转化水平较低层缺失的对照均值可用其他投放单元的回归关系预测，因此这里主要增加模型拟合的不确定性，不构成识别障碍。</p>
+<h3 id="退出题">退出题</h3>
+<p>用一句话补全：因果推断不是仅从相关性推到因果性，而是从“______、______和______”共同推导干预结论。</p>
+<p><strong>参考：</strong>清晰的目标问题、观测或实验数据、明确的因果假设。</p>
+<h2 id="十三阅读指引">十三、阅读指引</h2>
+<ol type="1">
+<li><strong>主读：苗旺、刘春辰、耿直《因果推断的统计方法》</strong>，重点读第
+2 节和第 6.1 节。思考潜在结果如何定义效应，图模型如何定义干预。</li>
+<li><strong>进阶：Judea Pearl, “Causal inference in statistics: An
+overview”</strong>，重点读第 3 节、第 4
+节。比较结构模型和潜在结果两种语言。</li>
+<li><strong>辅助：丁鹏课程讲义</strong>，结合课堂符号对照其处理效应和实验设计部分。</li>
+</ol>
+<p>本讲案例、活动及练习为教学构造，不是阅读文献中的实证结果。原始材料使用的处理变量符号可能与本讲不同。</p>
+<ul>
+<li>苗旺等：因果推断的统计方法（参考文献）</li>
+<li>Pearl：Causal inference in statistics: An overview（参考文献）</li>
+<li>丁鹏课程讲义（参考文献）</li>
+</ul>
+<p><strong>下一讲：</strong><a
+href="lecture-02.html">因果效应的识别与估计</a>。</p>
+</body>
+</html>

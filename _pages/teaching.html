@@ -138,7 +138,7 @@ author_profile: true
 
 <div class="teaching-intro">
   <p>我将课堂视作<strong>"数据科学 + 媒体应用"</strong>的实践场，强调从基础统计思维到大模型应用的渐进式训练。课程中融入数据采集、可视化、建模、文本分析、社交网络等环节，并通过开放的优秀作业和讲义，帮助学生快速上手并形成可复用的项目案例库。</p>
-  
+
   <p>为提升学习体验，我正在尝试以 <strong>Scholar Hero</strong> 智能助教支持课堂演示、代码示例和问答反馈，也欢迎跨校同仁交流教材建设与教学创新。</p>
 </div>
 
@@ -160,8 +160,8 @@ author_profile: true
         <div class="course-card">
           <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
           <div class="course-meta">
-            <span class="type">{{ post.type }}</span>
-            <span class="date">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y" }}{% endif %}</span>
+            {% if post.type %}<span class="type">{{ post.type }}</span>{% endif %}
+            {% unless post.hide_date %}<span class="date">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y" }}{% endif %}</span>{% endunless %}
           </div>
           {% if post.venue %}
             <div class="course-meta" style="margin-top: 5px;">{{ post.venue }}</div>
@@ -183,9 +183,9 @@ author_profile: true
       <li>
         <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
         <div class="course-info">
-          <strong>{{ post.type }}</strong> | 
-          {{ post.venue }} | 
-          <span style="color: #999;">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y年%m月" }}{% endif %}</span>
+          {% if post.type %}<strong>{{ post.type }}</strong> | {% endif %}
+          {{ post.venue }}{% unless post.hide_date %} |
+          <span style="color: #999;">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y年%m月" }}{% endif %}</span>{% endunless %}
         </div>
       </li>
     {% endfor %}
