@@ -98,6 +98,11 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
     <p>区分新闻事实、新闻报道、公众表达、平台传播与回应行动，建立课程共用的问题框架和证据标准。</p>
     <a href="{{ '/teaching/publicopinion/chapt1-news-and-public-opinion/' | relative_url }}">进入本章讲义 →</a>
   </article>
+  <article class="chapter-card">
+    <h3>第 2 讲：舆情分析报告指南</h3>
+    <p>从事实核验、监测口径与议题分析到结论建议，借助模拟案例、写作模板和练习完成可追溯的舆情报告。</p>
+    <a href="{{ '/teaching/publicopinion/chapt2-public-opinion-report-writing/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
 </div>
 
 后续章节将在课程推进过程中持续更新。
