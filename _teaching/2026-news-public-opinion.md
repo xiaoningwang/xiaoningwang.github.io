@@ -103,6 +103,11 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
     <p>从事实核验、监测口径与议题分析到结论建议，借助模拟案例、写作模板和练习完成可追溯的舆情报告。</p>
     <a href="{{ '/teaching/publicopinion/chapt2-public-opinion-report-writing/' | relative_url }}">进入本讲讲义 →</a>
   </article>
+  <article class="chapter-card">
+    <h3>第 3 讲：新闻与舆情数据学主要分析方法</h3>
+    <p>系统学习从研究设计、文本预处理与表示到分类、聚类、情感立场、传播网络及大模型辅助分析的主要方法，理解方法选择、评价与证据边界。</p>
+    <a href="{{ '/teaching/publicopinion/chapt3-main-analysis-methods/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
 </div>
 
 后续章节将在课程推进过程中持续更新。

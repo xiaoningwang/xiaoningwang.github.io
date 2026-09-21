@@ -452,4 +452,4 @@ D. AI 使用说明与成员分工
 
 后续学习数据采集、文本分析与传播网络时，请持续更新这份报告的同一版本链：新增了什么证据，哪些判断因此改变，哪些问题仍不能回答。报告的成熟程度取决于证据与判断是否对应，而不是篇幅或图表数量。
 
-[返回课程主页 →]({{ '/teaching/publicopinion/' | relative_url }})
+[返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [下一讲：主要分析方法 →]({{ '/teaching/publicopinion/chapt3-main-analysis-methods/' | relative_url }})
