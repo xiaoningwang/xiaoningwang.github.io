@@ -17,6 +17,7 @@ location: "北京市，中国"
 1. [第一讲：因果推断的基本框架]({{ '/files/ComAD/lecture-01.html' | relative_url }})
 2. [第二讲：因果效应的识别与估计]({{ '/files/ComAD/lecture-02.html' | relative_url }})
 3. [第三讲：因果发现与方向识别]({{ '/files/ComAD/lecture-03.html' | relative_url }})
+4. [第四讲：选题中的统计方法与应用]({{ '/files/ComAD/lecture-04.html' | relative_url }})
 
 课前推荐阅读材料：
 
