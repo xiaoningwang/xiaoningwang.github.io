@@ -153,11 +153,7 @@ redirect_from:
     </div>
     <div class="section-content">
       <p><a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">查看发表论文</a></p>
-      <ul class="publication-list">
-        {% for post in site.publications %}
-          {% include archive-single-cv.html %}
-        {% endfor %}
-      </ul>
+      <p><a href="{{ '/publication/books' | relative_url }}" class="btn btn-primary">查看教材与译著</a></p>
     </div>
   </section>
 

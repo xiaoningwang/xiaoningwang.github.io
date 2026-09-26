@@ -11,31 +11,7 @@ author_profile: true
 
 {% include base_path %}
 
-<style>
-/* Publications Page Styles */
-.publication-section {
-  margin-bottom: 30px;
-}
-
-.publication-list {
-  list-style-position: inside;
-  padding-left: 0;
-  margin: 0;
-}
-
-.publication-list li {
-  margin-bottom: 12px; /* Adjust this value to change line spacing between items */
-  line-height: 1.5; /* Adjust this value to change line spacing within items */
-}
-
-.publication-section h2 {
-  margin-bottom: 10px;
-}
-
-.publication-section hr {
-  margin: 10px 0 20px 0;
-}
-</style>
+{% include publication-styles.html %}
 
 <!-- 主持项目 -->
 <h2>主持项目</h2>
@@ -126,16 +102,9 @@ author_profile: true
   </ol>
 </div>
 
-<!-- 教材和译著 -->
-<h2 id="books">教材和译著</h2>
+<!-- 教材与译著 -->
+<h2 id="books">教材与译著</h2>
 <hr />
 <div class="publication-section">
-  <ol class="publication-list">
-    <li><strong>王小宁</strong>, 刘撷芯和黄俊文（2016）.《R语言实战（第2版）》, 人民邮电出版社（译著，畅销20万册，人大图书馆借阅排行前20）</li>
-    <li><strong>王小宁</strong>（2017）.《Hadoop 金融大数据分析》, 电子工业出版社（译著）</li>
-    <li>黄俊文, <strong>王小宁</strong>, 冯璟烁和于嘉傲（2018）.《ggplot2数据分析与图形艺术（第2版）》, 西安交通大学出版社.（译著）</li>
-    <li>柴剑平，王妍，倪业鹏，<strong>王小宁</strong>（2021），《传媒数据学》，高等教育出版社（教材）</li>
-    <li><strong>王小宁</strong>（2025），《社会调查中的问卷分割技术》，中国传媒大学出版社（专著）</li>
-    <li>左然、吴殿义、<strong>王小宁</strong>编著，《计算广告技术与架构》，中国传媒大学出版社（教材）</li>
-  </ol>
+  <p><a href="{{ '/publication/books' | relative_url }}">查看教材与译著完整列表</a></p>
 </div>
