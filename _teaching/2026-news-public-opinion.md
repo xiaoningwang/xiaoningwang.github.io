@@ -108,6 +108,11 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
     <p>系统学习从研究设计、文本预处理与表示到分类、聚类、情感立场、传播网络及大模型辅助分析的主要方法，理解方法选择、评价与证据边界。</p>
     <a href="{{ '/teaching/publicopinion/chapt3-main-analysis-methods/' | relative_url }}">进入本讲讲义 →</a>
   </article>
+  <article class="chapter-card">
+    <h3>第 4 讲：新闻与舆情研究的理论基础与研究设计</h3>
+    <p>整合25个主题、250项理论、框架与模型，通过分层学习、理论选择、操作化案例和课堂练习，把传播问题转化为可检验的研究设计。</p>
+    <a href="{{ '/teaching/publicopinion/chapt4-theories-and-research-design/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
 </div>
 
 后续章节将在课程推进过程中持续更新。

@@ -14,7 +14,7 @@ classes: wide
 excerpt: "系统梳理研究设计、文本预处理与表示、分类与聚类、情感与立场、传播网络、统计推断及大模型辅助分析的方法与证据边界。"
 ---
 
-[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：舆情分析报告指南]({{ '/teaching/publicopinion/chapt2-public-opinion-report-writing/' | relative_url }})
+[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：舆情分析报告指南]({{ '/teaching/publicopinion/chapt2-public-opinion-report-writing/' | relative_url }}) · [下一讲：理论基础与研究设计]({{ '/teaching/publicopinion/chapt4-theories-and-research-design/' | relative_url }})
 
 新闻与舆情数据分析研究的是：**谁在什么时间、什么平台，围绕什么对象和事件，表达了什么观点，这些表达如何传播、变化，并产生何种可观察结果。** 文本处理与机器学习提供计算工具，新闻传播理论提供问题和解释框架，人工核验与研究设计决定结论是否可信。
 
@@ -1404,4 +1404,4 @@ project/
 
 ---
 
-[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：舆情分析报告指南]({{ '/teaching/publicopinion/chapt2-public-opinion-report-writing/' | relative_url }})
+[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：舆情分析报告指南]({{ '/teaching/publicopinion/chapt2-public-opinion-report-writing/' | relative_url }}) · [下一讲：理论基础与研究设计]({{ '/teaching/publicopinion/chapt4-theories-and-research-design/' | relative_url }})
