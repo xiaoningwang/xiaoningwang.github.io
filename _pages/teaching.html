@@ -156,6 +156,7 @@ author_profile: true
       <div class="course-excerpt">从新闻事实与公众表达出发，学习舆情数据采集、分析、可视化与证据核验。</div>
     </div>
     {% for post in site.teaching reversed %}
+      {% unless post.hide_from_teaching %}
       {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" %}
         <div class="course-card">
           <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
@@ -171,6 +172,7 @@ author_profile: true
           </div>
         </div>
       {% endif %}
+    {% endunless %}
     {% endfor %}
   </div>
 </div>
@@ -180,6 +182,7 @@ author_profile: true
   <h2>全部课程</h2>
   <ul class="course-list">
     {% for post in site.teaching reversed %}
+      {% unless post.hide_from_teaching %}
       <li>
         <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
         <div class="course-info">
@@ -188,6 +191,7 @@ author_profile: true
           <span style="color: #999;">{% if post.period %}{{ post.period }}{% else %}{{ post.date | date: "%Y年%m月" }}{% endif %}</span>{% endunless %}
         </div>
       </li>
+    {% endunless %}
     {% endfor %}
   </ul>
 </div>

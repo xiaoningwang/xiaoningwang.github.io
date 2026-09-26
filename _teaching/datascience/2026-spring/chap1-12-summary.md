@@ -1,6 +1,7 @@
 ---
 title: "数据科学导论第1-12讲课程讲稿汇总"
 collection: teaching
+hide_from_teaching: true
 type: "数据科学导论"
 permalink: /teaching/datascience/chap1-12-summary
 date: 2026-06-24
