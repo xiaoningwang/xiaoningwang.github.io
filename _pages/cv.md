@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Xiaoning Wang - CV"
+show_title: false
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -151,6 +152,7 @@ redirect_from:
       <h2 class="section-title">📚 相关著作</h2>
     </div>
     <div class="section-content">
+      <p><a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">查看发表论文</a></p>
       <ul class="publication-list">
         {% for post in site.publications %}
           {% include archive-single-cv.html %}
@@ -167,8 +169,10 @@ redirect_from:
     <div class="section-content">
       <ul class="teaching-list">
         {% for post in site.teaching %}
-          {% unless post.title contains "第" and post.title contains "讲" %}
-            {% include archive-single-cv.html %}
+          {% unless post.hide_from_cv %}
+            {% unless post.title contains "第" and post.title contains "讲" %}
+              {% include archive-single-cv.html %}
+            {% endunless %}
           {% endunless %}
         {% endfor %}
       </ul>

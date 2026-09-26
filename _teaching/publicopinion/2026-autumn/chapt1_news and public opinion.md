@@ -1,5 +1,6 @@
 ---
 title: "第一章 新闻与舆情问题定义"
+hide_from_cv: true
 collection: teaching
 type: "传媒大数据专业，大三上"
 permalink: /teaching/publicopinion/chapt1-news-and-public-opinion/
