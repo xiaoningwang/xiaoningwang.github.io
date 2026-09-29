@@ -1,7 +1,7 @@
 ---
 title: "新闻与舆情数据学"
 collection: teaching
-type: "传媒大数据专业 · 大三上"
+type: "数据科学与大数据技术专业，计算广告专业 · 大三上"
 permalink: /teaching/publicopinion/
 venue: "新闻与舆情数据分析课程"
 date: 2026-09-01
@@ -61,7 +61,7 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
   <div class="course-tags">
     <span class="course-tag">2026 秋季</span>
     <span class="course-tag">2 学分 / 32 学时</span>
-    <span class="course-tag">传媒大数据专业 · 大三上</span>
+    <span class="course-tag">数据科学与大数据技术专业，计算广告专业 · 大三上</span>
   </div>
 </div>
 
