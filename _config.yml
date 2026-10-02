@@ -72,6 +72,11 @@ social:
 
 
 # Analytics
+visitor_stats:
+  enabled: true
+  flagcounter_id: "wNrs"
+  flagcounter_server: "s01"
+
 analytics:
   provider               :  "google-analytics-4" # false (default), "google", "google-universal", "custom"
   google:

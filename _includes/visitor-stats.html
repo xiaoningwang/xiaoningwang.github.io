@@ -1,0 +1,26 @@
+{% if site.visitor_stats.enabled and site.visitor_stats.flagcounter_id != blank %}
+<section class="visitor-stats" aria-label="访问量与访客地区分布">
+  <h2 class="visitor-stats__title">访问量与访客地区 <span lang="en">Visitor statistics</span></h2>
+  {% if jekyll.environment == "production" %}
+  <a class="visitor-stats__counter" href="https://{{ site.visitor_stats.flagcounter_server | escape }}.flagcounter.com/more/{{ site.visitor_stats.flagcounter_id | escape }}/" target="_blank" rel="noopener noreferrer" aria-label="查看累计浏览量与访客国家、地区分布详情（新窗口）">
+    <img src="https://{{ site.visitor_stats.flagcounter_server | escape }}.flagcounter.com/count2/{{ site.visitor_stats.flagcounter_id | escape }}/bg_F2F3F3/txt_646769/border_F2F3F3/columns_2/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="累计浏览量（Pageviews）与按 IP 归属地统计的访客国家、地区人数；图片无法加载时可点击查看统计详情" decoding="async">
+  </a>
+  {% else %}
+  <p class="visitor-stats__note">访客统计仅在正式发布后加载，本地预览不计数。</p>
+  {% endif %}
+  <p class="visitor-stats__note">Pageviews 为累计浏览量；国旗数字为访客数，默认按 24 小时去重。地区由 IP 推断，不展示完整 IP。<br>由 <a href="https://flagcounter.com/faq.html" target="_blank" rel="noopener noreferrer">Flag Counter</a> 提供，自接入起统计，图片数据约延迟 5 分钟；点击图表查看详情。</p>
+</section>
+{% if jekyll.environment == "production" %}
+<script>
+  // Let the theme recalculate its sticky footer after the remote image loads.
+  (function () {
+    var counter = document.querySelector('.visitor-stats__counter img');
+    if (counter) {
+      counter.addEventListener('load', function () {
+        window.dispatchEvent(new Event('resize'));
+      });
+    }
+  }());
+</script>
+{% endif %}
+{% endif %}

@@ -2,6 +2,33 @@
    FOOTER
    ========================================================================== */
 
+.visitor-stats {
+  margin: 1em 0;
+  padding: 1em 0;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+
+  &__title {
+    margin: 0 0 0.75em;
+    font-size: $type-size-6;
+
+    span { font-weight: normal; margin-left: 0.5em; }
+  }
+
+  &__counter {
+    display: inline-block;
+    max-width: 100%;
+
+    img { display: block; max-width: 100%; height: auto; }
+  }
+
+  &__note {
+    margin: 0.75em 0 0;
+    font-size: $type-size-7;
+    line-height: 1.7;
+  }
+}
+
 .page__footer {
   @include clearfix;
   float: left;
