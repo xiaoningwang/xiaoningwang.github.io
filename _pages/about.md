@@ -108,8 +108,11 @@ My open-source projects, course examples, and website updates are maintained on 
 ## 📱 公众号文章
 
 <div class="wechat-articles">
-  <h3>课程与数据科学文章</h3>
+  <h3>结课作品文章</h3>
   <div class="article-list">
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/xSKdreyLiaM1qvWuPONceg" class="article-title">结课作品文章</a>
+    </div>
     <div class="article-item">
       <a href="https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ" class="article-title">2025春季数据科学导论优秀作品</a>
       <span class="article-date">2025</span>
