@@ -155,9 +155,18 @@ author_profile: true
       <div class="course-meta" style="margin-top: 5px;">新闻与舆情数据分析课程</div>
       <div class="course-excerpt">从新闻事实与公众表达出发，学习舆情数据采集、分析、可视化与证据核验。</div>
     </div>
+    <div class="course-card">
+      <h3><a href="{{ '/teaching/business-skills/' | relative_url }}">商业技能</a></h3>
+      <div class="course-meta">
+        <span class="type">专业选修课 · 2学分</span>
+        <span class="date">2026</span>
+      </div>
+      <div class="course-meta" style="margin-top: 5px;">中国人民大学金融科技双学位学生</div>
+      <div class="course-excerpt">聚焦大语言模型与AI智能体在商业及金融领域的应用，涵盖提示工程、RAG、商业数据分析、智能风控和多智能体协作。</div>
+    </div>
     {% for post in site.teaching reversed %}
       {% unless post.hide_from_teaching %}
-      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" or post.title contains "商业技能" %}
+      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" %}
         <div class="course-card">
           <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
           <div class="course-meta">
