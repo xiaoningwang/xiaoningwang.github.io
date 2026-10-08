@@ -70,7 +70,6 @@ location: "Beijing, China"
 </table>
 </div>
 
-*教学进度可根据实际情况适当调整。*
 
 ## 项目式学习
 
@@ -84,13 +83,29 @@ location: "Beijing, China"
 
 ## 考核方式
 
-| 考核环节 | 成绩占比 |
-| --- | ---: |
-| 课程作业 | 30% |
-| 研讨交流与课堂表现 | 20% |
-| 期中项目方案汇报 | 20% |
-| 期末智能体作品与项目报告 | 30% |
-| **合计** | **100%** |
+<style>
+.business-assessment { max-width: 680px; width: 100%; margin: 1.2rem auto 1.5rem; }
+.business-assessment table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.95rem; }
+.business-assessment th, .business-assessment td { padding: 10px 14px; }
+.business-assessment th:last-child, .business-assessment td:last-child { width: 110px; text-align: right; white-space: nowrap; }
+.business-assessment tbody tr:last-child { font-weight: 700; }
+@media (max-width: 600px) {
+  .business-assessment th, .business-assessment td { padding: 10px 9px; }
+  .business-assessment th:last-child, .business-assessment td:last-child { width: 82px; }
+}
+</style>
+<div class="business-assessment">
+<table>
+<thead><tr><th>考核环节</th><th>成绩占比</th></tr></thead>
+<tbody>
+<tr><td>课程作业</td><td>30%</td></tr>
+<tr><td>研讨交流与课堂表现</td><td>20%</td></tr>
+<tr><td>期中项目方案汇报</td><td>20%</td></tr>
+<tr><td>期末智能体作品与项目报告</td><td>30%</td></tr>
+<tr><td>合计</td><td>100%</td></tr>
+</tbody>
+</table>
+</div>
 
 期末提交材料包括智能体作品、业务方案报告和演示材料，并需说明AI工具使用情况，遵守学术诚信规范。
 
