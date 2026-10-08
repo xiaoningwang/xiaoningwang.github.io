@@ -33,7 +33,7 @@ location: "Beijing, China"
 
 [阅读第一讲讲义：商业技能与AI智能体]({{ '/files/business-skills/2026-autumn/lecture-01.html' | relative_url }})
 
-学生阅读版，涵盖大语言模型、工作流与智能体的基本概念，工具调用与RAG、金融与商业应用、效果评测、风险控制，以及课堂练习与课后学习。
+涵盖大语言模型、工作流与智能体的基本概念，工具调用与RAG、金融与商业应用、效果评测、风险控制，以及课堂练习与课后学习。
 
 ## 八周教学安排
 
@@ -177,9 +177,7 @@ location: "Beijing, China"
 </article>
 </div>
 
-### 二、近年商业技能延伸阅读（8本）
-
-以下采用**原版书名与原版书目信息**，避免不同中文译本书名、出版时间和ISBN混淆。英文书可选择原版或可靠的授权译本阅读。
+### 二、近年商业技能延伸阅读
 
 <div class="business-books">
 <article class="business-book">
@@ -197,11 +195,11 @@ location: "Beijing, China"
 <p><a href="https://www.princeton.edu/news/2024/12/18/ai-snake-oil-conversation-princeton-ai-experts-arvind-narayanan-and-sayash-kapoor" target="_blank" rel="noopener noreferrer">普林斯顿大学介绍</a></p>
 </article>
 <article class="business-book">
-<h4>8. <em>The Coming Wave: Technology, Power, and the Twenty-First Century’s Greatest Dilemma</em>（技术创新与治理）</h4>
-<p class="meta">Mustafa Suleyman、Michael Bhaskar｜Crown，2023｜ISBN：9780593593950</p>
+<h4>8. <em>The Coming Wave: Technology, Power, and the Twenty-First Century’s Greatest Dilemma《浪潮将至》</em>（技术创新与治理）</h4>
+<p class="meta">Mustafa Suleyman、Michael Bhaskar｜Crown，2023｜ISBN：9780593593950（中文：ISBN: 9787521768480）</p>
 <p><span class="label">核心内容：</span>从技术扩散、权力结构与社会治理讨论AI及相关技术对组织和产业的影响。</p>
 <p><span class="label">课程应用：</span>为金融智能体项目绘制“机会—风险—控制措施”矩阵。</p>
-<p><a href="https://catalog.nvcourts.gov/cgi-bin/koha/opac-detail.pl?biblionumber=94571" target="_blank" rel="noopener noreferrer">馆藏书目</a></p>
+<p><a href="https://book.douban.com/subject/37077347/" target="_blank" rel="noopener noreferrer">豆瓣读书</a></p>
 </article>
 <article class="business-book">
 <h4>9. <em>The Friction Project</em>（组织流程优化）</h4>
@@ -239,6 +237,7 @@ location: "Beijing, China"
 <p><a href="https://books.google.com/books?q=The+Nvidia+Way+Tae+Kim" target="_blank" rel="noopener noreferrer">查询图书版本</a></p>
 </article>
 </div>
+
 
 ### 三、建议阅读与实践路径
 
