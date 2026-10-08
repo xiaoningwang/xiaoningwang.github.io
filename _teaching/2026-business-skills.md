@@ -29,16 +29,46 @@ location: "Beijing, China"
 
 ## 八周教学安排
 
-| 周次 | 主题 | 核心内容与实践任务 |
-| --- | --- | --- |
-| 第1周 | 课程导论：商业技能与AI智能体 | LLM、Agent的商业价值、能力边界与风险；梳理一个金融或商业AI应用场景。 |
-| 第2周 | 大模型最新进展与提示工程 | 长上下文、多模态、推理模型、工具型AI；角色设定、任务分解、结构化输出和少样本提示；比较主流工具的表现。 |
-| 第3周 | RAG、企业知识管理与工具调用 | 文档切分、检索、重排序、引用溯源、知识库评测；函数调用与数据库、浏览器等工具接入；设计知识库问答或自动化方案。 |
-| 第4周 | 商业数据分析、客户服务与营销智能体 | 财务、交易和用户行为数据处理；客户画像、智能客服、个性化推荐与服务质量评测；完成数据摘要及Agent方案。 |
-| 第5周 | 期中项目方案汇报与智能风控 | 汇报项目需求、数据、技术路线、风险和价值；学习异常检测、信用评分、交易监控、合规审查与人工复核。 |
-| 第6周 | 智能投顾、研报生成与文档智能 | 风险偏好、资产配置与投资建议边界；财报摘要、竞品分析、会议纪要及引用核验；提交AI辅助分析片段。 |
-| 第7周 | 强化学习、多智能体协作与治理评测 | Q-learning、DQN和策略优化；Planner–Executor、Reviewer、Critic等协作模式；准确性、鲁棒性、幻觉、成本、延迟与安全评测。 |
-| 第8周 | 项目打磨、期末展示与课程总结 | 展示智能体原型、业务方案及评测结果；综合考查技术实现、商业价值、合规意识、团队合作和表达能力。 |
+<style>
+/* 商业技能课程：八周教学安排 */
+.business-schedule { margin: 1.2rem 0 1.5rem; }
+.business-schedule__table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; border: 1px solid #e1e7eb; border-radius: 8px; overflow: hidden; font-size: 0.94rem; line-height: 1.7; }
+.business-schedule__table col.week { width: 90px; }
+.business-schedule__table col.topic { width: 30%; }
+.business-schedule__table th, .business-schedule__table td { padding: 15px 16px; text-align: left; vertical-align: top; border: 0; border-bottom: 1px solid #e6eaf0; overflow-wrap: break-word; word-break: normal; }
+.business-schedule__table thead th { background: #edf3f1; color: #263c37; font-weight: 700; }
+.business-schedule__table tbody tr:nth-child(even) { background: #f7f9fa; }
+.business-schedule__table tbody tr:nth-child(odd) { background: #fff; }
+.business-schedule__table tbody tr:last-child td { border-bottom: 0; }
+.business-schedule__table td.week { white-space: nowrap; font-weight: 700; color: #346758; }
+.business-schedule__table td.topic { font-weight: 600; color: #283b42; }
+@media (max-width: 700px) {
+  .business-schedule__table, .business-schedule__table tbody, .business-schedule__table tr, .business-schedule__table td { display: block; width: 100%; box-sizing: border-box; }
+  .business-schedule__table { border: 0; background: transparent; }
+  .business-schedule__table colgroup, .business-schedule__table thead { display: none; }
+  .business-schedule__table tbody tr { border: 1px solid #e1e7eb; border-radius: 8px; overflow: hidden; margin-bottom: 12px; background: #fff !important; }
+  .business-schedule__table td { padding: 8px 14px; border: 0; }
+  .business-schedule__table td.week { padding-top: 12px; color: #346758; }
+  .business-schedule__table td.topic { padding-top: 0; font-size: 1.02em; }
+  .business-schedule__table td.details { padding: 10px 14px 14px; border-top: 1px solid #eef0f2; }
+}
+</style>
+<div class="business-schedule">
+<table class="business-schedule__table">
+<colgroup><col class="week"><col class="topic"><col></colgroup>
+<thead><tr><th scope="col">周次</th><th scope="col">主题</th><th scope="col">核心内容与实践任务</th></tr></thead>
+<tbody>
+<tr><td class="week">第1周</td><td class="topic">课程导论：商业技能与AI智能体</td><td class="details">LLM、Agent的商业价值、能力边界与风险；梳理一个金融或商业AI应用场景。</td></tr>
+<tr><td class="week">第2周</td><td class="topic">大模型最新进展与提示工程</td><td class="details">长上下文、多模态、推理模型、工具型AI；角色设定、任务分解、结构化输出和少样本提示；比较主流工具的表现。</td></tr>
+<tr><td class="week">第3周</td><td class="topic">RAG、企业知识管理与工具调用</td><td class="details">文档切分、检索、重排序、引用溯源、知识库评测；函数调用与数据库、浏览器等工具接入；设计知识库问答或自动化方案。</td></tr>
+<tr><td class="week">第4周</td><td class="topic">商业数据分析、客户服务与营销智能体</td><td class="details">财务、交易和用户行为数据处理；客户画像、智能客服、个性化推荐与服务质量评测；完成数据摘要及Agent方案。</td></tr>
+<tr><td class="week">第5周</td><td class="topic">期中项目方案汇报与智能风控</td><td class="details">汇报项目需求、数据、技术路线、风险和价值；学习异常检测、信用评分、交易监控、合规审查与人工复核。</td></tr>
+<tr><td class="week">第6周</td><td class="topic">智能投顾、研报生成与文档智能</td><td class="details">风险偏好、资产配置与投资建议边界；财报摘要、竞品分析、会议纪要及引用核验；提交AI辅助分析片段。</td></tr>
+<tr><td class="week">第7周</td><td class="topic">强化学习、多智能体协作与治理评测</td><td class="details">Q-learning、DQN和策略优化；Planner–Executor、Reviewer、Critic等协作模式；准确性、鲁棒性、幻觉、成本、延迟与安全评测。</td></tr>
+<tr><td class="week">第8周</td><td class="topic">项目打磨、期末展示与课程总结</td><td class="details">展示智能体原型、业务方案及评测结果；综合考查技术实现、商业价值、合规意识、团队合作和表达能力。</td></tr>
+</tbody>
+</table>
+</div>
 
 *教学进度可根据实际情况适当调整。*
 
