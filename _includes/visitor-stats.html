@@ -1,6 +1,5 @@
 {% if site.visitor_stats.enabled and site.visitor_stats.flagcounter_id != blank %}
 <section class="visitor-stats" aria-label="访问量与访客地区分布">
-  <h2 class="visitor-stats__title">访问量与访客地区 <span lang="en">Visitor statistics</span></h2>
   {% if jekyll.environment == "production" %}
   <a class="visitor-stats__counter" href="https://{{ site.visitor_stats.flagcounter_server | escape }}.flagcounter.com/more/{{ site.visitor_stats.flagcounter_id | escape }}/" target="_blank" rel="noopener noreferrer" aria-label="查看累计浏览量与访客国家、地区分布详情（新窗口）">
     <img src="https://{{ site.visitor_stats.flagcounter_server | escape }}.flagcounter.com/count2/{{ site.visitor_stats.flagcounter_id | escape }}/bg_F2F3F3/txt_646769/border_F2F3F3/columns_2/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="累计浏览量（Pageviews）与按 IP 归属地统计的访客国家、地区人数；图片无法加载时可点击查看统计详情" decoding="async">
@@ -8,7 +7,7 @@
   {% else %}
   <p class="visitor-stats__note">访客统计仅在正式发布后加载，本地预览不计数。</p>
   {% endif %}
-  <p class="visitor-stats__note">浏览量自 <time datetime="2026-10-02">2026 年 10 月 2 日</time>起统计。</p>
+  <p class="visitor-stats__note" lang="en">Page views counted since <time datetime="2026-10-02">October 2, 2026</time>.</p>
 </section>
 {% if jekyll.environment == "production" %}
 <script>

@@ -124,7 +124,7 @@ location: "Beijing, China"
 
 ## 推荐阅读：经典思维与前沿商业
 
-阅读书目围绕“**善于提问—识别真需求—清晰表达—理解技术—验证价值—审慎决策**”组织。经典阅读重点训练底层思维，前沿阅读侧重2023—2025年AI商业实践与治理。推荐阅读不要求一次读完，可按项目主题选择精读。
+阅读书目围绕“**善于提问—识别真需求—清晰表达—理解技术—验证价值—审慎决策**”组织。经典阅读重点训练底层思维，延伸阅读侧重中文商业实践书籍，兼顾近年出版的商业模式、数据分析与组织管理著作。推荐阅读不要求一次读完，可按项目主题选择精读。
 
 <style>
 .business-books { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:1rem 0 1.4rem; }
@@ -177,64 +177,95 @@ location: "Beijing, China"
 </article>
 </div>
 
+<<<<<<< HEAD
 ### 二、近年商业技能延伸阅读
+=======
+
+### 二、中文商业技能延伸阅读（12本）
+
+以下以**中文出版版本**为准。2018年初版及升级版、典藏版均明确标注版本年份，不将再版误写为首次出版。与消费趋势相关的两本三浦展著作可按兴趣二选一。
+>>>>>>> 46da07209e0c5eaddd71585201be923efa990746
 
 <div class="business-books">
 <article class="business-book">
-<h4>6. <em>Co-Intelligence: Living and Working with AI</em>（AI协作）</h4>
-<p class="meta">Ethan Mollick｜Portfolio，2024｜ISBN：9780593716717</p>
-<p><span class="label">核心内容：</span>讨论把生成式AI用作协作者、教练和学习伙伴，同时辨识其局限。</p>
-<p><span class="label">课程应用：</span>设计“人工独立完成／AI辅助完成”对照任务，比较质量、时间和核验成本。</p>
-<p><a href="https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/" target="_blank" rel="noopener noreferrer">出版社资料</a></p>
+<h4>6. 《数据驱动：从方法到实践》</h4>
+<p class="meta">桑文锋｜电子工业出版社，2018｜ISBN：9787121334511</p>
+<p><span class="label">核心内容：</span>讲解数据采集、建模、分析与指标体系的企业实践。</p>
+<p><span class="label">课程应用：</span>为商业智能体项目设计关键业务指标及数据收集方案。</p>
 </article>
 <article class="business-book">
-<h4>7. <em>AI Snake Oil: What Artificial Intelligence Can Do, What It Can’t, and How to Tell the Difference</em>（AI能力辨识）</h4>
-<p class="meta">Arvind Narayanan、Sayash Kapoor｜Princeton University Press，2024</p>
-<p><span class="label">核心内容：</span>区分真实有效的AI应用与证据不足的宣传，理解预测、生成与评测的能力边界。</p>
-<p><span class="label">课程应用：</span>为一款“AI赋能”商业产品设计验证清单，提出基线模型、失败情形和证据要求。</p>
-<p><a href="https://www.princeton.edu/news/2024/12/18/ai-snake-oil-conversation-princeton-ai-experts-arvind-narayanan-and-sayash-kapoor" target="_blank" rel="noopener noreferrer">普林斯顿大学介绍</a></p>
+<h4>7. 《价值驱动：数据分析价值逻辑与实战方法》</h4>
+<p class="meta">黄小伟、赵力、邵俊杰｜电子工业出版社，2023｜ISBN：9787121456015</p>
+<p><span class="label">核心内容：</span>从企业战略与规模、成本、效率出发，讨论数据分析如何创造业务价值。</p>
+<p><span class="label">课程应用：</span>建立项目价值评估框架，说明AI应用究竟带来哪些可量化改善。</p>
 </article>
 <article class="business-book">
+<<<<<<< HEAD
 <h4>8. <em>The Coming Wave: Technology, Power, and the Twenty-First Century’s Greatest Dilemma《浪潮将至》</em>（技术创新与治理）</h4>
 <p class="meta">Mustafa Suleyman、Michael Bhaskar｜Crown，2023｜ISBN：9780593593950（中文：ISBN: 9787521768480）</p>
 <p><span class="label">核心内容：</span>从技术扩散、权力结构与社会治理讨论AI及相关技术对组织和产业的影响。</p>
 <p><span class="label">课程应用：</span>为金融智能体项目绘制“机会—风险—控制措施”矩阵。</p>
 <p><a href="https://book.douban.com/subject/37077347/" target="_blank" rel="noopener noreferrer">豆瓣读书</a></p>
+=======
+<h4>8. 《数据运营之路：掘金数据化时代（升级版）》</h4>
+<p class="meta">张明明｜电子工业出版社，2022/2023｜ISBN：9787121446122</p>
+<p><span class="label">核心内容：</span>聚焦数据化运营中的指标、用户分析与增长实践。</p>
+<p><span class="label">课程应用：</span>分析用户转化、留存和复购，提出数据驱动的运营实验。</p>
+>>>>>>> 46da07209e0c5eaddd71585201be923efa990746
 </article>
 <article class="business-book">
-<h4>9. <em>The Friction Project</em>（组织流程优化）</h4>
-<p class="meta">Robert I. Sutton、Huggy Rao｜St. Martin's Press，2024｜ISBN：9781250284419</p>
-<p><span class="label">核心内容：</span>识别影响组织效率的无效摩擦，讨论哪些流程应简化、哪些约束反而必要。</p>
-<p><span class="label">课程应用：</span>绘制客服或审批流程图，识别可自动化节点及必须保留的人工复核节点。</p>
-<p><a href="https://academic.macmillan.com/academictrade/9781250284419/thefrictionproject/" target="_blank" rel="noopener noreferrer">出版社资料</a></p>
+<h4>9. 《人工智能产品经理：AI时代PM修炼手册（修订版）》</h4>
+<p class="meta">张竞宇｜电子工业出版社，2023｜ISBN：9787121447600</p>
+<p><span class="label">核心内容：</span>介绍AI产品从需求分析、技术协同到设计和迭代的工作方法。</p>
+<p><span class="label">课程应用：</span>提交AI产品需求文档、业务流程图与可行性分析。</p>
 </article>
 <article class="business-book">
-<h4>10. <em>The Geek Way: The Radical Mindset That Drives Extraordinary Results</em>（团队协作与创新文化）</h4>
-<p class="meta">Andrew McAfee｜2023｜英文原版</p>
-<p><span class="label">核心内容：</span>讨论科技企业的实验、学习、协作与组织文化，以及如何持续改进工作方式。</p>
-<p><span class="label">课程应用：</span>为小组Agent项目设计实验周期、角色分工、反馈与复盘机制。</p>
-<p><a href="https://www.hachettebookgroup.com/titles/andrew-mcafee/the-geek-way/9781668619766/" target="_blank" rel="noopener noreferrer">出版方资料</a></p>
+<h4>10. 《生意的本质：商业模式动态升级的底层逻辑》</h4>
+<p class="meta">周宏骐｜机械工业出版社，2024｜ISBN：9787111753261</p>
+<p><span class="label">核心内容：</span>从价值创造与商业模式演进理解企业增长。</p>
+<p><span class="label">课程应用：</span>为AI产品绘制商业模式画布并识别收入、成本和竞争壁垒。</p>
 </article>
 <article class="business-book">
-<h4>11. <em>The Thinking Machine: Jensen Huang, Nvidia, and the World's Most Coveted Microchip</em>（技术战略与商业化）</h4>
-<p class="meta">Stephen Witt｜Viking，2025｜ISBN：9780593832691</p>
-<p><span class="label">核心内容：</span>以英伟达的发展为线索，理解技术押注、软硬件生态、平台战略及AI产业竞争。</p>
-<p><span class="label">课程应用：</span>分析从底层算力到行业应用的价值链，绘制AI应用的商业生态图。</p>
-<p><a href="https://www.penguinrandomhouse.com/books/757558/the-thinking-machine-by-stephen-witt/" target="_blank" rel="noopener noreferrer">出版社资料</a></p>
+<h4>11. 《超越战略（典藏版）》</h4>
+<p class="meta">魏炜、张振广、朱武祥｜机械工业出版社，2024｜ISBN：9787111746775</p>
+<p><span class="label">核心内容：</span>讨论商业模式和战略如何联动，推动企业持续升级。</p>
+<p><span class="label">课程应用：</span>比较两个竞争性商业方案的资源组合与价值捕获机制。</p>
 </article>
 <article class="business-book">
-<h4>12. <em>Empire of AI: Dreams and Nightmares in Sam Altman’s OpenAI</em>（AI产业与责任治理）</h4>
-<p class="meta">Karen Hao｜Penguin Press，2025｜ISBN：9780593657508</p>
-<p><span class="label">核心内容：</span>以调查报道视角讨论AI产业竞争、资源投入、组织决策及社会影响；阅读时应结合其他资料交叉核验。</p>
-<p><span class="label">课程应用：</span>讨论AI产品的成本、数据来源、劳动分工和治理责任。</p>
-<p><a href="https://penguinrandomhouselibrary.com/book/?isbn=9780593657508" target="_blank" rel="noopener noreferrer">出版社资料</a></p>
+<h4>12. 《第五消费时代》</h4>
+<p class="meta">三浦展 著，赵宇菲 译｜新星出版社，2025｜ISBN：9787513360364</p>
+<p><span class="label">核心内容：</span>分析日本消费社会与生活方式的变化，讨论未来需求趋势。</p>
+<p><span class="label">课程应用：</span>选择一个消费者群体，检验消费趋势能否迁移到中国情境。</p>
 </article>
 <article class="business-book">
-<h4>13. <em>The Nvidia Way</em>（企业经营与竞争优势）</h4>
-<p class="meta">Tae Kim｜2024｜英文原版</p>
-<p><span class="label">核心内容：</span>分析英伟达的产品路线、领导方式、市场转型和战略决策，可与《The Thinking Machine》对读。</p>
-<p><span class="label">课程应用：</span>比较两本企业案例叙事的证据、重点与战略解释，形成商业案例分析。</p>
-<p><a href="https://books.google.com/books?q=The+Nvidia+Way+Tae+Kim" target="_blank" rel="noopener noreferrer">查询图书版本</a></p>
+<h4>13. 《孤独社会：即将到来的第五消费时代》</h4>
+<p class="meta">三浦展｜人民邮电出版社，2023｜ISBN：9787115613073</p>
+<p><span class="label">核心内容：</span>从人口与社会结构变化讨论个体化、孤独感和消费需求。</p>
+<p><span class="label">课程应用：</span>分析社会趋势如何影响产品定位；与《第五消费时代》可二选一。</p>
+</article>
+<article class="business-book">
+<h4>14. 《活下来就有转机：做好经营的48个关键洞见》</h4>
+<p class="meta">三谷宏治｜人民邮电出版社，2025｜ISBN：9787115669032</p>
+<p><span class="label">核心内容：</span>围绕经营判断、资源取舍与逆境应对整理管理洞见。</p>
+<p><span class="label">课程应用：</span>为创业项目制定低成本验证方案和风险应对预案。</p>
+</article>
+<article class="business-book">
+<h4>15. 《关键对话：如何高效能沟通（原书第3版）》</h4>
+<p class="meta">Kerry Patterson 等｜机械工业出版社，2022/2025｜ISBN：9787111714385（2022版）；9787111781479（2025版）</p>
+<p><span class="label">核心内容：</span>学习在高压力、观点冲突和重要议题下进行有效沟通。</p>
+<p><span class="label">课程应用：</span>模拟客户需求澄清与项目分歧协调，进行结构化复盘。</p>
+</article>
+<article class="business-book">
+<h4>16. 《向上管理：搞定领导拿结果》</h4>
+<p class="meta">梅洛迪·怀尔丁｜中信出版集团，2025｜ISBN：9787521779462</p>
+<p><span class="label">核心内容：</span>讨论职场沟通、目标对齐、反馈管理和跨层级协作。</p>
+<p><span class="label">课程应用：</span>完成项目干系人地图，并设计阶段性汇报与反馈节奏。</p>
+</article>
+<article class="business-book">
+<h4>17. 《无限游戏：可持续范式的商业未来》</h4>
+<p class="meta">陈科｜机械工业出版社，2026｜ISBN：9787111807957</p>
+<p><span class="label">核心内容：</span>讨论企业如何摆脱短期竞争惯性，通过动态效率与创新维持长期成长。</p>
+<p><span class="label">课程应用：</span>为商业AI项目区分短期KPI和长期用户价值与可持续能力。</p>
 </article>
 </div>
 
@@ -243,12 +274,13 @@ location: "Beijing, China"
 
 | 阶段 | 推荐阅读 | 课堂产出 |
 | --- | --- | --- |
-| 问题发现与需求识别（第1—2周） | 《创新，从提问开始》《真需求》 | 研究问题清单、用户访谈提纲、需求画布 |
-| 理解与表达（第2—3周） | 《费曼学习法》《批判性思维》《艾伦·图灵传》 | 3分钟技术说明、证据核验表、技术边界讨论 |
-| AI产品与流程设计（第3—5周） | *Co-Intelligence*、*The Friction Project*、*The Geek Way* | AI协作实验、流程改进图、项目迭代计划 |
-| 商业模式与前沿治理（第5—8周） | *The Thinking Machine*、*The Nvidia Way*、*AI Snake Oil*、*The Coming Wave*、*Empire of AI* | 商业生态图、风险矩阵、项目价值评估报告 |
+| 问题发现与需求识别（第1—2周） | 《创新，从提问开始》《真需求》《第五消费时代》 | 问题清单、用户访谈提纲、需求画布 |
+| 理解与表达（第2—3周） | 《费曼学习法》《批判性思维》《艾伦·图灵传》《关键对话》 | 技术说明、证据核验表、项目沟通演练 |
+| 数据与AI产品设计（第3—5周） | 《数据驱动》《价值驱动》《数据运营之路》《人工智能产品经理》 | 指标体系、需求文档、数据分析与AI原型 |
+| 商业战略与组织协作（第5—8周） | 《生意的本质》《超越战略》《活下来就有转机》《向上管理》《无限游戏》 | 商业模式画布、风险预案、项目价值评估 |
 
-**阅读建议：**每组从经典阅读中精读至少1本、前沿阅读中选读至少1本，在期中方案或期末报告中引用其关键观点，并用真实数据、访谈或实验结果检验，不把畅销书观点直接等同于事实或因果证据。
+**阅读建议：**每组选读至少1本经典著作和1本中文商业实践读物，在期中或期末项目报告中结合用户访谈、数据或实验验证关键主张。《The First 90 Days》因本次提供的是英文版本书目信息，暂未纳入中文阅读清单。
+
 
 ---
 

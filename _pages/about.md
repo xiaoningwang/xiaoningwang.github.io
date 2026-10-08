@@ -111,7 +111,12 @@ My open-source projects, course examples, and website updates are maintained on 
   <h3>结课作品文章</h3>
   <div class="article-list">
     <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/xSKdreyLiaM1qvWuPONceg" class="article-title">结课作品文章</a>
+      <a href="https://mp.weixin.qq.com/s/xSKdreyLiaM1qvWuPONceg" class="article-title">2026年春季数据科学导论优秀作品</a>
+      <span class="article-date">2026</span>
+    </div>
+    <div class="article-item">
+      <a href="https://mp.weixin.qq.com/s/Qp8GmPh8IT0xIlxjFqTPJQ?scene=1" class="article-title">商业技能 2025结课作品：10+个「会思考、有温度」的智能体，正在重新定义生活</a>
+      <span class="article-date">2025</span>
     </div>
     <div class="article-item">
       <a href="https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ" class="article-title">2025春季数据科学导论优秀作品</a>
