@@ -185,7 +185,7 @@ location: "Beijing, China"
 <p class="meta">桑文锋｜电子工业出版社，2018｜ISBN：9787121334511</p>
 <p><span class="label">核心内容：</span>数据采集、指标设计与企业数据应用。</p>
 <p><span class="label">课程应用：</span>设计业务指标体系和数据采集方案。</p>
-<p><a href="https://read.douban.com/reader/ebook/59654071/" target="_blank" rel="noopener noreferrer">豆瓣阅读（书籍内容页）</a></p>
+<p><a href="https://book.douban.com/subject/30168661/" target="_blank" rel="noopener noreferrer">豆瓣阅读（书籍内容页）</a></p>
 </article>
 <article class="business-book">
 <h4>7. 《价值驱动：数据分析价值逻辑与实战方法》</h4>
