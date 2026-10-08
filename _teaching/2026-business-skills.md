@@ -185,72 +185,84 @@ location: "Beijing, China"
 <p class="meta">桑文锋｜电子工业出版社，2018｜ISBN：9787121334511</p>
 <p><span class="label">核心内容：</span>数据采集、指标设计与企业数据应用。</p>
 <p><span class="label">课程应用：</span>设计业务指标体系和数据采集方案。</p>
+<p><a href="https://read.douban.com/reader/ebook/59654071/" target="_blank" rel="noopener noreferrer">豆瓣阅读（书籍内容页）</a></p>
 </article>
 <article class="business-book">
 <h4>7. 《价值驱动：数据分析价值逻辑与实战方法》</h4>
 <p class="meta">黄小伟、赵力、邵俊杰｜电子工业出版社，2023｜ISBN：9787121456015</p>
 <p><span class="label">核心内容：</span>数据分析与业务价值创造。</p>
 <p><span class="label">课程应用：</span>量化AI方案的收益和成本。</p>
+<p><a href="https://search.douban.com/book/subject_search?search_text=9787121456015" target="_blank" rel="noopener noreferrer">豆瓣检索（尚未核实独立条目）</a></p>
 </article>
 <article class="business-book">
 <h4>8. 《数据运营之路：掘金数据化时代（升级版）》</h4>
 <p class="meta">张明明｜电子工业出版社，2022/2023｜ISBN：9787121446122</p>
 <p><span class="label">核心内容：</span>数据运营、用户分析与增长。</p>
 <p><span class="label">课程应用：</span>设计转化率和留存率分析。</p>
+<p><a href="https://search.douban.com/book/subject_search?search_text=9787121446122" target="_blank" rel="noopener noreferrer">豆瓣检索（升级版待核实）</a></p>
 </article>
 <article class="business-book">
 <h4>9. 《人工智能产品经理：AI时代PM修炼手册（修订版）》</h4>
 <p class="meta">张竞宇｜电子工业出版社，2023｜ISBN：9787121447600</p>
 <p><span class="label">核心内容：</span>AI产品需求、设计及迭代管理。</p>
 <p><span class="label">课程应用：</span>撰写AI产品需求文档。</p>
+<p><a href="https://read.douban.com/ebook/448436785/" target="_blank" rel="noopener noreferrer">豆瓣阅读（修订版）</a></p>
 </article>
 <article class="business-book">
 <h4>10. 《生意的本质：商业模式动态升级的底层逻辑》</h4>
 <p class="meta">周宏骐｜机械工业出版社，2024｜ISBN：9787111753261</p>
 <p><span class="label">核心内容：</span>商业模式和企业价值创造。</p>
 <p><span class="label">课程应用：</span>绘制商业模式画布。</p>
+<p><a href="https://book.douban.com/subject/36868232/" target="_blank" rel="noopener noreferrer">豆瓣图书</a></p>
 </article>
 <article class="business-book">
 <h4>11. 《超越战略（典藏版）》</h4>
 <p class="meta">魏炜、张振广、朱武祥｜机械工业出版社，2024｜ISBN：9787111746775</p>
 <p><span class="label">核心内容：</span>商业模式与企业战略协同。</p>
 <p><span class="label">课程应用：</span>比较竞争方案的战略差异。</p>
+<p><a href="https://search.douban.com/book/subject_search?search_text=9787111746775" target="_blank" rel="noopener noreferrer">豆瓣检索（典藏版待核实）</a></p>
 </article>
 <article class="business-book">
 <h4>12. 《第五消费时代》</h4>
 <p class="meta">三浦展（赵宇菲 译）｜新星出版社，2025｜ISBN：9787513360364</p>
 <p><span class="label">核心内容：</span>消费社会与未来市场需求。</p>
 <p><span class="label">课程应用：</span>分析目标市场消费变化。</p>
+<p><a href="https://search.douban.com/book/subject_search?search_text=9787513360364" target="_blank" rel="noopener noreferrer">豆瓣检索（中文2025版）</a></p>
 </article>
 <article class="business-book">
 <h4>13. 《孤独社会：即将到来的第五消费时代》</h4>
 <p class="meta">三浦展｜人民邮电出版社，2023｜ISBN：9787115613073</p>
 <p><span class="label">核心内容：</span>社会结构变化和消费行为。</p>
 <p><span class="label">课程应用：</span>研究独居群体的服务需求。</p>
+<p><a href="https://book.douban.com/subject/36402200/" target="_blank" rel="noopener noreferrer">豆瓣图书</a></p>
 </article>
 <article class="business-book">
 <h4>14. 《活下来就有转机：做好经营的48个关键洞见》</h4>
 <p class="meta">三谷宏治｜人民邮电出版社，2025｜ISBN：9787115669032</p>
 <p><span class="label">核心内容：</span>经营决策、资源配置与风险应对。</p>
 <p><span class="label">课程应用：</span>设计项目经营应急预案。</p>
+<p><a href="https://search.douban.com/book/subject_search?search_text=9787115669032" target="_blank" rel="noopener noreferrer">豆瓣检索（尚未核实独立条目）</a></p>
 </article>
 <article class="business-book">
 <h4>15. 《关键对话：如何高效能沟通（原书第3版）》</h4>
 <p class="meta">Patterson 等｜机械工业出版社，2022/2025｜ISBN：9787111714385（2022版）；9787111781479（2025版）</p>
 <p><span class="label">核心内容：</span>高风险场景下的有效沟通。</p>
 <p><span class="label">课程应用：</span>进行客户访谈及团队分歧沟通演练。</p>
+<p><a href="https://search.douban.com/book/subject_search?search_text=9787111781479" target="_blank" rel="noopener noreferrer">豆瓣检索（2025版待核实）</a></p>
 </article>
 <article class="business-book">
 <h4>16. 《向上管理：搞定领导拿结果》</h4>
 <p class="meta">梅洛迪·怀尔丁｜中信出版集团，2025｜ISBN：9787521779462</p>
 <p><span class="label">核心内容：</span>目标对齐、汇报反馈与协同。</p>
 <p><span class="label">课程应用：</span>设计利益相关方沟通方案。</p>
+<p><a href="https://book.douban.com/subject/37508924/" target="_blank" rel="noopener noreferrer">豆瓣图书</a></p>
 </article>
 <article class="business-book">
 <h4>17. 《无限游戏：可持续范式的商业未来》</h4>
 <p class="meta">陈科｜机械工业出版社，2026｜ISBN：9787111807957</p>
 <p><span class="label">核心内容：</span>长期主义、商业创新与持续经营。</p>
 <p><span class="label">课程应用：</span>对比短期KPI与长期商业价值。</p>
+<p><a href="https://book.douban.com/subject/38443838/" target="_blank" rel="noopener noreferrer">豆瓣图书</a></p>
 </article>
 </div>
 
