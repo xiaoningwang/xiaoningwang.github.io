@@ -157,7 +157,7 @@ author_profile: true
     </div>
     {% for post in site.teaching reversed %}
       {% unless post.hide_from_teaching %}
-      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" %}
+      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" or post.title contains "商业技能" %}
         <div class="course-card">
           <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
           <div class="course-meta">
