@@ -10,6 +10,7 @@ redirect_from:
 
 
 
+<<<<<<< ours
 I am an Associate Professor in the [School of Data Science and Media Intelligence](https://dsmi.cuc.edu.cn/main.htm) at the Communication University of China, focused on cultivating data-driven media talent. I earned my Ph.D. from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019 under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My teaching centers on building rigorous courses, guiding students through hands-on projects, and using intelligent tools to support collaborative learning.
 
 Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM + Agent) that provides classroom demonstrations, coding guidance, and personalized feedback. Teachers and students are welcome to explore and share suggestions: [scholarhero.cn](https://scholarhero.cn/).
@@ -21,6 +22,36 @@ Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM 
 主要研究方向涵盖大语言模型与智能体（LLM 架构、微调、Prompt 工程、多智能体系统）、抽样调查方法（复杂抽样设计、调查方法学、数据质量评估）、机器学习（监督与无监督学习、深度学习、强化学习）、媒体数据分析（文本挖掘、社交网络分析、情感分析、内容推荐）以及数据融合与管理（数据融合、缺失数据填补、大数据处理）。近年来聚焦于将大模型技术与传媒场景深度结合，探索"统计学习 + 大模型 + 传媒应用"的跨学科路径。
 
 教学方面，主讲"数据科学导论""采样调查""媒体数据分析""计算广告学""贝叶斯统计""新闻与舆情数据学""R 语言数据分析实战"等本科课程，并开设"TraeAI——现代软件开发与 AI 辅助编程"前沿课程，构建了从基础统计思维到 AI 驱动开发的渐进式课程链条。教学中强调实践驱动，在每门课程中融入数据采集、可视化、建模和真实应用案例，鼓励学生完成可复用的项目并展示优秀作业，搭建面向传媒领域的项目库。
+=======
+I am an Associate Professor in the [School of Data Science and Media Intelligence](http://dsmi.cuc.edu.cn/main.htm) at the Communication University of China, focused on cultivating data-driven media talent. I earned my Ph.D. from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019 under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My teaching centers on building rigorous courses, guiding students through hands-on projects, and using intelligent tools to support collaborative learning.
+
+Our team is developing **Scholar Hero**, an intelligent teaching assistant (LLM + Agent) that provides classroom demonstrations, coding guidance, and personalized feedback. Teachers and students are welcome to explore and share suggestions: [scholarhero.cn](https://scholarhero.cn/).
+
+## 教学特色与贡献
+
+- **课程建设与更新**：主讲数据科学导论、采样调查、媒体数据分析等课程，持续将统计学习、大模型与传媒场景结合，形成循序渐进的课程链条。
+- **实践驱动**：在每门课程中加入数据采集、可视化、建模和应用案例，鼓励学生完成真实项目和优秀作业展示，搭建面向传媒领域的项目库。
+- **智能助教探索**：依托 Scholar Hero 辅助课堂讲解、作业辅导和即时问答，打造开放的“教、学、研”互动生态。
+
+## 代表课程与资源
+
+- **数据科学导论**：覆盖数据采集、统计学习方法、自然语言处理、推荐算法与分布式计算，提供教材化讲义与案例代码，帮助学生从零起步进入数据科学。【F:_teaching/2021-0-data-science.md†L1-L35】
+- **课程资料与优秀作业**：整理 SVM、数据智慧原则、文本分析等幻灯片，并展示优秀报告，方便学生复习与二次创作。【F:_teaching/2021-0-data-science.md†L37-L57】
+- 更多课程信息可在[教学页面](/teaching/)与[学习资料合集](/links/)获取。
+
+## 学生培养
+
+- 指导学生参与数据分析比赛与项目实践，形成多篇优秀报告和课堂视频案例，为后续年级提供参考。
+- 鼓励跨学科合作，帮助传媒、统计与计算机背景学生在真实数据上完成创新性探索。
+
+## 教育背景
+
+- 2019，统计学博士，中国人民大学统计学院
+- 2017，统计学硕士，中国人民大学统计学院
+- 2013，应用数学学士，天津理工大学数学学院
+
+## 研究兴趣
+>>>>>>> theirs
 
 此外，主导研发 **Scholar Hero** 智能助教系统（LLM + Agent），支持课堂演示、代码示例与即时问答反馈，致力于打造开放的"教、学、研"互动生态。公众号"抽样调查之家"持续分享数据科学、抽样调查方法与教学创新内容，B 站频道"抽样调查之家"和抖音/小红书"教统计的小宁老师"同步更新教学视频与学习资源。
 
