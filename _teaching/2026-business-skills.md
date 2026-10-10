@@ -1,4 +1,4 @@
-\---  
+---
 title: "商业技能"  
 collection: teaching  
 type: "专业选修课 · 2学分"  
@@ -7,7 +7,7 @@ venue: "中国人民大学高礼金融科技双学位实验班"
 date: 2026-10-08  
 period: "2026"  
 location: "Beijing, China"  
-\---
+---
 
 > **课程定位**：面向中国人民大学高礼金融科技双学位实验班学生，以“大语言模型（LLM）+ 智能体（Agent）+ 商业与金融应用”为主线，强调从业务问题识别到智能体原型构建、效果评测与合规治理的完整实践过程。
 
@@ -47,38 +47,39 @@ location: "Beijing, China"
 
 ### 第一讲：商业技能与AI智能体
 
-\[阅读第一讲讲义：商业技能与AI智能体\]({{ '/files/business-skills/2026-autumn/lecture-01.html' | relative_url }})
+[阅读第一讲讲义：商业技能与AI智能体]({{ '/files/business-skills/2026-autumn/lecture-01.html' | relative_url }})
 
 涵盖大语言模型、工作流与智能体的基本概念，工具调用与RAG、金融与商业应用、效果评测、风险控制，以及课堂练习与课后学习。
 
 ## 八周教学安排
 
-<style>   <u>* 商业技能课程：八周教学安排 \*</u>  
-.business-schedule { margin: 1.2rem 0 1.5rem; }  
-.business-schedule\_\_table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; border: 1px solid #e1e7eb; border-radius: 8px; overflow: hidden; font-size: 0.94rem; line-height: 1.7; }  
-.business-schedule\_\_table col.week { width: 90px; }  
-.business-schedule\_\_table col.topic { width: 30%; }  
-.business-schedule\_\_table th, .business-schedule\_\_table td { padding: 15px 16px; text-align: left; vertical-align: top; border: 0; border-bottom: 1px solid #e6eaf0; overflow-wrap: break-word; word-break: normal; }  
-.business-schedule\_\_table thead th { background: #edf3f1; color: #263c37; font-weight: 700; }  
-.business-schedule\_\_table tbody tr:nth-child(even) { background: #f7f9fa; }  
-.business-schedule\_\_table tbody tr:nth-child(odd) { background: #fff; }  
-.business-schedule\_\_table tbody tr:last-child td { border-bottom: 0; }  
-.business-schedule\_\_table td.week { white-space: nowrap; font-weight: 700; color: #346758; }  
-.business-schedule\_\_table td.topic { font-weight: 600; color: #283b42; }  
-@media (max-width: 700px) {  
-  .business-schedule\_\_table, .business-schedule\_\_table tbody, .business-schedule\_\_table tr, .business-schedule\_\_table td { display: block; width: 100%; box-sizing: border-box; }  
-  .business-schedule\_\_table { border: 0; background: transparent; }  
-  .business-schedule\_\_table colgroup, .business-schedule\_\_table thead { display: none; }  
-  .business-schedule\_\_table tbody tr { border: 1px solid #e1e7eb; border-radius: 8px; overflow: hidden; margin-bottom: 12px; background: #fff !important; }  
-  .business-schedule\_\_table td { padding: 8px 14px; border: 0; }  
-  .business-schedule\_\_table td.week { padding-top: 12px; color: #346758; }  
-  .business-schedule\_\_table td.topic { padding-top: 0; font-size: 1.02em; }  
-  .business-schedule\_\_table td.details { padding: 10px 14px 14px; border-top: 1px solid #eef0f2; }  
-}  
+<style>
+/* 商业技能课程：八周教学安排 */
+.business-schedule { margin: 1.2rem 0 1.5rem; }
+.business-schedule__table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; border: 1px solid #e1e7eb; border-radius: 8px; overflow: hidden; font-size: 0.94rem; line-height: 1.7; }
+.business-schedule__table col.week { width: 90px; }
+.business-schedule__table col.topic { width: 30%; }
+.business-schedule__table th, .business-schedule__table td { padding: 15px 16px; text-align: left; vertical-align: top; border: 0; border-bottom: 1px solid #e6eaf0; overflow-wrap: break-word; word-break: normal; }
+.business-schedule__table thead th { background: #edf3f1; color: #263c37; font-weight: 700; }
+.business-schedule__table tbody tr:nth-child(even) { background: #f7f9fa; }
+.business-schedule__table tbody tr:nth-child(odd) { background: #fff; }
+.business-schedule__table tbody tr:last-child td { border-bottom: 0; }
+.business-schedule__table td.week { white-space: nowrap; font-weight: 700; color: #346758; }
+.business-schedule__table td.topic { font-weight: 600; color: #283b42; }
+@media (max-width: 700px) {
+  .business-schedule__table, .business-schedule__table tbody, .business-schedule__table tr, .business-schedule__table td { display: block; width: 100%; box-sizing: border-box; }
+  .business-schedule__table { border: 0; background: transparent; }
+  .business-schedule__table colgroup, .business-schedule__table thead { display: none; }
+  .business-schedule__table tbody tr { border: 1px solid #e1e7eb; border-radius: 8px; overflow: hidden; margin-bottom: 12px; background: #fff !important; }
+  .business-schedule__table td { padding: 8px 14px; border: 0; }
+  .business-schedule__table td.week { padding-top: 12px; color: #346758; }
+  .business-schedule__table td.topic { padding-top: 0; font-size: 1.02em; }
+  .business-schedule__table td.details { padding: 10px 14px 14px; border-top: 1px solid #eef0f2; }
+}
 </style>
 
 <div class="business-schedule">  
-<table class="business-schedule\_\_table">  
+<table class="business-schedule__table">
 <colgroup><col class="week"><col class="topic"><col></colgroup>  
 <thead><tr><th scope="col">周次</th><th scope="col">主题</th><th scope="col">核心内容与实践任务</th></tr></thead>  
 <tbody>  
@@ -106,16 +107,16 @@ location: "Beijing, China"
 
 ## 考核方式
 
-<style>  
-.business-assessment { max-width: 680px; width: 100%; margin: 1.2rem auto 1.5rem; }  
-.business-assessment table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.95rem; }  
-.business-assessment th, .business-assessment td { padding: 10px 14px; }  
-.business-assessment th:last-child, .business-assessment td:last-child { width: 110px; text-align: right; white-space: nowrap; }  
-.business-assessment tbody tr:last-child { font-weight: 700; }  
-@media (max-width: 600px) {  
-  .business-assessment th, .business-assessment td { padding: 10px 9px; }  
-  .business-assessment th:last-child, .business-assessment td:last-child { width: 82px; }  
-}  
+<style>
+.business-assessment { max-width: 680px; width: 100%; margin: 1.2rem auto 1.5rem; }
+.business-assessment table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 0.95rem; }
+.business-assessment th, .business-assessment td { padding: 10px 14px; }
+.business-assessment th:last-child, .business-assessment td:last-child { width: 110px; text-align: right; white-space: nowrap; }
+.business-assessment tbody tr:last-child { font-weight: 700; }
+@media (max-width: 600px) {
+  .business-assessment th, .business-assessment td { padding: 10px 9px; }
+  .business-assessment th:last-child, .business-assessment td:last-child { width: 82px; }
+}
 </style>
 
 <div class="business-assessment">  
@@ -148,15 +149,15 @@ location: "Beijing, China"
 - 分享周次在课堂分组后统一安排，成绩归属见“考核方式”。
 - 在项目报告中结合数据、访谈或实验检验书中的观点。
 
-<style>  
-.business-books { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:1rem 0 1.4rem; }  
-.business-book { padding:15px 17px; border:1px solid #e1e7eb; border-radius:8px; background:#fff; min-width:0; }  
-.business-book h4 { margin:0 0 6px; font-size:1.02rem; line-height:1.55; }  
-.business-book p { margin:5px 0; line-height:1.7; font-size:.93rem; overflow-wrap:anywhere; }  
-.business-book .meta { color:#52636b; font-size:.87rem; }  
-.business-book .label { font-weight:650; color:#346758; }  
-.business-book a { text-decoration:underline; text-underline-offset:2px; }  
-@media(max-width:700px) { .business-books { grid-template-columns:1fr; } .business-book { padding:13px 14px; } }  
+<style>
+.business-books { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:1rem 0 1.4rem; }
+.business-book { padding:15px 17px; border:1px solid #e1e7eb; border-radius:8px; background:#fff; min-width:0; }
+.business-book h4 { margin:0 0 6px; font-size:1.02rem; line-height:1.55; }
+.business-book p { margin:5px 0; line-height:1.7; font-size:.93rem; overflow-wrap:anywhere; }
+.business-book .meta { color:#52636b; font-size:.87rem; }
+.business-book .label { font-weight:650; color:#346758; }
+.business-book a { text-decoration:underline; text-underline-offset:2px; }
+@media(max-width:700px) { .business-books { grid-template-columns:1fr; } .business-book { padding:13px 14px; } }
 </style>
 
 ### 一、经典阅读（5本）
@@ -167,35 +168,35 @@ location: "Beijing, China"
 <p class="meta">陈明键 编著｜中信出版集团，2022｜ISBN：9787521739558</p>  
 <p>核心内容：基于以色列教育与创新实践访谈，讨论提问、思辨、深度学习与创新文化之间的关系。此处“深度学习”指教育中的学习方式，不是神经网络技术。</p>  
 <p>课程应用：为拟开发的AI商业产品提出5个可检验的问题，区分“技术功能”与“业务问题”。</p>  
-<p><a href="https://www.dedao.cn/ebook/detail?id=EJmMZXq1b8qOpBlD69XAdP7LEGaKJWEL160xRnme5vrVzo4QMZYgNyk2jNA5467K" target="\_blank" rel="noopener noreferrer">查看图书资料</a></p>  
+<p><a href="https://www.dedao.cn/ebook/detail?id=EJmMZXq1b8qOpBlD69XAdP7LEGaKJWEL160xRnme5vrVzo4QMZYgNyk2jNA5467K" target="_blank" rel="noopener noreferrer">查看图书资料</a></p>
 </article>  
 <article class="business-book">  
 <h4>2. 《真需求》</h4>  
 <p class="meta">梁宁 著｜新星出版社，2024｜ISBN：9787513357685</p>  
 <p>核心内容：从用户价值、共识与商业模式出发辨识需求，结合产业和产品案例讨论商业创新为何成立。</p>  
 <p>课程应用：开展用户访谈，形成“目标用户—关键痛点—现有替代方案—价值主张”需求画布。</p>  
-<p><a href="https://book.douban.com/subject/37070351/" target="\_blank" rel="noopener noreferrer">查看图书资料</a></p>  
+<p><a href="https://book.douban.com/subject/37070351/" target="_blank" rel="noopener noreferrer">查看图书资料</a></p>
 </article>  
 <article class="business-book">  
 <h4>3. 《费曼学习法：用输出倒逼输入》</h4>  
 <p class="meta">尹红心、李伟 著｜江苏凤凰文艺出版社，2021｜ISBN：9787559454911</p>  
 <p>核心内容：通过目标聚焦、知识理解、简明复述、查漏补缺和再次表达，提高学习与知识迁移能力。</p>  
 <p>课程应用：用3分钟向非技术听众解释RAG或Agent的工作流程，标记解释不清的环节并修订。</p>  
-<p><a href="https://book.douban.com/subject/35368398/" target="\_blank" rel="noopener noreferrer">查看图书资料</a></p>  
+<p><a href="https://book.douban.com/subject/35368398/" target="_blank" rel="noopener noreferrer">查看图书资料</a></p>
 </article>  
 <article class="business-book">  
 <h4>4. 《批判性思维》（Critical Thinking）</h4>  
 <p class="meta">布鲁克·诺埃尔·摩尔（Brooke Noel Moore）、理查德·帕克（Richard Parker）著；朱素梅 译｜机械工业出版社，2021年版｜ISBN：9787111664420</p>  
 <p>核心内容：训练辨别事实和观点、评估证据、识别逻辑谬误，以及进行归纳、演绎与论证。</p>  
 <p>课程应用：审查一份AI商业计划中的关键假设、数据证据和因果推断，形成“主张—证据—反例”表。</p>  
-<p><a href="https://book.douban.com/subject/35298208/" target="\_blank" rel="noopener noreferrer">查看图书资料</a></p>  
+<p><a href="https://book.douban.com/subject/35298208/" target="_blank" rel="noopener noreferrer">查看图书资料</a></p>
 </article>  
 <article class="business-book">  
 <h4>5. 《艾伦·图灵传：如谜的解谜者》（Alan Turing: The Enigma）</h4>  
 <p class="meta">安德鲁·霍奇斯（Andrew Hodges）著；孙天齐 译｜湖南科学技术出版社，2012｜ISBN：9787535773067</p>  
 <p>核心内容：介绍图灵在计算理论、密码分析和机器智能方面的探索及其时代背景，帮助理解AI的历史起点。</p>  
 <p>课程应用：讨论“机器能否思考”的概念与当代大模型的能力边界，区分计算、模仿与理解。</p>  
-<p><a href="https://book.douban.com/subject/10522003/" target="\_blank" rel="noopener noreferrer">查看图书资料</a></p>  
+<p><a href="https://book.douban.com/subject/10522003/" target="_blank" rel="noopener noreferrer">查看图书资料</a></p>
 </article>  
 </div>
 
@@ -207,21 +208,21 @@ location: "Beijing, China"
 <p class="meta">桑文锋｜电子工业出版社，2018｜ISBN：9787121334511</p>  
 <p>核心内容：数据采集、指标设计与企业数据应用。</p>  
 <p>课程应用：设计业务指标体系和数据采集方案。</p>  
-<p><a href="https://book.douban.com/subject/30168661/" target="\_blank" rel="noopener noreferrer">豆瓣图书</a></p>  
+<p><a href="https://book.douban.com/subject/30168661/" target="_blank" rel="noopener noreferrer">豆瓣图书</a></p>
 </article>  
 <article class="business-book">  
 <h4>7. 《价值驱动：数据分析价值逻辑与实战方法》</h4>  
 <p class="meta">黄小伟、赵力、邵俊杰｜电子工业出版社，2023｜ISBN：9787121456015</p>  
 <p>核心内容：数据分析与业务价值创造。</p>  
 <p>课程应用：量化AI方案的收益和成本。</p>  
-<p><a href="https://book.douban.com/subject/36424091/" target="\_blank" rel="noopener noreferrer">豆瓣图书</a></p>  
+<p><a href="https://book.douban.com/subject/36424091/" target="_blank" rel="noopener noreferrer">豆瓣图书</a></p>
 </article>  
 <article class="business-book">  
 <h4>8. 《数据运营之路：掘金数据化时代（升级版）》</h4>  
 <p class="meta">张明明｜电子工业出版社，2022年12月｜ISBN：9787121446122</p>  
 <p>核心内容：数据运营、用户分析与增长。</p>  
 <p>课程应用：设计转化率和留存率分析。</p>  
-<p><a href="https://read.douban.com/ebook/432527968/" target="\_blank" rel="noopener noreferrer">豆瓣阅读（升级版）</a></p>  
+<p><a href="https://read.douban.com/ebook/432527968/" target="_blank" rel="noopener noreferrer">豆瓣阅读（升级版）</a></p>
 </article>  
 <article class="business-book">  
 <h4>9. 《人工智能产品经理：AI时代PM修炼手册（修订版）》</h4>  
