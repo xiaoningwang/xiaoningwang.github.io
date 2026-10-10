@@ -27,6 +27,22 @@ location: "Beijing, China"
 4. 设计智能体效果评测方案，兼顾成本、延迟、人工审核、数据安全与合规要求。
 5. 通过团队项目展示智能体作品，论证技术方案、业务价值与风险控制措施。
 
+
+
+# 课程准备
+
+选课学生建议提前安装或注册以下账号。
+
+1. 注册github 账号，地址:https://github.com/，同时建议下载：https://desktop.github.com/download/
+
+2. 注册ima 账号：地址：https://ima.qq.com/，同时建议下载：ima电脑版，https://ima.qq.com/download/
+
+3. 注册trae 账号，地址：https://www.trae.cn/，同时建议下载：traecode
+
+4. 注册书卷侠账号，地址：https://chat.scholarhero.cn/，输入邀请码：351326
+
+   
+
 ## 课程讲义
 
 ### 第一讲：商业技能与AI智能体
