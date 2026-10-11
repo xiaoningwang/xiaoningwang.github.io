@@ -113,6 +113,11 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
     <p>整合25个主题、250项理论、框架与模型，通过分层学习、理论选择、操作化案例和课堂练习，把传播问题转化为可检验的研究设计。</p>
     <a href="{{ '/teaching/publicopinion/chapt4-theories-and-research-design/' | relative_url }}">进入本讲讲义 →</a>
   </article>
+  <article class="chapter-card">
+    <h3>第 5 讲：文本分析建模的主要方法</h3>
+    <p>围绕文本聚类、文本分类、情感分析与社会网络，掌握主要模型的思想、适用条件和评价方法，通过案例与实践形成有边界的研究解释。</p>
+    <a href="{{ '/teaching/publicopinion/chapt5-text-analysis-modeling/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
 </div>
 
 后续章节将在课程推进过程中持续更新。

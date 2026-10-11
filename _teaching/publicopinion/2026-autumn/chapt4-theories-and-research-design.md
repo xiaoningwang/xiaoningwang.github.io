@@ -809,4 +809,4 @@ excerpt: "从理论命题到研究证据，整合25个主题、250项理论框�
 
 ---
 
-[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：主要分析方法]({{ '/teaching/publicopinion/chapt3-main-analysis-methods/' | relative_url }})
+[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：主要分析方法]({{ '/teaching/publicopinion/chapt3-main-analysis-methods/' | relative_url }}) · [下一讲：文本分析建模的主要方法 →]({{ '/teaching/publicopinion/chapt5-text-analysis-modeling/' | relative_url }})
