@@ -176,7 +176,7 @@ location: "Beijing, China"
 <p>核心内容：从用户价值、共识与商业模式出发辨识需求，结合产业和产品案例讨论商业创新为何成立。</p>  
 <p>课程应用：开展用户访谈，形成“目标用户—关键痛点—现有替代方案—价值主张”需求画布。</p>  
 <p><a href="https://book.douban.com/subject/37070351/" target="_blank" rel="noopener noreferrer">查看图书资料</a></p>
-</article>  
+  </article>  
 <article class="business-book">  
 <h4>3. 《费曼学习法：用输出倒逼输入》</h4>  
 <p class="meta">尹红心、李伟 著｜江苏凤凰文艺出版社，2021｜ISBN：9787559454911</p>  
