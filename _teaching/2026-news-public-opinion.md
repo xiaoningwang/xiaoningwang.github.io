@@ -118,6 +118,16 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
     <p>围绕文本聚类、文本分类、情感分析与社会网络，掌握主要模型的思想、适用条件和评价方法，通过案例与实践形成有边界的研究解释。</p>
     <a href="{{ '/teaching/publicopinion/chapt5-text-analysis-modeling/' | relative_url }}">进入本讲讲义 →</a>
   </article>
+  <article class="chapter-card">
+    <h3>第 6 讲：社会网络中的社区识别与信息传播</h3>
+    <p>掌握网络构建、社区识别、传播模型与链接预测，结合计算示例和实验解释传播结构及证据边界。</p>
+    <a href="{{ '/teaching/publicopinion/chapt6-community-detection-and-information-diffusion/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
+  <article class="chapter-card">
+    <h3>第 7 讲：舆情研究设计、模型评测与综合应用</h3>
+    <p>贯通研究问题、数据与编码、模型评测、误差分析及综合研判，形成可追溯的研究证据链。</p>
+    <a href="{{ '/teaching/publicopinion/chapt7-research-design-model-evaluation-and-applications/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
 </div>
 
 后续章节将在课程推进过程中持续更新。

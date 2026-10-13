@@ -14,7 +14,7 @@ classes: wide
 excerpt: "围绕文本聚类、文本分类、情感分析和社会网络，学习模型选择、评价与错误分析，通过案例与课堂实践将文本数据转化为研究证据。"
 ---
 
-[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：理论基础与研究设计]({{ '/teaching/publicopinion/chapt4-theories-and-research-design/' | relative_url }})
+[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：理论基础与研究设计]({{ '/teaching/publicopinion/chapt4-theories-and-research-design/' | relative_url }}) · [下一讲：社区识别与信息传播]({{ '/teaching/publicopinion/chapt6-community-detection-and-information-diffusion/' | relative_url }})
 
 ## 一、本讲定位与学习目标
 
