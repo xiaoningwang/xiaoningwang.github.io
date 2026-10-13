@@ -166,7 +166,7 @@ author_profile: true
     </div>
     {% for post in site.teaching reversed %}
       {% unless post.hide_from_teaching %}
-      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" or post.title == "传媒数据学" %}
+      {% if post.title contains "数据科学导论" or post.title contains "TraeAI" or post.title contains "计算广告" %}
         <div class="course-card">
           <h3><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
           <div class="course-meta">
@@ -183,6 +183,11 @@ author_profile: true
       {% endif %}
     {% endunless %}
     {% endfor %}
+    <div class="course-card">
+      <h3><a href="{{ '/teaching/communicationdatascience' | relative_url }}">传媒数据学</a></h3>
+      <div class="course-meta"><span class="type">核心课程 · 32课时</span><span class="date">2026 秋季</span></div>
+      <div class="course-excerpt">从传媒研究选题出发，学习文献梳理、问题定义、数据采集与可行性验证，通过连续作业修改和词条共建完善研究方案。</div>
+    </div>
   </div>
 </div>
 
@@ -204,3 +209,4 @@ author_profile: true
     {% endfor %}
   </ul>
 </div>
+
