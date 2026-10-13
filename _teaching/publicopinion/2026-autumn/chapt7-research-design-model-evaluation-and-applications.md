@@ -18,9 +18,12 @@ excerpt: "贯通研究问题、数据与编码、模型评测、误差分析及�
 .page__content table { display: block; overflow-x: auto; font-size: .85em; }
 .page__content th, .page__content td { min-width: 6em; vertical-align: top; }
 .page__content pre { overflow-x: auto; }
+.page__content .formula-image { display: inline-block; max-width: none; margin: 0; border: 0; }
+.page__content .formula-display { text-align: center; overflow-x: auto; padding: 1em 0; }
+@media print { .page__content .formula-display { break-inside: avoid; } }
 </style>
 
-[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：社区识别与信息传播]({{ '/teaching/publicopinion/chapt6-community-detection-and-information-diffusion/' | relative_url }})
+[← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：社区识别与信息传播]({{ '/teaching/publicopinion/chapt6-community-detection-and-information-diffusion/' | relative_url }}) · [下一讲：证据核验、伦理与披露]({{ '/teaching/publicopinion/chapt8-llm-evidence-ethics-and-disclosure/' | relative_url }})
 
 > 新闻与舆情数据学课程讲义。作为前面理论、数据治理、文本建模和社会网络分析的综合应用课。教学案例、混淆矩阵和数值均为虚构示例。
 
@@ -92,9 +95,9 @@ excerpt: "贯通研究问题、数据与编码、模型评测、误差分析及�
 
 单纯比较回应前后，可能混入时间趋势、新证据、删帖、推荐变化和日周期。若能找到合适对照，可考虑差分中的差分：
 
-\[
-\widehat\tau=(\bar Y_{处理,后}-\bar Y_{处理,前})-(\bar Y_{对照,后}-\bar Y_{对照,前}).
-\]
+
+<div class="formula-display"><img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/b8bf21b8669b0320.svg' | relative_url }}" alt="\widehat\tau=(\bar Y_{处理,后}-\bar Y_{处理,前})-(\bar Y_{对照,后}-\bar Y_{对照,前})." style="width:43.619ex;height:2.833ex;vertical-align:-0.72ex" /></div>
+
 
 需要论证平行趋势、对照可比性以及没有严重外溢或同时发生的差异冲击。另一种方案是中断时间序列，但要有足够观测点并处理自相关、季节性和同期事件。实验可以更直接识别特定回应版本的影响，但研究对象、同意程序和实际场景仍需明确。
 
@@ -123,6 +126,12 @@ excerpt: "贯通研究问题、数据与编码、模型评测、误差分析及�
 一套代表性样本估计日常表现，另一套挑战样本专门覆盖反讽、转引、混合态度、短文本和缺失上下文。挑战集适合发现失败模式，不适合不加权地估计总体错误率。
 
 按类别、平台、阶段分层抽样时，应保留抽样概率或权重。稀有类别可以过采样以评测，但汇总总体表现和比例时需恢复目标分布，或明确只报告类别指标。
+
+### 4.4 文献综述：自动编码的价值需要任务内验证
+
+Grimmer与Stewart（2013）梳理自动内容分析的潜力与局限，强调将方法用于社会科学问题时需要验证。Gilardi等（2023）进一步显示，ChatGPT在若干推文和新闻标注任务中相对众包人员具有优势。两项研究共同支持自动化的实用价值，但也提示，模型性能应在本研究标签、语言和样本上检验，不能把既有基准当作当前项目的金标准。[文本作为数据](https://doi.org/10.1093/pan/mps028)、[大模型标注研究](https://doi.org/10.1073/pnas.2305016120)
+
+因此人工基准必须独立于待评模型，分类准确与概念效度分别检查。模型能识别评论中的“质疑”不意味着它直接测量了全体学生的信任；将输出转为社会科学变量，还需要解释构念、抽样与误差。
 
 ## 五、评测设计：先冻结规则，再比较模型
 
@@ -157,7 +166,7 @@ TF-IDF词表、IDF、标准化与特征选择只在训练数据上拟合；未�
 | 实际质疑 | 30 | 10 | 40 |
 | 实际非质疑 | 5 | 55 | 60 |
 
-精确率 \(P=TP/(TP+FP)=30/35\approx0.857\)；召回率 \(R=TP/(TP+FN)=30/40=0.750\)；F1为 \(2PR/(P+R)=0.800\)；准确率为0.850。
+精确率 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/272f3da024402dc3.svg' | relative_url }}" alt="P=TP/(TP+FP)=30/35\approx0.857" style="width:37.195ex;height:2.262ex;vertical-align:-0.566ex" />；召回率 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/c33eee9b61e4828e.svg' | relative_url }}" alt="R=TP/(TP+FN)=30/40=0.750" style="width:37.523ex;height:2.262ex;vertical-align:-0.566ex" />；F1为 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/dfa3fbc25693a77e.svg' | relative_url }}" alt="2PR/(P+R)=0.800" style="width:21.792ex;height:2.262ex;vertical-align:-0.566ex" />；准确率为0.850。
 
 高精确率意味着被标为质疑的文本通常可靠；召回率0.75意味着仍漏掉四分之一的实际质疑。模型报告的质疑比例是35%，人工标签为40%，说明总体准确率高仍可能影响舆情判断。
 
@@ -188,6 +197,12 @@ TF-IDF词表、IDF、标准化与特征选择只在训练数据上拟合；未�
 
 对于RAG，应分别检查检索是否找到了支持材料、生成是否忠于材料。评估引用时，可以定义“有充分证据支持的事实性主张数/全部事实性主张数”，并固定主张拆分规则。自动评审可辅助筛查，最终关键事实应有人审，避免让同一模型给自己的输出打分后直接作为质量证明。
 
+### 6.5 文献综述：生成式报告为什么需要拆分评测
+
+FActScore（Min等，2023）以原子事实衡量长文本的证据支持；ALCE（Gao等，2023）区分正确性与引用质量；Zheng等（2023）则研究模型评审与人类偏好及其偏差。三者评测对象不同，不能把“评审模型给高分”“文字流畅”“附有链接”合并为同一个可靠性指标。[FActScore](https://aclanthology.org/2023.emnlp-main.741/)、[ALCE](https://aclanthology.org/2023.emnlp-main.398/)、[模型评审](https://arxiv.org/abs/2306.05685)
+
+据此，本讲要求分别保存标签误差、事实支持、关键遗漏和引用核验结果。若使用模型辅助评审，应在独立人工样本上校准；关键归因和数字回到原始证据，不以总体自动评分替代逐条检查。第8讲进一步说明具体核验、伦理和披露流程。
+
 ## 七、误差如何进入研究结论
 
 ### 7.1 错误分析表
@@ -207,11 +222,11 @@ TF-IDF词表、IDF、标准化与特征选择只在训练数据上拟合；未�
 
 二分类下，若灵敏度为Se、特异度为Sp，目标真实比例为p，则预测正类比例q满足：
 
-\[
-q=Se\,p+(1-Sp)(1-p).
-\]
 
-在误差机制适用于目标数据且Se+Sp≠1时，可得到 \(p=(q+Sp-1)/(Se+Sp-1)\)。教学矩阵中Se=0.75、Sp=55/60，q=0.35，代入得到p=0.40。
+<div class="formula-display"><img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/e1509dbb30a5c388.svg' | relative_url }}" alt="q=Se\,p+(1-Sp)(1-p)." style="width:26.531ex;height:2.262ex;vertical-align:-0.566ex" /></div>
+
+
+在误差机制适用于目标数据且Se+Sp≠1时，可得到 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/d1823b64f9592d2c.svg' | relative_url }}" alt="p=(q+Sp-1)/(Se+Sp-1)" style="width:30.881ex;height:2.262ex;vertical-align:-0.566ex" />。教学矩阵中Se=0.75、Sp=55/60，q=0.35，代入得到p=0.40。
 
 这个例子只解释测量误差。真实项目中验证样本有限，不同平台、阶段与社区的误差可能不同；校正需纳入参数不确定性，出现不合理结果时应检查假设，不能机械使用。它也不能修复平台样本不代表总体的问题。
 

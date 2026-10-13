@@ -18,6 +18,9 @@ excerpt: "掌握网络构建、社区识别、传播模型与链接预测，结�
 .page__content table { display: block; overflow-x: auto; font-size: .85em; }
 .page__content th, .page__content td { min-width: 6em; vertical-align: top; }
 .page__content pre { overflow-x: auto; }
+.page__content .formula-image { display: inline-block; max-width: none; margin: 0; border: 0; }
+.page__content .formula-display { text-align: center; overflow-x: auto; padding: 1em 0; }
+@media print { .page__content .formula-display { break-inside: avoid; } }
 </style>
 
 [← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：文本分析建模]({{ '/teaching/publicopinion/chapt5-text-analysis-modeling/' | relative_url }}) · [下一讲：研究设计与模型评测]({{ '/teaching/publicopinion/chapt7-research-design-model-evaluation-and-applications/' | relative_url }})
@@ -49,7 +52,7 @@ excerpt: "掌握网络构建、社区识别、传播模型与链接预测，结�
 
 ### 2.1 节点与边不是天然存在的
 
-图记为 \(G=(V,E)\)。节点集合V和边集合E由研究者依据问题定义。带时间的互动记录可以写为 \((u,v,t,r,w)\)，分别表示来源节点、目标节点、时间、关系类型和权重。
+图记为 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/5db81eace30253e1.svg' | relative_url }}" alt="G=(V,E)" style="width:11.03ex;height:2.262ex;vertical-align:-0.566ex" />。节点集合V和边集合E由研究者依据问题定义。带时间的互动记录可以写为 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/9fbb5d18bbe2b459.svg' | relative_url }}" alt="(u,v,t,r,w)" style="width:11.633ex;height:2.262ex;vertical-align:-0.566ex" />，分别表示来源节点、目标节点、时间、关系类型和权重。
 
 | 网络类型 | 节点 | 边 | 能够支持的解释 |
 |---|---|---|---|
@@ -82,21 +85,21 @@ excerpt: "掌握网络构建、社区识别、传播模型与链接预测，结�
 
 无向节点的度是邻居数；有向网络分别有入度和出度；强度是相连边权之和。按本讲内容流动方向，出度高表示内容被更多不同账号直接转发，入度高表示该账号转发了更多不同来源。两者都不等于说服效果。
 
-简单无向图的密度为 \(2m/[n(n-1)]\)，不含自环的简单有向图为 \(m/[n(n-1)]\)。密度取决于规模、边定义和采样，不能只凭密度上升就判断群体关系更紧密。
+简单无向图的密度为 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/bac35852463f9708.svg' | relative_url }}" alt="2m/[n(n-1)]" style="width:13.879ex;height:2.262ex;vertical-align:-0.566ex" />，不含自环的简单有向图为 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/580e31ff39d500be.svg' | relative_url }}" alt="m/[n(n-1)]" style="width:12.748ex;height:2.262ex;vertical-align:-0.566ex" />。密度取决于规模、边定义和采样，不能只凭密度上升就判断群体关系更紧密。
 
 ### 3.2 中介与接近中心性
 
 节点中介中心性的未归一化形式为：
 
-\[
-C_B(v)=\sum_{s\ne v\ne t}\frac{\sigma_{st}(v)}{\sigma_{st}}.
-\]
 
-其中 \(\sigma_{st}\) 是s到t的最短路径数，\(\sigma_{st}(v)\) 是经过v的路径数。高值意味着节点处于较多最短路径上，但信息未必沿最短路径传播，平台推荐也可能绕过可见关系。
+<div class="formula-display"><img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/2a46355d1070bc1e.svg' | relative_url }}" alt="C_B(v)=\sum_{s\ne v\ne t}\frac{\sigma_{st}(v)}{\sigma_{st}}." style="width:21.154ex;height:6.415ex;vertical-align:-3.112ex" /></div>
+
+
+其中 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/6b095f1b2dd9637d.svg' | relative_url }}" alt="\sigma_{st}" style="width:2.807ex;height:1.332ex;vertical-align:-0.357ex" /> 是s到t的最短路径数，<img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/706ff0708392fe56.svg' | relative_url }}" alt="\sigma_{st}(v)" style="width:5.665ex;height:2.262ex;vertical-align:-0.566ex" /> 是经过v的路径数。高值意味着节点处于较多最短路径上，但信息未必沿最短路径传播，平台推荐也可能绕过可见关系。
 
 接近中心性通常基于到其他节点的距离。非连通图应报告连通性，选择适当修正或调和中心性，并说明有向距离考察的是到达别人还是被别人到达。
 
-互动频次越高表示关系越强，但最短路径算法中的权重通常表示距离或成本。不能直接把互动频次当作距离；若采用 \(d=1/w\)，必须说明这是分析假设，并与不加权结果比较。
+互动频次越高表示关系越强，但最短路径算法中的权重通常表示距离或成本。不能直接把互动频次当作距离；若采用 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/b48198e4ea6d7057.svg' | relative_url }}" alt="d=1/w" style="width:8.076ex;height:2.262ex;vertical-align:-0.566ex" />，必须说明这是分析假设，并与不加权结果比较。
 
 ### 3.3 三种“重要性”
 
@@ -114,19 +117,19 @@ C_B(v)=\sum_{s\ne v\ne t}\frac{\sigma_{st}(v)}{\sigma_{st}}.
 
 简单无向图的模块度为：
 
-\[
-Q=\frac{1}{2m}\sum_{i,j}\left(A_{ij}-\gamma\frac{k_i k_j}{2m}\right)\mathbf{1}(c_i=c_j).
-\]
+
+<div class="formula-display"><img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/bbea1e828b7f4600.svg' | relative_url }}" alt="Q=\frac{1}{2m}\sum_{i,j}\left(A_{ij}-\gamma\frac{k_i k_j}{2m}\right)\mathbf{1}(c_i=c_j)." style="width:38.554ex;height:6.285ex;vertical-align:-3.006ex" /></div>
+
 
 A是邻接矩阵，k是度，m是边数，c是社区归属，γ是分辨率参数。度保持的空模型提供内部连接的期望值。加权图用强度和总权重替代相应量；有向图应采用有向公式，不能机械套用上式。
 
-取γ=1时，也可写为 \(Q=\sum_C[l_C/m-(d_C/2m)^2]\)，其中l是社区内部边数，d是该社区节点的度之和。
+取γ=1时，也可写为 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/33d9752909b8db1c.svg' | relative_url }}" alt="Q=\sum_C[l_C/m-(d_C/2m)^2]" style="width:27.395ex;height:2.568ex;vertical-align:-0.681ex" />，其中l是社区内部边数，d是该社区节点的度之和。
 
 教学网络有两个三角形ABC、DEF，并以C—D连接。共6个节点、7条边。划分为{A,B,C}与{D,E,F}时，每个社区内部有3条边、度之和为7，因此：
 
-\[
-Q=2\left(\frac37-\left(\frac7{14}\right)^2\right)=\frac5{14}\approx0.357.
-\]
+
+<div class="formula-display"><img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/7f79b70f44e3ae02.svg' | relative_url }}" alt="Q=2\left(\frac37-\left(\frac7{14}\right)^2\right)=\frac5{14}\approx0.357." style="width:37.442ex;height:6.785ex;vertical-align:-2.827ex" /></div>
+
 
 把所有节点放入同一社区时，γ=1下Q=0。这个例子说明该划分比空模型有更多内部连接，不说明两个社区具有不同立场。
 
@@ -157,7 +160,7 @@ Q=2\left(\frac37-\left(\frac7{14}\right)^2\right)=\frac5{14}\approx0.357.
 
 桥接节点不自动属于两个社区；非重叠算法仍会把它归到一个集合。若研究“同时参与多个讨论圈”，应选择重叠方法或直接统计用户参与的多个话题，明确成员资格的含义。
 
-动态分析可用相邻时间窗的成员交集、Jaccard相似度 \(|A\cap B|/|A\cup B|\) 辅助匹配社区，并允许分裂、合并和新生。不要强行给每一期社区找一一对应关系。
+动态分析可用相邻时间窗的成员交集、Jaccard相似度 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/9377e958806e2bd6.svg' | relative_url }}" alt="|A\cap B|/|A\cup B|" style="width:15.504ex;height:2.262ex;vertical-align:-0.566ex" /> 辅助匹配社区，并允许分裂、合并和新生。不要强行给每一期社区找一一对应关系。
 
 ## 六、社区结果怎样评估和命名
 
@@ -168,6 +171,12 @@ Q=2\left(\frac37-\left(\frac7{14}\right)^2\right)=\frac5{14}\approx0.357.
 建议每个主要社区抽查中心节点、普通成员和边界成员，并保存原文证据。初始命名用“社区A”“社区B”，核验后可写“以价格诉求讨论为主的社区”，避免使用无身份依据的“激进群体”“水军组织”等名称。
 
 结构相似可能来自同质性选择、共同接触来源、平台推荐或社会影响。仅凭相邻账号表达相似，不能区分这些机制，也不能证明协同行动。
+
+### 6.1 文献综述：结构识别与社会解释之间的距离
+
+Girvan与Newman（2002）将社区结构理解为内部连接紧密、群组之间联系较疏的结构，并以中心性识别社区边界，在已知与未知结构的网络上进行验证。这项工作为GN算法提供依据，但验证的是关系图的划分，不是节点的政治立场、真实组织身份或协同行为。[原始论文](https://arxiv.org/abs/cond-mat/0112110)
+
+从这一研究出发，课程项目需要分两步：先检查结构结果是否稳定，再用独立属性、内容与行为证据解释群组。两步使用不同证据；算法标签只是待解释对象。因而“社区A中多数样本讨论价格”可以是有编码依据的描述，“社区A是某组织成员”则需要身份材料，不能从同一划分直接推出。
 
 ## 七、从静态关系到传播过程
 
@@ -192,6 +201,12 @@ Q=2\left(\frac37-\left(\frac7{14}\right)^2\right)=\frac5{14}\approx0.357.
 
 弱关系可能把内容带入新的圈子；强关系和重复接触可能支持需要信任或社会认可的行动。关系强度、跨社区位置和传播效果是不同概念。跨社区边未必是弱关系，同社区内部也可能意见分化。
 
+### 7.3 文献综述：弱关系论证的适用条件
+
+Granovetter（1973）讨论关系强度、局部关系与更大社会结构之间的联系，为理解信息如何穿过紧密圈子提供了经典视角。其论证并不是“所有弱关系都传播得更快”，也不是仅凭一条跨社区边就能够确认弱关系。[原始论文](https://smg.media.mit.edu/library/Granovetter1973.pdf)
+
+对舆情传播的应用应检验两类证据：关系强弱是否由互动历史等资料合理测量，相关内容是否确实沿该关系跨圈流动。若只有事件期边表，往往只能描述跨社区连接；关于弱关系机制的解释应保留为待验证推断，并同时考虑推荐、媒体转载与共同外部事件。
+
 ## 八、信息传播模型
 
 ### 8.1 SI、SIS、SIR与SIRS
@@ -207,11 +222,11 @@ S、I、R是建模状态，不是人的价值分类；看到信息、相信信�
 
 均匀混合的连续时间SIR可写为：
 
-\[
-\dot S=-\beta SI/N,\quad\dot I=\beta SI/N-\mu I,\quad\dot R=\mu I.
-\]
 
-β和μ是速率，N=S+I+R。在这一模型及相应早期条件下，增长取决于 \(\beta S(0)/N>\mu\)。不能把均匀混合模型的阈值直接视为任意网络的普遍阈值。网络结构、个体差异和外部输入都会改变传播过程。
+<div class="formula-display"><img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/8e2202865670c8f3.svg' | relative_url }}" alt="\dot S=-\beta SI/N,\quad\dot I=\beta SI/N-\mu I,\quad\dot R=\mu I." style="width:44.11ex;height:2.896ex;vertical-align:-0.566ex" /></div>
+
+
+β和μ是速率，N=S+I+R。在这一模型及相应早期条件下，增长取决于 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/a9edc0be312b6709.svg' | relative_url }}" alt="\beta S(0)/N&gt;\mu" style="width:13.153ex;height:2.262ex;vertical-align:-0.566ex" />。不能把均匀混合模型的阈值直接视为任意网络的普遍阈值。网络结构、个体差异和外部输入都会改变传播过程。
 
 ### 8.2 独立级联（IC）
 
@@ -227,7 +242,7 @@ IC表达一次尝试的随机扩散，LT表达累积影响。这是机制假设�
 
 ### 8.4 影响力最大化与模拟评测
 
-给定种子预算k，选择种子集合，使模型下预期激活规模最大。在特定渐进IC/LT模型及单调、次模等条件下，精确评估的贪心方法具有 \(1-1/e\) 近似保证；这不是“真实传播预测准确率至少63%”。有限模拟估计会带来额外误差。
+给定种子预算k，选择种子集合，使模型下预期激活规模最大。在特定渐进IC/LT模型及单调、次模等条件下，精确评估的贪心方法具有 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/8725166dacbfb67a.svg' | relative_url }}" alt="1-1/e" style="width:7.214ex;height:2.262ex;vertical-align:-0.566ex" /> 近似保证；这不是“真实传播预测准确率至少63%”。有限模拟估计会带来额外误差。
 
 课堂可以比较随机选种子、按度选种子和按中介选种子。每种策略应重复模拟，报告均值和离散程度。结论应写为“在本图与所设参数下”，不能推成现实干预效果。若要解释真实扩散，还需校准参数、检验样本外表现和加入平台推荐等竞争机制。
 
@@ -235,7 +250,7 @@ IC表达一次尝试的随机扩散，LT表达累积影响。这是机制假设�
 
 链接预测可用于推测缺失边或预测未来新增边。两种任务不同：前者研究观测不完整，后者研究时间演化。
 
-无向简单图的基础相似性方法包括：共同邻居 \(|N(u)\cap N(v)|\)；Jaccard相似度；Adamic–Adar得分 \(\sum_{z\in N(u)\cap N(v)}1/\log k_z\)。它们体现相似性假设，有向转发网络需要重新定义邻居和候选方向。
+无向简单图的基础相似性方法包括：共同邻居 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/0c1e7ba82fbb8b01.svg' | relative_url }}" alt="|N(u)\cap N(v)|" style="width:13.702ex;height:2.262ex;vertical-align:-0.566ex" />；Jaccard相似度；Adamic–Adar得分 <img class="formula-image" src="{{ '/assets/images/publicopinion/formulas/8ce85c6e2b02f420.svg' | relative_url }}" alt="\sum_{z\in N(u)\cap N(v)}1/\log k_z" style="width:20.872ex;height:2.742ex;vertical-align:-1.046ex" />。它们体现相似性假设，有向转发网络需要重新定义邻居和候选方向。
 
 未来预测必须在截止时间冻结图与特征，用之后的新增边评价。不能使用未来全图算中心性后再声称预测未来。候选负例应明确是否覆盖所有未连边对、是否只考虑活跃节点以及如何采样；没有观测到边不一定表示真实不存在。
 

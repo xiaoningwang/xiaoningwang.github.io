@@ -128,6 +128,11 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
     <p>贯通研究问题、数据与编码、模型评测、误差分析及综合研判，形成可追溯的研究证据链。</p>
     <a href="{{ '/teaching/publicopinion/chapt7-research-design-model-evaluation-and-applications/' | relative_url }}">进入本讲讲义 →</a>
   </article>
+  <article class="chapter-card">
+    <h3>第 8 讲：大模型辅助分析的证据核验、伦理与披露</h3>
+    <p>结合研究文献与现行规范，学习原子主张核验、RAG与引用评测、多模态来源核验、隐私与群体偏差治理，以及AI使用声明和内容标识。</p>
+    <a href="{{ '/teaching/publicopinion/chapt8-llm-evidence-ethics-and-disclosure/' | relative_url }}">进入本讲讲义 →</a>
+  </article>
 </div>
 
 后续章节将在课程推进过程中持续更新。
