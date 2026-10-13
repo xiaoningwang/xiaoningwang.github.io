@@ -335,5 +335,3 @@ ICMJE的作者AI使用建议要求披露工具用途，并将准确性、完整�
 16. ICMJE. *Use of AI by Authors*. [现行建议页面](https://www.icmje.org/recommendations/browse/artificial-intelligence/ai-use-by-authors.html)
 17. 《中华人民共和国个人信息保护法》（2021）。 [法律原文](https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm)
 18. 国家互联网信息办公室等（2025）。《人工智能生成合成内容标识办法》。 [办法原文](https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm)
-
-编写说明：本讲使用AI辅助检索、资料整理和初稿撰写；文献论述依据论文页面、作者版本及官方规范核对，部分研究的介绍基于摘要和公开方法说明。本讲未开展新的模型实测，教学建议与原研究结果分别表述。
