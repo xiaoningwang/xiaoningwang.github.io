@@ -6,6 +6,13 @@ date: 2026-09-29
 period: "2026 秋季"
 ---
 
+## 词条作业反馈
+
+- [词条作业评估与修改建议（2026年10月13日）]({{ '/files/communicationdatascience/glossary-feedback.html' | relative_url }})
+- [完整评估报告]({{ '/files/communicationdatascience/glossary-feedback-report.html' | relative_url }})
+
+按姓名、关键词和修改优先级查阅90项分工，查看具体纠错与原稿定位。71篇已匹配稿件中，15篇优先退修、41篇需实质完善、15篇局部完善；另7项已认领稿件待核对，12项未认领。支持筛选、打印和报告下载。修改优先级不是最终成绩，“本地未找到”不能直接判为未提交。
+
 ## 学习记录
 
 - [学习记录总览：选题情况更新（2026年9月29日）]({{ '/files/communicationdatascience/learning-records.html' | relative_url }})
