@@ -146,17 +146,6 @@ redirect_from:
     </div>
   </section>
 
-  <!-- Publications Section -->
-  <section class="cv-section publications">
-    <div class="section-header">
-      <h2 class="section-title">📚 相关著作</h2>
-    </div>
-    <div class="section-content">
-      <p><a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">查看发表论文</a></p>
-      <p><a href="{{ '/publication/books' | relative_url }}" class="btn btn-primary">查看教材与译著</a></p>
-    </div>
-  </section>
-
   <!-- Teaching Section -->
   <section class="cv-section teaching">
     <div class="section-header">
