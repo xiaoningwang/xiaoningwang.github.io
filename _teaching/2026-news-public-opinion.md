@@ -90,6 +90,16 @@ excerpt: "从新闻事实与公众表达出发，学习舆情数据采集、处�
 
 如因设备、数据访问或其他原因无法完成课前任务，请提前与教师沟通，并携带已经完成的部分参加课堂活动。
 
+## 作业点评
+
+<div class="chapter-list">
+  <article class="chapter-card">
+    <h3>论文初稿逐人点评 · 2026 年 10 月 19 日更新</h3>
+    <p>本轮覆盖 81 位同学：78 份已交论文的内容点评与具体修改建议，另列 3 位未交记录。请使用课程访问密码查看。</p>
+    <a href="{{ '/files/publicopinion/2026-autumn/draft-feedback-20261019.html' | relative_url }}">输入课程密码，查看逐人点评 →</a>
+  </article>
+</div>
+
 ## 课程讲义
 
 <div class="chapter-list">
