@@ -25,8 +25,6 @@ excerpt: "结合研究文献与现行规范，学习事实与引用核验、RAG�
 
 [← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：研究设计与模型评测]({{ '/teaching/publicopinion/chapt7-research-design-model-evaluation-and-applications/' | relative_url }})
 
-> 新闻与舆情数据学课程讲义。承接文本分析、网络传播与模型评测，将文件夹中的提示词、摘要、RAG和多模态核验内容整合为研究流程。案例均为教学构造；文献与法规检索核验日期为2026年10月13日。
-
 ## 一、本讲定位与学习目标
 
 大模型可以辅助整理资料、提出编码建议、抽取事实和生成简报。但在新闻与舆情研究中，一段读起来合理的文字只有在来源、测量、推断和责任均可检查时，才能成为可用的研究成果。

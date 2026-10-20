@@ -25,8 +25,6 @@ excerpt: "掌握网络构建、社区识别、传播模型与链接预测，结�
 
 [← 返回课程主页]({{ '/teaching/publicopinion/' | relative_url }}) · [上一讲：文本分析建模]({{ '/teaching/publicopinion/chapt5-text-analysis-modeling/' | relative_url }}) · [下一讲：研究设计与模型评测]({{ '/teaching/publicopinion/chapt7-research-design-model-evaluation-and-applications/' | relative_url }})
 
-> 新闻与舆情数据学课程讲义。承接第5讲文本建模。基础部分要求理解、计算和解释，拓展部分供课程项目选用。案例和计算数据均为虚构教学示例，不代表实际舆情结论。
-
 ## 一、本讲定位与学习目标
 
 文本分析回答“人们谈论什么”，社会网络分析回答“谁与谁发生联系，内容沿哪些关系流动”。社区识别进一步把个体连接组织为中观结构，信息传播研究则引入时间和行为，考察内容如何进入、穿过或停留在这些结构中。
