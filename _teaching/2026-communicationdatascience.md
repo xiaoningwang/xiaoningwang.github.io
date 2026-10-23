@@ -10,6 +10,13 @@ excerpt: "从传媒研究选题出发，学习文献梳理、问题定义、数�
 
 传媒数据学以传媒问题为起点，将数据思维落实到研究设计与实践。课程围绕选题、文献、研究问题、数据来源和分析方案展开，强调用证据检验设想，并通过连续反馈完善研究方案。
 
+## 拓展阅读：未来传媒与人机共生
+
+- [2050：当传媒成为一种生活环境（图文阅读）]({{ '/teaching/communicationdatascience/future-media-2050/' | relative_url }})
+- [下载六页图文 PDF]({{ '/files/communicationdatascience/future-media-2050/future-media-2050.pdf' | relative_url }})
+
+以“2050年的一天”为线索，结合三幅AI概念图，想象未来传媒的形态、感官叙事与人机共创，并讨论认知互补、共同事实、人的判断和退出连接的自由。本文为未来设想，供课程阅读与讨论。
+
 ## 期末作业第一次提交反馈
 
 [期末初稿逐人评估与修改任务（2026年10月20日，密码访问）]({{ '/files/communicationdatascience/final-draft-feedback-20261020.html' | relative_url }})
