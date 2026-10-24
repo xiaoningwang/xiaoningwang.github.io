@@ -57,6 +57,12 @@ location: "Beijing, China"
 
 涵盖语言模型演进、预训练与后训练、多模态与智能体、提示词设计、零样本与少样本提示、结构化输出和任务分解，并提供销售分析案例、参考核验结果、课堂练习与课后学习。
 
+### 第三讲：提示词工程与智能体基础
+
+[阅读第三讲讲义：提示词工程与智能体基础]({{ '/files/business-skills/2026-autumn/lecture-03.html' | relative_url }})
+
+围绕校园文创店售后助手，讲解任务设计与结构化交付、推理预算与上下文管理、工作流与智能体运行、RAG证据流程，以及课堂实践与效果评估。提供配图、任务提示、输出示例和课堂测试题。
+
 ### 第一讲作业点评
 
 [查看第一讲作业点评（密码访问）]({{ '/files/business-skills/2026-autumn/lecture-01-feedback.html' | relative_url }})
@@ -314,3 +320,4 @@ location: "Beijing, China"
 ---
 
 [← 返回全部课程]({{ '/teaching/' | relative_url }})
+
