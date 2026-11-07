@@ -46,7 +46,6 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <h2>学习目标与贯穿案例</h2>
 <p>前三讲分别建立了大语言模型与智能体的基本认识，学习了提示工程，并围绕校园文创店售后助手讨论了任务设计、工具调用、RAG与效果评测。本讲进一步讨论：<strong>怎样利用商业数据理解经营问题，组织客户服务与营销行动，并检验这些行动是否创造价值。</strong></p>
 <p>本讲继续使用校园文创店作为贯穿案例。店铺经营者希望回答三个问题：哪些经营问题值得优先处理，怎样为不同客户提供合适的服务，以及哪些营销行动值得继续投入。</p>
-<p>文中的店铺、客户、数据和实验结果均为教学模拟。</p>
 <p>完成本讲后，应当能够：</p>
 <ol>
 <li>区分不同层次的商业分析，说明数据能够支持哪些判断。</li>
@@ -106,7 +105,7 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <h3 id="channel-case">校园文创店的经营数据</h3>
 <p>以下统计范围为2026年10月支付订单，退款观察截止日为11月6日。</p>
 <div class="table-wrap" role="region" aria-label="校园文创店渠道经营数据" tabindex="0"><table class="numeric-table">
-<caption>渠道经营数据　教学模拟</caption>
+<caption>渠道经营数据</caption>
 <thead><tr><th scope="col">渠道</th><th scope="col">访问人数</th><th scope="col">支付客户数</th><th scope="col">支付订单数</th><th scope="col">实付金额／元</th><th scope="col">已退款／元</th></tr></thead>
 <tbody>
 <tr><th scope="row">校园社群</th><td>40</td><td>3</td><td>5</td><td>500</td><td>100</td></tr>
@@ -159,7 +158,7 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <p>本讲以2026年11月7日为参考日，交易窗口为10月1日至10月31日。R依据最近支付日期计算，F为期间支付订单数，M为扣除截至11月6日已完成退款后的净销售额。</p>
 <p>下表摘取三位教学客户：</p>
 <div class="table-wrap" role="region" aria-label="客户RFM教学示例" tabindex="0"><table class="rfm-table">
-<caption>客户购买行为　教学模拟</caption>
+<caption>客户购买行为</caption>
 <thead><tr><th scope="col">客户</th><th scope="col">R／天</th><th scope="col">F／单</th><th scope="col">M／元</th><th scope="col">需要进一步了解的事项</th></tr></thead>
 <tbody>
 <tr><th scope="row">C01</th><td>16</td><td>3</td><td>300</td><td>购买用途及后续需求</td></tr>
@@ -296,9 +295,9 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <p>校园文创店可以在满足触达条件的人群中，按客户随机分组：</p>
 <ul><li>A组沿用现有做法。</li><li>B组使用新的个性化推荐。</li></ul>
 <p>实验开始前，需要明确业务假设、主指标、约束指标、随机分组单位和样本量要求。<sup class="citation"><a href="#ref-5" aria-label="参考文献5">[5]</a></sup></p>
-<p>下面是一个独立的教学模拟实验，与前面的12张订单样本不属于同一批数据。</p>
-<div class="table-wrap" role="region" aria-label="A/B实验教学模拟结果" tabindex="0"><table class="experiment-table">
-<caption>A/B实验结果　独立教学模拟</caption>
+<p>下面是一个独立的实验示例，与前面的12张订单样本不属于同一批数据。</p>
+<div class="table-wrap" role="region" aria-label="A/B实验结果" tabindex="0"><table class="experiment-table">
+<caption>A/B实验结果</caption>
 <thead><tr><th scope="col">指标</th><th scope="col">A组</th><th scope="col">B组</th></tr></thead>
 <tbody>
 <tr><th scope="row">随机分组客户数</th><td>1000</td><td>1000</td></tr>
@@ -354,7 +353,6 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <li id="ref-4"><span class="ref-number">[4]</span> DMITRIEV P, GUPTA S, KIM D W, VAZ G. A Dirty Dozen: Twelve Common Metric Interpretation Pitfalls in Online Controlled Experiments[C]//Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. New York: ACM, 2017: 1427–1436. DOI: 10.1145/3097983.3098024.</li>
 <li id="ref-5"><span class="ref-number">[5]</span> KOHAVI R, LONGBOTHAM R, SOMMERFIELD D, HENNE R M. Controlled Experiments on the Web: Survey and Practical Guide[J]. Data Mining and Knowledge Discovery, 2009, 18(1): 140–181. DOI: 10.1007/s10618-008-0114-1.</li>
 </ol>
-<p class="reading">参考文献用于支持理论与方法阅读。本讲的订单、客户、线索评分权重及实验数值均为教学设定，不是上述文献报告的实证结果。</p>
 </section>
 
 </main>
