@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="商业技能第四讲：商业数据分析、客户画像与RFM、客户服务智能体、个性化推荐与线索评分、A/B实验及业务效果评价。">
+<title>第四讲：商业数据分析、客户服务与营销智能体 - 商业技能</title>
+<link rel="canonical" href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-04.html">
+<style>body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#203347;max-width:860px;margin:52px auto;padding:0 30px;font-size:18px;line-height:1.95}h1{font-size:36px;line-height:1.45}h2{font-size:25px;line-height:1.6;margin-top:42px;color:#176b70}p{margin:16px 0;text-align:justify}.subtitle{font-size:17px;color:#667480}.reading{font-size:15px}a{color:#176b70;overflow-wrap:anywhere}@media print{body{max-width:none;margin:0;font-size:12pt;line-height:1.75}h1{font-size:24pt}h2{font-size:16pt;break-after:avoid}p{orphans:3;widows:3}a{color:inherit}}h3{font-size:21px;line-height:1.6;margin-top:28px}nav{font-size:15px;margin-bottom:24px}.contents{padding:18px 24px;background:#f4f8f8;border-left:3px solid #176b70}.contents ol{margin:6px 0}pre{background:#f4f7f9;padding:18px;border:1px solid #e1e7eb;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.8}code{font-family:ui-monospace,Menlo,monospace}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.7}caption{text-align:left;font-weight:600;margin-bottom:8px}th,td{padding:10px 12px;border:1px solid #dce5e9;text-align:left;vertical-align:top}th{background:#f1f6f5}.formula{margin:24px 0;padding:18px 8px;overflow-x:auto;text-align:center}math{font-family:"STIX Two Math","Cambria Math",math;font-size:1.08em}math[display="inline"]{display:inline math}.formula math{min-width:max-content;margin:auto}math mtext{font-family:"PingFang SC","Microsoft YaHei",sans-serif}footer{border-top:1px solid #dce5e9;margin-top:40px}@media(max-width:600px){body{margin:28px auto;padding:0 18px;font-size:17px}h1{font-size:29px}h2{font-size:23px}pre{font-size:14px;padding:12px}.contents{padding:14px 16px}}@media print{nav{display:none}pre{font-size:10pt}table{font-size:10pt}h3{break-after:avoid}tr{break-inside:avoid}}
+*{box-sizing:border-box}body{max-width:960px}.subtitle{text-align:left}
+main,section,.column{min-width:0}section{scroll-margin-top:24px}h2,h3{scroll-margin-top:24px}
+li{margin:.35em 0}pre,code{font-variant-ligatures:none}pre{max-width:100%;overflow-x:auto}
+img{display:block;max-width:100%;height:auto;margin:18px auto}
+.columns{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center;margin:22px 0 32px}
+.columns .column p{margin:12px 0}.column img{max-height:640px;object-fit:contain}
+.column ul{padding-left:1.4em}figure{margin:24px 0}figcaption{font-size:15px;color:#667480}
+.display.math{display:block;max-width:100%;overflow-x:auto;text-align:center;padding:12px 0}
+math{max-width:100%}math[display="block"]{margin:auto;min-width:max-content}
+th,td{overflow-wrap:anywhere}.table-wrap{margin:18px 0 26px}table{min-width:520px}
+.contents ol{padding-left:1.5em}
+.updated{display:inline-block;white-space:nowrap}footer{font-size:15px;padding-top:16px}
+@media(max-width:700px){.columns{grid-template-columns:minmax(0,1fr);gap:8px}.column img{max-height:none}h1{font-size:29px}.contents{padding:14px 18px}}
+@media print{.columns{display:block}img{max-height:210mm;object-fit:contain}pre{white-space:pre-wrap}section{break-before:auto}}
+
+.citation{font-size:.78em;line-height:0;vertical-align:super;white-space:nowrap}
+.citation a{text-decoration:none;padding:0 2px}
+.references{list-style:none;padding-left:0;font-size:16px;line-height:1.8}
+.references li{margin:14px 0;padding-left:2.3em;text-indent:-2.3em;overflow-wrap:anywhere;scroll-margin-top:24px}
+.ref-number{font-variant-numeric:tabular-nums}
+.numeric-table{min-width:670px;font-variant-numeric:tabular-nums}
+.numeric-table td,.numeric-table thead th:not(:first-child){text-align:right}
+.numeric-table tbody th,.experiment-table tbody th,.rfm-table tbody th{background:transparent;font-weight:400}
+.rfm-table td:nth-child(2),.rfm-table td:nth-child(3),.rfm-table td:nth-child(4),.experiment-table td{text-align:right;font-variant-numeric:tabular-nums}
+.metric-formulas{padding-left:1.4em}.metric-formulas li{margin:.55em 0}
+.process,.calculation{overflow-wrap:anywhere}
+a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offset:4px}
+.skip-link{position:absolute;left:-10000px}.skip-link:focus{position:static;display:inline-block}
+@media(max-width:600px){.references{font-size:15px}p{text-align:left}}
+@media print{.table-wrap{overflow:visible}table,.numeric-table{min-width:0;table-layout:fixed}.references{font-size:10pt}.contents{display:none}.citation a{color:inherit}.table-wrap{break-inside:auto}}
+</style></head>
+<body id="top">
+<a class="skip-link" href="#main">跳至正文</a>
+<nav aria-label="课程导航"><a href="/teaching/business-skills/">← 返回课程首页</a> · <a href="lecture-01.html">第一讲</a> · <a href="lecture-02.html">第二讲</a> · <a href="lecture-03.html">第三讲</a></nav>
+<main id="main">
+<h1>商业数据分析、客户服务与营销智能体</h1>
+<p class="subtitle">第四讲　商业数据与客户运营<br>王小宁　2026年秋季　<span class="updated">更新：2026年11月7日</span></p>
+<nav class="contents" aria-label="本讲目录"><strong>阅读路径</strong><ol><li><a href="#overview">学习目标与贯穿案例</a></li><li><a href="#business-analysis">一 商业数据分析</a></li><li><a href="#customer-profiles">二 客户画像与客户分群</a></li><li><a href="#customer-service">三 客户服务智能体</a></li><li><a href="#marketing-agents">四 营销智能体</a></li><li><a href="#business-evaluation">五 业务效果评价</a></li><li><a href="#practice">课堂实践与期中项目准备</a></li><li><a href="#references">参考文献</a></li></ol></nav>
+<section id="overview">
+<h2>学习目标与贯穿案例</h2>
+<p>前三讲分别建立了大语言模型与智能体的基本认识，学习了提示工程，并围绕校园文创店售后助手讨论了任务设计、工具调用、RAG与效果评测。本讲进一步讨论：<strong>怎样利用商业数据理解经营问题，组织客户服务与营销行动，并检验这些行动是否创造价值。</strong></p>
+<p>本讲继续使用校园文创店作为贯穿案例。店铺经营者希望回答三个问题：哪些经营问题值得优先处理，怎样为不同客户提供合适的服务，以及哪些营销行动值得继续投入。</p>
+<p>文中的店铺、客户、数据和实验结果均为教学模拟。</p>
+<p>完成本讲后，应当能够：</p>
+<ol>
+<li>区分不同层次的商业分析，说明数据能够支持哪些判断。</li>
+<li>理解指标口径、数据粒度和数据质量对结论的影响。</li>
+<li>运用客户画像、RFM和分群方法组织客户信息。</li>
+<li>说明客服与营销智能体中模型、工具、规则和人工的分工。</li>
+<li>从任务结果、客户体验和商业收益三个方面评价智能体。</li>
+</ol>
+</section>
+
+<section id="business-analysis">
+<h2>一 商业数据分析</h2>
+<h3 id="analysis-task">从经营问题确定分析任务</h3>
+<p>商业分析需要明确使用者准备做什么决定。店长关注的可能是渠道投入、商品改进或售后资源安排；不同决定需要的数据与分析方法并不相同。</p>
+<p>“分析店铺经营情况”范围较大。将其收敛为“检查本月退款集中在哪些商品和渠道”，就能够进一步确定观察期间、统计对象、指标和所需记录。</p>
+<p>商业分析可以分为四个相互关联的层次。</p>
+<div class="table-wrap" role="region" aria-label="商业分析的四个层次" tabindex="0"><table>
+<caption>商业分析的层次与业务问题</caption>
+<thead><tr><th scope="col">分析层次</th><th scope="col">主要问题</th><th scope="col">校园文创店中的应用</th></tr></thead>
+<tbody>
+<tr><td>描述性分析</td><td>发生了什么</td><td>汇总销售、退款和客户咨询情况</td></tr>
+<tr><td>诊断性分析</td><td>差异可能来自哪里</td><td>按商品、渠道、时间与客户群拆解变化</td></tr>
+<tr><td>预测性分析</td><td>未来可能发生什么</td><td>估计需求、咨询量或再次购买的可能性</td></tr>
+<tr><td>决策分析</td><td>应当采取什么行动</td><td>比较商品改进、服务安排和营销方案</td></tr>
+</tbody></table></div>
+<p>描述性分析提供经营事实，诊断性分析帮助提出解释。预测需要历史数据、稳定的目标定义和独立验证。决策还需要考虑成本、资源和执行条件。</p>
+<p>例如，某类商品退款较多，可能与销售规模、商品质量、展示说明或配送有关。退款数量本身只能提示调查方向，不能单独确定原因。</p>
+
+<h3 id="data-grain">理解数据粒度与关联关系</h3>
+<p>数据粒度是指一条记录代表什么对象。商业数据中常见的粒度包括一笔收支、一张订单、一条商品明细、一次用户行为和一张服务工单。</p>
+<p>同一家店铺的数据可能同时包含：</p>
+<ul>
+<li><strong>财务与费用记录</strong>：金额、币种、归属期间及费用类型。</li>
+<li><strong>交易记录</strong>：订单、商品、客户、支付、退款与履约状态。</li>
+<li><strong>用户行为记录</strong>：访问、浏览、搜索、加购和购买。</li>
+<li><strong>服务记录</strong>：咨询意图、处理过程、工单状态与客户评价。</li>
+</ul>
+<p>这些数据需要通过订单号、客户号等字段关联。关联之前，应检查记录之间是一对一、一对多还是多对多关系。</p>
+<p>假设一张100元订单对应三次咨询。将订单与咨询记录直接关联后，订单金额可能出现三次。如果对关联结果求和，就会得到300元。此时应分别明确订单金额和咨询次数的统计方式，避免关联扩大记录数量后重复计算金额。</p>
+<p>时间也需要统一。下单日、支付日、发货日和退款完成日分别对应不同业务事件。按支付月份归属订单，再观察其后续退款，与直接统计某个月发生的全部退款，回答的是不同问题。</p>
+
+<h3 id="metric-definitions">指标需要同时说明公式与口径</h3>
+<p>指标将业务现象转换为可以比较的数量。一个完整的指标定义至少需要说明统计对象、时间范围、计算方法和排除条件。</p>
+<p>本讲采用以下教学经营口径：</p>
+<ul class="metric-formulas">
+<li><strong>净销售额＝实付金额－截至观察日已完成的退款金额</strong></li>
+<li><strong>购买转化率＝成功支付客户数÷同范围去重访问客户数</strong></li>
+<li><strong>支付客单价＝实付金额÷成功支付订单数</strong></li>
+<li><strong>退款金额率＝已完成退款金额÷实付金额</strong></li>
+</ul>
+<p>其中，净销售额是本案例的经营统计指标，不直接等同于会计营业收入。购买转化率使用人数，支付客单价使用订单数，二者的分母不同。</p>
+<p>指标比较还需要注意三个问题。</p>
+<p>首先，<strong>总量与比例共同解释结果</strong>。退款金额率较高，可能来自少数大额订单；只看比例而不看金额和订单数量，容易误判问题规模。</p>
+<p>其次，<strong>整体指标需要重新计算</strong>。不同渠道存在重复访问客户，整体转化率应使用跨渠道去重后的客户数，不能直接平均各渠道转化率。</p>
+<p>再次，<strong>缺失值需要保留其含义</strong>。退款字段缺失，表示当前没有取得该项数据；只有确认没有退款时，才能记为零。分母为零时，应说明指标不适用。</p>
+
+<h3 id="channel-case">校园文创店的经营数据</h3>
+<p>以下统计范围为2026年10月支付订单，退款观察截止日为11月6日。</p>
+<div class="table-wrap" role="region" aria-label="校园文创店渠道经营数据" tabindex="0"><table class="numeric-table">
+<caption>渠道经营数据　教学模拟</caption>
+<thead><tr><th scope="col">渠道</th><th scope="col">访问人数</th><th scope="col">支付客户数</th><th scope="col">支付订单数</th><th scope="col">实付金额／元</th><th scope="col">已退款／元</th></tr></thead>
+<tbody>
+<tr><th scope="row">校园社群</th><td>40</td><td>3</td><td>5</td><td>500</td><td>100</td></tr>
+<tr><th scope="row">校园摊位</th><td>50</td><td>3</td><td>4</td><td>440</td><td>100</td></tr>
+<tr><th scope="row">内容平台</th><td>100</td><td>3</td><td>3</td><td>360</td><td>160</td></tr>
+<tr><th scope="row">整体</th><td>190</td><td>7</td><td>12</td><td>1300</td><td>360</td></tr>
+</tbody></table></div>
+<p>整体访问人数190和支付客户数7，均来自跨渠道去重统计。它们不是各渠道人数的简单相加。</p>
+<p>根据表中数据：</p>
+<ul>
+<li>校园社群净销售额为400元，购买转化率为7.5%。</li>
+<li>校园摊位净销售额为340元，购买转化率为6.0%。</li>
+<li>内容平台净销售额为200元，购买转化率为3.0%。</li>
+<li>全店净销售额为940元。</li>
+</ul>
+<p>内容平台的退款金额率约为44.4%，但该渠道只有3张支付订单。在本例中，160元退款来自一张全额退款订单。这提示店长进一步核对退款原因，也说明小样本中的比例可能受到单笔交易明显影响。</p>
+<p>当前可以确认的是各渠道的经营差异。商品展示不充分、质量问题或客户预期不一致，仍然属于需要补充证据的解释。</p>
+<p>如果进一步取得本期净商品成本420元、渠道投放费用180元，则：</p>
+<p class="calculation"><strong>投放后贡献＝940－420－180＝340元。</strong></p>
+<p>这里的商品成本已经处理退货成本冲回。由于尚未扣除运费、售后、人工和固定成本，340元不能称为净利润。</p>
+
+<h3 id="analysis-agent">数据分析智能体的分工</h3>
+<p>数据分析智能体可以按照以下步骤组织任务：</p>
+<p class="process">明确业务问题 → 检查数据 → 查询与计算 → 核对结果 → 解释发现 → 提出行动。</p>
+<p>模型适合理解自然语言问题、提出分析计划和组织解释。计算工具负责汇总、分组、指标计算和作图，业务人员确认口径、解释与行动是否合理。</p>
+<p>一份可使用的分析摘要应保留数据范围、指标定义、计算结果和来源，并将已经确认的事实与待验证原因分别表达。工具执行失败时，应保存失败状态，不能用模型生成的数字补齐结果。</p>
+</section>
+
+<section id="customer-profiles">
+<h2>二 客户画像与客户分群</h2>
+<h3 id="profile-features">从记录形成可使用的客户信息</h3>
+<p>客户画像是围绕具体业务目的组织客户信息的方法。</p>
+<p>构建画像时，可以区分三个层次：</p>
+<ul>
+<li><strong>特征</strong>：客户已经表现出的行为或明确提供的信息，例如购买频次和本次用途。</li>
+<li><strong>标签</strong>：依据规则或模型形成的描述，例如近期有售后、近期待购。</li>
+<li><strong>分群</strong>：将具有某些共同特征的客户划入同一组，以支持服务或经营行动。</li>
+</ul>
+<p>客户在一次对话中说“这次替朋友买礼物”，可以支持本次商品选择，却不足以证明其长期偏好。画像因此需要记录信息来源、适用范围和更新时间。</p>
+<p>分群应当服务于决策。例如，为安排服务资源，可以根据咨询类型和问题状态分群；为研究复购，可以根据购买时间与频次分群。不同任务可以使用不同分群方式。</p>
+
+<h3 id="rfm">RFM分析</h3>
+<p>RFM利用购买行为描述客户，包括三个维度：<sup class="citation"><a href="#ref-1" aria-label="参考文献1">[1]</a></sup></p>
+<ul>
+<li><strong>R，Recency</strong>：距离最近一次购买的时间。</li>
+<li><strong>F，Frequency</strong>：一定期间内的购买频次。</li>
+<li><strong>M，Monetary</strong>：一定期间内的购买金额。</li>
+</ul>
+<p>RFM的观察期间、评分规则及是否扣除退货，需要根据业务统一设置。以下采用本讲的教学口径。</p>
+<p>本讲以2026年11月7日为参考日，交易窗口为10月1日至10月31日。R依据最近支付日期计算，F为期间支付订单数，M为扣除截至11月6日已完成退款后的净销售额。</p>
+<p>下表摘取三位教学客户：</p>
+<div class="table-wrap" role="region" aria-label="客户RFM教学示例" tabindex="0"><table class="rfm-table">
+<caption>客户购买行为　教学模拟</caption>
+<thead><tr><th scope="col">客户</th><th scope="col">R／天</th><th scope="col">F／单</th><th scope="col">M／元</th><th scope="col">需要进一步了解的事项</th></tr></thead>
+<tbody>
+<tr><th scope="row">C01</th><td>16</td><td>3</td><td>300</td><td>购买用途及后续需求</td></tr>
+<tr><th scope="row">C03</th><td>29</td><td>2</td><td>100</td><td>退款原因与服务是否结束</td></tr>
+<tr><th scope="row">C05</th><td>33</td><td>1</td><td>0</td><td>全额退款的原因与处理结果</td></tr>
+</tbody></table></div>
+<p>本例中，R越小表示距离最近支付越近。R和F均保留支付交易记录，M再扣除退款。如果需要评价有效购买，应另设排除全额退款交易后的指标。</p>
+<p>RFM能够帮助整理历史行为，但不能直接说明客户满意度、未来购买概率或终身价值。C05的净消费为零，也不能据此判断其没有未来价值。</p>
+
+<h3 id="segments-actions">从分群走向差异化行动</h3>
+<p>分群的作用，是帮助企业选择更合适的行动。</p>
+<p>近期有明确需求的客户，可以获得与需求相关的信息；有未解决售后的客户，需要优先推进问题处理；长期没有购买记录的客户，则需要结合商品购买周期与历史需求理解。</p>
+<p>“长期未购买”不必然意味着客户流失。购买纪念品、耐用品与日常消耗品的频率不同，同一时间阈值在不同业务中的含义也不同。</p>
+<p>企业还可以从客户生命周期理解关系变化，包括初次了解、首次购买、重复购买和关系维护等阶段。这是一种运营视角，阶段判断需要行为证据支持，并随新信息调整。</p>
+
+<h3 id="profiles-agent">客户画像如何进入智能体</h3>
+<p>智能体读取画像后，应当据此调整当前任务所需的信息与行动。</p>
+<p>例如，客户存在尚未解决的印刷质量工单，系统应先读取工单状态，确认处理进展。只有在服务条件与触达条件均满足时，才考虑后续推荐。</p>
+<p>画像更新需要处理新增、修正和失效信息。客户明确纠正偏好后，系统应更新记录；一次模型推断应标明为推断，并保留验证或删除的方式。</p>
+<p>画像的使用范围也需要与当前任务一致。经营分析通常可以使用去标识化的聚合数据；处理一笔订单时，则由系统检查当前用户是否有权访问该订单。</p>
+</section>
+
+<section id="customer-service">
+<h2>三 客户服务智能体</h2>
+<h3 id="service-completion">从答复质量走向服务完成</h3>
+<p>第三讲重点训练了售后条件判断。本讲进一步关注完整服务过程：客户问题是否得到解决，处理中发生了多少等待和重复沟通，系统在什么情况下需要交接。</p>
+<p>客服任务通常包含三类：</p>
+<ol>
+<li><strong>知识问答</strong>：解释制度、商品信息和服务流程。</li>
+<li><strong>状态查询</strong>：读取订单、物流或申请进度。</li>
+<li><strong>问题处理</strong>：补充材料、提交申请、协调异常与人工接管。</li>
+</ol>
+<p>三类任务需要的证据不同。制度问答需要有效条款，订单查询需要实际业务记录，问题处理还需要明确操作权限和执行结果。</p>
+<p>“符合申请条件”“申请已提交”“审核已通过”和“退款已到账”分别代表不同状态。客服答复应与当前可核验状态一致。</p>
+
+<h3 id="intent-routing">意图识别与任务路由</h3>
+<p>意图识别用于判断客户希望完成什么任务，任务路由则决定进入哪一条处理流程。</p>
+<p>例如，查询物流、了解退货条件与投诉商品质量，虽然都属于售后咨询，却需要不同资料与处理步骤。</p>
+<p>模型可以从口语描述中提取意图和事实，规则或程序负责日期、订单归属与固定条件检查。关键事实不清楚时，系统应提出有针对性的追问。</p>
+<p>同一段描述还可能包含多个意图。例如，客户既询问订单进度，又表达取消订单的意愿。系统需要明确两个诉求之间的关系，避免仅回答其中一个问题便结束服务。</p>
+
+<h3 id="service-process">一个完整的服务流程</h3>
+<p>客服智能体可以按照以下流程运行：</p>
+<p class="process">接收诉求 → 核对身份与订单 → 识别意图 → 读取有效规则与业务状态 → 判断信息是否充分 → 提出处理方案 → 执行或交接 → 确认后续状态。</p>
+<p>流程中需要保存已经确认的事实、已经完成的操作和待处理事项。转人工时，应将这些信息一并交接，减少客户重复描述。</p>
+<p>如果工具超时，系统能够确认的是“当前未取得查询结果”。后续可以有限重试或交接，不能将查询失败解释为订单不存在。</p>
+
+<h3 id="service-improvement">校园文创店的服务改进</h3>
+<p>假设一段时期内，多份工单出现印刷质量问题。</p>
+<p>单笔服务需要根据第三讲的有效规则，核对商品、收货时间、凭证与问题照片，协助完成相应申请。经营分析还可以将这些工单按商品、批次、问题类型和处理结果汇总，为改进提供线索。</p>
+<p>汇总时需要区分：</p>
+<ul>
+<li>问题涉及多少张订单；</li>
+<li>同一订单发生多少次咨询；</li>
+<li>问题是否已经解决；</li>
+<li>是否集中于某个商品或生产批次。</li>
+</ul>
+<p>某类问题的咨询次数较多，可能来自问题订单增加，也可能来自同一客户反复联系。两者对应的改进方向不同。</p>
+
+<h3 id="service-quality">服务质量如何衡量</h3>
+<p>本讲从处理结果、过程体验和运行效率三个方面检查服务质量。</p>
+<p><strong>处理结果</strong>关注判断是否正确、问题是否解决、承诺是否兑现。</p>
+<p><strong>过程体验</strong>关注解释是否清楚、客户是否重复提交资料，以及转人工后能否继续处理。</p>
+<p><strong>运行效率</strong>关注响应、解决耗时、人工介入与单个解决问题的成本。</p>
+<p>常用指标包括：</p>
+<p><strong>问题解决率＝经核实已解决工单数÷纳入评估工单数。</strong></p>
+<p>统计时应预先确定解决标准和后续观察窗口。对话结束、转人工或等待补充材料，不能直接记为问题已解决。</p>
+<p><strong>客户满意度＝满意的有效评价数÷全部有效评价数。</strong></p>
+<p>报告满意度时，还应说明评价样本量与响应率。未评价的客户不能直接视为满意。</p>
+<p>首次响应时间反映首次反馈速度，最终解决时间反映问题处理周期。自动回复能够缩短前者，后者是否改善需要单独检验。</p>
+</section>
+
+<section id="marketing-agents">
+<h2>四 营销智能体</h2>
+<h3 id="marketing-goals">营销任务需要明确对象与目标</h3>
+<p>营销任务需要说明希望影响哪类客户、满足什么需求，以及如何观察结果。</p>
+<p>“提高销量”可以进一步拆成首次购买、重复购买、团体定制咨询或其他目标。这些目标对应不同客户、商品和评价方式。</p>
+<p>客户分群帮助理解需求差异，目标客户选择决定优先服务哪些群体，价值表达说明产品或服务能够提供什么。生成文案是这一过程中的一个环节。</p>
+<p>在校园文创店中，个人纪念品购买与团体活动定制具有不同的数量、时间和沟通要求。营销智能体应先确认需求，再组织商品与服务方案。</p>
+
+<h3 id="recommendation">个性化推荐的基本机制</h3>
+<p>推荐流程可以按候选生成（召回）、评分排序与重排组织，并在相关环节执行过滤：先从商品集合中取得相关候选，再比较匹配程度，最后结合其他要求调整结果。<sup class="citation"><a href="#ref-3" aria-label="参考文献3">[3]</a></sup></p>
+<p>候选生成的常见思路包括：<sup class="citation"><a href="#ref-2" aria-label="参考文献2">[2]</a></sup></p>
+<ul>
+<li><strong>基于内容的推荐</strong>：利用商品属性及客户明确表达的偏好寻找相关商品。</li>
+<li><strong>协同过滤</strong>：利用用户与商品之间的历史交互寻找可能相关的候选。</li>
+</ul>
+<p>在本案例中，还需要检查库存、预算、交付时间和客户限制。这些硬条件应在产生可执行推荐前得到验证。</p>
+<p>例如，客户需要一周内用于活动的定制品，即使某商品在偏好评分上较高，只要无法按时交付，就不能作为当前可执行方案。</p>
+<p>大模型可以理解自然语言需求、组织候选信息和解释推荐依据。商品是否存在、价格与库存是否有效，需要由目录和业务工具确认。</p>
+<p>对于新客户或新商品，历史交互较少，可以通过询问用途、预算和时间要求补充信息，再提供少量适合的候选。</p>
+
+<h3 id="lead-scoring">销售线索评分</h3>
+<p>销售线索评分用于安排跟进优先级。它需要明确哪些行为与需求值得优先投入沟通资源。</p>
+<p>以团体定制业务为例，可以考虑需求匹配、明确意向和跟进时效三个维度。假设各项采用0—100分，课堂规则为：</p>
+<p class="calculation"><strong>线索分＝0.40×需求匹配分＋0.35×意向行为分＋0.25×跟进时效分。</strong></p>
+<p>一条线索的三项分数分别为80、60和100，则总分为：</p>
+<p class="calculation"><strong>0.40×80＋0.35×60＋0.25×100＝78分。</strong></p>
+<p>权重与分值规则是本例的教学设定。78分表示该规则下的跟进优先级，不能解释为78%的成交概率。</p>
+<p>评分还需要避免使用结果发生后才获得的信息。如果目标是预测是否成交，就不能把成交后形成的合同状态用于当时的评分。</p>
+<p>触达条件应先于评分排序检查。客户已经拒绝营销，或存在需要优先处理的服务问题时，高分不能覆盖这些状态。</p>
+
+<h3 id="marketing-process">营销智能体的工作流程</h3>
+<p>营销智能体可以按照以下顺序工作：</p>
+<p class="process">明确目标 → 筛选合格人群 → 查询商品与活动 → 比较策略 → 生成内容 → 核验并审核 → 记录触达与反馈。</p>
+<p>其中，客户筛选需要考虑需求相关性、触达许可、服务状态和发送频次。内容生成需要使用可核实的商品、价格、优惠与交付信息。</p>
+<p>客户明确表示不感兴趣后，应及时更新记录。商品缺货、活动到期或交付条件变化后，相关内容也应随之失效。</p>
+<p>营销智能体的改进依据包括客户反馈、成交、退款与成本。点击量可以帮助了解内容表现，不能单独证明客户需求得到满足或营销产生了收益。</p>
+</section>
+
+<section id="business-evaluation">
+<h2>五 业务效果评价</h2>
+<h3 id="evaluation-levels">同时检查任务、体验与收益</h3>
+<p>第三讲已经讨论固定测试集与失败分析。本讲在此基础上，将评价扩展到业务结果。</p>
+<div class="table-wrap" role="region" aria-label="智能体业务效果的三个评价层次" tabindex="0"><table>
+<caption>智能体的评价层次</caption>
+<thead><tr><th scope="col">评价层次</th><th scope="col">需要回答的问题</th><th scope="col">可观察指标</th></tr></thead>
+<tbody>
+<tr><td>任务结果</td><td>系统是否按要求完成任务</td><td>计算正确率、引用正确率、规则符合率</td></tr>
+<tr><td>客户体验</td><td>客户是否顺利完成目标</td><td>解决时间、重复联系、满意度、投诉与退订</td></tr>
+<tr><td>商业结果</td><td>改善是否值得投入</td><td>完整成本、每客户贡献、增量收益</td></tr>
+</tbody></table></div>
+<p>一套系统可能答复准确，但人工复核耗时较高；也可能提高点击量，却带来更多退款。评价需要同时观察这些变化。</p>
+<p>指标应在测试或实验前定义。在线实验研究也指出，指标变化的误读会导致错误的业务决定。<sup class="citation"><a href="#ref-4" aria-label="参考文献4">[4]</a></sup></p>
+
+<h3 id="offline-and-field">离线测试与业务试验的分工</h3>
+<p>离线测试可以检查系统在既定样例中的表现，包括正常请求、缺失信息、规则例外、工具失败与权限不足。</p>
+<p>比较两个方案时，应保持任务、输入资料和验收标准一致，并记录各方案实际具有的工具与数据权限。如果权限不同，结果应解释为整套方案的比较。</p>
+<p>业务试验进一步观察真实使用后的结果。它需要面对客户构成、活动、季节、商品与运营方式等变化。</p>
+<p>营销方案实施后销量增加，可能同时受到这些因素影响。仅比较实施前后，通常不足以将全部变化归因于新方案。</p>
+
+<h3 id="ab-testing">用A/B实验检验增量效果</h3>
+<p>A/B实验将合格对象随机分配到不同方案，比较相同观察窗口内的结果。随机分配有助于减少客户选择造成的系统差异，因果解释还需要检查执行、数据完整性与组间干扰等条件。<sup class="citation"><a href="#ref-5" aria-label="参考文献5">[5]</a></sup></p>
+<p>校园文创店可以在满足触达条件的人群中，按客户随机分组：</p>
+<ul><li>A组沿用现有做法。</li><li>B组使用新的个性化推荐。</li></ul>
+<p>实验开始前，需要明确业务假设、主指标、约束指标、随机分组单位和样本量要求。<sup class="citation"><a href="#ref-5" aria-label="参考文献5">[5]</a></sup></p>
+<p>下面是一个独立的教学模拟实验，与前面的12张订单样本不属于同一批数据。</p>
+<div class="table-wrap" role="region" aria-label="A/B实验教学模拟结果" tabindex="0"><table class="experiment-table">
+<caption>A/B实验结果　独立教学模拟</caption>
+<thead><tr><th scope="col">指标</th><th scope="col">A组</th><th scope="col">B组</th></tr></thead>
+<tbody>
+<tr><th scope="row">随机分组客户数</th><td>1000</td><td>1000</td></tr>
+<tr><th scope="row">观察期成交客户数</th><td>50</td><td>70</td></tr>
+<tr><th scope="row">成交率</th><td>5.0%</td><td>7.0%</td></tr>
+<tr><th scope="row">每名分组客户的净贡献</th><td>6.0元</td><td>6.8元</td></tr>
+</tbody></table></div>
+<p>B组成交率比A组高<strong>2个百分点</strong>，相对提升为<strong>40%</strong>。</p>
+<p>每名分组客户的净贡献差为0.8元。按B组1000名客户计算，样本中的增量贡献估计为800元。</p>
+<p>净贡献的成本范围应事先约定，例如是否扣除商品成本、优惠、退款及营销费用。主分析应按最初随机分组统计，不能在看到结果后仅挑选点击或成交客户比较。</p>
+<p>是否推广还需要结合置信区间、业务上有意义的改善幅度，以及投诉、退订、退款等约束指标判断。观察期应覆盖主要结果的形成过程，特别注意延迟退款。</p>
+
+<h3 id="total-cost">计算智能体的完整成本</h3>
+<p>智能体成本包括模型调用、工具使用、数据整理、人工复核、系统开发维护，以及失败后的返工处理。</p>
+<p>客服方案可以估算：</p>
+<p class="calculation"><strong>净收益＝实际可节省的工时价值＋返工成本减少－新增运行与维护成本。</strong></p>
+<p>工时减少需要结合排班、服务质量与实际工作安排解释。释放的时间可以用于其他任务，但不一定立即转化为现金节约。</p>
+<p>营销方案则需要评价增量贡献。被推荐客户的全部购买额包含其原本可能发生的购买，不能全部计为智能体创造的新增收入。</p>
+<p>评价结果还应保留适用范围。某类客户、某段时期或某个商品上的有效结果，需要进一步验证才能推广到其他场景。</p>
+</section>
+
+<section id="practice">
+<h2>课堂实践与期中项目准备</h2>
+<p>每组围绕校园文创店，完成一份数据摘要，并选择客服或营销方向形成方案。</p>
+<p>数据摘要需要说明观察期间、统计对象、指标口径、主要结果及需要补充的证据。至少选取一个发现，区分数据事实、分析解释和下一步验证行动。</p>
+<p>方案需要明确：</p>
+<ol>
+<li><strong>业务问题</strong>：谁需要完成什么任务，当前困难是什么。</li>
+<li><strong>数据需求</strong>：需要哪些资料、字段和状态，数据是否可获得。</li>
+<li><strong>Agent流程</strong>：模型、工具、规则与人工分别负责什么。</li>
+<li><strong>评价指标</strong>：怎样检查任务完成、客户体验、成本和业务收益。</li>
+</ol>
+<p>课堂交付为一页业务说明、一张流程图和一份评价指标表，可作为第五讲期中项目方案汇报的基础。</p>
+<h3 id="questions">思考题</h3>
+<ol>
+<li>描述性分析与诊断性分析分别能够支持什么判断？</li>
+<li>一张订单对应多次咨询，如何避免销售金额被重复计算？</li>
+<li>为什么不能直接平均不同渠道的购买转化率？</li>
+<li>RFM能够描述哪些行为，又有哪些信息需要另行补充？</li>
+<li>客服首次响应更快，是否意味着问题解决得更好？</li>
+<li>为什么线索评分78分不能解释为78%的成交概率？</li>
+<li>成交率从5%提高到7%，百分点变化与相对变化分别是多少？</li>
+<li>评价营销智能体时，为什么需要关注增量贡献与完整成本？</li>
+</ol>
+</section>
+
+<section id="references">
+<h2>参考文献</h2>
+<ol class="references">
+<li id="ref-1"><span class="ref-number">[1]</span> FADER P S, HARDIE B G S, LEE K L. RFM and CLV: Using Iso-Value Curves for Customer Base Analysis[J]. Journal of Marketing Research, 2005, 42(4): 415–430. DOI: 10.1509/jmkr.2005.42.4.415.</li>
+<li id="ref-2"><span class="ref-number">[2]</span> ADOMAVICIUS G, TUZHILIN A. Toward the Next Generation of Recommender Systems: A Survey of the State-of-the-Art and Possible Extensions[J]. IEEE Transactions on Knowledge and Data Engineering, 2005, 17(6): 734–749. DOI: 10.1109/TKDE.2005.99.</li>
+<li id="ref-3"><span class="ref-number">[3]</span> 阿里云. 推荐解决方案综述（PAI-Rec推荐开发平台）[EB/OL]. [2026-11-07]. <a href="https://help.aliyun.com/zh/pai/use-cases/recommended-solutions-overview" target="_blank" rel="noopener noreferrer">阿里云帮助中心</a>.</li>
+<li id="ref-4"><span class="ref-number">[4]</span> DMITRIEV P, GUPTA S, KIM D W, VAZ G. A Dirty Dozen: Twelve Common Metric Interpretation Pitfalls in Online Controlled Experiments[C]//Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. New York: ACM, 2017: 1427–1436. DOI: 10.1145/3097983.3098024.</li>
+<li id="ref-5"><span class="ref-number">[5]</span> KOHAVI R, LONGBOTHAM R, SOMMERFIELD D, HENNE R M. Controlled Experiments on the Web: Survey and Practical Guide[J]. Data Mining and Knowledge Discovery, 2009, 18(1): 140–181. DOI: 10.1007/s10618-008-0114-1.</li>
+</ol>
+<p class="reading">参考文献用于支持理论与方法阅读。本讲的订单、客户、线索评分权重及实验数值均为教学设定，不是上述文献报告的实证结果。</p>
+</section>
+
+</main>
+<footer><a href="/teaching/business-skills/">返回商业技能课程首页</a> · <a href="lecture-03.html">阅读第三讲</a> · <a href="#top">返回顶部</a></footer>
+</body></html>

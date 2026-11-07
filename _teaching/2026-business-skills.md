@@ -63,6 +63,12 @@ location: "Beijing, China"
 
 围绕校园文创店售后助手，讲解任务设计与结构化交付、推理预算与上下文管理、工作流与智能体运行、RAG证据流程，以及课堂实践与效果评估。提供配图、任务提示、输出示例和课堂测试题。
 
+### 第四讲：商业数据分析、客户服务与营销智能体
+
+[阅读第四讲讲义：商业数据分析、客户服务与营销智能体]({{ '/files/business-skills/2026-autumn/lecture-04.html' | relative_url }})
+
+延续校园文创店案例，讲解商业数据分析与指标口径、客户画像与RFM、客服流程、个性化推荐与销售线索评分，以及A/B实验、服务质量和业务价值评价。包含课堂实践、期中项目准备与参考文献。
+
 ### 第一讲作业点评
 
 [查看第一讲作业点评（密码访问）]({{ '/files/business-skills/2026-autumn/lecture-01-feedback.html' | relative_url }})
@@ -320,4 +326,5 @@ location: "Beijing, China"
 ---
 
 [← 返回全部课程]({{ '/teaching/' | relative_url }})
+
 
