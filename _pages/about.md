@@ -1,147 +1,39 @@
 ---
 permalink: /
 title: "Xiaoning Wang"
-excerpt: "About me"
+excerpt: "王小宁 · 中国传媒大学副教授、硕士生导师"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
+<div class="profile-compact" lang="zh-CN">
+  <p class="profile-compact__lead"><strong>王小宁</strong> · 中国传媒大学数据科学与智能媒体学院副教授、硕士生导师。</p>
+  <p class="profile-compact__english" lang="en">Associate Professor, Communication University of China. Ph.D. in Statistics, Renmin University of China (2019).</p>
+  <nav class="profile-compact__links" aria-label="个人资源">
+    <a href="{{ '/cv/' | relative_url }}">学术简历</a>
+    <a href="{{ '/publications/' | relative_url }}">论文与著作</a>
+    <a href="{{ '/teaching/' | relative_url }}">课程</a>
+    <a href="{{ '/blog/' | relative_url }}">博客</a>
+  </nav>
+  <dl class="profile-facts">
+    <div><dt>研究</dt><dd>大模型与智能体 · 抽样调查 · 数据融合 · 传媒数据分析</dd></div>
+    <div><dt>招生</dt><dd>信息传播学、MPA；欢迎高年级本科生与研究生参加组会，可线上交流。</dd></div>
+  </dl>
 
+  {% include scholarhero-products.html %}
 
-I am an Associate Professor in the [School of Data Science and Media Intelligence](https://dsmi.cuc.edu.cn/main.htm) at the Communication University of China, focused on cultivating data-driven media talent. I earned my Ph.D. from the [School of Statistics, Renmin University of China](http://stat.ruc.edu.cn/) in 2019 under the supervision of [Prof. Yongjin Jin](http://cfas.ruc.edu.cn/kydw/rtyjy/jyj/index.htm). My teaching centers on building rigorous courses, guiding students through hands-on projects, and using intelligent tools to support collaborative learning.
+  <h2>课程与作品</h2>
+  <ul class="profile-resource-list">
+    <li><a href="{{ '/teaching/datascience/chap1-12-summary' | relative_url }}">数据科学导论</a><span>12 讲课程讲稿</span></li>
+    <li><a href="{{ '/teaching/llmpracticeandapplication' | relative_url }}">大模型案例场景应用</a><span>研究生课程</span></li>
+    <li><a href="{{ '/teaching/publicopinion/' | relative_url }}">新闻与舆情数据学</a><span>2026 秋季</span></li>
+    <li><a href="https://mp.weixin.qq.com/s/xSKdreyLiaM1qvWuPONceg">数据科学优秀作品</a><span>2026 春季</span></li>
+    <li><a href="https://mp.weixin.qq.com/s/Qp8GmPh8IT0xIlxjFqTPJQ?scene=1">商业技能智能体作品</a><span>2025</span></li>
+    <li><a href="{{ '/links/' | relative_url }}">学习资料合集</a><span>更多资源</span></li>
+  </ul>
 
-Our team is developing **Scholar Hero**, a suite of tools for teaching, survey research, and academic reading. Teachers and students are welcome to explore and share suggestions.
-
-{% include scholarhero-products.html %}
-
-## 教师简介
-
-王小宁，中国传媒大学数据科学与智能媒体学院副教授，硕士生导师（招生方向为信息传播学和MPA）。2019年获得中国人民大学统计学院统计学博士学位（师从金勇进教授），同年进入中国传媒大学任教；2017年获中国人民大学统计学硕士学位，2013年获天津理工大学应用数学学士学位。
-
-主要研究方向涵盖大语言模型与智能体（LLM 架构、微调、Prompt 工程、多智能体系统）、抽样调查方法（复杂抽样设计、调查方法学、数据质量评估）、机器学习（监督与无监督学习、深度学习、强化学习）、媒体数据分析（文本挖掘、社交网络分析、情感分析、内容推荐）以及数据融合与管理（数据融合、缺失数据填补、大数据处理）。近年来聚焦于将大模型技术与传媒场景深度结合，探索"统计学习 + 大模型 + 传媒应用"的跨学科路径。
-
-教学方面，主讲“数据科学导论”“采样调查”“媒体数据分析”“计算广告学”“贝叶斯统计”“新闻与舆情数据学”“R 语言数据分析实战”等本科课程，并面向研究生开设“大模型案例场景应用”，构建从基础统计思维到大模型与智能体应用的渐进式课程链条。教学中强调实践驱动，在课程中融入数据采集、可视化、建模和真实应用案例，鼓励学生完成可复用的项目并展示优秀作业，搭建面向传媒领域的项目库。
-
-此外，主导研发**书卷侠（Scholar Hero）系列产品**，覆盖课程教学、问卷研究与文献阅读，探索开放的“教、学、研”互动生态。公众号"抽样调查之家"持续分享数据科学、抽样调查方法与教学创新内容，B 站频道"抽样调查之家"和抖音/小红书"教统计的小宁老师"同步更新教学视频与学习资源。
-
-## 教学特色与贡献
-
-- **课程建设与更新**：主讲数据科学导论、采样调查、媒体数据分析等课程，持续将统计学习、大模型与传媒场景结合，形成循序渐进的课程链条。
-- **实践驱动**：在每门课程中加入数据采集、可视化、建模和应用案例，鼓励学生完成真实项目和优秀作业展示，搭建面向传媒领域的项目库。
-- **智能助教探索**：依托 Scholar Hero 辅助课堂讲解、作业辅导和即时问答，打造开放的“教、学、研”互动生态。
-
-## 代表课程与资源
-
-- **数据科学导论**（本科一年级下，2020—2026）：覆盖数据采集、数据处理与清洗、数据可视化、统计学习的基本框架与模型评估、回归分析、分类方法、决策树与集成学习、支持向量机与朴素贝叶斯、推荐算法、文本挖掘与社交网络分析、无监督学习与大数据计算方法，共 12 讲，提供教材化讲义与案例代码，帮助学生从零起步进入数据科学。详见[第 1-12 讲课程讲稿汇总](/teaching/datascience/chap1-12-summary)。
-- **大模型案例场景应用**（研究生课程，2026—2027学年第一学期）：面向传媒实践、学术研究与公共文化服务，贯通提示设计、RAG、工具调用、智能体构建与效果评测。采用师—生—机协同课堂，设置两次场景实操，以个人项目、过程证据与作品答辩评价人机协同能力。详见[课程页面](/teaching/llmpracticeandapplication)。
-- **计算广告学**（传媒大数据专业，大四上）：掌握基本的计算广告技术和分析方法，结合传媒场景进行广告效果评估与精准投放分析。
-- **贝叶斯统计**（传媒大数据专业，大三上）：掌握基本的贝叶斯建模和分析方法，培养概率思维与推断能力。
-- **传媒数据与统计分析**（传媒大数据专业，大二上）：掌握基本的社会媒体挖掘技术和分析方法，涵盖社交网络分析与文本挖掘。
-- **新闻与舆情数据学**（传媒大数据专业，大三上，2026 秋季）：从新闻事实、公众表达与平台传播出发，系统学习舆情数据采集、文本分析、社会网络、可视化与证据核验。进入[课程主页](/teaching/publicopinion/)或阅读[第 1 章：新闻与舆情问题定义](/teaching/publicopinion/chapt1-news-and-public-opinion/)。
-- **大数据分析软件**（本科，网络与新媒体 / 数据科学与大数据技术）：掌握大数据处理工具与分析方法，面向实际数据工程场景。
-- **R 语言数据分析实战**（R 语言入门者）：了解基本的数理统计方法，通过实战案例快速上手 R 语言数据分析。
-- **课程资料与优秀作业**：整理 SVM、数据智慧原则、文本分析等幻灯片，并展示优秀报告，方便学生复习与二次创作。
-- 更多课程信息可在[教学页面](/teaching/)与[学习资料合集](/links/)获取。
-
-## 学生培养
-
-- 指导学生参与数据分析比赛与项目实践，形成多篇优秀报告和课堂视频案例，为后续年级提供参考。
-- 鼓励跨学科合作，帮助传媒、统计与计算机背景学生在真实数据上完成创新性探索。
-
-## 教育背景
-
-- 2019，统计学博士，中国人民大学统计学院
-- 2017，统计学硕士，中国人民大学统计学院
-- 2013，应用数学学士，天津理工大学数学学院
-
-## 研究兴趣
-
-<div class="tech-stack">
-  <div class="tech-item">
-    <strong>Large Language Models & Agents</strong><br>
-    <small>LLM architecture, fine-tuning, prompt engineering, multi-agent systems</small>
-  </div>
-  <div class="tech-item">
-    <strong>Sampling Survey Techniques</strong><br>
-    <small>Complex sampling designs, survey methodology, data quality assessment</small>
-  </div>
-  <div class="tech-item">
-    <strong>Machine Learning</strong><br>
-    <small>Supervised/unsupervised learning, deep learning, reinforcement learning</small>
-  </div>
-  <div class="tech-item">
-    <strong>Media Data Analysis</strong><br>
-    <small>Text mining, social network analysis, sentiment analysis, content recommendation</small>
-  </div>
-  <div class="tech-item">
-    <strong>Data Integration & Management</strong><br>
-    <small>Data fusion, missing data imputation, big data processing</small>
-  </div>
-</div>
-
-## GitHub
-
-My open-source projects, course examples, and website updates are maintained on [GitHub @xiaoningwang](https://github.com/xiaoningwang).
-
-## 🌐 Connect with Me
-
-<div class="connect-section">
-  <div class="connect-info">
-    <ul class="connect-list">
-      <li><strong>GitHub</strong>: <a href="https://github.com/xiaoningwang">@xiaoningwang</a></li>
-      <li><strong>Email</strong>: sdwangxiaoning@foxmail.com</li>
-      <li><strong>Scholar Hero</strong>: <a href="https://scholarhero.cn/">scholarhero.cn</a></li>
-      <li><strong>小红书</strong>: 教统计的小宁老师</li>
-      <li><strong>抖音</strong>: 教统计的小宁老师</li>
-      <li><strong>B站</strong>: <a href="https://space.bilibili.com/1091726673">抽样调查之家</a></li>
-    </ul>
-  </div>
-  <div class="wechat-section">
-    <h4>📱 关注公众号</h4>
-    <div class="wechat-qrcode">
-      <img src="{{ '/assets/images/qrcode.jpg' | prepend: site.baseurl }}" alt="公众号二维码" width="150" height="150">
-    </div>
-    <p class="wechat-desc">扫描二维码关注我的公众号，获取最新的研究动态和技术分享</p>
-  </div>
-</div>
-
-## 📱 公众号文章
-
-<div class="wechat-articles">
-  <h3>结课作品文章</h3>
-  <div class="article-list">
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/xSKdreyLiaM1qvWuPONceg" class="article-title">2026年春季数据科学导论优秀作品</a>
-      <span class="article-date">2026</span>
-    </div>
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/Qp8GmPh8IT0xIlxjFqTPJQ?scene=1" class="article-title">商业技能 2025结课作品：10+个「会思考、有温度」的智能体，正在重新定义生活</a>
-      <span class="article-date">2025</span>
-    </div>
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/um8W29nnSTC9K7YuDsgDdQ" class="article-title">2025春季数据科学导论优秀作品</a>
-      <span class="article-date">2025</span>
-    </div>
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/DxO-OvoTLsd2CQSiVVpHHg" class="article-title">数据科学导论课程2024春季优秀报告展示</a>
-      <span class="article-date">2024</span>
-    </div>
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/Bx44Q8GzRDstYioOoqPA5Q" class="article-title">2022数据科学导论优秀报告展示合集</a>
-      <span class="article-date">2022</span>
-    </div>
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/lC_-h91Gc03CJxf9rSzF4w" class="article-title">统计与真理视频合集</a>
-      <span class="article-date">视频合集</span>
-    </div>
-    <div class="article-item">
-      <a href="https://mp.weixin.qq.com/s/YfMDOMCdlsp6op9VdrzA2w" class="article-title">调查与计算广告分析报告合集</a>
-      <span class="article-date">案例合集</span>
-    </div>
-  </div>
-  <div class="article-more">
-    <a href="/teaching/" class="btn btn-primary">查看更多课程资源</a>
-  </div>
+  <h2>联系与关注</h2>
+  {% include profile-contact.html %}
 </div>
