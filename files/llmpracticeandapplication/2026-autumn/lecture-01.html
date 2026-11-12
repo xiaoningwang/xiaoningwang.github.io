@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第一讲 应用场景与智能体 · 大模型案例场景应用</title>
+<meta name="description" content="中国传媒大学研究生课程《大模型案例场景应用》第一讲：课程安排、智能体基础、校园文化活动传播案例与课堂任务。">
+<style>
+:root{--ink:#26394a;--muted:#667480;--accent:#176b70;--line:#dce4e8;--paper:#fff;--wash:#f6f8fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.85 "PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+header{max-width:1160px;margin:auto;padding:42px 30px 25px;border-bottom:1px solid var(--line)}header h1{font-size:36px;line-height:1.45;margin:18px 0 12px}.meta{font-size:16px;color:var(--muted);margin:10px 0}.resources{font-size:16px;display:flex;flex-wrap:wrap;gap:8px 22px}
+.layout{max-width:1160px;margin:auto;padding:32px 30px 60px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px}
+aside{align-self:start;position:sticky;top:24px;font-size:15px;line-height:1.6}aside h2{font-size:17px;margin:0 0 12px}aside ul{list-style:none;padding:0;margin:0}aside li{margin:0 0 12px}aside a{text-decoration:none}
+main{min-width:0}main h2{font-size:28px;color:var(--accent);line-height:1.5;margin:54px 0 25px;padding-bottom:12px;border-bottom:1px solid var(--line)}main h2:first-child{margin-top:0}main h3{font-size:23px;line-height:1.55;margin:35px 0 15px}p{margin:16px 0}ul,ol{padding-left:1.5em}li{margin:9px 0}strong{font-weight:650}
+table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse;font-size:16px;line-height:1.7;margin:22px 0}th,td{padding:11px 14px;border:1px solid var(--line);vertical-align:top}th{background:var(--wash);font-weight:650}th:first-child,td:first-child{min-width:80px}
+footer{max-width:1160px;margin:auto;border-top:1px solid var(--line);padding:22px 30px 36px;font-size:15px;color:var(--muted)}.skip{position:absolute;left:-9999px}.skip:focus{left:20px;top:8px;background:white;padding:8px;z-index:2}
+@media(max-width:760px){body{font-size:17px}header{padding:28px 20px 22px}header h1{font-size:29px}.layout{display:block;padding:24px 20px 45px}aside{position:static;margin-bottom:35px;padding-bottom:18px;border-bottom:1px solid var(--line)}aside li{display:inline-block;margin:0 18px 12px 0}main h2{font-size:25px}main h3{font-size:21px}table{font-size:15px}footer{padding-left:20px;padding-right:20px}}
+@media print{body{font-size:11pt;line-height:1.65}header{padding:0 0 15px}header h1{font-size:24pt}.layout{display:block;padding:20px 0}aside,.resources,.back{display:none}main h2{font-size:19pt;break-after:avoid}main h3{font-size:15pt;break-after:avoid}li,p{orphans:3;widows:3}table{display:table;font-size:10pt}tr{break-inside:avoid}a{color:inherit}footer{padding:12px 0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳转到讲义正文</a>
+<header>
+<a class="back" href="/teaching/llmpracticeandapplication">← 返回课程主页</a>
+<h1>第一讲 应用场景与智能体</h1>
+<p class="meta">大模型案例场景应用 · 中国传媒大学研究生课程 · 王小宁<br>2026—2027学年第一学期</p>
+<nav class="resources" aria-label="讲义资源"><a href="lecture-01.pdf">下载PDF课件（52页）</a><a href="lecture-01.Rmd" download>下载Rmd源文件</a></nav>
+</header>
+<div class="layout">
+<aside aria-label="讲义目录"><h2>本讲内容</h2><ul>
+<li><a href="#课程与学习方式"
+id="toc-课程与学习方式">课程与学习方式</a></li>
+<li><a href="#实操与课程评价"
+id="toc-实操与课程评价">实操与课程评价</a></li>
+<li><a href="#第一讲的基本概念"
+id="toc-第一讲的基本概念">第一讲的基本概念</a></li>
+<li><a href="#案例-校园文化活动传播助手"
+id="toc-案例-校园文化活动传播助手">案例 校园文化活动传播助手</a></li>
+<li><a href="#第一讲课堂任务"
+id="toc-第一讲课堂任务">第一讲课堂任务</a></li>
+<li><a href="#阅读与分享" id="toc-阅读与分享">阅读与分享</a></li>
+</ul></aside>
+<main id="content"><h2 id="课程与学习方式">课程与学习方式</h2>
+<h3 id="课程信息">课程信息</h3>
+<ul>
+<li><strong>课程名称</strong>：中国传媒大学研究生《大模型案例场景应用》。</li>
+<li><strong>教学班</strong>：213551510005，大模型案例场景应用01。</li>
+<li><strong>任课教师</strong>：王小宁；<strong>学期</strong>：2026—2027学年第一学期。</li>
+<li><strong>时间地点</strong>：第10—17周，星期四第9—12节，一教204。</li>
+<li><strong>课次安排</strong>：共8次课；下文同时标注教学周与课次。</li>
+</ul>
+<h3
+id="课程主线从场景到可核验的作品">课程主线：从场景到可核验的作品</h3>
+<ul>
+<li>从<strong>传媒实践、学术研究与公共文化服务</strong>中的具体问题出发。</li>
+<li>贯通任务建模、提示设计、知识检索、工具调用与效果评测。</li>
+<li>用真实或明确标注的模拟材料完成原型、测试和迭代。</li>
+<li>每个项目都要回答：<strong>谁需要它、依据是什么、怎样证明有效</strong>。</li>
+</ul>
+<h3 id="学习目标与对应证据">学习目标与对应证据</h3>
+<ul>
+<li><strong>任务建模</strong>：明确用户、问题、输入输出与人工接管条件，提交场景设计。</li>
+<li><strong>知识与工具设计</strong>：组织RAG知识库和工具流程，保留来源与运行记录。</li>
+<li><strong>评测与迭代</strong>：比较基线与改进方案，提交测试集、误差分析和版本差异。</li>
+<li><strong>协作与表达</strong>：说明人的判断、AI的贡献与局限，完成演示和答辩。</li>
+</ul>
+<h3 id="师生机如何协作">师—生—机如何协作</h3>
+<ul>
+<li><strong>教师是思维导师</strong>：提出复杂任务，组织质疑，设定质量判据并把关伦理。</li>
+<li><strong>学生是探究主体</strong>：提出问题、选择证据、设计方案、运行测试并解释结果。</li>
+<li><strong>AI是能力增强助手</strong>：辅助阅读、检索、分析、编程与学习过程整理。</li>
+<li><strong>责任落实到人</strong>：学生对提交内容负责，教师依据证据进行评价。</li>
+</ul>
+<h3 id="一次课如何组织">一次课如何组织</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">环节</th>
+<th style="text-align: right;">占比</th>
+<th style="text-align: left;">主要活动</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">导入与任务确认</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: left;">明确问题、材料与完成标准</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">学生分享与方案说明</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: left;">展示思路、证据和分工</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">协作研讨与高阶讨论</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: left;">比较方案，质疑假设</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">实践演示与场景操作</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: left;">运行原型，核验结果</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">教师点评与伦理把关</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: left;">讲解关键难点与责任边界</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">反思与下次任务安排</td>
+<td style="text-align: right;">10%</td>
+<td style="text-align: left;">记录改进方向，准备下次课</td>
+</tr>
+</tbody>
+</table>
+<p><strong>学生主导的分享、研讨与实操合计70%；按实际活动记录核对。</strong></p>
+<h3 id="课前课中与课后">课前、课中与课后</h3>
+<ul>
+<li><strong>课前</strong>：阅读指定材料，借助AI补学，带着问题和初步方案进入课堂。</li>
+<li><strong>课中</strong>：学生分享、互相质疑、操作验证；教师针对共性难点讲解。</li>
+<li><strong>课后</strong>：提交本次证据，修订作品，写明保留或否定某个方案的理由。</li>
+<li><strong>每周反馈</strong>：依据学习记录生成补学与改进建议，经教师核对后使用。</li>
+</ul>
+<h3 id="第1011周第12次课">第10—11周（第1—2次课）</h3>
+<ul>
+<li><strong>第10周：应用场景与智能体</strong>。区分LLM、工作流与Agent，拆解一个传媒或科研任务。</li>
+<li><strong>产出</strong>：一页场景设计；说明交付物、成功标准和人工接管条件。</li>
+<li><strong>第11周：模型能力与提示设计</strong>。比较同一任务下的提示、材料组织和输出方式。</li>
+<li><strong>产出</strong>：两版提示、同一组测试结果及改进说明。</li>
+</ul>
+<h3 id="第1213周第34次课">第12—13周（第3—4次课）</h3>
+<ul>
+<li><strong>第12周：RAG与证据链</strong>。完成知识整理、检索、引用溯源与问答评测。</li>
+<li><strong>实操一</strong>：每人完成带来源的知识库问答，提交检索记录与错误分析。</li>
+<li><strong>第13周：工具调用与传媒数据分析</strong>。练习表格计算、文档提取与流程编排。</li>
+<li><strong>产出</strong>：可复核的数据摘要、工具运行记录和项目初步方案。</li>
+</ul>
+<h3 id="第1415周第56次课">第14—15周（第5—6次课）</h3>
+<ul>
+<li><strong>第14周：期中方案汇报</strong>。展示需求、数据、原型与评测设计，接受同伴质询。</li>
+<li><strong>产出</strong>：项目方案、初步证据与修订清单。</li>
+<li><strong>第15周：多工具智能体与场景实操</strong>。将检索、计算和生成连接为可运行流程。</li>
+<li><strong>实操二</strong>：每人运行工具链，测试异常与接管，提交日志和版本对比。</li>
+</ul>
+<h3 id="第1617周第78次课">第16—17周（第7—8次课）</h3>
+<ul>
+<li><strong>第16周：多智能体协作与评测治理</strong>。比较单体与分工方案，检验准确性、耗时和成本。</li>
+<li><strong>产出</strong>：基线对比、失败案例与改进版本；复测第15周的工具链。</li>
+<li><strong>第17周：作品展示、答辩与复盘</strong>。现场运行原型，解释证据、人机分工与应用价值。</li>
+<li><strong>产出</strong>：作品、项目报告、测试材料及个人学习档案。</li>
+</ul>
+<h2 id="实操与课程评价">实操与课程评价</h2>
+<h3 id="实操一知识库与证据链">实操一：知识库与证据链</h3>
+<ul>
+<li><strong>场景</strong>：行业资料问答、文献辅助阅读或校园公共服务知识库，任选其一。</li>
+<li><strong>任务</strong>：整理可授权使用的资料，设计检索问答，逐条核对关键引用。</li>
+<li><strong>提交</strong>：资料清单、问答样例、检索记录、错误分析与个人操作说明。</li>
+<li><strong>检查</strong>：既测“资料里有答案”，也测“资料不足、版本冲突和无法回答”。</li>
+</ul>
+<h3 id="实操二工具链与评估迭代">实操二：工具链与评估迭代</h3>
+<ul>
+<li><strong>场景</strong>：活动传播助手、媒体数据周报或科研资料处理，沿用个人项目推进。</li>
+<li><strong>任务</strong>：连接至少两类工具能力，如文档检索、表格计算、结构化信息提取。</li>
+<li><strong>提交</strong>：运行日志、测试结果、失败案例、前后版本差异与个人贡献。</li>
+<li><strong>检查</strong>：数据缺失、工具失败或证据冲突时，能否停止、解释并转人工。</li>
+</ul>
+<h3 id="个人项目与课堂协作">个人项目与课堂协作</h3>
+<ul>
+<li>项目按<strong>一人一组</strong>开展，本人完成需求与证据、流程实现、测试与表达。</li>
+<li><strong>每名同学至少完成两次实操</strong>，分别对应第12周和第15周的训练。</li>
+<li>作品中说明本人判断与AI协助的环节，保留自己的操作与核验记录。</li>
+<li>现场答辩需能解释本人贡献，并复现本人负责的一项关键操作。</li>
+</ul>
+<h3 id="期中方案汇报第14周">期中方案汇报：第14周</h3>
+<ul>
+<li><strong>问题与使用者</strong>：现有流程哪里困难，项目准备改善什么。</li>
+<li><strong>数据与原型</strong>：资料从哪里来，如何组织，当前能运行到哪一步。</li>
+<li><strong>评测与风险</strong>：用什么任务测试，如何发现错误，何时交由人工处理。</li>
+<li><strong>修订计划</strong>：回应质询，明确下一版本的改动与验证方法。</li>
+</ul>
+<h3 id="期末提交材料第17周">期末提交材料：第17周</h3>
+<ul>
+<li><strong>可运行的作品</strong>：原型、配置或代码，以及使用与复现说明。</li>
+<li><strong>项目报告与演示</strong>：问题、数据、流程、基线对比、评测结果和应用边界。</li>
+<li><strong>过程证据包</strong>：资料清单、关键日志、测试集、版本差异与同伴反馈。</li>
+<li><strong>个人说明</strong>：两次实操、人机分工、个人贡献、AI使用说明与反思。</li>
+</ul>
+<h3 id="成绩组成">成绩组成</h3>
+<ul>
+<li><strong>课程作业：30%</strong>。场景设计、提示比较、两次实操及配套个人记录。</li>
+<li><strong>研讨交流与课堂表现：20%</strong>。问题质量、证据论证、同伴反馈与协作贡献。</li>
+<li><strong>期中项目方案汇报：20%</strong>。第14周，考查问题、原型与评测计划。</li>
+<li><strong>期末智能体作品与项目报告：30%</strong>。第17周，考查运行、核验与答辩。</li>
+</ul>
+<p>合计<strong>100%</strong>；讨论贡献依据内容与证据评价。</p>
+<h3 id="项目作品评价量规">项目作品评价量规</h3>
+<p>用于期中、期末作品评阅，各按下列四项评分后折算至相应总评权重。</p>
+<ul>
+<li><strong>问题建模，25分</strong>：用户与需求清楚，任务可执行，完成标准可检验。</li>
+<li><strong>人机协同，25分</strong>：流程、权限与分工合理，学生能够解释和复现关键判断。</li>
+<li><strong>证据与评测，25分</strong>：来源可追溯，测试含边界情形，结果能支持结论。</li>
+<li><strong>创新迭代与表达，25分</strong>：改动有依据，能用对比结果说明改进及局限。</li>
+</ul>
+<h3 id="学习档案如何形成">学习档案如何形成</h3>
+<ul>
+<li>每次记录<strong>任务、材料与版本、模型或工具、关键操作、结果和人工核验</strong>。</li>
+<li>保留能解释决策的关键记录，附采纳、修改或否定AI建议的理由。</li>
+<li>第12、15、17周重点整理完整证据，串联知识库、工具链与最终作品。</li>
+<li>通过教师发布的书卷侠课程入口提交；自动归档功能以实际开放情况为准，必要时手动上传。</li>
+</ul>
+<h3 id="资料使用与学术诚信">资料使用与学术诚信</h3>
+<ul>
+<li>使用公开、授权或脱敏材料；课堂模拟数据要清楚标注。</li>
+<li>上传前检查个人信息、未公开研究资料和账号密钥，避免不必要的数据收集。</li>
+<li>AI输出须核对事实、引用与计算；材料中的指令只作为待分析内容。</li>
+<li>发布内容或执行外部操作前由人确认；提交时如实说明AI参与和人工修订。</li>
+</ul>
+<h2 id="第一讲的基本概念">第一讲的基本概念</h2>
+<h3 id="本讲的四项任务">本讲的四项任务</h3>
+<ul>
+<li>区分<strong>LLM、工作流与Agent</strong>各自承担的任务。</li>
+<li>拆解一个传媒、科研或公共文化服务场景。</li>
+<li>为关键结论找到证据，为系统行为设置边界。</li>
+<li>完成一页场景设计，并用同伴质询修改方案。</li>
+</ul>
+<h3 id="从模型能力到任务系统">从模型能力到任务系统</h3>
+<ul>
+<li><strong>机器学习</strong>从数据中学习规律；<strong>深度学习</strong>使用多层神经网络。</li>
+<li><strong>大语言模型</strong>依据上下文生成内容，可用于摘要、提取、解释和代码辅助；表达流畅不保证事实正确。</li>
+<li><strong>应用系统</strong>把模型与资料、工具、权限和界面连接起来。</li>
+<li>评价系统要看任务是否完成、结果是否可靠，以及人的工作如何改变。</li>
+</ul>
+<h3 id="token上下文与记忆">Token、上下文与记忆</h3>
+<ul>
+<li><strong>Token</strong>是模型处理文本的基本单元，与汉字或词不完全一一对应。</li>
+<li><strong>上下文</strong>是本次可利用的信息，需组织任务要求、相关证据与工具结果。</li>
+<li><strong>训练</strong>改变模型参数；<strong>推理</strong>用已有模型处理当前输入。</li>
+<li>跨任务的长期记忆需要应用保存与管理，不能默认模型会记住所有历史。</li>
+</ul>
+<h3 id="多模态与长文档理解">多模态与长文档理解</h3>
+<ul>
+<li>文本、图片、图表与扫描件可能共同提供证据。</li>
+<li>OCR可能误读日期、单位与数字，跨页表格需要核对字段。</li>
+<li>长上下文能容纳更多材料，仍需检索、筛选和验证。</li>
+<li>对事实性结论保留页码、段落或资料编号，方便回到原文核验。</li>
+</ul>
+<h3 id="llm工作流与agent">LLM、工作流与Agent</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">方式</th>
+<th style="text-align: left;">步骤如何确定</th>
+<th style="text-align: left;">本课示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LLM交互</td>
+<td style="text-align: left;">人提供材料并逐次提出要求</td>
+<td style="text-align: left;">根据通知起草活动介绍</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">工作流</td>
+<td style="text-align: left;">主要步骤由系统预先规定</td>
+<td style="text-align: left;">提取字段、校验日期、生成草稿</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Agent</td>
+<td style="text-align: left;">在授权范围内依据反馈选择动作</td>
+<td style="text-align: left;">发现冲突后检索补充材料再作答</td>
+</tr>
+</tbody>
+</table>
+<p>选择依据是任务需要、可验证性与运行成本。</p>
+<h3 id="一条可核验的提示词">一条可核验的提示词</h3>
+<ul>
+<li><strong>任务</strong>：面向谁，完成什么，成功标准是什么。</li>
+<li><strong>资料</strong>：使用哪些来源，时间范围与版本如何限定。</li>
+<li><strong>输出</strong>：约定字段、格式，以及事实与来源的对应关系。</li>
+<li><strong>边界</strong>：缺少证据时说明不足，遇到冲突先列差异，再请求确认。</li>
+</ul>
+<h3 id="rag如何支持证据链">RAG如何支持证据链</h3>
+<ul>
+<li><strong>检索增强生成（RAG）</strong>先找相关材料，再据此组织回答。</li>
+<li>为资料保留编号、版本、日期与位置，确保引用可以回查。</li>
+<li>逐项检查：有没有找到相关资料，资料是否支持答案，引用是否准确。</li>
+<li>无相关证据时说明无法判断；检索到内容也不等于内容必然可信。</li>
+</ul>
+<h3 id="工具调用与记忆管理">工具调用与记忆管理</h3>
+<ul>
+<li>模型提出工具与参数，应用检查权限和输入后执行。</li>
+<li>检索提供材料，计算工具处理数值，工具返回结果仍需核验。</li>
+<li>记忆保留任务状态与已确认事实，并标注来源、版本与更新条件。</li>
+<li>重试要有次数或耗时上限；执行失败时说明原因并保留日志。</li>
+</ul>
+<h3 id="智能体如何完成闭环">智能体如何完成闭环</h3>
+<ul>
+<li><strong>理解与规划</strong>：确定目标、任务边界和下一步动作。</li>
+<li><strong>取证与行动</strong>：检索材料、调用工具，记录输入与真实返回。</li>
+<li><strong>核验与修订</strong>：检查是否满足标准，区分资料缺失、计算错误和生成错误。</li>
+<li><strong>停止与接管</strong>：完成后交付；触及权限或无法消除冲突时交由人处理。</li>
+</ul>
+<h3 id="多智能体与反馈">多智能体与反馈</h3>
+<ul>
+<li>可将规划、执行、核验分给不同角色，并规定各自可用的工具和资料。</li>
+<li>比较单体与多角色方案：准确性是否改善，耗时、成本与沟通错误是否增加。</li>
+<li>审核角色仍可能重复同一错误，关键证据需要独立核验。</li>
+<li>强化学习通过奖励信号学习策略；课堂的人工反馈主要用于方案评测与修订。</li>
+</ul>
+<h2 id="案例-校园文化活动传播助手">案例 校园文化活动传播助手</h2>
+<h3 id="从真实需求定义任务">从真实需求定义任务</h3>
+<ul>
+<li><strong>使用者</strong>：负责活动宣传与咨询的学生团队。</li>
+<li><strong>输入</strong>：活动通知、报名记录、场地规则与后续更新。</li>
+<li><strong>输出</strong>：带来源的活动信息表、传播草稿及待确认事项。</li>
+<li><strong>完成标准</strong>：事实准确、引用可查、数据可算；内容经人工确认后发布。</li>
+</ul>
+<h3 id="案例资料课堂模拟数据">案例资料：课堂模拟数据</h3>
+<p>下列活动、编号与数据均为<strong>教学模拟</strong>。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">资料编号</th>
+<th style="text-align: left;">材料与版本</th>
+<th style="text-align: left;">关键内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">活动通知，第1版</td>
+<td style="text-align: left;">周六14:00，报告厅A，名额300人</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">场地更新，第2版</td>
+<td style="text-align: left;">地点改为报告厅B，名额调整为240人</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">报名表，统计时点T</td>
+<td style="text-align: left;">200名有效报名者，其中80名新生</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">场地规则，当前版</td>
+<td style="text-align: left;">须预约；未经确认不得对外发布</td>
+</tr>
+</tbody>
+</table>
+<p>B明确更新A的场地与名额；其余信息需逐项核对。</p>
+<h3 id="先列事实与来源">先列事实与来源</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">待交付信息</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">证据或计算</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">活动时间</td>
+<td style="text-align: left;">周六14:00</td>
+<td style="text-align: left;">A；现有更新未修改时间</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">活动地点</td>
+<td style="text-align: left;">报告厅B</td>
+<td style="text-align: left;">B更新A中的地点</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">报名占名额比例</td>
+<td style="text-align: left;">约83.3%</td>
+<td style="text-align: left;">C、B：200 / 240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">报名者中新生占比</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: left;">C：80 / 200</td>
+</tr>
+</tbody>
+</table>
+<p>报名数不等于到场数；现有材料不能说明实际到场率。</p>
+<h3 id="给助手的任务指令">给助手的任务指令</h3>
+<p>根据资料A—D整理活动信息，只使用给定材料。</p>
+<ol type="1">
+<li>先列时间、地点、名额、报名人数，并为每项附资料编号。</li>
+<li>明确新旧版本关系；无法确认的冲突列为待核验项。</li>
+<li>计算报名占名额比例和新生占比，展示公式与分母。</li>
+<li>根据已确认事实起草不超过150字的活动介绍。</li>
+<li>缺失信息不补写；草稿交由人审核，不执行发布。</li>
+</ol>
+<h3 id="如何选择实现方式">如何选择实现方式</h3>
+<ul>
+<li><strong>材料少且任务单一</strong>：人工提供资料，用LLM生成后逐项核对。</li>
+<li><strong>每周重复同一流程</strong>：按检索、字段校验、计算、生成、审核设计工作流。</li>
+<li><strong>存在可处理的动态缺口</strong>：允许Agent在限定资料库内补充检索并复核。</li>
+<li><strong>涉及发布或变更报名</strong>：设置明确确认环节，保留操作与审核记录。</li>
+</ul>
+<h3 id="故意加入三个异常">故意加入三个异常</h3>
+<ul>
+<li><strong>更新没有日期</strong>：不能直接认定“最新”；列出冲突，请负责人确认。</li>
+<li><strong>报名表缺少人数口径</strong>：不能计算占比；先确认是否去重、是否有效报名。</li>
+<li><strong>检索或计算工具失败</strong>：有限重试；仍失败则保留中间结果并转人工。</li>
+<li>每次异常测试记录<strong>输入、预期行为、实际行为与处理结果</strong>。</li>
+</ul>
+<h3 id="用测试回答效果如何">用测试回答“效果如何”</h3>
+<ul>
+<li>先准备一组固定任务，包含常规问答、资料不足、版本冲突与工具失败。</li>
+<li><strong>字段正确率</strong>：正确字段数 /
+应核验字段数，逐项回到原始材料检查。</li>
+<li><strong>引用支持率</strong>：有正确来源支持的事实性断言数 /
+全部事实性断言数。</li>
+<li><strong>流程通过率</strong>：满足预期行为的用例数 /
+全部用例数；同时记录耗时与复核。</li>
+</ul>
+<h3 id="与什么比较才算改进">与什么比较，才算改进</h3>
+<ul>
+<li><strong>人工基线</strong>：按同一任务和材料记录质量、耗时与复核工作。</li>
+<li><strong>基础方案</strong>：直接提示生成；<strong>改进方案</strong>：加入版本核对、工具或检索。</li>
+<li>测试条件、模型与工具版本要可比；记录样本数和所有失败情形。</li>
+<li>用开发任务改方案，用保留任务检验；小样本结果只说明测试范围内的表现。</li>
+</ul>
+<h3 id="应用价值也要有口径">应用价值也要有口径</h3>
+<ul>
+<li><strong>课堂假设</strong>：每月100项任务，人工每项20分钟，AI辅助后每项12分钟（含复核）。</li>
+<li>按人工时间价值60元 / 小时计算，节约价值为100 × 8 / 60 × 60 =
+<strong>800元</strong>。</li>
+<li>若模型与运维新增成本为200元，估计净节约价值为<strong>600元 /
+月</strong>。</li>
+<li>项目需实测并计入建设、维护与错误处理；上述假设不能当作项目成效。</li>
+</ul>
+<h2 id="第一讲课堂任务">第一讲课堂任务</h2>
+<h3 id="练习选择一个值得做的场景">练习：选择一个值得做的场景</h3>
+<ul>
+<li><strong>传媒实践</strong>：活动传播、媒体数据周报、内容资料核验。</li>
+<li><strong>学术研究</strong>：文献阅读、研究资料整理、可复核的数据摘要。</li>
+<li><strong>公共文化服务</strong>：校史或展览资料问答、预约信息咨询。</li>
+<li>每组选择一个小而完整的任务，说明当前人工流程和具体困难。</li>
+</ul>
+<h3 id="一页场景设计需要什么">一页场景设计需要什么</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">需要回答的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">用户与问题</td>
+<td style="text-align: left;">谁在什么情境下遇到什么困难？</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">输入与证据</td>
+<td
+style="text-align: left;">使用什么资料，能否合法取得，如何回查？</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">流程与分工</td>
+<td style="text-align: left;">哪些步骤由人、模型与工具分别承担？</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">输出与标准</td>
+<td style="text-align: left;">交付什么，用什么任务和指标判断合格？</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">异常与接管</td>
+<td style="text-align: left;">缺失、冲突或工具失败时如何处理？</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">验证与迭代</td>
+<td style="text-align: left;">与哪个基线比较，下次准备验证什么？</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分享质询与操作">分享、质询与操作</h3>
+<ul>
+<li><strong>学生分享</strong>：展示场景设计，说明需求证据与准备交付的结果。</li>
+<li><strong>协作研讨</strong>：另一组从来源、失败条件和人的责任提出质询。</li>
+<li><strong>实践演示</strong>：用一份公开或模拟材料运行一次任务，核查至少一项事实或计算。</li>
+<li><strong>记录修订</strong>：保留初稿、质询、运行结果和修改理由，教师集中点评。</li>
+</ul>
+<h3 id="本次提交与下次准备">本次提交与下次准备</h3>
+<ul>
+<li><strong>本次提交</strong>：一页场景设计、一次运行记录及同伴反馈后的修订说明。</li>
+<li><strong>个人记录</strong>：本次承担的操作、采纳或否定AI建议的理由与尚未解决的问题。</li>
+<li><strong>下次准备</strong>：为同一场景编写两版提示，准备相同的一组测试任务。</li>
+<li>后续两次实操与个人项目尽量沿用该场景，逐步积累可比较的版本。</li>
+</ul>
+<h2 id="阅读与分享">阅读与分享</h2>
+<h3 id="阅读如何服务项目">阅读如何服务项目</h3>
+<ul>
+<li>建议2—3位同学共同选读一本书，分享<strong>不超过15分钟</strong>，纳入学生分享环节。</li>
+<li>每次围绕一个项目问题，说明书中观点、适用条件与可验证的启发。</li>
+<li>将观点转化为访谈问题、设计选择或测试假设，附阅读页码或章节。</li>
+<li>AI可辅助梳理；分享者需读过所引内容，并能回应质询。</li>
+</ul>
+<h3 id="核心选读问题证据与表达">核心选读：问题、证据与表达</h3>
+<ul>
+<li><strong>《真需求》</strong>（梁宁）：把“想做一个智能体”改写为具体使用者的需求。</li>
+<li><strong>《批判性思维》</strong>（摩尔、帕克）：检查主张、证据、假设与可能的反例。</li>
+<li><strong>《费曼学习法：用输出倒逼输入》</strong>（尹红心、李伟）：向非技术听众解释方案与局限。</li>
+<li><strong>《艾伦·图灵传：如谜的解谜者》</strong>（霍奇斯）：讨论机器智能与人类判断的关系。</li>
+</ul>
+<h3 id="延伸选读与实践">延伸选读与实践</h3>
+<ul>
+<li><strong>《人工智能产品经理：AI时代PM修炼手册》</strong>：形成需求、流程与交付设计。</li>
+<li><strong>《数据驱动：从方法到实践》</strong>：将应用价值转化为指标与数据采集方案。</li>
+<li><strong>《关键对话：如何高效能沟通》</strong>：练习用户访谈、同伴质询与团队分歧沟通。</li>
+<li>选读服务于项目任务；使用项目数据和测试结果检验观点。</li>
+</ul></main>
+</div>
+<footer>大模型案例场景应用 · 第一讲　<a href="/teaching/llmpracticeandapplication">课程主页</a> · <a href="/teaching/">全部课程</a></footer>
+</body>
+</html>
