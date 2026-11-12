@@ -1,0 +1,22 @@
+<section class="scholarhero-products" aria-labelledby="scholarhero-products-title" lang="zh-CN">
+  <div class="scholarhero-products__header">
+    <div>
+      <h2 id="scholarhero-products-title">书卷侠 · 产品更新</h2>
+      <p class="scholarhero-products__intro">三款工具，连接教、学、研。</p>
+    </div>
+    <time class="scholarhero-products__date" datetime="{{ site.data.scholarhero.updated }}">{{ site.data.scholarhero.updated | date: "%Y.%m.%d" }}</time>
+  </div>
+  <div class="scholarhero-products__grid">
+    {% for product in site.data.scholarhero.products %}
+    <article class="scholarhero-product">
+      <img class="scholarhero-product__image" src="{{ product.image | relative_url }}" alt="{{ product.image_alt }}" width="720" height="420" decoding="async">
+      <div class="scholarhero-product__body">
+        <p class="scholarhero-product__category">{{ product.category }}</p>
+        <h3>{{ product.name }}</h3>
+        <p class="scholarhero-product__description">{{ product.description }}</p>
+        <a class="scholarhero-product__link" href="{{ product.url }}">{{ product.action }}<span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -38,11 +38,7 @@ redirect_from:
       </div>
       <p>欢迎感兴趣的同学联系我，我的邮箱：<strong>sdwangxiaoning@foxmail.com</strong></p>
 
-      <div class="project-highlight">
-        <h3>✨ 我们的智能助教项目</h3>
-        <p>我们团队正在开发智能助教-书卷侠（Scholar Hero），感兴趣的老师同学欢迎体验并给予反馈意见：</p>
-        <a href="https://scholarhero.cn/" class="btn btn-primary">访问 Scholar Hero</a>
-      </div>
+      {% include scholarhero-products.html %}
     </div>
   </section>
 
@@ -352,20 +348,6 @@ redirect_from:
   background: #4f46e5;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
-}
-
-/* Project Highlight */
-.project-highlight {
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.project-highlight h3 {
-  margin-top: 0;
-  color: #0369a1;
 }
 
 /* Buttons */
