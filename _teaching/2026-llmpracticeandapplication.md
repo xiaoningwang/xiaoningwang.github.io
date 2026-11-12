@@ -9,7 +9,6 @@ period: "2026—2027学年第一学期"
 location: "Beijing, China"
 excerpt: "面向传媒实践、学术研究与公共文化服务，贯通提示设计、RAG、工具调用、智能体构建与效果评测，通过两次实操和项目作品训练可核验的人机协同能力。"
 redirect_from:
-  - /traeai/
   - /teaching/2025-traeai
   - /teaching/2025-traeai/
 ---
@@ -29,15 +28,9 @@ redirect_from:
 | 上课地点 | 一教204 |
 | 课次 | 共8次课，每次4节 |
 
-## 课程资源
+## 课件与学习平台
 
-### 第一讲 应用场景与智能体
-
-[在线阅读第一讲讲义]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.html' | relative_url }}) · [下载PDF课件（52页）]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.pdf' | relative_url }}) · [下载Rmd源文件（ZIP）]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01-source.zip' | relative_url }})
-
-内容包括课程安排与评价、LLM与工作流及Agent的区别、提示设计、RAG与证据链、工具调用与记忆、多智能体协作，以及“校园文化活动传播助手”案例和一页场景设计练习。讲义可用于课前阅读和课堂查阅，课堂按分享、研讨与实操活动组织。
-
-课程学习与提交入口由教师通过书卷侠课程平台发布。后续讲义按教学进度补充。
+课程PPT及学习资料请参见[书卷侠课程平台](https://courses.scholarhero.cn/)。课程入口、学习任务与提交安排以教师发布为准。
 
 ## 学习目标
 
