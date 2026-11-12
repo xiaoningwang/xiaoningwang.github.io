@@ -33,7 +33,7 @@ redirect_from:
 
 ### 第一讲 应用场景与智能体
 
-[在线阅读第一讲讲义]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.html' | relative_url }}) · [下载PDF课件（52页）]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.pdf' | relative_url }}) · [下载Rmd源文件]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.Rmd' | relative_url }})
+[在线阅读第一讲讲义]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.html' | relative_url }}) · [下载PDF课件（52页）]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01.pdf' | relative_url }}) · [下载Rmd源文件（ZIP）]({{ '/files/llmpracticeandapplication/2026-autumn/lecture-01-source.zip' | relative_url }})
 
 内容包括课程安排与评价、LLM与工作流及Agent的区别、提示设计、RAG与证据链、工具调用与记忆、多智能体协作，以及“校园文化活动传播助手”案例和一页场景设计练习。讲义可用于课前阅读和课堂查阅，课堂按分享、研讨与实操活动组织。
 
