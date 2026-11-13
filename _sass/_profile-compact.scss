@@ -112,6 +112,10 @@
     }
   }
 
+  .profile-resource-list--articles {
+    grid-template-columns: 1fr;
+  }
+
   .profile-contact {
     display: flex;
     align-items: center;
