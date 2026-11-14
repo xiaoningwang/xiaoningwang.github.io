@@ -1,0 +1,679 @@
+{
+  "account": "抽样调查之家",
+  "album": "市调大赛",
+  "album_url": "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyMjA5ODg3NA==&action=getalbum&album_id=2020993093524652037",
+  "updated": "2026-11-14",
+  "note": "来自微信公众号「抽样调查之家」的「市调大赛」合集，点击标题跳转微信阅读原文。",
+  "articles": [
+    {
+      "title": "市调大赛｜近三年市调大赛获奖选题去哪找？2024—2026年查看入口整理",
+      "date": "2026-11-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500977&idx=1&sn=3aa0aeb3684f6b609468e1810a4f748f&chksm=c1fb0964f68c8072dc51a1c896064dcb9546cca7009fe26898cc00b68fa0eccf41ce2be30bed"
+    },
+    {
+      "title": "市调大赛｜选题之后，下一步怎么做？从研究方案到调查落地",
+      "date": "2026-11-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500966&idx=1&sn=a2309b9327f41bd0c25549a53f9cc483&chksm=c1fb0973f68c80653210817b9aa3c15d3e25ae6bed1434a8dc4298bbf72897b9ff4df115e35d"
+    },
+    {
+      "title": "市调大赛｜市调大赛选题怎么写？从一个想法到一份可执行的调研方案",
+      "date": "2026-11-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500956&idx=1&sn=db596a3fa7f7c55129bd155ca6a17201&chksm=c1fb0949f68c805fef23243652c078d86234576d426f3fdbb54aa21b20aa40a78f02ab86a685"
+    },
+    {
+      "title": "市调大赛｜第十七届备赛时间表，寒假前要做到哪一步？",
+      "date": "2026-11-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500941&idx=1&sn=b45452f7a20f075cf201124b312c38a1&chksm=c1fb0958f68c804ef951bc719f12305290c9f560b1334c70222da23f46d90ef7cf5dbd4a1bce"
+    },
+    {
+      "title": "市调大赛|怎么定义市调大赛选题里面的问题和目标",
+      "date": "2026-11-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500906&idx=1&sn=46019d9b1df3587733187c834f5d9232&chksm=c1fb09bff68c80a940bd38ed03373f7757002e0a69945f07232269bec94687c3adbdc9e57c4b"
+    },
+    {
+      "title": "市调大赛｜揭秘国奖级市调选题：从构思到论证的全攻略",
+      "date": "2026-10-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500893&idx=1&sn=828892e2a5d8e7bdf328bb34c1037056&chksm=c1fb0988f68c809eb0f9f8abca71cd89e8b5718b27c2dee3d4aefdea5945f2ef777369c560eb"
+    },
+    {
+      "title": "推荐视频|市调大赛金牌指导教师参赛经验分享",
+      "date": "2026-10-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500880&idx=1&sn=a25fb5160304fc75d6eb601418e7af4e&chksm=c1fb0985f68c8093b989aefecff5ad9a934cd6c0ffd86ef458bb78c882026578e06c647dbf1e"
+    },
+    {
+      "title": "经验｜在华留学生组国赛一等奖市调大赛经验分享",
+      "date": "2026-10-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500867&idx=3&sn=c9d3e70988d961475f6f8f1e589ab517&chksm=c1fb0996f68c8080d4d2161a6ed89ea41392b570cc8825e5cb79a1bfda2d9f25a6acc68b4da8"
+    },
+    {
+      "title": "经验｜市调国赛一等奖团队的备赛经验分享",
+      "date": "2026-10-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500867&idx=1&sn=7f6dcfa1b592fda6da57f3365029237e&chksm=c1fb0996f68c80807fe602f444c17483c7c31271762e853f424fc4bd2fa2cf7b43d0711fc572"
+    },
+    {
+      "title": "经验|2021-2026年全国大学生市场调查与分析大赛国赛公开赛答辩视频集锦",
+      "date": "2026-10-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500850&idx=1&sn=5bc144a0019386729d6d2c8a75492ce6&chksm=c1fb09e7f68c80f12aa248052f7bfa0954f45402142f1694dd5ecea9a65f6e0ca86a010f9882"
+    },
+    {
+      "title": "经验|近三年市调获奖作品有哪些特点——2023年",
+      "date": "2026-10-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500810&idx=3&sn=ef56db409647902c5ce752cd74eda14c&chksm=c1fb09dff68c80c9bf779c1e66aae3b4f0782882a0e1c75e26628dbe466a7057674b139bb170"
+    },
+    {
+      "title": "经验｜近三年市调获奖作品有哪些特点——2025年",
+      "date": "2026-10-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500810&idx=1&sn=03fde40f475814f8b0f965137a345f38&chksm=c1fb09dff68c80c930fb6a90d26a438a65c96ffc6301f8aff58013f32feb2fff6edbf944b259"
+    },
+    {
+      "title": "市调大赛｜如何检查自己选题过大或过小",
+      "date": "2026-10-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500789&idx=3&sn=486fb37fdead1aa2153a09172ca2b711&chksm=c1fb0e20f68c8736a6ce3c08055832987c49f09ad51de92abd4517ff1cbbe632ce60d65797c2"
+    },
+    {
+      "title": "市调大赛|如何定义市调大赛选题里面的问题和目标",
+      "date": "2026-10-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500789&idx=2&sn=210d4a91ea250a17be3acd0eeb6b1166&chksm=c1fb0e20f68c87360126e5da850cb18ab60126923f142b5059e8214232a3f06824d6131ea9be"
+    },
+    {
+      "title": "市调大赛|市场调查大赛如何选题",
+      "date": "2026-10-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500789&idx=1&sn=44e464658ae595d3834be216ff7f94b1&chksm=c1fb0e20f68c87364a839c4668fe5cf3e1b4a37e0e993d0c6e0fa2d58cbbf088cc0b5aac2579"
+    },
+    {
+      "title": "我把市调大赛里的方法，整理成了4个AI技能，公开分享给大家做市调，很多团队都会遇到这样的困惑：",
+      "date": "2026-10-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500781&idx=1&sn=c614ceaf66bcee22b10f63da1af13ca4&chksm=c1fb0e38f68c872e7686842d3057a04b6cb34fbd991db66d80302118ed950ab253085fef602e"
+    },
+    {
+      "title": "竞赛速递 | 中国传媒大学全国大学生市场调查分析大赛报名开始啦！",
+      "date": "2026-10-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500761&idx=1&sn=27be1662a708478899d8d6ebf1e015e0&chksm=c1fb0e0cf68c871acd74bdf48202478894cd627f2b7e64d3e325e0615e1668527a3da3b5f1e6"
+    },
+    {
+      "title": "第十七届市调大赛开启报名这些变化值得注意",
+      "date": "2026-09-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500721&idx=1&sn=adfb00fdbb962ded39ad488978a48532&chksm=c1fb0e64f68c8772774c25cb730dd09648a2e3d569594f72b0bd88ded0a8e4b2b47b7e8acb8f"
+    },
+    {
+      "title": "市调大赛答辩时，结果分析部分怎么讲，评委才会觉得你们真正“有发现”",
+      "date": "2026-04-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500073&idx=1&sn=75eefe9f91da2fa3996e4e88671642ce&chksm=c1fb0cfcf68c85ea0cc55ff60e704f52d6d1eef1e040763798e2181e7ec79a356310e175098f"
+    },
+    {
+      "title": "市调大赛答辩PPT怎么讲更清楚？从开场、过渡到结尾的完整表达逻辑",
+      "date": "2026-04-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500063&idx=1&sn=aa958003f9c409986c70df2b3102ee5b&chksm=c1fb0ccaf68c85dce72d4ec59323c996cef744bd7b9dccf4944ad322430a06c35f82bf73a102"
+    },
+    {
+      "title": "市调大赛答辩开场怎么设计？数据开场、案例开场、问题开场、情境开场，哪种更合适？",
+      "date": "2026-04-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500059&idx=1&sn=c17b9e6af57d16a6940a9e8430d24f79&chksm=c1fb0ccef68c85d844029ea638c0408caae9f12275ba8f3e3ef2db28de3435aa1b1bce1791b1"
+    },
+    {
+      "title": "市调大赛答辩，到底要不要设置情景剧？",
+      "date": "2026-04-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500055&idx=1&sn=c41ce080299c5b39f3aefbe2d35d5680&chksm=c1fb0cc2f68c85d48fe9caa1eeb59840118335b3c9117dd95585abb791431052ec8b9687b5eb"
+    },
+    {
+      "title": "市调大赛｜市调大赛答辩高频问题100问",
+      "date": "2026-04-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500051&idx=1&sn=e88dae99a35644dd8e16da4029130f3a&chksm=c1fb0cc6f68c85d080e1f6684b05676c323a1ea65ef219f23a426a921f9422c58b104ecf8227"
+    },
+    {
+      "title": "市调大赛｜市调大赛答辩时，评委最爱问什么？",
+      "date": "2026-04-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500047&idx=1&sn=0e2650f9bf490722166de7c235dc071b&chksm=c1fb0cdaf68c85ccb992b2007c1da6dda86cf82a876a00e5bad1317a3ca66ac697bfe946267e"
+    },
+    {
+      "title": "市调大赛｜ PPT 怎么做更好？8 分钟内这样讲，才更容易打动评委",
+      "date": "2026-04-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500011&idx=1&sn=b50d83f94a9637ee9eda31904db2f63b&chksm=c1fb0d3ef68c8428906b4e9d454659c4fa1e97e6fb2ace913083b29460a9aa5aa47bb3f4c415"
+    },
+    {
+      "title": "《全国大学生市场调查与分析大赛获奖作品选》出版了，附购买链接",
+      "date": "2026-03-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247500007&idx=1&sn=d5cad6d4273b01c60c307bf103b8d83d&chksm=c1fb0d32f68c842434e7b7d00cfa847faa7fae35dd3c143b4b513e13d4b84813ba81e71d7d52"
+    },
+    {
+      "title": "市调大赛报告检查指南：一项一项对照着改，别在细节上失分（文字版）",
+      "date": "2026-03-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499995&idx=1&sn=d802692b85735f57f33ff111cdeecbca&chksm=c1fb0d0ef68c8418645ca8f9dda7e85b4483cd41219036c4dd4fed9b10461d765ad518deb2ec"
+    },
+    {
+      "title": "全国大学生市场调查与分析大赛中国传媒大学校赛晋级名单来啦",
+      "date": "2026-03-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499847&idx=1&sn=a34b01d3575da87c75bbc939b06bda14&chksm=c1fb0d92f68c84841945d355317b2af04efea9cedd51f78481cf2a04d3ed41a213dc793c1dfa"
+    },
+    {
+      "title": "市调大赛|如何撰写报告摘要附优秀摘要",
+      "date": "2026-03-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499757&idx=2&sn=a624ab2e79b765f95e0718b27234f78f&chksm=c1fb3238f68cbb2e581e2924f70ed9f1f609299214eccb602ebd9c3a042fc529a3baf5f199ed"
+    },
+    {
+      "title": "市调大赛丨你的市调报告落选是不是因为存在了这些问题？",
+      "date": "2026-03-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499746&idx=2&sn=c0e867e5c082ade8ae610b8b3b1cb56d&chksm=c1fb3237f68cbb2180f02d77d98de7f4f925152caf877e4d870f955ac7dfdd13336f5f61487b"
+    },
+    {
+      "title": "市调大赛 | 如何制作市调答辩PPT",
+      "date": "2026-03-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499730&idx=2&sn=0f47b7170554369a7268c3bee421f673&chksm=c1fb3207f68cbb119f51afdc2f05d53e26b42a16681aa6ae294a9994d0d1ea2b555ebbcca77e"
+    },
+    {
+      "title": "市调大赛| 市调报告写作和优秀作品赏析内容",
+      "date": "2026-03-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499732&idx=2&sn=0af460fc69309c43676e494ee834225e&chksm=c1fb3201f68cbb17ee724d621f0adeae41e888b713c81df4acdbb13ff2d28fc44b1e7c1549af"
+    },
+    {
+      "title": "市调大赛 | 市场调查报告撰写对照指南",
+      "date": "2026-03-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499726&idx=2&sn=cb7633bd06009d6a20c7a777b0429c93&chksm=c1fb321bf68cbb0d2cf92ac0dc591305853af49139c378d92f2d3003145b43c8a0365d273d64"
+    },
+    {
+      "title": "市调大赛｜如果信效度不好，还能做结构方程模型么",
+      "date": "2026-02-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499467&idx=2&sn=07dbd43e9df1e105a8db54793dd43b84&chksm=c1fb331ef68cba08b2d8e40bc68f068aadb6ac200d5b0af2a1007601b7121d8340dda85f98f0"
+    },
+    {
+      "title": "市调大赛｜结构方程模型如何与扎根理论结合",
+      "date": "2026-02-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499460&idx=2&sn=69e33201abb1e680cb8743d40989994d&chksm=c1fb3311f68cba076c07cb99b5183ec2cb5fca1713486f91943c156134a6e7515b5e25c1a6e3"
+    },
+    {
+      "title": "市调比赛｜市调比赛中如何应用扎根理论",
+      "date": "2026-02-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499457&idx=2&sn=87453b27d8ceaca4919c418cd55d75ec&chksm=c1fb3314f68cba02e235a4d3d00d38d27f43f14f801061556617612f620fc4cc2889dd707cea"
+    },
+    {
+      "title": "市调大赛｜对预调查结果进行信效性分析与预想结果不一致怎么办",
+      "date": "2026-02-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499448&idx=2&sn=e7bbfa5635e4b45b1ad68043b32458c7&chksm=c1fb336df68cba7b6d4c01c58b455737cd4ca3bb7983071bdb02d40386db33d4e3918a0d52d8"
+    },
+    {
+      "title": "市调大赛｜样本量设计中的设计效应该如何使用",
+      "date": "2026-02-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499445&idx=2&sn=e846f0eb177f6bd5899822b21a855a76&chksm=c1fb3360f68cba767aaf573e53601e03897375d919ccd3178e1ec13905dd81381b03e86b076c"
+    },
+    {
+      "title": "市调大赛｜互联网文本分析用什么方法",
+      "date": "2026-02-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499437&idx=2&sn=7e2c7865bf9aede8cf37871148a04eba&chksm=c1fb3378f68cba6e8dfe9aee9102eac256d3f0a442759b97d649bdea5a397d96140a20de5de1"
+    },
+    {
+      "title": "市调大赛｜数据清洗用什么软件及注意事项",
+      "date": "2026-02-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499434&idx=2&sn=454af6c3c3086f9a3139d111f185389a&chksm=c1fb337ff68cba69c813af255b60569ce9ca8ad0a0cb490e00ce11fc08b0cd2c1d3c910d6d81"
+    },
+    {
+      "title": "市调大赛｜关于预调查的样本量问题",
+      "date": "2026-02-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499429&idx=2&sn=1e869dc71b425055006361309bee47b4&chksm=c1fb3370f68cba6695e00702ee927c8481295e226c6a489a6ede1e891bbb7e83026e9f0346e7"
+    },
+    {
+      "title": "市调大赛｜问卷设计的几个关键概念",
+      "date": "2026-02-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499415&idx=2&sn=f8c9ae3b515756a6354899ebe0ca3305&chksm=c1fb3342f68cba54c88819c52de825524673eb8974b511529729a46de116482f3b8be30ad3f5"
+    },
+    {
+      "title": "市调大赛｜如果预调查完了，发现有些单选题或者多选题需要删掉或者更改，可以直接删掉或更改吗",
+      "date": "2026-02-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499412&idx=2&sn=318192f7c536ff2839e739d9186baa8d&chksm=c1fb3341f68cba57f562d53202a453898c8abbf35f407d6a4788bdafedd8ef6440afb5bdf8e7"
+    },
+    {
+      "title": "市调大赛｜调查数据用什么模型好",
+      "date": "2026-02-01",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499409&idx=2&sn=d4ffa8b0ca6dc51eb957ce87c32a3d73&chksm=c1fb3344f68cba5283fef77e465ad8ffc47c7ae46dba82d640d286502299567680714c9d7610"
+    },
+    {
+      "title": "市调大赛｜如果让我们3月中旬提交报告，该如何安排时间",
+      "date": "2026-01-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499392&idx=2&sn=540c6b11f9768c55cee90a620c4f67df&chksm=c1fb3355f68cba43de391973d8c7a99a951af5caf27e00e516f0639bedbe9eff60daaebd3061"
+    },
+    {
+      "title": "市调大赛｜问卷设计注意的一些问题",
+      "date": "2026-01-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499384&idx=2&sn=adf518b26f8310e4029b9eee78d88a11&chksm=c1fb33adf68cbabbda3ff8aa5819ff0e13e1d261de3892faa706ae599195bdcaf1158a5ada30"
+    },
+    {
+      "title": "市调大赛|为什么说在你的朋友圈投放的问卷没有代表性？",
+      "date": "2026-01-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499306&idx=2&sn=9c61358604cfc71c041da27684167d7e&chksm=c1fb33fff68cbae9c73ee27ab0cb5536feb35a4ab81004aaae50deb273bae21ef1343c4b628e"
+    },
+    {
+      "title": "市调大赛｜市调报告中关于抽样调查的一些常见概念",
+      "date": "2026-01-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499306&idx=1&sn=7e9b5699ada1ce509bca245e2934d722&chksm=c1fb33fff68cbae96869623719255cfad3be333cefe316144a3f631fd58f03ba263c6cdf9f91"
+    },
+    {
+      "title": "市调大赛｜如何检查自己选题过大或过小",
+      "date": "2026-01-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499302&idx=1&sn=1234d67a20872324bcb7295c1c35fd67&chksm=c1fb33f3f68cbae52e08a862b7f645e2c09fc6e4f9e07ba8efab5f572c36960eb284d915e90a"
+    },
+    {
+      "title": "市调大赛|如何选择合适的抽样方法",
+      "date": "2026-01-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499298&idx=1&sn=1bdaecabbb0890ef0630d40927b066ed&chksm=c1fb33f7f68cbae1a279d8d324d735d5d3b2e0b5a72f336a7a9a9eb97514fb528d76d4b03ed4"
+    },
+    {
+      "title": "市调大赛｜中国商业统计学会关于维护诚信参赛环境的通告",
+      "date": "2026-01-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499296&idx=1&sn=4afd56ea43563e904802d1ecb393ed0b&chksm=c1fb33f5f68cbae3e550fb0e6d01ef121587d3fa4d640b52950eaec2ed9d817d22fb164fa68e"
+    },
+    {
+      "title": "市调大赛｜大学生市调大赛选题灵感库！从罗振宇跨年演讲 + 罗永浩直播里挖爆款方向",
+      "date": "2026-01-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247499164&idx=1&sn=d6e9c9c718627802d7a90a96d298ddb3&chksm=c1fb3049f68cb95fb11c56a2d35a72cdb71a583ff76966b7e928e105c81ca801898002b5e134"
+    },
+    {
+      "title": "经验|近三年市调获奖作品有哪些特点——2023年",
+      "date": "2025-12-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247498746&idx=1&sn=5af3751d551ee8fd1a01f5a99d97eb72&chksm=c1fb362ff68cbf39583cefa5a93b590fc000bc609d6be5783aa9d965af44fac0771f060af94d"
+    },
+    {
+      "title": "市调大赛｜近三年市调获奖作品有哪些特点-2025",
+      "date": "2025-12-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247498744&idx=1&sn=cae8b79fd12262cbcfe9444953779304&chksm=c1fb362df68cbf3b1022667ae68cfc1534bcb0e0436eb19c9a0898f9fd67982aa936ed7aab15"
+    },
+    {
+      "title": "经验|近三年市调获奖作品有哪些特点——2024年",
+      "date": "2025-12-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247498740&idx=1&sn=b432ca1262141ae26564c14689b3001f&chksm=c1fb3621f68cbf37ffe726aebf8e640f4401a89a02de7d896331d97f1b27097b4177e655a880"
+    },
+    {
+      "title": "市调大赛|如何设计问卷？",
+      "date": "2025-11-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247496464&idx=1&sn=414f07aa102262925103f22b50c7989c&chksm=c1fb3ec5f68cb7d35e54417ea8c03c03e24157a2dd071edfbd96111486f6f46f38d714757ba1"
+    },
+    {
+      "title": "市调大赛｜揭秘国奖级市调选题：从构思到论证的全攻略",
+      "date": "2025-11-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247496454&idx=1&sn=00fdb33a2c27d87c6d45fcbc280c8047&chksm=c1fb3ed3f68cb7c547d92b814f7249f8e158fb604c214ff4a061f556e9e181c64715b4682940"
+    },
+    {
+      "title": "市调大赛|如何定义市调大赛选题里面的问题和目标",
+      "date": "2025-11-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247496446&idx=1&sn=a7a9240380b2e003b421b4c75ebd4100&chksm=c1fb3f2bf68cb63dd12f7e59e41596c68999df7ba5658a6712e17a49f1b2051a855f920cc11b"
+    },
+    {
+      "title": "“十五五”市场调查大赛选题全攻略：7大黄金赛道+可直接套用的创新模版，拿国奖就靠它！",
+      "date": "2025-10-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247496433&idx=1&sn=f30093e8d893a0da5f2ca291bbcf3ed5&chksm=c1fb3f24f68cb632ec6d7b1a4af382882c05dc1390a19e5efb03c7b8ce17ff69ee4ea9d3c295"
+    },
+    {
+      "title": "经验|2021-2025年全国大学生市场调查与分析大赛国赛公开赛答辩视频集锦",
+      "date": "2025-10-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247496428&idx=1&sn=9ff26924b03d5165cd3d9df9f6b0786d&chksm=c1fb3f39f68cb62f7146ae5e7fe208592472aaba0cbff33a42a1b13641a4e2c1ef6e9089908b"
+    },
+    {
+      "title": "经验｜市调国赛一等奖团队的备赛经验分享",
+      "date": "2025-06-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495368&idx=1&sn=ffb95d65e8e6974f975015e7499cb8cf&chksm=c1fb231df68caa0b24b74c84924a88534e1c963d685242cd53e7346071b1e950524017ee731d"
+    },
+    {
+      "title": "经验｜在华留学生组国赛一等奖市调大赛经验分享",
+      "date": "2025-06-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495364&idx=1&sn=027471f65499c0dae3ed238e962f1848&chksm=c1fb2311f68caa07750812a22de141dc434842af73e5468f5de81ccb128e0dc5f15a9e532928"
+    },
+    {
+      "title": "直播｜第十五届全国大学生市场调查与分析大赛本科组总决赛",
+      "date": "2025-05-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495273&idx=1&sn=f0ce535cdc6c26439174f8cd72c0bded&chksm=c1fb23bcf68caaaa287a107997a8852e19942f604367398dbccfc287ceea6e41d06904e04173"
+    },
+    {
+      "title": "市调大赛丨国赛答辩现场有哪些问题需要注意？",
+      "date": "2025-05-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495266&idx=1&sn=e8be90bd342caf836507bb8faef83f16&chksm=c1fb23b7f68caaa1b70cbc5c68a2ee5e07b1c469c91216855526e0eef09b8d45ad4faf888f12"
+    },
+    {
+      "title": "大赛对比丨市调大赛作品可以参加统计建模大赛么？基于评审规则对比分析",
+      "date": "2025-04-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495073&idx=1&sn=73b37ecf75ba9cf4a8ebe9ca8d4c96e2&chksm=c1fb2074f68ca9629f64a2dde6d19572305ef8d70e1e9a08e3436c7d63e370bbfa5478a0ef59"
+    },
+    {
+      "title": "市调大赛丨你的结论和建议写对了么？",
+      "date": "2025-04-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495026&idx=1&sn=7d55fc4f847191b69987f6cc124c5214&chksm=c1fb20a7f68ca9b1bce789b6dd2474bee0cee18cd41d20bb79ca71054e9d298cdb187fa6c1f8"
+    },
+    {
+      "title": "市调大赛丨你的市调报告落选是不是因为存在了这些问题？",
+      "date": "2025-04-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247495007&idx=1&sn=23ed856410f6a323bea1edb12ed8aaf9&chksm=c1fb208af68ca99c36cd835b55dca3af25e8edb287153889dfcb483948dbc7779e033fa41b04"
+    },
+    {
+      "title": "市调大赛 | 如何制作市调答辩PPT",
+      "date": "2025-03-23",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247494898&idx=1&sn=89b1d21959fc55d2ea4bc70f7b82d158&chksm=c1fb2127f68ca8318c2836ddc06d5eb3bb3690ac1aba07d9f92de86950b798fe9cdb9664d1e6"
+    },
+    {
+      "title": "视频号直播 | 如何制作市调答辩PPT",
+      "date": "2025-03-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247494866&idx=1&sn=c7e0391ef2dde127ac836d5ea5d4a924&chksm=c1fb2107f68ca811ebb74cc244a8de5d0de8acb247c2193379c8b7e07bbf42810307f8e3b116"
+    },
+    {
+      "title": "PPT | 市调报告写作和优秀作品赏析内容",
+      "date": "2025-03-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247494803&idx=1&sn=d38758dbf5a93f78e9d933b5c7f41848&chksm=c1fb2146f68ca8507ce9aa9afbb84ead6dd59c1063b298fcb6043b1604d8119573e6a508c2b8"
+    },
+    {
+      "title": "视频号直播 | 市调报告撰写经验分享和优秀作品赏析",
+      "date": "2025-03-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247494711&idx=1&sn=8aee531dae24cd309e6a0b6f30376644&chksm=c1fb21e2f68ca8f46dc8d90d26ffd32de50772569c585fb1adc6bb3da38aa2c4022aa7ef8488"
+    },
+    {
+      "title": "市调大赛 | 市场调查报告撰写对照指南",
+      "date": "2025-03-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247494695&idx=1&sn=8a132ffaebac85a710b806749fb66b6c&chksm=c1fb21f2f68ca8e4f7dfb2c0d2d8d68911f44b95be3673d8cd8ad2af479a44df629c922b98b5"
+    },
+    {
+      "title": "市调比赛|你需要的市调问答小助手来了！（红包福利助你取得好成绩）",
+      "date": "2025-01-24",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493974&idx=1&sn=97f352a462fa75ae33531e012aa29457&chksm=c1fb2483f68cad95475ccc8cc9482c6708572f20fb31b2eaa6c3ce3e1178d5b38ab9e8cc9e40"
+    },
+    {
+      "title": "市调大赛 | 从罗振宇、雷军等的跨年演讲中，我们可以做哪些选题",
+      "date": "2025-01-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493838&idx=1&sn=dcc900be2b827b4d1f36137715d918b9&chksm=c1fb251bf68cac0d4384b5bdcd7642c3750e1a120bcd9ce3149e9c7c1e8baa9249de9dd066da"
+    },
+    {
+      "title": "市调大赛|如何从最新的评审规则中找寻开题思路",
+      "date": "2024-12-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493833&idx=1&sn=242f4e2f8a5512f62c2948908092c9be&chksm=c1fb251cf68cac0a2fb15b6d99dd16f1bb0670f4a3d2c6040141989944b78dc9092276b16308"
+    },
+    {
+      "title": "市调大赛|报告评审说明",
+      "date": "2024-12-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493833&idx=2&sn=2beb22a293f965296dd0985d66ebf9ca&chksm=c1fb251cf68cac0a078f4688f62f5b72b53e69262df2f4b18f581ad8f7326de8b0bf089e17fe"
+    },
+    {
+      "title": "市调大赛|如何设计问卷？",
+      "date": "2024-12-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493831&idx=1&sn=1e33d0b8fa6227b97a7383a964152341&chksm=c1fb2512f68cac04a9fdc07e9ac8161766785dfd7ab985182d1d82113a8fbe64057157fee117"
+    },
+    {
+      "title": "市调大赛|为什么说在你的朋友圈投放的问卷没有代表性？",
+      "date": "2024-12-16",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493812&idx=2&sn=cbf135fb6dd91ad650a9b20ba3babe7c&chksm=c1fb2561f68cac77353eee1bdeb84ceb43e0c096089093286672128745d0993e397f0c29a9ed"
+    },
+    {
+      "title": "市调大赛|怎么定义市调大赛选题里面的问题和目标",
+      "date": "2024-12-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493514&idx=1&sn=79457c378f453a5338e7661871faca97&chksm=c1fb2a5ff68ca349baab75735e168ab73591848907dbc91e34352cf1924f533a4fa1753bb40e"
+    },
+    {
+      "title": "经验|2021-2024年全国大学生市场调查与分析大赛国赛公开赛答辩视频集锦",
+      "date": "2024-11-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493068&idx=1&sn=b71d4b7f072c5857cf6aabfb3c30f911&chksm=c1fb2819f68ca10f5d47f210af83490ec0dfbe84be5c619082c8f2213a25ac3d2e5d46a5eee8"
+    },
+    {
+      "title": "经验|近三年市调获奖作品有哪些特点——2024年",
+      "date": "2024-11-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493022&idx=1&sn=97c9ce1b486be6cefedf3b25b3961b4d&chksm=c1fb284bf68ca15daf24950e54f4982234bf27d9f19a3197a7c0ebd55772494dd568856047f3"
+    },
+    {
+      "title": "经验|近三年市调获奖作品有哪些特点——2022年",
+      "date": "2024-10-31",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247493005&idx=1&sn=54faa0adc0acd87a48a81a274d9fae73&chksm=c1fb2858f68ca14e2b10e3991f9e61a05746f38be35ee908f2e1f9f3cab97f9aad45c76224b8"
+    },
+    {
+      "title": "市调大赛|攻略：精准筹备，多样开题",
+      "date": "2024-10-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247492987&idx=1&sn=051bf7b1406423e5da18cac4dd968d81&chksm=c1fb28aef68ca1b82a4e8c6a89744fa8d77ca6a6024f81c1f18f32523fb31576eaf7eba581a0"
+    },
+    {
+      "title": "市调大赛|参赛经验分享：选题与团队协作的精髓",
+      "date": "2024-10-09",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247492977&idx=1&sn=f676e0f0e6770b9f7476210fd38e9f91&chksm=c1fb28a4f68ca1b2de4cfa4e1ff54db098113c6b7a9f9cf2184174c754a7e4e3d307007bef4a"
+    },
+    {
+      "title": "市调比赛 | 关于组织中国传媒大学学生参加第十五届全国大学生市场调查与分析大赛的通知",
+      "date": "2024-10-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247492968&idx=1&sn=d9979dc6b73ce62bbd25f50175acc67a&chksm=c1fb28bdf68ca1ab6e23b6c22d486d3471ef168aa2e6a3d7429e05f98be3913381f2f7e6192f"
+    },
+    {
+      "title": "市调大赛|相关内容文章汇总",
+      "date": "2024-04-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491194&idx=1&sn=504f9eb51bc7d9ff18058345e28a362e&chksm=c1f8d3aff68f5ab9680af6c97566d7c0c1542e03364a581e5c5c340103a23a5836e39ffd1453"
+    },
+    {
+      "title": "市调大赛|调研报告的撰写和答辩技巧",
+      "date": "2024-04-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491190&idx=1&sn=997a3dbefd6f2e715010fbbea78c172d&chksm=c1f8d3a3f68f5ab53e15f540c629d55446b468bde703b9ab46a80977efbbbc98d2584556bbe7"
+    },
+    {
+      "title": "市调大赛|如何撰写报告摘要附优秀摘要",
+      "date": "2024-03-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491165&idx=1&sn=c7f3052dd5d87afc03d38983379c1379&chksm=c1f8d388f68f5a9e8158652e3bed56cc14aa5ec508a9857906957c962ffa3ed50470425e5d27"
+    },
+    {
+      "title": "市调大赛|如何准备市调比赛的答辩材料",
+      "date": "2024-03-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491160&idx=1&sn=2e210e9a9fdffba470fad5817b490384&chksm=c1f8d38df68f5a9bd3da7e4de978ac355f1975a2ecda8c1ebc1d15058b83964fb3f13aebea0a"
+    },
+    {
+      "title": "市调大赛|如何组织市调大赛的分析报告",
+      "date": "2024-03-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491152&idx=1&sn=252046e63f9fcea6e531747bb1709b79&chksm=c1f8d385f68f5a93d78900bccf153315dea8be4e2e0fe7ce1a3152ce2eff1bacba5748022e8c"
+    },
+    {
+      "title": "市调大赛|问卷数据质量控制和进度安排",
+      "date": "2024-03-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491134&idx=1&sn=29ec20c59edad1b8934fe75dde7bc46c&chksm=c1f8d3ebf68f5afd5e916ced9799d8847499ce3cda136bb60dd3acbc70ddcbeec411abc16b38"
+    },
+    {
+      "title": "市调大赛|关于抽样调查中总体和样本的说明",
+      "date": "2024-03-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491119&idx=1&sn=c0bef2d94a0468865ae97fad48a5b414&chksm=c1f8d3faf68f5aec9c1d40c5a551b44cb27c5b1fa9b303538b5db9a120847db1f641b188d3b1"
+    },
+    {
+      "title": "市调大赛|如何做深度访谈调查",
+      "date": "2024-03-04",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491111&idx=1&sn=b4516742672df5793b4a9580fb22e3e8&chksm=c1f8d3f2f68f5ae4bdf32fabfbeb0926ec8916d0e23fc908724eac0ec97d8f52783e87ce7513"
+    },
+    {
+      "title": "市调大赛|如何计算信度和效度",
+      "date": "2024-02-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491100&idx=1&sn=5403ff63a3c7408694f210ce9ede755b&chksm=c1f8d3c9f68f5adf5ac178a8132fddece12b03d2738c3be7277a38580fe9b2e1f2d1db177d4f"
+    },
+    {
+      "title": "市调大赛|什么是问卷的信度和效度？",
+      "date": "2024-02-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491090&idx=1&sn=efc8cfff9185aa8d17d487e6deeed0ff&chksm=c1f8d3c7f68f5ad1b1a7d8d0b2d95d7e47ba8edb87db768fedd253b96acd3c5962a9dac7c0df"
+    },
+    {
+      "title": "市调大赛|如何选择合适的抽样方法",
+      "date": "2024-02-22",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491064&idx=1&sn=78c25b6893cdf650b59a75709bd24a5f&chksm=c1f8d02df68f593b7dc14061a664a680d8c82e0b776e6cd986009a11875c8487405392f783de"
+    },
+    {
+      "title": "市调大赛|如何设计问卷？",
+      "date": "2024-01-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491055&idx=1&sn=b2772552bb6b3535a35877c448ae5b59&chksm=c1f8d03af68f592ce695a96863017a9abc3a0cbfa0a733499139066b037294d80163b3923d7f"
+    },
+    {
+      "title": "市调大赛|大赛准备过程中有哪些需要注意的问题",
+      "date": "2024-01-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247491039&idx=1&sn=84791c53a4731eaf419ae0327a150cb0&chksm=c1f8d00af68f591c28a623dc5b76852156594f4dedf00068c31b8c5e3585ebe9240971dfe350"
+    },
+    {
+      "title": "市调大赛|如何选择参考文献",
+      "date": "2024-01-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490842&idx=1&sn=b8771a8720f299574ea99546a5133a59&chksm=c1f8d0cff68f59d9d8e266886b88f12114caa1fcabd246a25ce527ab6ec57fdc98dbc7ed969e"
+    },
+    {
+      "title": "市调大赛|如何评估你的选题",
+      "date": "2024-01-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490835&idx=1&sn=d8aa80405b65157606a628771a758949&chksm=c1f8d0c6f68f59d0455494b806df58532db2da862155214f942408c554d4e1067d3146ebb4d7"
+    },
+    {
+      "title": "市调大赛之研究选题、备赛事项及获奖项目",
+      "date": "2023-12-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490821&idx=1&sn=ed9637932aac599fb07778effe08d143&chksm=c1f8d0d0f68f59c6003499d72831bdb9e4bea806295f15da1d3dc4c2517e88af485ecbfc8712"
+    },
+    {
+      "title": "市场调查大赛组队经验分享",
+      "date": "2023-12-21",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490736&idx=1&sn=fd6815621a9cfd35fe941e2b0b5e6250&chksm=c1f8d165f68f58736bf3118c17adf4daf6cdca70c74fc8408a5916d0881f06b951707f1897ed"
+    },
+    {
+      "title": "市调大赛|如何从最新的评审规则中找寻开题思路",
+      "date": "2023-12-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490409&idx=1&sn=873511a17e908ac78ed52ba422eccd33&chksm=c1f8d6bcf68f5faa41f8e80f75693fb1e1b5b03c89033600da0b6ca3dd565e8554db9a04033d"
+    },
+    {
+      "title": "市调大赛|报告评审说明",
+      "date": "2023-12-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490409&idx=2&sn=75d021aa55b7110a6cf3e93e92b4ff53&chksm=c1f8d6bcf68f5faa3893039cbff742a330d67e1cb4d9b07534524b9cc976bd772da2b0b4c9cd"
+    },
+    {
+      "title": "市调大赛|从获奖论文题目看如何选题容易获奖",
+      "date": "2023-12-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490294&idx=1&sn=34b26530b75a8b6930de7e4bdf8bf48b&chksm=c1f8d723f68f5e3533355426c4cedbb063afe39055b58c379f1566df02d7da2674a2b0e288d8"
+    },
+    {
+      "title": "市调大赛|市场调查大赛如何选题",
+      "date": "2023-12-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247490226&idx=1&sn=1dfd6e728cadc3a25a8766b8842167c5&chksm=c1f8d767f68f5e714cc07e4974b9939a36a622731a2db3bedd85a6575d3c0a27d5fc89c5088a"
+    },
+    {
+      "title": "推荐视频|市调大赛金牌指导教师参赛经验分享",
+      "date": "2023-01-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488609&idx=1&sn=acc6c7d4c07772417754db0ca8341de9&chksm=c1f8d9b4f68f50a2c63d14a0c20a0babbc6523c5cb59d7ab2d2ed380dda63235e1aa690d8b8e"
+    },
+    {
+      "title": "今晚七点半|金牌指导教师系列直播分享第十期",
+      "date": "2023-01-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488565&idx=1&sn=6172ad1b3fcd1713635ca2bd73460925&chksm=c1f8d9e0f68f50f6ab15c8341620247f8eea7507888d5164f3c9f97c510ed03005d73a513f4e"
+    },
+    {
+      "title": "今晚七点半|金牌指导教师系列直播分享第九期",
+      "date": "2023-01-05",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488558&idx=1&sn=f2995a5d74b327f929b9433833a2d74a&chksm=c1f8d9fbf68f50edcd01f92514b5718c4ce2c74f04c69309cf11161703133295de2aa7df8f54"
+    },
+    {
+      "title": "今晚七点半|金牌指导教师系列直播分享第八期",
+      "date": "2022-12-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488548&idx=1&sn=3ff7935002499ec1e860207f2becf42c&chksm=c1f8d9f1f68f50e740e973912b9b4162e466ef067d14bfc273bdcf6d5df60c2a3d495c7ff2e3"
+    },
+    {
+      "title": "今晚七点半|金牌指导教师系列直播分享第七期",
+      "date": "2022-12-15",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488543&idx=1&sn=ac208af2ef045568da7376a7f4f06ee1&chksm=c1f8d9caf68f50dca5a42f108ca0532bba714e975a2dcdc99e8164a809535f1fc99e22390027"
+    },
+    {
+      "title": "今晚七点半|金牌指导教师系列直播分享第六期",
+      "date": "2022-12-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488532&idx=1&sn=95b796d98b729e1b4817fb67fd152092&chksm=c1f8d9c1f68f50d74831ef0563e8bdc3b706956a33c4dd19a81616c2adf131e0998121e7ed68"
+    },
+    {
+      "title": "今晚七点半｜金牌指导教师系列直播分享第三期",
+      "date": "2022-11-18",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488511&idx=1&sn=1bbc3de5f54c39f0159ba6cd879c2381&chksm=c1f8de2af68f573cf5a21be632806ff47dcd34db6fa8c2c42f4adce356e36ab0e6adba95ba19"
+    },
+    {
+      "title": "公开课|市调金牌指导教师系列直播分享第二期",
+      "date": "2022-11-10",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488503&idx=1&sn=18efb2f05e553644a8afe351e996484d&chksm=c1f8de22f68f57348ad09c18486b8237697e411a99e9affce1f082e506131398498f4852498a"
+    },
+    {
+      "title": "公开课｜“正大杯”第13届市调大赛—金牌指导教师系列直播分享第一期今晚线上开播，敬请期待！",
+      "date": "2022-11-03",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488498&idx=1&sn=f24b103bcd17ad6a7203a6d7e9450f04&chksm=c1f8de27f68f573135e8f0bcc4c204259213d89a6c4d3aad4670e5a72ae91ac8207d77d86978"
+    },
+    {
+      "title": "第十三届市调大赛中国传媒大学开题动员会",
+      "date": "2022-10-17",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488472&idx=1&sn=0077685eea407f5efebbb0b7028be557&chksm=c1f8de0df68f571b6351e8e7fd6d6f9682f66576281f0391991f1ee8456620dcd6988b3b01ad"
+    },
+    {
+      "title": "预告｜9月30日“正大杯”第13届全国大学生市场调查与分析大赛启动仪式",
+      "date": "2022-09-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488435&idx=1&sn=08772345bb15d1bb3d06bd186a147f31&chksm=c1f8de66f68f57701fcc0650a02105e1a59f58fe4df0289555da55ddce0ba3d5c13ae7678157"
+    },
+    {
+      "title": "报告|大学生市场调查与分析大赛获奖规律探究",
+      "date": "2022-08-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247488276&idx=1&sn=f50971a9ab4d6bb632de17fdae5080b8&chksm=c1f8dec1f68f57d73b87e6266b87e4e1a1e98c7665b00cfee6aaf7317b0f97a4e231c7597eb2"
+    },
+    {
+      "title": "市调大赛公开课 | 第八讲 · 课程回顾",
+      "date": "2022-01-02",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485565&idx=1&sn=37f9b8073d52c983545d3e8d1a233ae8&chksm=c1f8c5a8f68f4cbef6a400bee90cbf63cfd8ed96ccdcb7f614f92117f1f7c524daeed373a116"
+    },
+    {
+      "title": "市调大赛公开课 | 第七讲 · 课程回顾",
+      "date": "2021-12-26",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485552&idx=1&sn=1ad86c91bfa8d7a0cf02c3a5ef96c810&chksm=c1f8c5a5f68f4cb352f86206bf80c9f41ab6ed9c809cee2b808c4942ff96f35f73613464bfb0"
+    },
+    {
+      "title": "市调大赛公开课 | 第八讲 · 企业选题与调研报告撰写",
+      "date": "2021-12-25",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485531&idx=1&sn=caa30b1c44cbda5d74f14e92cfbb18f6&chksm=c1f8c58ef68f4c98b9f381f8bf03b0e57601a55e0593a4a6190c7f55364dab728f951e7669b3"
+    },
+    {
+      "title": "市调大赛公开课 | 第六讲 · 课程回顾",
+      "date": "2021-12-20",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485506&idx=1&sn=38332af6955e4aed388689710af3d2d4&chksm=c1f8c597f68f4c815dfb04c1ec2b7192e5fdc48f0cfccd7f4d0f6d22edf23e4405f34a1fb4ad"
+    },
+    {
+      "title": "市调大赛公开课 | 第七讲 · 统计模型与结构方程模型",
+      "date": "2021-12-19",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485497&idx=1&sn=63eeca081cded51b56a0d24f43d1c392&chksm=c1f8c5ecf68f4cfaaddb09cec7e8c23834c114656866afb2a311a6de7ae33daa42989f7fba42"
+    },
+    {
+      "title": "市场调查公开课 | 第六讲 · 网络调查推断与统计机器学习",
+      "date": "2021-12-12",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485465&idx=1&sn=011b2a91e023d434eea3c6169363588b&chksm=c1f8c5ccf68f4cda6f4aad55e917ecc111bca41925ddc3c7df0c516226db2b632308d18e50ca"
+    },
+    {
+      "title": "市调大赛公开课 | 第五讲 · 课程回顾",
+      "date": "2021-12-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485448&idx=1&sn=23e12a3d622b3e6418b52d6bf6a2504f&chksm=c1f8c5ddf68f4ccb8ac52546ab6549a849dcc144cebcaf641147a579f2bb10bc49e7872bedbd"
+    },
+    {
+      "title": "市调大赛公开课 | 第四讲 · 课程回顾",
+      "date": "2021-12-07",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485430&idx=1&sn=1673c3706b527af07a514387d6e680d6&chksm=c1f8ca23f68f433571a7768de70e952df017c455044c5ce48d276be375ae0b14650a12597ce9"
+    },
+    {
+      "title": "市调大赛公开课 | 第五讲 · 网络调查实战与概率统计推断",
+      "date": "2021-12-06",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485420&idx=1&sn=0fdfcb25bec89543686ccbc76ac08a33&chksm=c1f8ca39f68f432fbf6888ebfa7e17db4adb46fbc445c2b1ff4c6d5b942aa1f8d0b851e5b11b"
+    },
+    {
+      "title": "市调大赛公开课 | 第四讲",
+      "date": "2021-11-29",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485390&idx=1&sn=083f8fdcb55f03bc202bc7b905a2ae67&chksm=c1f8ca1bf68f430d321118b8a99f7e65d31c6907cf776b5310d306aa2ee0a82d6105de83574c"
+    },
+    {
+      "title": "市调大赛公开课 | 第三讲 · 课程回顾",
+      "date": "2021-11-28",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485385&idx=1&sn=22813241c0b88c82d932e40d744cb22f&chksm=c1f8ca1cf68f430a68126bbb39bd47ac2cdaefad123cfcdc4906eacd0aaf4536d164183d5694"
+    },
+    {
+      "title": "市调大赛公开课 | 第二讲",
+      "date": "2021-11-14",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485324&idx=1&sn=b3cbfd108560dfa11c407fc10c938f4f&chksm=c1f8ca59f68f434f59f9ad8ccbe9152afaa8b5ed0e8bb0e8bc589d947b35ff02a536c653fc5c"
+    },
+    {
+      "title": "市调大赛 | 第一讲 · 课程回顾",
+      "date": "2021-11-13",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485323&idx=1&sn=7dff4d96dfb10b7a8c649fea4a3b4ba8&chksm=c1f8ca5ef68f43488efa23ba6b47d2094f45b823b8a7021b5440bf3ce142bcc9ba431d48c8f8"
+    },
+    {
+      "title": "市调公开课 | 第一讲-研究选题和问卷设计",
+      "date": "2021-11-11",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485288&idx=1&sn=4d406dcd4e015fd5216037971c422ad0&chksm=c1f8cabdf68f43ab765bd9438989671c430a4647a689f44dec7544006daf5f3447a86efa7a22"
+    },
+    {
+      "title": "公开课|大学生市场调查方法及数据分析",
+      "date": "2021-11-08",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485248&idx=1&sn=11cda74020425fd569b1c4e9e21eb570&chksm=c1f8ca95f68f438304bd30c1774459ef94468fcf352d6e6963521a1d94bab338441f14e0fa95"
+    },
+    {
+      "title": "直播|2021年海峡两岸暨港澳大学生市调大赛总决赛",
+      "date": "2021-08-27",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjA5ODg3NA==&mid=2247485183&idx=1&sn=9cc2a09088a147e617469001f6b5e00b&chksm=c1f8cb2af68f423ce081b35ce0c16373db3c2b7aa139e457f4fb7b39daefaf972c6377f1654c"
+    }
+  ]
+}

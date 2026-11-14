@@ -20,6 +20,9 @@ redirect_from:
         <span>最近更新 {{ site.posts.first.date | date: "%Y-%m-%d" }}</span>
       {% endif %}
       <a href="{{ base_path }}/feed.xml">RSS 订阅</a>
+      {% if site.data.wechat_articles.articles %}
+        <a href="#wechat-articles">公众号 {{ site.data.wechat_articles.articles | size }} 篇</a>
+      {% endif %}
     </div>
   </section>
 
@@ -78,4 +81,55 @@ redirect_from:
   {% else %}
     <p class="blog-index__empty">暂无文章。</p>
   {% endfor %}
+
+  {% assign wx = site.data.wechat_articles %}
+  {% if wx and wx.articles %}
+  <section class="blog-wechat" id="wechat-articles" aria-labelledby="wechat-articles-title">
+    <div class="blog-wechat__head">
+      <p class="blog-wechat__eyebrow">公众号 · {{ wx.account }}</p>
+      <h2 id="wechat-articles-title" class="blog-wechat__title">{{ wx.album }}合集</h2>
+      <p class="blog-wechat__note">{{ wx.note }}</p>
+      <div class="blog-wechat__stats" aria-label="公众号文章汇总">
+        <span>{{ wx.articles | size }} 篇</span>
+        <span>最近更新 {{ wx.updated }}</span>
+        <a href="{{ wx.album_url | escape }}">在微信查看合集 ↗</a>
+      </div>
+    </div>
+
+    <ul class="blog-wechat__list">
+      {% for a in wx.articles limit:10 %}
+      <li class="blog-wechat__item">
+        <a href="{{ a.url | escape }}" target="_blank" rel="noopener noreferrer">
+          <time datetime="{{ a.date }}">{{ a.date | slice: 5, 5 | replace: '-', '.' }}</time>
+          <span class="blog-wechat__item-title">{{ a.title | escape }}</span>
+          <span class="blog-wechat__item-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <details class="blog-wechat__all">
+      <summary>展开其余 {{ wx.articles | size | minus: 10 }} 篇（按年份）</summary>
+      <ul class="blog-wechat__list blog-wechat__list--all">
+        {% assign wx_year = "" %}
+        {% for a in wx.articles %}
+          {% if forloop.index > 10 %}
+            {% assign this_year = a.date | slice: 0, 4 %}
+            {% if this_year != wx_year %}
+              <li class="blog-wechat__year"><h3>{{ this_year }}</h3></li>
+            {% endif %}
+            <li class="blog-wechat__item">
+              <a href="{{ a.url | escape }}" target="_blank" rel="noopener noreferrer">
+                <time datetime="{{ a.date }}">{{ a.date | slice: 5, 5 | replace: '-', '.' }}</time>
+                <span class="blog-wechat__item-title">{{ a.title | escape }}</span>
+                <span class="blog-wechat__item-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            {% assign wx_year = this_year %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </details>
+  </section>
+  {% endif %}
 </div>
