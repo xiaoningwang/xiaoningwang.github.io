@@ -53,7 +53,7 @@ redirect_from:
     {% endunless %}
     {% assign clean_excerpt = post.excerpt | strip_html | strip_newlines | strip %}
 
-    <article class="blog-card" itemscope itemtype="http://schema.org/CreativeWork">
+    <article class="blog-card{% if forloop.first %} blog-card--latest{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
       <a class="blog-card__main" href="{{ base_path }}{{ post.url }}" rel="permalink" itemprop="url">
         <span class="blog-card__date">{{ post.date | date: "%m.%d" }}</span>
         <span class="blog-card__content">
