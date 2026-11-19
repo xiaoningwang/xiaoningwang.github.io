@@ -22,7 +22,7 @@ redirect_from:
 {% include llmpracticeandapplication/lecture-02-body.html %}
 </details>
 
-[单独阅读讲义](/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.html) · <a href="/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.md" download>下载讲义文本（Markdown）</a>
+[单独阅读讲义](/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.html)
 
 [进入词条点评与修改建议](/files/llmpracticeandapplication/2026-autumn/glossary-feedback-20261119.html)（需输入密码）。点评覆盖 11 月 19 日已提交正文的九篇词条，同学们可按词条查阅修改建议。
 
