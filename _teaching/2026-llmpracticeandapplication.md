@@ -15,6 +15,17 @@ redirect_from:
 
 本课程从传媒实践、学术研究与公共文化服务中的具体问题出发，学习如何把大模型与资料、工具和人工判断连接起来，完成有来源、可复核、可迭代的智能体作品。每个项目都要回答：**谁需要它、依据是什么、怎样证明有效**。
 
+## 第二讲　模型能力与提示设计 {#lecture-02}
+
+<details markdown="0" id="lecture-02-handout">
+<summary><strong>展开第二讲课堂讲义全文</strong></summary>
+{% include llmpracticeandapplication/lecture-02-body.html %}
+</details>
+
+[单独阅读讲义](/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.html) · <a href="/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.md" download>下载讲义文本（Markdown）</a>
+
+[进入词条点评与修改建议](/files/llmpracticeandapplication/2026-autumn/glossary-feedback-20261119.html)（需输入密码）。点评覆盖 11 月 19 日已提交正文的九篇词条，同学们可按词条查阅修改建议。
+
 ## 课程信息
 
 | 项目 | 安排 |
@@ -31,13 +42,6 @@ redirect_from:
 ## 课件与学习平台
 
 课程PPT及学习资料请参见[书卷侠课程平台](https://courses.scholarhero.cn/)。课程入口、学习任务与提交安排以教师发布为准。
-
-### 第二讲学习资料
-
-- [核心词条点评与修改建议：九篇有正文稿件（密码访问）](/files/llmpracticeandapplication/2026-autumn/glossary-feedback-20261119.html)
-- [第二讲课堂讲义：模型能力与提示设计（公开文本）](/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.html)
-
-词条点评需输入课程访问密码；课堂讲义可公开阅读，并提供Markdown文本下载。点评依据2026年11月19日的文件快照，供同学逐项修订；讲义配合第二讲课程展示版课件使用。
 
 ## 学习目标
 
