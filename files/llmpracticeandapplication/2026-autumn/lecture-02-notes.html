@@ -1,5 +1,324 @@
-<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><title>第二讲课堂讲义：模型能力与提示设计 · 大模型案例场景应用</title>
-<style>body{margin:0;background:#f6f7f9;color:#24272d;font:17px/1.75 system-ui,-apple-system,"PingFang SC",sans-serif}header{padding:15px 5%;background:#fff;border-bottom:2px solid #ba0031;display:flex;gap:20px;align-items:center;flex-wrap:wrap}a{color:#17568a}main{max-width:560px;margin:8vh auto;padding:32px;background:#fff;border:1px solid #d8dde4;border-radius:10px}h1{font-size:27px;line-height:1.4;margin-top:0;color:#a8002c}label{display:block;margin-bottom:8px}input{box-sizing:border-box;width:100%;padding:12px;font:inherit;border:1px solid #8394a5;border-radius:5px}button{padding:10px 20px;font:inherit;background:#ba0031;color:white;border:0;border-radius:5px;cursor:pointer}form button{margin-top:16px}button:disabled{opacity:.6}#message{color:#a12c2c;min-height:1.75em}iframe{display:block;width:100%;height:calc(100vh - 78px);border:0;background:white}[hidden]{display:none!important}.meta{color:#59636f;font-size:15px}@media(max-width:600px){main{margin:30px 16px;padding:24px}header{padding:12px 16px;gap:12px}h1{font-size:24px}}</style>
-<script src="/files/communicationdatascience/record-access.js" defer></script></head>
-<body data-payload="lecture-02-notes.html.encrypted.json"><header><a href="/teaching/llmpracticeandapplication">课程主页</a><strong>第二讲学习资料</strong><button id="lock" type="button" hidden>锁定资料</button></header><main id="gate"><h1>第二讲课堂讲义：模型能力与提示设计</h1><p>围绕模型原理、能力边界、提示设计、案例演示和效果评估展开。</p><form><label for="password">课程资料访问密码</label><input id="password" type="password" autocomplete="off" required><button type="submit">解锁查看</button><p id="message" role="status" aria-live="polite"></p></form><p class="meta">两份资料使用同一访问密码。刷新页面后需重新输入。</p><noscript>请启用JavaScript后查看资料。</noscript></main><iframe id="records" title="第二讲课堂讲义：模型能力与提示设计" sandbox="allow-scripts allow-modals allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" hidden></iframe></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第二讲课堂讲义：模型能力与提示设计</title><style>
+:root{color-scheme:light;--accent:#ba0031;--ink:#24272d;--muted:#5d6570;--line:#d8dde4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:18px/1.85 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1040px;margin:auto;padding:30px 28px 70px}.docnav{display:flex;gap:20px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:14px 24px;font-size:16px;background:#fafbfc}
+a{color:#17568a;text-underline-offset:3px}button{padding:8px 16px;border:1px solid var(--line);border-radius:5px;background:#fff;font:inherit;cursor:pointer}.docnav button{margin-left:auto}h1{font-size:2rem;line-height:1.4;color:var(--accent);margin:18px 0 12px}h2{font-size:1.45rem;line-height:1.5;margin:2em 0 .8em;border-bottom:2px solid var(--accent);padding-bottom:.3em}h3{font-size:1.12rem;margin:1.6em 0 .6em}p{margin:.8em 0}li{margin:.4em 0}.meta{font-size:16px;color:var(--muted)}details.toc{padding:12px 18px;border:1px solid var(--line);border-radius:6px;margin:24px 0}summary{cursor:pointer;font-weight:600}table{border-collapse:collapse;width:100%;font-size:.91rem;margin:1.2em 0}th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left!important;vertical-align:top;overflow-wrap:anywhere}th{background:#f5f6f8;border-top:2px solid #5b636c}pre{padding:18px;background:#f5f6f8;border:1px solid var(--line);border-radius:5px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.91rem;line-height:1.65}code{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace}math{font-size:1.04em}math[display=block]{margin:1.2em 0;overflow-x:auto}footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+@media(max-width:620px){body{font-size:17px}main{padding:22px 16px 50px}h1{font-size:1.6rem}h2{font-size:1.25rem}th,td{padding:8px 6px}table{font-size:.82rem}.docnav{gap:12px;padding:12px 16px}}
+@media print{.docnav,details.toc{display:none}main{max-width:none;padding:0}body{font:11pt/1.65 serif}a{color:inherit;text-decoration:none}h2,h3{break-after:avoid}table,pre{break-inside:avoid}h1{font-size:22pt}h2{font-size:15pt}h3{font-size:12pt}footer{font-size:9pt}}
+</style></head><body><nav class="docnav"><a href="/teaching/llmpracticeandapplication" target="_top">课程主页</a><a href="glossary-feedback-20261119.html" target="_top">词条点评</a><a href="lecture-02-notes.html" target="_top">课堂讲义</a><a href="lecture-02-notes.md" download>下载讲义文本</a></nav><main><header><h1>第二讲课堂讲义：模型能力与提示设计</h1><p class="meta">大模型案例场景应用 · 中国传媒大学 · 2026年11月19日</p></header><details class="toc"><summary>目录</summary><ul>
+<li><a href="#sec-overview"
+id="toc-sec-overview">从一个回答追问四件事</a></li>
+<li><a href="#sec-language-model"
+id="toc-sec-language-model">语言模型学习什么</a></li>
+<li><a href="#sec-training"
+id="toc-sec-training">发展主线与任务适配</a></li>
+<li><a href="#sec-token" id="toc-sec-token">Token与上下文窗口</a></li>
+<li><a href="#sec-attention"
+id="toc-sec-attention">注意力怎样组织信息</a></li>
+<li><a href="#sec-post-training"
+id="toc-sec-post-training">后训练、偏好与事实正确性</a></li>
+<li><a href="#sec-boundaries"
+id="toc-sec-boundaries">能力边界如何影响应用设计</a></li>
+<li><a href="#sec-prompt"
+id="toc-sec-prompt">把需求写成可核验的提示</a></li>
+<li><a href="#sec-context"
+id="toc-sec-context">上下文工程：本轮真正获得了什么</a></li>
+<li><a href="#sec-case"
+id="toc-sec-case">贯穿案例：活动咨询助手</a></li>
+<li><a href="#sec-evaluation"
+id="toc-sec-evaluation">怎样比较两套提示</a></li>
+<li><a href="#sec-transfer"
+id="toc-sec-transfer">把结果迁移到个人项目</a></li>
+<li><a href="#sec-extension"
+id="toc-sec-extension">补充认识：方法名称不能代替测量</a></li>
+<li><a href="#sec-assignment"
+id="toc-sec-assignment">课程任务与词条修订</a></li>
+<li><a href="#sec-reading" id="toc-sec-reading">阅读路径</a></li>
+</ul></details> <h2 id="sec-overview">从一个回答追问四件事</h2>
+<p>面对一条大模型回答，我们需要追问：模型依据什么生成了它，当前输入提供了什么，哪些内容有证据支持，以及怎样判断一次改动是否有效。这四个问题把模型原理、能力边界、提示设计和效果评估连接起来。</p>
+<p>本讲延续第一讲的个人应用场景。关注点从“想做一个什么系统”推进到“怎样把一个任务交代清楚，并检查它是否完成”。学习成果是一项可以解释的比较：保留同一任务的两版提示，在固定问题与资料上运行，逐项核验输出，再说明哪些地方改善、哪些仍然失败。词条写作则负责把概念、来源与验证过程讲清楚。</p>
+<h2 id="sec-language-model">语言模型学习什么</h2>
+<p>语言模型描述文本序列的概率关系。对自回归生成模型，给定已有Token，模型估计下一个Token的条件概率；生成程序依据这些概率和解码设置选择后续Token，再把新内容接回上下文。一个序列的概率可以写为：</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>T</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∏</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>T</mi></munderover><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>。</mi></mrow><annotation encoding="application/x-tex">
+P(x_1,\ldots,x_T)=\prod_{t=1}^{T}P(x_t\mid x_1,\ldots,x_{t-1})。
+</annotation></semantics></math></p>
+<p>这里的链式分解是概率关系，神经网络负责估计其中的条件概率。训练时，模型根据预测误差调整参数；推理时，通常利用已经训练好的参数处理输入。给模型一份新通知，改变的是这次调用能够使用的输入，并不等于重新训练模型。<a
+href="https://www.jmlr.org/papers/v3/bengio03a.html">Bengio等，2003</a>；<a
+href="https://arxiv.org/abs/2005.14165">Brown等，2020</a></p>
+<p>这种机制能够产生连贯文本，也可能产生没有依据的内容。模型可以根据语言模式生成一个看似合理的报名网址，但网址是否存在，要到真实来源核对。因此，应分别评价表达是否清楚、事实是否有依据，以及系统是否具备完成任务所需的资料与工具。</p>
+<p>还要区分三个层次。<strong>模型</strong>负责处理输入和生成输出；<strong>聊天产品</strong>提供会话界面，并可能附带联网、文件读取或记忆；<strong>应用系统</strong>围绕具体任务组合模型、资料、工具和人工判断。某个产品能查网页，不能直接推断其基础模型在任何环境中都能联网。</p>
+<h2 id="sec-training">发展主线与任务适配</h2>
+<p>统计语言模型主要依据有限历史估计序列概率，容易遇到未见组合与数据稀疏问题。神经语言模型通过学习向量表示，让相关表达能够共享统计信息。Transformer进一步通过注意力组织位置之间的联系，为并行处理序列提供了重要架构基础。随后，不同预训练目标与后训练方式形成了不同使用路线。<a
+href="https://arxiv.org/abs/1706.03762">Transformer原论文</a></p>
+<p>原始BERT采用双向编码器，通过掩码词预测等任务学习表示，典型用途包括分类、抽取和文本表示。典型自回归GPT模型使用因果约束，依据前文预测后续Token，适合续写与生成。这里比较的是代表性路线，实际应用还受到模型规模、后训练、输入组织和系统设计影响，不能据此把所有编码器与解码器的能力固定为两个互不相通的类别。<a
+href="https://arxiv.org/abs/1810.04805">BERT原论文</a></p>
+<p>不同适配方法改变的对象也不同：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">主要改变的对象</th>
+<th style="text-align: left;">适合先检查的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">预训练</td>
+<td style="text-align: left;">模型参数与基础表示</td>
+<td style="text-align: left;">基础语言和任务能力如何形成</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">监督微调</td>
+<td style="text-align: left;">用示范继续训练参数</td>
+<td style="text-align: left;">是否需要学习稳定的格式与行为</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">提示与上下文示例</td>
+<td style="text-align: left;">本次输入</td>
+<td style="text-align: left;">任务、材料和输出要求是否清楚</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">检索与工具</td>
+<td style="text-align: left;">可获得的证据及执行结果</td>
+<td style="text-align: left;">是否缺少外部事实或实际计算</td>
+</tr>
+</tbody>
+</table>
+<p>微调是后续适配训练的统称之一，监督微调只是常见形式。LoRA通过冻结基础权重、训练低秩增量，减少可训练参数。它是否节约多少资源，取决于模型、秩、目标层和部署方式；不能把某个实验中的参数数量当作所有应用的固定比例。<a
+href="https://arxiv.org/abs/2106.09685">LoRA原论文</a></p>
+<p>对于频繁变化的通知、价格或服务规则，优先检查资料管理与检索，通常比要求模型把每次更新都写入参数更便于维护。对于有稳定定义、明确标签和足够样本的重复任务，可以进一步比较微调方案。选择应依据固定测试、维护成本和实际收益，而不只凭方法名称。</p>
+<h2 id="sec-token">Token与上下文窗口</h2>
+<p>Token是分词器把文本编码后得到的处理单位，不一定具有完整语义，也不与汉字或单词一一对应。不同分词器可能把同一个词切成不同片段；中文、英文、数字和标点的计数关系也会变化。BPE、WordPiece和Unigram都是常见的子词编码方法，不能将一种算法写成所有模型的统一配置。<a
+href="https://huggingface.co/docs/transformers/tokenizer_summary">Hugging
+Face分词说明</a></p>
+<p>上下文窗口约束一次调用能够处理的信息范围。对常见的自回归对话服务，规划输入时需要考虑系统指令、用户材料、历史消息、工具结果和输出预留；具体输入、输出及总长度限制，以所用模型和接口的实际说明为准。字符数可以用于编辑工作，但未经对应分词器计算，不能直接当作Token数或实际费用。</p>
+<p>容量与有效利用是两个问题。材料能够放入窗口，不保证模型准确使用其中每一条信息。《Lost
+in the
+Middle》在其测试的多文档问答和键值检索任务中观察到位置敏感性；不同模型、任务和设置的表现并不相同。这项研究支持“需要验证信息利用”，不支持给所有模型规定统一的中间位置准确率。<a
+href="https://arxiv.org/html/2307.03172v3">Liu等，2023／2024</a></p>
+<p>在应用中，可以给证据编号，保留来源与适用范围，减少重复材料，并检查关键事实是否真正进入本轮输入。长输入的实际代价还受硬件、缓存、实现和服务计费影响，不能仅凭注意力的复杂度公式推算价格。</p>
+<h2 id="sec-attention">注意力怎样组织信息</h2>
+<p>注意力机制根据查询与键的匹配分数，对值表示进行加权组合。缩放点积注意力可以写为：</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Attention</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Q</mi><mo>,</mo><mi>K</mi><mo>,</mo><mi>V</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>softmax</mo><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>Q</mi><msup><mi>K</mi><mi>𝖳</mi></msup></mrow><msqrt><msub><mi>d</mi><mi>k</mi></msub></msqrt></mfrac><mo>+</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>V</mi><mi>。</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{Attention}(Q,K,V)=
+\operatorname{softmax}\!\left(\frac{QK^{\mathsf T}}{\sqrt{d_k}}+M\right)V。
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>是查询，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>是键，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>是值，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>k</mi></msub><annotation encoding="application/x-tex">d_k</annotation></semantics></math>是键的维度，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>表示可选掩码。可以访问的位置不额外屏蔽，不允许访问的位置在softmax前受到屏蔽。自回归生成利用因果掩码限制对未来位置的访问。多头注意力在不同表示子空间中分别进行这种计算，再整合结果。<a
+href="https://arxiv.org/abs/1706.03762">Transformer第3节</a></p>
+<p>一个简化的手工例子可以说明加权过程：设两个位置的匹配分数相同，softmax权重各为二分之一；值分别为10和20，则输出为15。如果屏蔽第二个位置，剩下的位置权重为1，输出变为10。这只是教学数值，用来检查权重、可见范围和加权和，不是某个词语在真实模型中的实际注意力分布。</p>
+<p>注意力提供信息交互的计算方式，不会自动判定一份通知是否合法有效，也不等于人的意识或理解。某段文字的权重较高，不能直接证明该段内容真实，或它就是最终预测的唯一原因。应用仍需核对来源、条件与结论之间的支持关系。</p>
+<h2 id="sec-post-training">后训练、偏好与事实正确性</h2>
+<p>监督微调使用示范回答，帮助模型学习如何响应任务。PPO式RLHF流程进一步收集人类比较，训练奖励模型，再用强化学习优化输出，同时约束策略变化。DPO则直接使用偏好数据构造优化目标，不必沿用同样的显式奖励模型与在线强化学习流程。<a
+href="https://arxiv.org/abs/2203.02155">InstructGPT</a>；<a
+href="https://arxiv.org/abs/2305.18290">DPO</a></p>
+<p>理解这些方法，要把“反馈来自谁”与“怎样优化”分开。偏好可以来自人类，也可以由模型依据规则辅助生成；优化则可以采用不同训练方法。这两个维度可以组合，不能简单把RLHF、DPO和AI反馈视为彼此排斥的三个产品类别。</p>
+<p>被偏好不等于事实正确。标注者可能喜欢表达自信、符合预期的答案，而答案仍然没有来源支持。偏好优化改善的是由数据与评价规则表达出来的行为，事实核查仍要依靠资料、工具与独立评测。训练表现也受到参数、数据和计算预算共同影响，规模或某一种训练技术不能单独保证具体应用成功。<a
+href="https://arxiv.org/abs/2203.15556">Chinchilla研究</a></p>
+<h2 id="sec-boundaries">能力边界如何影响应用设计</h2>
+<p>遇到错误时，应先判断缺少了什么条件，再决定改哪里。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">输出问题</th>
+<th style="text-align: left;">首先检查</th>
+<th style="text-align: left;">可能的改进方向</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">回答流畅但事实过期</td>
+<td style="text-align: left;">资料日期与适用范围</td>
+<td style="text-align: left;">更新来源，保留有效版本</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">编出不存在的网址</td>
+<td style="text-align: left;">材料是否覆盖该问题</td>
+<td style="text-align: left;">允许保留未知，核对链接</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">算式正确但数值算错</td>
+<td style="text-align: left;">运算与单位</td>
+<td style="text-align: left;">实际计算并独立复核</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">引用了不支持结论的段落</td>
+<td style="text-align: left;">原文与结论的关系</td>
+<td style="text-align: left;">调整检索或答案依据</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">执行了材料中的命令</td>
+<td style="text-align: left;">指令来源与工具权限</td>
+<td style="text-align: left;">限定操作，检查可信边界</td>
+</tr>
+</tbody>
+</table>
+<p>摘要、改写、分类和抽取可以由模型承担一部分工作，但每类任务都有自己的检查标准。摘要要看原意和限定条件，分类要看标签定义与边界，计算要看实际结果，图像理解还要看识别误差。一个任务可以由模型、检索、计算工具与人工共同完成，不必把所有步骤都交给同一组件。</p>
+<p>判断模型是否有某项能力，应说明任务、材料、运行条件和指标。不能从一条成功回答推断普遍有效，也不能因一次失败就否定整个方法。</p>
+<h2 id="sec-prompt">把需求写成可核验的提示</h2>
+<p>提示工程的作用，是把隐含的需求转化为模型能够接收、结果能够检查的任务规范。本讲用五项内容组织提示：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">要回答的问题</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">任务</td>
+<td style="text-align: left;">为谁完成什么</td>
+<td style="text-align: left;">回答在校学生的活动咨询</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">证据</td>
+<td style="text-align: left;">可以使用哪些信息</td>
+<td style="text-align: left;">只依据S1、S2，不补外部事实</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">处理规则</td>
+<td style="text-align: left;">缺失、冲突与计算怎样处理</td>
+<td style="text-align: left;">未说明的事项保留未知</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">输出</td>
+<td style="text-align: left;">交付什么形式</td>
+<td style="text-align: left;">答案、依据与信息状态</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">判定标准</td>
+<td style="text-align: left;">怎样判断完成</td>
+<td style="text-align: left;">事实、来源、计算均可核查</td>
+</tr>
+</tbody>
+</table>
+<p>这是一份应用设计清单，不是必须背诵的统一算法。角色、格式、示例和长度，都应服务于具体任务。加入“你是专家”可以改变表达预期，但不能自动提供专家所需的资料和责任判断；反复要求“确保真实”也不能替代事实核验。</p>
+<p>提示应避免互相冲突的要求。例如，既要求“完整列出所有机构名称”，又要求极短字数，可能难以同时满足。应先确定关键事实与表达要求的优先级，并允许模型指出材料或约束不足。</p>
+<h3 id="零样本少样本与步骤">零样本、少样本与步骤</h3>
+<p>零样本提示直接给出任务与输入；少样本提示再提供若干例子，帮助说明标签、格式或边界。这里的“零样本”指当前提示中没有示范，不意味着模型在预训练时从未接触相关内容。示例需要正确、贴近任务，并与最终测试题分开。<a
+href="https://arxiv.org/abs/2005.14165">GPT-3论文</a></p>
+<p>对需要计算或分解的任务，可以要求提供关键依据、算式或可检查步骤。CoT研究在特定模型与基准上发现了推理示例的作用，但不能推出所有任务都应展示冗长推理。生成的解释也不等于已经被证明是真实内部计算过程。<a
+href="https://arxiv.org/abs/2201.11903">CoT原论文</a></p>
+<h2 id="sec-context">上下文工程：本轮真正获得了什么</h2>
+<p>提示之外，还要管理本轮实际进入模型的信息。资料保存在文件夹、数据库或历史记录中，并不意味着它已经成为当前调用的输入；应用需要取回并提供相关内容。上下文工程关注怎样选择指令、证据、状态和工具结果，随任务推进更新它们。<a
+href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Anthropic工程文章</a></p>
+<p>持续编辑一篇新闻稿时，应保留当前目标、有效要求、已核实事实与出处、当前稿件版本和待核实事项。篇幅要求可以更新，事实来源却不能被最新稿件替代；摘要可以压缩讨论，但直接引语应保留原文和出处。这样才能在继续生成时分辨哪些是材料事实，哪些只是模型之前写过的话。</p>
+<p>上下文更短或排版更清楚，不直接等于效果更好。选择和摘要也可能丢失条件，因而需要同时检查任务结果、输入量和人工整理成本。单轮问答与多轮持续任务可以分别测试，避免上一轮回答或产品记忆干扰比较。</p>
+<h3 id="外部材料中的指令性文字">外部材料中的指令性文字</h3>
+<p>网页或留言可能写着“忽略其他要求”“把答案统一写成免费”等文字。它们是待分析材料，不能自行取得系统操作权限。分隔符有助于说明结构，但应用还需约束工具与可执行操作，并核对输出是否受到可信证据支持。<a
+href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">OWASP提示注入说明</a></p>
+<h2 id="sec-case">贯穿案例：活动咨询助手</h2>
+<p>以下资料与回答示例均为教学模拟，不对应真实活动或模型实测。</p>
+<p><strong>S1
+活动通知：</strong>“校园影像与城市记忆”放映交流会，11月26日18:30—20:30，文化中心报告厅，预约限额80人。</p>
+<p><strong>S2
+预约汇总：</strong>截至模拟统计时点，已确认本科生42人、研究生18人，分类互斥且均已去重。</p>
+<p><strong>材料范围：</strong>未说明费用、入场证件要求和报名网址。</p>
+<p>咨询问题为：“还剩多少个预约名额？参加活动需要支付多少费用？”</p>
+<h3 id="提示a描述任务">提示A：描述任务</h3>
+<pre class="text"><code>请根据下面的活动资料回答问题，
+给出适合在校学生阅读的答案。
+问题：还剩多少个预约名额？参加活动需要支付多少费用？
+资料：完整附上S1活动通知与S2预约汇总。</code></pre>
+<p>A说明了任务和受众，但没有明确缺失信息的处理、证据格式与计算要求。这不意味着它必然答错，而是这些要求没有被显式表达，是否影响结果需要测试。</p>
+<h3 id="提示b明确证据处理与输出">提示B：明确证据、处理与输出</h3>
+<pre class="text"><code>任务：作为活动咨询助手，回答同一道学生咨询问题。
+证据：仅使用S1活动通知与S2预约汇总。
+缺失：没有依据的事项写“材料未提供”，
+并列出需向主办方确认的问题。
+计算：使用材料中的数值，列出算式，限定统计时点。
+输出：答案；依据；状态。
+状态区分已支持、待确认、未提供。
+问题：还剩多少个预约名额？参加活动需要支付多少费用？
+资料：完整附上同一份S1与S2。</code></pre>
+<p>下面是人工编写的格式示例，用来说明核验口径，不用作模型已经成功的证据：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">咨询事项</th>
+<th style="text-align: left;">答案与依据</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">剩余名额</td>
+<td
+style="text-align: left;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>80</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>42</mn><mo>+</mo><mn>18</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">80-(42+18)=20</annotation></semantics></math>人，依据S1与S2，限定模拟统计时点</td>
+<td style="text-align: left;">已支持</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">活动费用</td>
+<td style="text-align: left;">S1、S2均未说明费用，需要向主办方确认</td>
+<td style="text-align: left;">未提供</td>
+</tr>
+</tbody>
+</table>
+<p>这个例子有两个关键判断。第一，计算用到的总额与已确认人数必须含义一致，分类互斥和已去重是能直接相加的条件。第二，没有写费用，不能直接推出免费；没有提供网址，也不能生成一个貌似可信的链接。对于可回答的问题，无依据地全部拒答同样没有完成任务。</p>
+<h2 id="sec-evaluation">怎样比较两套提示</h2>
+<h3 id="固定共同条件">固定共同条件</h3>
+<p>两套提示应回答同一道问题，使用完整且相同的资料，尽量保持同一模型、可见版本与设置，并分别保留完整输入和原始输出。比较时使用新会话，记录联网、工具和记忆条件；无法控制的设置应说明，不能声称已经实现完全相同的环境。</p>
+<p>提示B同时改变了证据规则、缺失处理和输出要求。因此，本例A/B比较只能说明两套方案在这组任务中的整体差异。若要解释单项因素，如资料编号是否有效，就应固定其他内容，仅改变编号这一项。</p>
+<h3 id="测试题应覆盖正常与边界情形">测试题应覆盖正常与边界情形</h3>
+<p>测试可以包括事实定位、数值计算、信息缺失和材料内指令干扰。已经用于改写提示的示例不宜同时充当唯一的最终测试；否则模型或操作者可能只是适应了这几个已知问题。重复运行应保存全部结果，包括持平和退步的记录。</p>
+<p>对本讲案例，可以先检查活动地点、剩余名额和费用；进一步用其他模拟活动构造未见问题。这里没有预置模型的通过率，也不要求结果必须显示B优于A。</p>
+<h3 id="分别评价内容证据与边界">分别评价内容、证据与边界</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;">判断内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">内容达标</td>
+<td
+style="text-align: left;">是否满足问题要求，关键事实与计算是否正确</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">证据可回查</td>
+<td style="text-align: left;">所指来源是否存在，内容是否支持结论</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">边界处理正确</td>
+<td
+style="text-align: left;">是否保留未知、处理冲突，避免无依据补造</td>
+</tr>
+</tbody>
+</table>
+<p>三项分别报告通过题数与有效测试总数，不宜只用一个总分隐藏关键错误。输出中出现资料编号，不代表引用成立；表格填得完整，也不代表每格内容正确。A即使没有采用B的字段顺序，仍应按相同的内容与证据标准评价。</p>
+<p>分析结果时，先看逐题变化，再看汇总。需要区分改进、持平和新增错误，也要比较运行代价与人工复核成本。只保留最好的一次，或在看到输出后修改评分规则，都会削弱比较的解释力。</p>
+<h2 id="sec-transfer">把结果迁移到个人项目</h2>
+<p>传媒项目可先核对事件主张，再生成面向不同受众的文案；科研项目应区分文献作者的观点与自己的推断，并回查真实原文；公共文化服务项目需要整理通知来源、适用条件和人工查询途径。共同要求是保留需求判断、输入、输出和核验之间的联系。</p>
+<p>如果问题出在没有找到材料，就需要检查资料组织与检索；如果找到了正确材料仍然答错，就要检查条件识别、计算或生成。语义相似度只能帮助排序，不是事实可信度。下一讲的RAG将进一步把检索与生成连接起来，并分别评价这两个环节。<a
+href="https://arxiv.org/abs/2005.11401">RAG原论文</a></p>
+<p>扩展为工具链或多智能体系统后，仍要遵守同样的证据要求。多个角色使用同一错误来源，可能形成一致但错误的结论；调用次数相同也不代表Token、延迟或费用相同。只有在分工解决了具体瓶颈，并通过同条件基线检验后，才能说明协作收益。</p>
+<h2 id="sec-extension">补充认识：方法名称不能代替测量</h2>
+<p>自我一致性通过采样多个候选推理路径并聚合答案，思维树则结合候选步骤、评价与搜索。它们会改变调用和计算预算，也依赖任务与评价方式；更多候选不等于更多独立证据。<a
+href="https://arxiv.org/abs/2203.11171">自我一致性</a>；<a
+href="https://arxiv.org/abs/2305.10601">思维树</a></p>
+<p>关于“涌现”，一类研究描述模型规模增长时某些能力表现出的跃升，另一类研究指出非连续指标可能制造表面上的突然变化。实际分析应检查任务、模型系列、指标和样本量。这也提醒我们：评价方法会影响对结果的理解，不能只看一条曲线或一个成功例子。<a
+href="https://arxiv.org/abs/2206.07682">能力涌现研究</a>；<a
+href="https://arxiv.org/abs/2304.15004">测量方法讨论</a></p>
+<h2 id="sec-assignment">课程任务与词条修订</h2>
+<p>选择个人项目中的一个小任务，保留两版完整提示、固定测试与资料、模型运行条件、原始输出和逐题核验。改进说明应回答：具体改了什么，观察到什么，证据能支持多大的结论，下一步还需验证什么。</p>
+<p>词条由同学自行查阅资料、撰写并修订。概念稿可以使用可复核的手工推演或准确的文献分析；有运行记录的稿件应保留失败项；尚未运行的设计应继续明确标注。每位同学还应说明一项本人完成的判断，而不只写“AI生成后已审核”。</p>
+<p>提交前可用四个问题自检：</p>
+<ol type="1">
+<li>是否准确区分模型、产品、输入、训练和应用流程？</li>
+<li>关键事实、数字和论文结论能否回到对应来源？</li>
+<li>原始输出、人工修订和预期答案是否分别保存？</li>
+<li>结论是否限于实际任务、资料、模型与测试条件？</li>
+</ol>
+<p>课程词条目录：<a
+href="https://github.com/xiaoningwang/2026llmapplications">2026llmapplications</a>。</p>
+<h2 id="sec-reading">阅读路径</h2>
+<p>本讲正文已在相关论点后给出原始来源。进一步阅读可以按问题选择：</p>
+<ul>
+<li><strong>理解模型与训练：</strong>Bengio等（2003）、Vaswani等（2017）、Devlin等（2018）、Brown等（2020）。</li>
+<li><strong>理解适配与偏好：</strong>Hu等（2021，LoRA）、Ouyang等（2022，InstructGPT）、Rafailov等（2023，DPO）。</li>
+<li><strong>理解上下文与提示：</strong>Liu等（2023／2024）、Wei等（2022，CoT）、Anthropic（2025，上下文工程）。</li>
+<li><strong>理解评测与证据：</strong>Lewis等（2020，RAG）、涌现与测量方法的两组研究、OWASP提示注入风险说明。</li>
+</ul>
+<p>阅读时记录论文解决的具体问题、测试模型与任务、使用的指标，以及不能直接推广到自己项目的条件。文献数据归于原作者，课堂模拟归于教学设计，个人实测则需要自己的输入、输出与核验记录。</p><footer>本资料供课程学习与修订使用。<a href="/teaching/llmpracticeandapplication" target="_top">返回课程主页</a></footer></main></body></html>

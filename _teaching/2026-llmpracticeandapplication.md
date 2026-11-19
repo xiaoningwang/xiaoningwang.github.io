@@ -32,12 +32,12 @@ redirect_from:
 
 课程PPT及学习资料请参见[书卷侠课程平台](https://courses.scholarhero.cn/)。课程入口、学习任务与提交安排以教师发布为准。
 
-### 第二讲学习资料（密码访问）
+### 第二讲学习资料
 
-- [核心词条点评与修改建议：九篇有正文稿件](/files/llmpracticeandapplication/2026-autumn/glossary-feedback-20261119.html)
-- [第二讲课堂讲义：模型能力与提示设计](/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.html)
+- [核心词条点评与修改建议：九篇有正文稿件（密码访问）](/files/llmpracticeandapplication/2026-autumn/glossary-feedback-20261119.html)
+- [第二讲课堂讲义：模型能力与提示设计（公开文本）](/files/llmpracticeandapplication/2026-autumn/lecture-02-notes.html)
 
-以上资料使用同一课程访问密码。点评依据2026年11月19日的文件快照，供同学逐项修订；讲义配合第二讲课程展示版课件使用。
+词条点评需输入课程访问密码；课堂讲义可公开阅读，并提供Markdown文本下载。点评依据2026年11月19日的文件快照，供同学逐项修订；讲义配合第二讲课程展示版课件使用。
 
 ## 学习目标
 
