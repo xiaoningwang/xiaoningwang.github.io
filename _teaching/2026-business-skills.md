@@ -69,6 +69,12 @@ location: "Beijing, China"
 
 延续校园文创店案例，讲解商业数据分析与指标口径、客户画像与RFM、客服流程、个性化推荐与销售线索评分，以及A/B实验、服务质量和业务价值评价。包含课堂实践、期中项目准备与参考文献。
 
+### 第六讲：智能投顾、研报生成与文档智能
+
+[阅读第六讲讲义：智能投顾、研报生成与文档智能]({{ '/files/business-skills/2026-autumn/lecture-06.html' | relative_url }})
+
+讲解客户需求与资产配置、财报与研报生成、文档解析与RAG证据核验、再平衡与顺序决策，以及工作流设计和质量评测。包含公开财报与机构应用案例、课堂练习、个人作业与参考文献。
+
 ### 第一讲作业点评
 
 [查看第一讲作业点评（密码访问）]({{ '/files/business-skills/2026-autumn/lecture-01-feedback.html' | relative_url }})
@@ -326,5 +332,6 @@ location: "Beijing, China"
 ---
 
 [← 返回全部课程]({{ '/teaching/' | relative_url }})
+
 
 
