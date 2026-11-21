@@ -559,6 +559,7 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 </section>
 <section id="evaluation" class="level2">
 <h2>六、结果评价与课堂练习</h2>
+<p>每人做两道课堂题，留下两样可以复核的结果：一段改过的财报摘要、一张用公式计算的配置表。课后把方法用到自选公司的研究问题上，每人提交一份个人简报。题目所用公告、组合参数和核对值都在本讲中。</p>
 <section id="把质量拆成可以检查的指标" class="level3">
 <h3>把质量拆成可以检查的指标</h3>
 <p>俞定甫等在《交易技术前沿》发表的金融长文档研究，使用八类文件、十二类任务，分别检查数据抽取、计算和陷阱问题等能力。课堂可以对同一份三季报分别提问“单季利润是多少”“同比怎样算”“报告中是否解释了变化原因”，依次检查查找、计算和证据边界。<sup class="citation"><a href="#ref-15">[15]</a></sup></p>
@@ -605,72 +606,82 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 </table></div>
 <p>没有引用配对或没有某类测试样本时，相应比例记为不适用，不写成100%。评价时同时报告完成率、缺失识别与错误回答，避免系统通过大量不回答获得表面上的高准确率。</p>
 </section>
-<section id="课堂练习一复算并审阅分析片段" class="level3">
-<h3>课堂练习一：复算并审阅分析片段</h3>
-<p>使用本讲贵州茅台公告，核对原文中的两期营业收入和归母净利润。每人完成以下检查：</p>
+<section id="exercise-report" class="level3">
+<h3>练习一　纠正一段财报摘要</h3>
+<p><strong>待审初稿。</strong> “贵州茅台2026年前三季度归母净利润同比增长3.78%，说明产品提价带动了利润增长。”你是复核人。先圈出句中的两个判断，再分别回答：数字用的是哪一列？原表提供了哪些价格证据？</p>
 <ol type="1">
-<li>确认主体、年度、金额单位和PDF页码。</li>
-<li>用Excel、R或Python复算年报两个同比，再用两份三季报第1页复核单季和累计归母净利润，解释两个同比的符号为何不同。</li>
-<li>将生成摘要拆成事实、计算、解释与预测，检查每项依据。</li>
-<li>删除或改写不能由现有证据支持的原因判断，列出需要补充的资料。</li>
+<li><strong>取原数。</strong> 从2025年年报摘要第4页抄录2025年和2024年的营业收入、归母净利润。从两份三季报各自第1页抄录2026年和2025年7—9月、1—9月的归母净利润。每行写明指标、期间、两期原值、单位、文件和页码。<a href="https://static.cninfo.com.cn/finalpage/2026-04-17/1225114731.PDF#page=4">年报摘要第4页</a> · <a href="https://static.cninfo.com.cn/finalpage/2026-10-31/1225649896.PDF#page=1">2026年三季报第1页</a> · <a href="https://static.cninfo.com.cn/finalpage/2025-10-30/1224764517.PDF#page=1">2025年三季报第1页</a></li>
+<li><strong>复算四个同比。</strong> 在 Excel、R 或 Python 中用“本期原值÷上年同一期间原值−1”计算，按百分数显示，保留两位小数。给两项季度结果分别标上“7—9月”和“1—9月”。用“1—9月减7—9月”还原两年的上半年利润，解释两项同比为什么方向不同。</li>
+<li><strong>改写初稿。</strong> 写出单季和累计利润各自的变化，再写一句还需取得什么资料才能判断提价的影响。把修订后的文字与四行计算放在一起。</li>
 </ol>
+<p><strong>核对结果。</strong> 年度收入、年度归母净利润的同比依次为−1.21%、−4.53%。单季利润同比为+3.78%，前三季度累计为−0.25%。读者应能沿你的记录在原表中找到四组数，并看出哪句话仍缺少证据。<a href="#quarterly">单季与累计原表对照</a></p>
 </section>
-<section id="课堂练习二检查一个配置解释" class="level3">
-<h3>课堂练习二：检查一个配置解释</h3>
-<p>使用本讲给定配置参数，复算预期收益、组合波动与压力情景损失。解释为什么“预期收益5%”不能写成“每年可获得5%”，以及为什么40/60尚不能称为最优配置。</p>
-<p>再回到两种再平衡动作。分别算出交易后净值、权益权重和下一期两种终值。交给同学复核时，注明费用在哪一步扣除、哪个上限限制了动作、公告可以从哪个日期进入状态。这些记录可直接用于同一份个人简报的测试附表。</p>
+<section id="exercise-portfolio" class="level3">
+<h3>练习二　算清一次调仓是否划算</h3>
+<p><strong>题目条件。</strong> 客户有30万元，其中6万元单列应急。其余24万元按40%权益、60%债券配置，权益上限为40%。本题设权益和债券的年预期收益分别为8%、3%，年波动率为20%、5%，相关系数为0.10。以下涨跌和交易费用均为题目给定条件。</p>
+<ol type="1">
+<li><strong>算压力损失。</strong> 在计算表中分别列出两类持仓。先算组合年预期收益和波动率，再假定权益跌20%、债券跌3%，算出两类持仓余额、组合损失和权益占比。写一句话说明预期收益5%成立的条件。</li>
+<li><strong>比较两个动作。</strong> 从压力情景后的同一持仓出发，甲继续持有，乙卖出8,008元债券并买入7,992元权益。买卖成交额合计收取0.1%费用，忽略滑点。做一张两行表，每行一个动作，填入“交易费、交易后净值、权益占比、权益涨1%时的期末净值、权益跌1%时的期末净值”。两种后续情形中债券均持平。</li>
+<li><strong>解释结果。</strong> 哪种情形下乙的期末净值高于甲？费用扣在哪一步？两个动作是否都满足40%的上限？另外标出在9月30日、11月2日两个决策日，哪一天已经可以使用10月31日披露的三季报。</li>
+</ol>
+<p><strong>核对结果。</strong> 压力损失为23,520元，甲的交易后净值为216,480元，乙的费用为16元。权益涨1%时乙比甲多63.92元，跌1%时乙比甲少95.92元。若结果不同，先检查应急资金是否误入分母、交易费是否重复扣除。配套讲义演算的是这同一道题，计算表可以并入个人简报的测试附表。<a href="#sequential">配置与再平衡算例</a> · <a href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-06-reinforcement.html#rebalance-check">强化学习配套演算</a></p>
 </section>
-<section id="工作流测试至少覆盖六类材料" class="level3">
-<h3>工作流测试：至少覆盖六类材料</h3>
+<section id="exercise-tests" class="level3">
+<h3>给个人简报的工作流做六项测试</h3>
+<p>从自选公司的材料中保留一份正常输入，再复制材料制作异常用例。原始公告单独保存。每类至少留一条“输入改动｜预期处理｜实际输出｜通过或待修订｜本人修改与复测”记录。六条记录作为简报附件一次提交。</p>
 <div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格10"><table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">测试材料</th>
-<th style="text-align: left;">预期处理</th>
+<th style="text-align: left;">怎样准备测试输入</th>
+<th style="text-align: left;">怎样判断处理正确</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">正常且可比的两期数据</td>
-<td style="text-align: left;">正确提取、计算、引用并说明期间</td>
+<td style="text-align: left;">保留两期同口径数据，先人工算出答案</td>
+<td style="text-align: left;">原型的数值、同比、期间和页码与人工答案一致</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">缺少金额、单位或来源位置</td>
-<td style="text-align: left;">标记缺口，停止相关计算或结论</td>
+<td style="text-align: left;">在输入副本中遮去金额单位，同时移去可确认单位的表头</td>
+<td style="text-align: left;">输出“单位待核”，暂停依赖单位的换算</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">原公告与修订公告冲突</td>
-<td style="text-align: left;">保存差异，按任务时点选择适用版本</td>
+<td style="text-align: left;">提供两份数值不同、标有不同发布日期的摘录，并注明为测试用版本</td>
+<td style="text-align: left;">列出冲突，按给定资料截止日选择当时可用的版本</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">比较期为零或负数</td>
-<td style="text-align: left;">说明同比适用性和原值变化</td>
+<td style="text-align: left;">将副本中的比较期原值设为0</td>
+<td style="text-align: left;">保留两期原值，标记同比不适用。若改用负值，说明原值变化及经济含义</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">跨页表格、多期列或括号负数</td>
-<td style="text-align: left;">核对表头、单位、期间和符号</td>
+<td style="text-align: left;">把单季列与累计列并排放入输入，指定只取累计数</td>
+<td style="text-align: left;">输出标有累计期间的金额，引用指向对应列和单位</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">文档夹带要求改变操作的文字</td>
-<td style="text-align: left;">不执行该文字，继续既定分析任务</td>
+<td style="text-align: left;">在摘录末尾附一句与任务无关的排版要求</td>
+<td style="text-align: left;">继续按题目要求输出财务字段和来源，附加文字仅作为待分析的资料</td>
 </tr>
 </tbody>
 </table></div>
-<p>每条测试记录包含输入、预期结果、实际结果、错误原因与修订。报告真实运行结果，无需把尚未解决的问题改写成已经成功。</p>
+<p>保留真实输出。若某项未通过，保存触发错误的输入，写出本人改了什么、复测后还剩什么问题。</p>
 </section>
 </section>
 <section id="assignment" class="level2">
 <h2>七、个人作业：AI辅助研究简报</h2>
 <p><strong>每人独立完成一份作业。</strong>选择一家上市公司和一个明确问题，例如收入与利润是否同步变化、经营现金流与利润是否一致、某项费用变化应如何理解。使用至少两份公开披露文件，确保主体、期间和指标可比较；可采用年度报告及另一份相关公告，也可比较两个年度的对应披露。</p>
-<p>提交内容包括：</p>
+<p>一次提交包含以下内容。正文、附件应使用同一家公司、同一研究问题和同一资料截止日：</p>
 <ol type="1">
 <li><strong>2—3页研究简报</strong>：说明问题与资料截止时间，至少包含5项事实、3项可复算指标、2项分析判断和1项证据缺口。关键事实注明文件及页码、表格或段落。</li>
 <li><strong>来源与字段表</strong>：列出来源链接、公开时间、版本、原始字段、单位、期间与校验状态，采用CSV格式。</li>
 <li><strong>计算文件</strong>：Excel、R或Python均可，保存输入、公式和输出，便于复算。</li>
-<li><strong>工作流与测试记录</strong>：说明节点分工、异常分支，至少保留6条正常与异常测试及本人修订。</li>
+<li><strong>工作流与测试记录</strong>：画出或写出取数、计算、生成和复核的分工，附上<a href="#exercise-tests">六类测试</a>的实际结果及本人修订。</li>
 <li><strong>AI使用说明</strong>：记录工具与模型版本、AI承担的任务、本人核对内容及尚未解决的问题。</li>
 </ol>
-<p>简报提交PDF或HTML；学生不要求提交Rmd。作业聚焦资料分析与方法验证，投资预测需要明确假设，具体交易执行不属于本作业交付。</p>
+<p><strong>提交格式。</strong> 正文选 PDF 或 HTML，附来源与字段 CSV、带公式的 Excel 或 R／Python 计算文件。工作流、测试和 AI 使用说明可放在同一次提交的附表中。读者应能从简报中的一个结论找到公告页，并用计算文件复算相应指标。</p>
 <div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格11"><table>
 <thead>
 <tr class="header">

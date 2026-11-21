@@ -25,7 +25,7 @@ location: "Beijing, China"
 2. 识别金融、零售、客服、市场分析和风控场景中的AI应用机会，完成需求拆解与流程设计。
 3. 使用AI工具完成数据分析、文档理解、报告生成、客户画像、策略比较和业务自动化原型。
 4. 设计智能体效果评测方案，兼顾成本、延迟、人工审核、数据安全与合规要求。
-5. 通过团队项目展示智能体作品，论证技术方案、业务价值与风险控制措施。
+5. 通过个人项目展示智能体作品，论证技术方案、业务价值与风险控制措施。
 
 
 
@@ -44,6 +44,8 @@ location: "Beijing, China"
    
 
 ## 课程讲义
+
+[直接查看各讲课程练习与提交要求](#course-exercises)
 
 ### 第一讲：商业技能与AI智能体
 
@@ -101,6 +103,20 @@ location: "Beijing, China"
 
 收录30份AI智能体调研，支持姓名、学号、产品与正文关键词搜索，以及分类筛选、逐份摘要、原文件下载和汇总表导出。页面末尾整理智能体的共同特点、商业思考与构建建议，并提供对账差异助手的项目示例。
 
+<h2 id="course-exercises">课程练习</h2>
+
+课堂练习由每位同学独立完成。阅读每讲的题目，先记下预期结果，再保留实际输出和本人核对的证据。第五讲的正式提交是个人期中项目说明，第六讲是个人研究简报，课堂记录可并入相应作业。
+
+- **第一讲 · 画出一个业务场景。** 选财报、客服、周报或风控中的一项工作，用一页写清使用者、输入、处理步骤、输出和人工接管条件。用一例正常输入与一例异常输入走一遍流程。[第一讲练习]({{ '/files/business-skills/2026-autumn/lecture-01.html' | relative_url }}#practice)
+- **第二讲 · 比较两版提示词。** 对同一份资料先用简短需求，再补充资料范围、计算口径和输出结构。并列保留两版回答，指出改对了什么、还错在哪里。[第二讲练习]({{ '/files/business-skills/2026-autumn/lecture-02.html' | relative_url }}#practice)
+- **第三讲 · 核验售后答复。** 用校园文创店的四份制度核对退换货案例，记录决定、条款编号、缺失信息和下一步动作。选一次失败，展示修改和复测结果。[第三讲练习]({{ '/files/business-skills/2026-autumn/lecture-03.html' | relative_url }}#practice-evaluation)
+- **第四讲 · 用数据设计客服或营销方案。** 从校园文创店的数据中选一个发现，说明统计期间和指标口径。课堂成果是一页业务说明、一张流程图和一份评价指标表，可沿用到期中项目。[第四讲练习]({{ '/files/business-skills/2026-autumn/lecture-04.html' | relative_url }}#practice)
+- **第五讲 · 测试费用预检。** 用300元预算和三笔费用逐项测试补凭证、重复导入、金额不符、超预算和工具超时，留下五行实测记录。期中汇报用自己的项目展示一例正常运行、一例异常处理，以及与原办法的比较。[课堂数据与五个用例]({{ '/files/business-skills/2026-autumn/lecture-05.html' | relative_url }}#practice) · [个人期中项目要求]({{ '/files/business-skills/2026-autumn/lecture-05.html' | relative_url }}#assignment)
+- **第六讲 · 审财报，算调仓。** 从公告复算四个同比，改写一段混淆单季与累计利润的摘要。再用一张表比较持有与再平衡在两种涨跌情形下的结果。强化学习配套页沿用这张表。课后自选公司，提交一份2—3页研究简报及附件。[财报纠错题]({{ '/files/business-skills/2026-autumn/lecture-06.html' | relative_url }}#exercise-report) · [再平衡计算题]({{ '/files/business-skills/2026-autumn/lecture-06.html' | relative_url }}#exercise-portfolio) · [个人研究简报要求]({{ '/files/business-skills/2026-autumn/lecture-06.html' | relative_url }}#assignment)
+- **第七讲 · 检验一次项目改进。** 用讲义的12类任务检查原型，留下一条失败记录。对同一输入运行原方案和修订方案，写清错误出现的位置、本人所做的修改和复测结果。[第七讲练习]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }}#practice) · [个人项目改进要求]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }}#assignment)
+
+第八周进入期末作品展示，交付内容见下方“项目式学习”。
+
 ## 八周教学安排
 
 <style>
@@ -138,9 +154,9 @@ location: "Beijing, China"
 <tr><td class="week">第3周</td><td class="topic">RAG、企业知识管理与工具调用</td><td class="details">文档切分、检索、重排序、引用溯源、知识库评测；函数调用与数据库、浏览器等工具接入；设计知识库问答或自动化方案。</td></tr>  
 <tr><td class="week">第4周</td><td class="topic">商业数据分析、客户服务与营销智能体</td><td class="details">财务、交易和用户行为数据处理；客户画像、智能客服、个性化推荐与服务质量评测；完成数据摘要及Agent方案。</td></tr>  
 <tr><td class="week">第5周</td><td class="topic">期中项目方案汇报与智能风控</td><td class="details">汇报项目需求、数据、技术路线、风险和价值；学习异常检测、信用评分、交易监控、合规审查与人工复核。</td></tr>  
-<tr><td class="week">第6周</td><td class="topic">智能投顾、研报生成与文档智能</td><td class="details">风险偏好、资产配置与投资建议边界；财报摘要、竞品分析、会议纪要及引用核验；提交AI辅助分析片段。</td></tr>  
+<tr><td class="week">第6周</td><td class="topic">智能投顾、研报生成与文档智能</td><td class="details">核对财报的单季与累计数据，复算配置与再平衡结果，完成一份个人研究简报。</td></tr>  
 <tr><td class="week">第7周</td><td class="topic">强化学习、多智能体协作与治理评测</td><td class="details">通过案例认识Q-learning、DQN与策略优化的基本概念；设计Planner–Executor、Reviewer、Critic等协作流程；开展准确性、鲁棒性、幻觉、成本、延迟与安全评测。</td></tr>  
-<tr><td class="week">第8周</td><td class="topic">项目打磨、期末展示与课程总结</td><td class="details">展示智能体原型、业务方案及评测结果；综合考查技术实现、商业价值、合规意识、团队合作和表达能力。</td></tr>  
+<tr><td class="week">第8周</td><td class="topic">项目打磨、期末展示与课程总结</td><td class="details">展示智能体原型、业务方案及评测结果；综合考查技术实现、商业价值、合规意识、个人贡献和表达能力。</td></tr>  
 </tbody>  
 </table>  
 </div>
@@ -149,7 +165,7 @@ location: "Beijing, China"
 
 项目按“需求定义—方案设计—原型实现—评测改进—展示交付”推进，课堂练习为各阶段提供可复用的材料与方法。
 
-- **课堂练习**：模型比较、提示词设计、知识库方案、数据摘要与业务流程设计。
+- **课堂练习**按讲次列出任务、课堂成果与提交要求。[查看各讲练习](#course-exercises)
 - **期中方案汇报（第5周）**：提出业务问题，说明数据来源、系统设计、风险控制和预期价值。
 - **期末智能体作品（第8周）**：提交可展示的智能体原型、项目报告、演示材料及AI使用说明；报告需说明业务方案、评测结果和风险控制措施。
 
