@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="用同一笔资产配置讲解再平衡费用、可行动作、Q-learning、PPO及时间一致的金融回测。">
+<title>第六讲配套阅读：强化学习与自主决策系统 - 商业技能</title>
+<link rel="canonical" href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-06-reinforcement.html">
+<style>body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#203347;max-width:860px;margin:52px auto;padding:0 30px;font-size:18px;line-height:1.95}h1{font-size:36px;line-height:1.45}h2{font-size:25px;line-height:1.6;margin-top:42px;color:#176b70}p{margin:16px 0;text-align:justify}.subtitle{font-size:17px;color:#667480}.reading{font-size:15px}a{color:#176b70;overflow-wrap:anywhere}@media print{body{max-width:none;margin:0;font-size:12pt;line-height:1.75}h1{font-size:24pt}h2{font-size:16pt;break-after:avoid}p{orphans:3;widows:3}a{color:inherit}}h3{font-size:21px;line-height:1.6;margin-top:28px}nav{font-size:15px;margin-bottom:24px}.contents{padding:18px 24px;background:#f4f8f8;border-left:3px solid #176b70}.contents ol{margin:6px 0}pre{background:#f4f7f9;padding:18px;border:1px solid #e1e7eb;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.8}code{font-family:ui-monospace,Menlo,monospace}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.7}caption{text-align:left;font-weight:600;margin-bottom:8px}th,td{padding:10px 12px;border:1px solid #dce5e9;text-align:left;vertical-align:top}th{background:#f1f6f5}.formula{margin:24px 0;padding:18px 8px;overflow-x:auto;text-align:center}math{font-family:"STIX Two Math","Cambria Math",math;font-size:1.08em}math[display="inline"]{display:inline math}.formula math{min-width:max-content;margin:auto}math mtext{font-family:"PingFang SC","Microsoft YaHei",sans-serif}footer{border-top:1px solid #dce5e9;margin-top:40px}@media(max-width:600px){body{margin:28px auto;padding:0 18px;font-size:17px}h1{font-size:29px}h2{font-size:23px}pre{font-size:14px;padding:12px}.contents{padding:14px 16px}}@media print{nav{display:none}pre{font-size:10pt}table{font-size:10pt}h3{break-after:avoid}tr{break-inside:avoid}}
+*{box-sizing:border-box}body{max-width:960px}.subtitle{text-align:left}
+main,section,.column{min-width:0}section{scroll-margin-top:24px}h2,h3{scroll-margin-top:24px}
+li{margin:.35em 0}pre,code{font-variant-ligatures:none}pre{max-width:100%;overflow-x:auto}
+img{display:block;max-width:100%;height:auto;margin:18px auto}
+.columns{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center;margin:22px 0 32px}
+.columns .column p{margin:12px 0}.column img{max-height:640px;object-fit:contain}
+.column ul{padding-left:1.4em}figure{margin:24px 0}figcaption{font-size:15px;color:#667480}
+.display.math{display:block;max-width:100%;overflow-x:auto;text-align:center;padding:12px 0}
+math{max-width:100%}math[display="block"]{margin:auto;min-width:max-content}
+th,td{overflow-wrap:anywhere}.table-wrap{margin:18px 0 26px}table{min-width:520px}
+.contents ol{padding-left:1.5em}
+.updated{display:inline-block;white-space:nowrap}footer{font-size:15px;padding-top:16px}
+@media(max-width:700px){.columns{grid-template-columns:minmax(0,1fr);gap:8px}.column img{max-height:none}h1{font-size:29px}.contents{padding:14px 18px}}
+@media print{.columns{display:block}img{max-height:210mm;object-fit:contain}pre{white-space:pre-wrap}section{break-before:auto}}
+
+.citation{font-size:.78em;line-height:0;vertical-align:super;white-space:nowrap}
+.citation a{text-decoration:none;padding:0 2px}
+.references{list-style:none;padding-left:0;font-size:16px;line-height:1.8}
+.references li{margin:14px 0;padding-left:2.3em;text-indent:-2.3em;overflow-wrap:anywhere;scroll-margin-top:24px}
+.ref-number{font-variant-numeric:tabular-nums}
+.numeric-table{min-width:670px;font-variant-numeric:tabular-nums}
+.numeric-table td,.numeric-table thead th:not(:first-child){text-align:right}
+.numeric-table tbody th,.experiment-table tbody th,.rfm-table tbody th{background:transparent;font-weight:400}
+.rfm-table td:nth-child(2),.rfm-table td:nth-child(3),.rfm-table td:nth-child(4),.experiment-table td{text-align:right;font-variant-numeric:tabular-nums}
+.metric-formulas{padding-left:1.4em}.metric-formulas li{margin:.55em 0}
+.process,.calculation{overflow-wrap:anywhere}
+a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offset:4px}
+.skip-link{position:absolute;left:-10000px}.skip-link:focus{position:static;display:inline-block}
+@media(max-width:600px){.references{font-size:15px}p{text-align:left}}
+@media print{.table-wrap{overflow:visible}table,.numeric-table{min-width:0;table-layout:fixed}.references{font-size:10pt}.contents{display:none}.citation a{color:inherit}.table-wrap{break-inside:auto}}
+
+.source-downloads{font-size:16px;border-top:1px solid #dce5e9;border-bottom:1px solid #dce5e9;margin:24px 0;padding:12px 0}.source-downloads summary{cursor:pointer;color:#176b70}.source-downloads li{margin:.5em 0}.math.display{display:block;overflow-x:auto;max-width:100%;padding:12px 0}.math.display math{min-width:max-content}pre code{font-size:inherit}blockquote{margin:24px 0;padding:2px 20px;border-left:3px solid #176b70;background:#f4f8f8}blockquote p{text-align:left}.numeric{font-variant-numeric:tabular-nums}.references li{list-style:none}.table-wrap:focus-visible{outline:2px solid #176b70;outline-offset:4px}@media(max-width:600px){table{font-size:15px}.subtitle{font-size:15px}.source-downloads{font-size:15px}blockquote{padding:2px 14px}}@media print{.source-downloads{display:none}a{text-decoration:none}a[href]::after{content:none}}
+
+.table-wrap [style*="text-align: right"]{white-space:nowrap;overflow-wrap:normal;font-variant-numeric:tabular-nums}#quarterly td,#quarterly th{white-space:nowrap}#practice table{min-width:0}@media(max-width:600px){#practice td,#practice th{padding:8px}}
+</style></head>
+<body id="top"><a class="skip-link" href="#main">跳至正文</a>
+<nav aria-label="课程导航"><a href="/teaching/business-skills/">返回课程首页</a> · <a href="lecture-06.html">第六讲主讲义</a> · <a href="lecture-07.html">第七讲</a></nav>
+<main id="main"><h1>强化学习与自主决策系统</h1>
+<p class="subtitle">第六讲配套阅读　资产配置与再平衡的顺序决策<br>王小宁　2026年秋季　<span class="updated">更新于2026年11月21日</span></p>
+<nav class="contents" aria-label="本讲目录"><strong>阅读路径</strong><ol><li><a href="#overview">两种再平衡动作</a></li><li><a href="#mdp">马尔可夫决策过程</a></li><li><a href="#value">价值函数与时序差分</a></li><li><a href="#policy">深度强化学习与策略优化</a></li><li><a href="#validation">金融策略的验证</a></li><li><a href="#references">参考文献</a></li></ol></nav>
+<section id="overview" class="level2">
+<h2>两种再平衡动作</h2>
+<section id="权益比重从40降到35.48之后" class="level3">
+<h3>权益比重从40%降到35.48%之后</h3>
+<ul>
+<li><p>沿用第六讲。24万元中，权益配置9.6万元，债券配置14.4万元。另有6万元应急资金。</p></li>
+<li><p>题目给定权益跌20%、债券跌3%。两项持仓变为76,800元和139,680元，权益占35.48%。</p></li>
+<li><p>本次可选保持持仓或部分调回。要比较这两个动作，需要知道费用、下一期可能的收益，以及40%的权益上限。</p></li>
+</ul>
+</section>
+<section id="三种智能体需要分清" class="level3">
+<h3>三种“智能体”需要分清</h3>
+<ul>
+<li><p><strong>LLM工具智能体</strong>：读取任务、决定工具调用、整理结果。</p></li>
+<li><p><strong>强化学习智能体</strong>：利用状态、动作与奖励数据学习策略。</p></li>
+<li><p><strong>固定规则系统</strong>：依据阈值或日历执行预先定义的决策。</p></li>
+</ul>
+<p>一个系统可以组合三者；使用Agent名称并不说明其采用了RL。</p>
+</section>
+</section>
+<section id="mdp" class="level2">
+<h2>马尔可夫决策过程</h2>
+<section id="状态动作与环境" class="level3">
+<h3>状态、动作与环境</h3>
+<ul>
+<li><p><strong>状态 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>t</mi></msub><annotation encoding="application/x-tex">s_t</annotation></semantics></math></strong> 包括持仓、可用资金、已披露信息、剩余期限和本次决策的权重上限。</p></li>
+<li><p><strong>动作 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>t</mi></msub><annotation encoding="application/x-tex">a_t</annotation></semantics></math></strong> 可用目标权重或交易金额表示。先核对预算和上限，再从可行动作集合 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒜</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal A(s_t)</annotation></semantics></math> 中选择。</p></li>
+<li><p><strong>环境</strong>：市场演化、成交机制、费用、现金流与持仓更新。</p></li>
+<li><p><strong>奖励 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">r_{t+1}</annotation></semantics></math></strong>：按照任务目标定义的即时反馈。</p></li>
+</ul>
+</section>
+<section id="mdp的基本形式" class="level3">
+<h3>MDP的基本形式</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℳ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝒮</mi><mo>,</mo><mi>𝒜</mi><mo>,</mo><mi>p</mi><mo>,</mo><mi>r</mi><mo>,</mo><mi>γ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+\mathcal M=(\mathcal S,\mathcal A,p,r,\gamma)
+</annotation></semantics></math></span></p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∣</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mn>0</mn></msub><mo>,</mo><msub><mi>a</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∣</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+p(s_{t+1}\mid s_t,a_t,\ldots,s_0,a_0)
+=p(s_{t+1}\mid s_t,a_t)
+</annotation></semantics></math></span></p>
+<ul>
+<li><p>马尔可夫假设要求当前状态包含预测后续所需的信息。<a href="#ref-1">[1]</a></p></li>
+<li><p>金融市场存在隐藏因素；实际状态往往只是信息摘要。</p></li>
+<li><p>若奖励依赖历史峰值或持仓成本，应将相应变量纳入状态。</p></li>
+</ul>
+</section>
+<section id="策略轨迹与回报" class="level3">
+<h3>策略、轨迹与回报</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>∣</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>t</mi></msub><mo>=</mo><mi>a</mi><mo>∣</mo><msub><mi>s</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+\pi(a\mid s)=P(a_t=a\mid s_t=s)
+</annotation></semantics></math></span></p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mn>0</mn></msub><mo>,</mo><msub><mi>a</mi><mn>0</mn></msub><mo>,</mo><msub><mi>r</mi><mn>1</mn></msub><mo>,</mo><msub><mi>s</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>r</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>s</mi><mi>T</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+\tau=(s_0,a_0,r_1,s_1,a_1,r_2,\ldots,s_T)
+</annotation></semantics></math></span></p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>t</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>T</mi><mo>−</mo><mi>t</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mi>γ</mi><mi>k</mi></msup><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝔼</mi><mrow><mi>τ</mi><mo>∼</mo><msub><mi>π</mi><mi>θ</mi></msub></mrow></msub><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>G</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1},\qquad
+J(\theta)=\mathbb E_{\tau\sim\pi_\theta}[G_0]
+</annotation></semantics></math></span></p>
+<ul>
+<li>折扣因子 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma\in[0,1]</annotation></semantics></math> 控制未来奖励的权重。</li>
+<li>最大化期望奖励，取决于奖励是否准确表达业务目标。</li>
+</ul>
+</section>
+<section id="买卖两边怎样结算费用" class="level3">
+<h3>买卖两边怎样结算费用</h3>
+<ul>
+<li><p>甲保持持仓。乙卖出8,008元债券、买入7,992元权益。双边成交额合计16,000元，按0.1%计费，忽略滑点。</p></li>
+<li><p>卖出款刚好覆盖买入款和费用，<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>,</mo><mn>008</mn><mo>=</mo><mn>7</mn><mo>,</mo><mn>992</mn><mo>+</mo><mn>16</mn></mrow><annotation encoding="application/x-tex">8{,}008=7{,}992+16</annotation></semantics></math>。费用用元计，双边换手率为 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>,</mo><mn>000</mn><mi>/</mi><mn>216</mn><mo>,</mo><mn>480</mn><mo>=</mo><mn>7.39</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">16{,}000/216{,}480=7.39\%</annotation></semantics></math>。</p></li>
+</ul>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格1"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">交易后</th>
+<th style="text-align: right;">甲　保持</th>
+<th style="text-align: right;">乙　部分调回</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">净值／元</td>
+<td style="text-align: right;">216,480</td>
+<td style="text-align: right;">216,464</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">权益比重</td>
+<td style="text-align: right;">35.48%</td>
+<td style="text-align: right;">39.17%</td>
+</tr>
+</tbody>
+</table></div>
+<p>两种动作都符合本次调仓后的40%上限。乙的净值已包含费用。</p>
+</section>
+<section id="两种动作的下一期净值" class="level3">
+<h3>两种动作的下一期净值</h3>
+<p>债券下一期持平，下表列出下一次决策前的组合价值。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格2"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">权益下一期收益</th>
+<th style="text-align: right;">甲／元</th>
+<th style="text-align: right;">乙／元</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+1%</td>
+<td style="text-align: right;">217,248.00</td>
+<td style="text-align: right;">217,311.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">−1%</td>
+<td style="text-align: right;">215,712.00</td>
+<td style="text-align: right;">215,616.08</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><p>乙多持有7,992元权益。权益涨1%时乙多63.92元，跌1%时乙少95.92元。</p></li>
+<li><p>两种情景都从同一持仓出发。决定交易时，下一期的涨跌还未知，应将其留到环境返回结果时使用。</p></li>
+</ul>
+</section>
+<section id="奖励净收益与风险惩罚" class="level3">
+<h3>奖励：净收益与风险惩罚</h3>
+<p>令 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mi>t</mi></msub><annotation encoding="application/x-tex">W_t</annotation></semantics></math> 为决策前净值，已反映过往费用。<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>t</mi></msub><mo>=</mo><msub><mo>max</mo><mrow><mi>u</mi><mo>≤</mo><mi>t</mi></mrow></msub><msub><mi>W</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">H_t=\max_{u\le t} W_u</annotation></semantics></math> 是同一组观察时点上的净值峰值。</p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>t</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><msub><mi>W</mi><mi>t</mi></msub><msub><mi>H</mi><mi>t</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">
+D_t=1-\frac{W_t}{H_t}
+</annotation></semantics></math></span></p>
+<p>一种可讨论的奖励为：</p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mo>log</mo><mfrac><msub><mi>W</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>W</mi><mi>t</mi></msub></mfrac><mo>−</mo><mi>λ</mi><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>D</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>D</mi><mi>t</mi></msub><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+r_{t+1}=\log\frac{W_{t+1}}{W_t}
+-\lambda\max(D_{t+1}-D_t,0)
+</annotation></semantics></math></span></p>
+<ul>
+<li>本期费用在动作执行时扣除，已经体现在下一决策前的 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">W_{t+1}</annotation></semantics></math>。在同一奖励里只计一次。</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> 控制回撤加深时的惩罚。权益上限直接限制可选动作。</li>
+</ul>
+</section>
+</section>
+<section id="value" class="level2">
+<h2>价值函数与时序差分</h2>
+<section id="状态价值与动作价值" class="level3">
+<h3>状态价值与动作价值</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝔼</mi><mi>π</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>G</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>s</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+V^\pi(s)=\mathbb E_\pi[G_t\mid s_t=s]
+</annotation></semantics></math></span></p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝔼</mi><mi>π</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>G</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>s</mi><mi>t</mi></msub><mo>=</mo><mi>s</mi><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo>=</mo><mi>a</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+Q^\pi(s,a)=\mathbb E_\pi[G_t\mid s_t=s,a_t=a]
+</annotation></semantics></math></span></p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">V^\pi(s)</annotation></semantics></math>：处于状态 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>，之后遵循策略 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> 的价值。</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q^\pi(s,a)</annotation></semantics></math>：在状态 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math> 先选动作 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>，之后遵循 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> 的价值。</p></li>
+</ul>
+</section>
+<section id="bellman方程" class="level3">
+<h3>Bellman方程</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mi>a</mi></munder><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>∣</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><munder><mo>∑</mo><mrow><mi>s</mi><mi>′</mi></mrow></munder><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mi>′</mi><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>s</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>γ</mi><msup><mi>V</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">
+V^\pi(s)=\sum_a\pi(a\mid s)\sum_{s&#39;}p(s&#39;\mid s,a)
+\big[r(s,a,s&#39;)+\gamma V^\pi(s&#39;)\big]
+</annotation></semantics></math></span></p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>s</mi><mi>′</mi></mrow></munder><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mi>′</mi><mo>∣</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>s</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>γ</mi><munder><mo>∑</mo><mrow><mi>a</mi><mi>′</mi></mrow></munder><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mi>′</mi><mo>∣</mo><mi>s</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>Q</mi><mi>π</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mi>′</mi><mo>,</mo><mi>a</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+Q^\pi(s,a)=\sum_{s&#39;}p(s&#39;\mid s,a)
+\left[r(s,a,s&#39;)+\gamma\sum_{a&#39;}\pi(a&#39;\mid s&#39;)Q^\pi(s&#39;,a&#39;)\right]
+</annotation></semantics></math></span></p>
+<p>当前价值由即时奖励与后续价值共同组成。</p>
+</section>
+<section id="蒙特卡罗与td学习" class="level3">
+<h3>蒙特卡罗与TD学习</h3>
+<ul>
+<li><p><strong>蒙特卡罗</strong>：观察完整回合的实际回报，再更新价值估计。</p></li>
+<li><p><strong>时序差分（TD）</strong>：使用一步奖励与下一状态估计进行更新。</p></li>
+</ul>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>←</mo><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>α</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>γ</mi><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">
+V(s_t)\leftarrow V(s_t)+\alpha
+\big[r_{t+1}+\gamma V(s_{t+1})-V(s_t)\big]
+</annotation></semantics></math></span></p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> 为学习率；TD依赖现有价值估计，可能存在自举误差。</li>
+</ul>
+</section>
+<section id="sarsa根据实际后续动作更新" class="level3">
+<h3>SARSA：根据实际后续动作更新</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>←</mo><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>α</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mi>+</mi><mi>γ</mi><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>a</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
+&amp;+\gamma Q(s_{t+1},a_{t+1})-Q(s_t,a_t)\big]
+\end{aligned}
+</annotation></semantics></math></span></p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">a_{t+1}</annotation></semantics></math> 是行为策略实际选择的动作。</p></li>
+<li><p>SARSA是同策略方法，更新目标包含当前策略的探索行为。</p></li>
+</ul>
+</section>
+<section id="q-learning使用贪心目标更新" class="level3">
+<h3>Q-learning：使用贪心目标更新</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>←</mo><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>α</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo></mtd><mtd columnalign="left" style="text-align: left"><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mi>+</mi><mi>γ</mi><munder><mo>max</mo><mrow><mi>a</mi><mi>′</mi><mo>∈</mo><mi>𝒜</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi>a</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
+&amp;+\gamma\max_{a&#39;\in\mathcal A(s_{t+1})}Q(s_{t+1},a&#39;)-Q(s_t,a_t)\big]
+\end{aligned}
+</annotation></semantics></math></span></p>
+<ul>
+<li><p>学习目标使用最大动作价值，采样动作仍由行为策略产生。</p></li>
+<li><p>属于异策略方法；经典收敛结论需要有限表格等条件。</p></li>
+<li><p>到达终止状态后，下一状态的价值项取零。</p></li>
+</ul>
+</section>
+<section id="同一条经验三种更新结果" class="level3">
+<h3>同一条经验，三种更新结果</h3>
+<p>给定旧Q值0.02、即时奖励0.01、学习率0.5、折扣0.9。下一状态有两个可行动作，估值0.01和0.03，行为策略实际选择前者。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格3"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">更新情形</th>
+<th style="text-align: right;">学习目标 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math></th>
+<th style="text-align: right;">更新后的Q值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SARSA</td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.01</mn><mo>+</mo><mn>0.9</mn><mo>×</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">0.01+0.9\times0.01</annotation></semantics></math></td>
+<td style="text-align: right;">0.0195</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Q-learning</td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.01</mn><mo>+</mo><mn>0.9</mn><mo>×</mo><mn>0.03</mn></mrow><annotation encoding="application/x-tex">0.01+0.9\times0.03</annotation></semantics></math></td>
+<td style="text-align: right;">0.0285</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">若此步已终止</td>
+<td style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.01</mn><annotation encoding="application/x-tex">0.01</annotation></semantics></math></td>
+<td style="text-align: right;">0.0150</td>
+</tr>
+</tbody>
+</table></div>
+<p>三行均使用 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">w</mi></mrow></msub><mo>=</mo><mn>0.02</mn><mo>+</mo><mn>0.5</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>−</mo><mn>0.02</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q_{\mathrm{new}}=0.02+0.5(y-0.02)</annotation></semantics></math>。Q值的单位由奖励定义。终止行表示这一步结束回合的另一种情形。</p>
+</section>
+<section id="探索与利用" class="level3">
+<h3>探索与利用</h3>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ε</mi><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math>-greedy：多数时候选估计价值最高的动作，少数时候探索。</p></li>
+<li><p>离线金融研究依赖历史记录或环境；不能随意用客户资金探索。</p></li>
+<li><p>行为策略未覆盖的动作，可能缺少可靠训练样本。</p></li>
+<li><p>历史市场路径不包含所有反事实，也不能消除市场冲击问题。</p></li>
+</ul>
+</section>
+</section>
+<section id="policy" class="level2">
+<h2>深度强化学习与策略优化</h2>
+<section id="dqn用神经网络表示动作价值" class="level3">
+<h3>DQN：用神经网络表示动作价值</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>t</mi></msub><mo>=</mo><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>γ</mi><munder><mo>max</mo><mrow><mi>a</mi><mi>′</mi><mo>∈</mo><mi>𝒜</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><msub><mi>Q</mi><mover><mi>θ</mi><mo accent="true">‾</mo></mover></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi>a</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+y_t=r_{t+1}+\gamma\max_{a&#39;\in\mathcal A(s_{t+1})}Q_{\bar\theta}(s_{t+1},a&#39;)
+</annotation></semantics></math></span></p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>𝔼</mi><mo minsize="1.2" maxsize="1.2" stretchy="false" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mi>t</mi></msub><mo>−</mo><msub><mi>Q</mi><mi>θ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo>,</mo><msub><mi>a</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo minsize="1.2" maxsize="1.2" stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">
+L(\theta)=\mathbb E\big[(y_t-Q_\theta(s_t,a_t))^2\big]
+</annotation></semantics></math></span></p>
+<ul>
+<li><strong>经验回放</strong>：重复利用历史转移，减弱连续采样的相关性。</li>
+<li><strong>目标网络</strong>：用较慢更新的 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar\theta</annotation></semantics></math> 构造学习目标。</li>
+<li>标准DQN适用于离散动作，终止时的目标取即时奖励。<a href="#ref-2">[2]</a></li>
+</ul>
+</section>
+<section id="怎样排除超过上限的动作" class="level3">
+<h3>怎样排除超过上限的动作</h3>
+<ul>
+<li><p>若当前客户权益上限为40%，备选目标权重为20%、40%、60%，则60%这项不能进入选择。</p></li>
+<li><p>即使网络给60%动作估值0.08、给两个合规动作估值0.01和0.03，Q-learning 下一步使用的最大值仍为0.03。</p></li>
+<li><p>探索选动作、贪心选动作和计算下一状态的目标值，都使用各自状态的可行动作集合。执行时再按费用和资金余额核算。</p></li>
+</ul>
+</section>
+<section id="策略梯度直接优化策略" class="level3">
+<h3>策略梯度：直接优化策略</h3>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>∇</mi><mi>θ</mi></msub><mi>J</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝔼</mi><msub><mi>π</mi><mi>θ</mi></msub></msub><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><munder><mo>∑</mo><mi>t</mi></munder><msup><mi>γ</mi><mi>t</mi></msup><msub><mi>∇</mi><mi>θ</mi></msub><mo>log</mo><msub><mi>π</mi><mi>θ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mi>t</mi></msub><mo>∣</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>G</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
+\nabla_\theta J(\theta)
+=\mathbb E_{\pi_\theta}\!\left[
+\sum_t\gamma^t\nabla_\theta\log\pi_\theta(a_t\mid s_t)G_t
+\right]
+</annotation></semantics></math></span></p>
+<ul>
+<li><p>REINFORCE使用采样回报估计梯度。</p></li>
+<li><p>引入与动作无关的基线，可在满足条件时降低梯度方差。</p></li>
+<li><p>状态、动作和奖励尺度变化，都会影响训练稳定性。</p></li>
+</ul>
+</section>
+<section id="actorcritic策略与评价分工" class="level3">
+<h3>Actor–Critic：策略与评价分工</h3>
+<ul>
+<li><p><strong>Actor</strong>：输出动作或动作分布 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mi>θ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>∣</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\pi_\theta(a\mid s)</annotation></semantics></math>。</p></li>
+<li><p><strong>Critic</strong>：估计价值，为策略更新提供反馈。</p></li>
+</ul>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mi>t</mi></msub><mo>=</mo><msub><mi>r</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>γ</mi><msub><mi>V</mi><mi>ϕ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>V</mi><mi>ϕ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+\delta_t=r_{t+1}+\gamma V_\phi(s_{t+1})-V_\phi(s_t)
+</annotation></semantics></math></span></p>
+<ul>
+<li><p>TD误差可用于构造优势估计；价值估计误差也会影响策略更新。</p></li>
+<li><p>PPO 的剪切目标限制概率比变化继续带来的优化激励。持仓和预算的硬性上限仍由动作空间或执行规则落实。<a href="#ref-4">[4]</a></p></li>
+</ul>
+</section>
+<section id="搜索与学习以alphago为例" class="level3">
+<h3>搜索与学习：以AlphaGo为例</h3>
+<ul>
+<li><p>策略网络提出候选动作，价值网络估计局面。</p></li>
+<li><p>蒙特卡罗树搜索结合模拟路径与价值估计选择落子。<a href="#ref-3">[3]</a></p></li>
+<li><p>棋类具有清晰规则与可交互环境；金融环境的转移与成交更难建模。</p></li>
+<li><p>LLM生成“多角色辩论”与通过奖励优化策略，是不同机制。</p></li>
+</ul>
+</section>
+</section>
+<section id="validation" class="level2">
+<h2>金融策略的验证</h2>
+<section id="按时间组织信息与样本" class="level3">
+<h3>按时间组织信息与样本</h3>
+<ul>
+<li><p>训练集用于学习，验证集用于调参，测试集用于最终比较。</p></li>
+<li><p>使用滚动或扩展窗口，报告每个样本外区间的结果。</p></li>
+<li><p>标准化、特征选择、协方差估计均只能使用当时可得数据。</p></li>
+<li><p>报告期结束不等于报告已公开；公告应按公开时间进入状态。</p></li>
+</ul>
+</section>
+<section id="同一份三季报何时能进入状态" class="level3">
+<h3>同一份三季报何时能进入状态</h3>
+<ul>
+<li><p>截至2026年9月30日，贵州茅台的第三季度已经结束，标为10月31日披露的三季报仍不可用。<a href="#ref-5">[5]</a></p></li>
+<li><p>截至11月2日，可以读取三季报第1页。第三季度归母净利润同比增长3.78%，前三季度累计同比下降0.25%。两个字段分别保留期间和来源。<a href="#ref-5">[5]</a></p></li>
+<li><p>状态记录保留报告期、披露日和决策时点。日内交易需进一步核对公开时间。上面的资产收益路径由题目单独给定。</p></li>
+</ul>
+</section>
+<section id="llm还可能带来知识泄漏" class="level3">
+<h3>LLM还可能带来知识泄漏</h3>
+<ul>
+<li><p>大模型可能从预训练资料中记住后来的公司事件或市场结果。</p></li>
+<li><p>即使提示词限制日期，也不代表模型已忘记未来信息。</p></li>
+<li><p>使用受控资料检索、固定提取任务和独立人工检查降低影响。</p></li>
+<li><p>涉及历史交易策略时，明确模型版本、数据来源与测试限制。</p></li>
+</ul>
+</section>
+<section id="策略比较需要相同假设" class="level3">
+<h3>策略比较需要相同假设</h3>
+<ul>
+<li><p><strong>基线</strong>可取买入后持有、定期再平衡、阈值再平衡。若某条规则产生超限持仓，在共同的决策时点执行相同的约束检查。</p></li>
+<li><p><strong>统一条件</strong>：资产池、信息集、执行时点、费用与资金约束。</p></li>
+<li><p><strong>结果</strong>：累计收益、年化波动、最大回撤、换手与约束违反。</p></li>
+<li><p><strong>稳定性</strong>：不同时间段、费用与参数设定下的表现。</p></li>
+</ul>
+</section>
+<section id="金融强化学习的实证复核" class="level3">
+<h3>金融强化学习的实证复核</h3>
+<ul>
+<li><p>FinRL-Meta 把市场数据处理、环境和策略评价分开，环境可纳入交易成本与持仓限制。<a href="#ref-6">[6]</a></p></li>
+<li><p>一篇2026年复现工作论文，在相同的2019—2023年回测区间比较 PPO 与加入新闻信号的 PPO-DeepSeek。换一个训练随机种子，两者的夏普比率排序发生反转。<a href="#ref-7">[7]</a></p></li>
+<li><p>论文共检验两个种子。课堂读表时分别问：同一行情重训后结果是否稳定？更换样本外行情后结论能否重现？两种检查回答不同的问题。</p></li>
+</ul>
+</section>
+<section id="讨论奖励高是否意味着方案合适" class="level3">
+<h3>讨论：奖励高是否意味着方案合适</h3>
+<p>某策略的历史收益较高，但频繁调仓、短期回撤较大。</p>
+<ul>
+<li><p>客户资金在一年后需要使用，奖励中是否体现这一约束？</p></li>
+<li><p>手续费与滑点是否计入？比较基线是否使用相同信息？</p></li>
+<li><p>哪些结论来自观察，哪些依赖环境设定？</p></li>
+</ul>
+<p>在已有个人简报的测试记录中写明初始持仓、决策日、可见资料、交易费用和比较基线。用一个反例说明在哪种条件下结论会改变。</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2>参考文献</h2>
+<section id="强化学习方法" class="level3">
+<h3>强化学习方法</h3>
+<ul>
+<li><p><span id="ref-1">[1]</span> Sutton R S, Barto A G. <em>Reinforcement Learning: An Introduction</em>. 2nd ed. MIT Press, 2018. <a href="https://mitpress.mit.edu/9780262039246/reinforcement-learning/">出版社</a></p></li>
+<li><p><span id="ref-2">[2]</span> Mnih V, et al. Human-level control through deep reinforcement learning. <em>Nature</em>, 2015, 518, 529–533. <a href="https://doi.org/10.1038/nature14236">论文</a></p></li>
+<li><p><span id="ref-3">[3]</span> Silver D, et al. Mastering the game of Go with deep neural networks and tree search. <em>Nature</em>, 2016, 529, 484–489. <a href="https://doi.org/10.1038/nature16961">论文</a></p></li>
+<li><p><span id="ref-4">[4]</span> Schulman J, et al. Proximal Policy Optimization Algorithms. 2017. <a href="https://arxiv.org/abs/1707.06347">arXiv:1707.06347</a></p></li>
+</ul>
+</section>
+<section id="信息时点与金融实验" class="level3">
+<h3>信息时点与金融实验</h3>
+<ul>
+<li><p><span id="ref-5">[5]</span> 贵州茅台酒股份有限公司. 2026年第三季度报告. 2026-10-31，第1页. <a href="https://static.cninfo.com.cn/finalpage/2026-10-31/1225649896.PDF#page=1">三季报原文</a></p></li>
+<li><p><span id="ref-6">[6]</span> Liu X Y, Xia Z, Rui J, et al. FinRL-Meta: Market Environments and Benchmarks for Data-Driven Financial Reinforcement Learning. NeurIPS, 2022. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/0bf54b80686d2c4dc0808c2e98d430f7-Abstract.html">论文</a></p></li>
+<li><p><span id="ref-7">[7]</span> Mbouyom Leumale V A. FinRL-DeepSeek Revisited. Cambridge Open Engage，工作论文，第1版，2026-09-15. <a href="https://doi.org/10.33774/coe-2026-jxlhg">原文与复现材料</a></p></li>
+</ul>
+</section>
+</section>
+
+</main><footer><a href="/teaching/business-skills/">返回商业技能课程首页</a> · <a href="lecture-06.html">第六讲主讲义</a> · <a href="lecture-07.html">第七讲</a> · <a href="#top">返回顶部</a></footer>
+</body></html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="商业技能第六讲：智能投顾与资产配置、财报与研报生成、金融文档解析、RAG证据核验、顺序决策、工作流评测及个人作业。">
+<meta name="description" content="贵州茅台年报与两期三季报原值、财务证据与文档解析、资产配置和再平衡，以及个人研究简报。">
 <title>第六讲：智能投顾、研报生成与文档智能 - 商业技能</title>
 <link rel="canonical" href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-06.html">
 <style>body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#203347;max-width:860px;margin:52px auto;padding:0 30px;font-size:18px;line-height:1.95}h1{font-size:36px;line-height:1.45}h2{font-size:25px;line-height:1.6;margin-top:42px;color:#176b70}p{margin:16px 0;text-align:justify}.subtitle{font-size:17px;color:#667480}.reading{font-size:15px}a{color:#176b70;overflow-wrap:anywhere}@media print{body{max-width:none;margin:0;font-size:12pt;line-height:1.75}h1{font-size:24pt}h2{font-size:16pt;break-after:avoid}p{orphans:3;widows:3}a{color:inherit}}h3{font-size:21px;line-height:1.6;margin-top:28px}nav{font-size:15px;margin-bottom:24px}.contents{padding:18px 24px;background:#f4f8f8;border-left:3px solid #176b70}.contents ol{margin:6px 0}pre{background:#f4f7f9;padding:18px;border:1px solid #e1e7eb;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.8}code{font-family:ui-monospace,Menlo,monospace}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.7}caption{text-align:left;font-weight:600;margin-bottom:8px}th,td{padding:10px 12px;border:1px solid #dce5e9;text-align:left;vertical-align:top}th{background:#f1f6f5}.formula{margin:24px 0;padding:18px 8px;overflow-x:auto;text-align:center}math{font-family:"STIX Two Math","Cambria Math",math;font-size:1.08em}math[display="inline"]{display:inline math}.formula math{min-width:max-content;margin:auto}math mtext{font-family:"PingFang SC","Microsoft YaHei",sans-serif}footer{border-top:1px solid #dce5e9;margin-top:40px}@media(max-width:600px){body{margin:28px auto;padding:0 18px;font-size:17px}h1{font-size:29px}h2{font-size:23px}pre{font-size:14px;padding:12px}.contents{padding:14px 16px}}@media print{nav{display:none}pre{font-size:10pt}table{font-size:10pt}h3{break-after:avoid}tr{break-inside:avoid}}
@@ -37,16 +37,17 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 @media print{.table-wrap{overflow:visible}table,.numeric-table{min-width:0;table-layout:fixed}.references{font-size:10pt}.contents{display:none}.citation a{color:inherit}.table-wrap{break-inside:auto}}
 
 .source-downloads{font-size:16px;border-top:1px solid #dce5e9;border-bottom:1px solid #dce5e9;margin:24px 0;padding:12px 0}.source-downloads summary{cursor:pointer;color:#176b70}.source-downloads li{margin:.5em 0}.math.display{display:block;overflow-x:auto;max-width:100%;padding:12px 0}.math.display math{min-width:max-content}pre code{font-size:inherit}blockquote{margin:24px 0;padding:2px 20px;border-left:3px solid #176b70;background:#f4f8f8}blockquote p{text-align:left}.numeric{font-variant-numeric:tabular-nums}.references li{list-style:none}.table-wrap:focus-visible{outline:2px solid #176b70;outline-offset:4px}@media(max-width:600px){table{font-size:15px}.subtitle{font-size:15px}.source-downloads{font-size:15px}blockquote{padding:2px 14px}}@media print{.source-downloads{display:none}a{text-decoration:none}a[href]::after{content:none}}
+
+.table-wrap [style*="text-align: right"]{white-space:nowrap;overflow-wrap:normal;font-variant-numeric:tabular-nums}#quarterly td,#quarterly th{white-space:nowrap}#practice table{min-width:0}@media(max-width:600px){#practice td,#practice th{padding:8px}}
 </style></head>
 <body id="top"><a class="skip-link" href="#main">跳至正文</a>
-<nav aria-label="课程导航"><a href="/teaching/business-skills/">返回课程首页</a> · <a href="lecture-04.html">第四讲</a></nav>
-<main id="main">
-<h1>智能投顾、研报生成与文档智能</h1>
-<p class="subtitle">第六讲　从金融文档到投资决策支持<br>王小宁　2026年秋季　<span class="updated">更新：2026年11月20日</span></p>
+<nav aria-label="课程导航"><a href="/teaching/business-skills/">返回课程首页</a> · <a href="lecture-05.html">第五讲</a> · <a href="lecture-07.html">第七讲</a></nav>
+<main id="main"><h1>智能投顾、研报生成与文档智能</h1>
+<p class="subtitle">第六讲　从金融文档到投资决策支持<br>王小宁　2026年秋季　<span class="updated">更新于2026年11月21日</span></p>
 <nav class="contents" aria-label="本讲目录"><strong>阅读路径</strong><ol><li><a href="#overview">学习目标与贯穿任务</a></li><li><a href="#advisory">一、智能投顾：把需求转化为约束</a></li><li><a href="#research">二、研报生成：从资料摘要到分析判断</a></li><li><a href="#documents">三、文档智能：从页面恢复结构与语义</a></li><li><a href="#workflow">四、把分析方法组织成工作流</a></li><li><a href="#sequential">五、从静态配置到顺序决策</a></li><li><a href="#evaluation">六、结果评价与课堂练习</a></li><li><a href="#assignment">七、个人作业：AI辅助研究简报</a></li><li><a href="#references">参考文献</a></li></ol></nav>
 <section id="overview" class="level2">
 <h2>学习目标与贯穿任务</h2>
-<p>前几讲讨论了提示工程、知识检索、工具调用与商业分析。本讲把这些方法放入金融信息处理与决策支持场景，回答三个问题：怎样理解客户的投资需求，怎样把公开文件转换为有依据的分析，以及怎样组织能够检查和修订的智能体工作流。</p>
+<p>贵州茅台2026年第三季度归母净利润同比增长3.78%，前三季度累计却同比下降0.25%。要解释两句话为何同时成立，研究助手必须读懂财报的列标题，找到上年同期原值，并分清何时能看到这份报告。投顾助手还要多回答一个问题：即使财务数据已经核实，客户的资金用途和持仓约束允许它提出哪些备选方案？<sup class="citation"><a href="#ref-13">[13]</a></sup></p>
 <p>完成本讲后，应能够：</p>
 <ol type="1">
 <li>区分投资信息服务、分析支持、投资建议与交易执行，说明各自需要的数据与业务条件。</li>
@@ -68,8 +69,8 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <section id="风险意愿承受能力与流动性" class="level3">
 <h3>风险意愿、承受能力与流动性</h3>
 <p>客户画像至少需要区分三个维度。<strong>风险意愿</strong>反映客户如何看待价格波动和损失；<strong>风险承受能力</strong>取决于资产负债、收入稳定性、投资经验及资金用途；<strong>流动性约束</strong>说明资金何时必须可以使用。愿意承担风险，并不等于具备承受损失的财务条件。</p>
-<p>中国证监会《证券期货投资者适当性管理办法》要求经营机构了解投资者、评估产品并进行适当性匹配；匹配意见不构成收益保证。<sup class="citation"><a href="#ref-1">[1]</a></sup> 在工作流中，这意味着客户信息、产品特征和匹配依据需要保留，关键冲突应交由专业人员处理。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格1" tabindex="0"><table>
+<p>中国证监会《证券期货投资者适当性管理办法》（2022年修正）第三、四条要求经营机构了解投资者、评估产品或服务并提出适当性匹配意见，投资者依自身能力作出决策并承担风险。匹配意见不构成对风险或收益的保证。工作流应保留客户信息、产品特征和匹配依据，存在冲突的记录交由专业人员复核。<sup class="citation"><a href="#ref-1">[1]</a></sup></p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格1"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">需要了解的信息</th>
@@ -119,7 +120,7 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <h3>配置算例：从客户记录到情景解释</h3>
 <p>给定一份练习客户记录：可支配资金30万元，其中6万元作为应急资金；其余资金计划持有3年。本题另给定权益类资产权重上限为40%，允许资产为权益类与债券类。这些条件先形成<strong>24万元可配置资金、应急资金单列、权益权重不超过40%</strong>的约束。</p>
 <p>设定以下年度参数，并比较40%权益、60%债券这一可行方案。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格2" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格2"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">参数</th>
@@ -182,7 +183,7 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <p>研究报告的价值来自问题、证据与判断之间的联系。以公司财务分析为例，“总结年报”可以形成概览；如果问题是“本年利润变化是否与收入同步”，就需要优先查找收入、利润、费用、非经常性项目及其比较期。</p>
 <p>任务开始时，应记录主体、分析期间、资料截止时间、预期读者与输出范围。研究历史决策时，资料必须在当时已经公开；公司2025年度报告即使描述2025年经营，也通常在2026年才公开，不能进入2025年末的可用信息集。</p>
 <p>金融文档尤其需要核对以下口径：</p>
-<div class="table-wrap" role="region" aria-label="本讲表格3" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格3"><table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -227,7 +228,7 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <section id="财报案例贵州茅台2025年年度报告摘要" class="level3">
 <h3>财报案例：贵州茅台2025年年度报告摘要</h3>
 <p>贵州茅台2025年年度报告摘要于2026年4月17日披露。下表取自该PDF第4页、第三节3.1“近3年的主要会计数据和财务指标”；原表单位为人民币元。<sup class="citation"><a href="#ref-4">[4]</a></sup></p>
-<div class="table-wrap" role="region" aria-label="本讲表格4" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格4"><table>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -277,10 +278,57 @@ g_t=\left(\frac{x_t}{x_{t-1}}-1\right)\times100\%.
 </blockquote>
 <p>其中，前一句可由原值和计算直接核验；后两句分别提出分析方向和证据缺口。如果要进一步解释原因，应补充主营业务、费用和现金流等资料。若要评价股票价格，还需引入估值时点、现金流预测、资本成本等条件。</p>
 </section>
+<section id="quarterly" class="level3">
+<h3>同一家公司的单季利润和累计利润为何方向相反</h3>
+<p>上交所公告列表列示贵州茅台2026年三季报的披露日期为10月31日。翻开2026年和2025年两份三季报的PDF第1页，在“一、主要财务数据（一）”找到相同指标和期间。两份报表均标明未经审计，单位为人民币元。“本报告期”取7—9月，“年初至报告期末”取1—9月。<sup class="citation"><a href="#ref-13">[13]</a> <a href="#ref-14">[14]</a></sup></p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格5"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">期间</th>
+<th style="text-align: left;">指标</th>
+<th style="text-align: right;">2026年原值／元</th>
+<th style="text-align: right;">2025年同期原值／元</th>
+<th style="text-align: right;">复算同比</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">7—9月</td>
+<td style="text-align: left;">营业收入</td>
+<td style="text-align: right;">40,267,482,684.56</td>
+<td style="text-align: right;">39,064,353,239.02</td>
+<td style="text-align: right;">+3.08%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1—9月</td>
+<td style="text-align: left;">营业收入</td>
+<td style="text-align: right;">130,970,743,649.04</td>
+<td style="text-align: right;">128,453,707,655.86</td>
+<td style="text-align: right;">+1.96%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7—9月</td>
+<td style="text-align: left;">归母净利润</td>
+<td style="text-align: right;">19,950,545,560.09</td>
+<td style="text-align: right;">19,223,784,414.08</td>
+<td style="text-align: right;">+3.78%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1—9月</td>
+<td style="text-align: left;">归母净利润</td>
+<td style="text-align: right;">64,467,425,981.95</td>
+<td style="text-align: right;">64,626,746,712.18</td>
+<td style="text-align: right;">−0.25%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>给研究员的结论。</strong> 单看第三季度，收入和归母净利润均高于上年同期。拉长到前三季度，收入同比增加，归母净利润略低于上年同期。用“1—9月减7—9月”还原上半年，2026年上半年归母净利润比2025年同期少约8.86亿元，第三季度同比多约7.27亿元，尚未抵消上半年的差额。表中没有销量、价格或费用变动的贡献，归因需要另取证据。<sup class="citation"><a href="#ref-13">[13]</a> <a href="#ref-14">[14]</a></sup></p>
+<p><strong>复核一道错题。</strong> 初稿称“前三季度归母净利润同比增长3.78%”。金额和来源链接都能在原表找到，但它引用了7—9月的列。把截止日设为2026年9月30日，这份10月披露的报告尚不能进入证据表。把截止日移到11月2日，则可引用1—9月变动 <strong>−0.25%</strong>，并保留两年原值。这里用交易所列示的披露日判断跨日可用性，若要比较日内时点还需公告时间戳。</p>
+</section>
 <section id="给每项主张建立证据关系" class="level3">
 <h3>给每项主张建立证据关系</h3>
 <p>一段话可能同时包含多个主张。“收入下降”“费用导致利润下降”“明年将恢复增长”需要不同证据。把它们共用一个年报链接，会掩盖支持程度的差异。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格5" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格6"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">主张类型</th>
@@ -347,19 +395,22 @@ g_t=\left(\frac{x_t}{x_{t-1}}-1\right)\times100\%.
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;unit&quot;</span><span class="fu">:</span> <span class="st">&quot;元&quot;</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;currency&quot;</span><span class="fu">:</span> <span class="st">&quot;CNY&quot;</span><span class="fu">,</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;period&quot;</span><span class="fu">:</span> <span class="st">&quot;2025年度&quot;</span><span class="fu">,</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;doc_id&quot;</span><span class="fu">:</span> <span class="st">&quot;MT-2025-SUMMARY&quot;</span><span class="fu">,</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;pdf_page&quot;</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;section&quot;</span><span class="fu">:</span> <span class="st">&quot;第三节3.1&quot;</span><span class="fu">,</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;source_url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://static.cninfo.com.cn/finalpage/2026-04-17/1225114731.PDF&quot;</span><span class="fu">,</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;verified&quot;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;period_start&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-01-01&quot;</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;period_end&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-12-31&quot;</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;disclosed_on&quot;</span><span class="fu">:</span> <span class="st">&quot;2026-04-17&quot;</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;doc_id&quot;</span><span class="fu">:</span> <span class="st">&quot;MT-2025-SUMMARY&quot;</span><span class="fu">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;pdf_page&quot;</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;section&quot;</span><span class="fu">:</span> <span class="st">&quot;第三节3.1&quot;</span><span class="fu">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;source_url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://static.cninfo.com.cn/finalpage/2026-04-17/1225114731.PDF&quot;</span><span class="fu">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;verified&quot;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 <p>实际系统还可以保存原文片段、页面坐标、抽取方式与修订记录。PDF文件页序与报告印刷页码可能不同，应分别记录，避免审核者打开错误页面。</p>
 <p>缺失值、零和不适用需要分别表达。找不到字段时使用空值并说明原因；原文明示为零时才记为零；分母为零时返回“不适用”；修订前后不一致时保留候选值与版本关系。结构化格式合法，只能证明记录能被程序读取，不能证明字段内容正确。</p>
 </section>
 <section id="应用案例paddleocr文档解析" class="level3">
 <h3>应用案例：PaddleOCR文档解析</h3>
-<p>飞桨PP-StructureV3提供版面、表格、公式与阅读顺序等解析能力；PaddleOCR-VL结合版面定位与视觉语言模型处理文档元素。<sup class="citation"><a href="#ref-7">[7]</a></sup> 百度智能云也提供相应的文档解析服务。<sup class="citation"><a href="#ref-8">[8]</a></sup></p>
-<p>财报应用可以将解析结果作为检索和字段抽取的输入。技术选择需要结合材料类型与字段核验：扫描质量、表格跨页、多期列、单位及脚注，都应进入测试。产品文档中的能力介绍或公开评测分数，不能直接代替当前财报任务的验证结果。</p>
+<p>飞桨 PP-StructureV3 提供版面、表格、公式与阅读顺序解析。PaddleOCR-VL 的产线文档还给出页面索引 <code>page_index</code>、版面块边框 <code>block_bbox</code>、类别 <code>block_label</code> 和内容 <code>block_content</code>。例如，使用文档列出的 PaddleOCR-VL-1.6 解析三季报时，可以将两项利润数连同表头所在的版面块一起保存。<sup class="citation"><a href="#ref-7">[7]</a></sup> 百度智能云也提供相应的文档解析服务。<sup class="citation"><a href="#ref-8">[8]</a></sup></p>
+<p>用第1页做一次抽取验收。先把“归属于上市公司股东的净利润”与下一行“扣除非经常性损益”分开，再对齐行内的单季金额、单季同比、累计金额和累计同比。点开报告的来源位置，应能同时看见对应行、列标题和金额单位。表头跨页时，连同上一页表头保存；把“未识别”留为空值，交复核人回到原页确认。</p>
 </section>
 <section id="rag证据检索与生成相连接" class="level3">
 <h3>RAG：证据检索与生成相连接</h3>
@@ -384,7 +435,7 @@ g_t=\left(\frac{x_t}{x_{t-1}}-1\right)\times100\%.
 <h2>四、把分析方法组织成工作流</h2>
 <section id="从输入到交付的六个环节" class="level3">
 <h3>从输入到交付的六个环节</h3>
-<div class="table-wrap" role="region" aria-label="本讲表格6" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格7"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">环节</th>
@@ -431,7 +482,7 @@ g_t=\left(\frac{x_t}{x_{t-1}}-1\right)\times100\%.
 <h3>模型、工具、规则与人员的分工</h3>
 <p>模型负责理解任务、提出分析结构、提取候选字段和组织解释。计算工具负责算术、汇总、同比和组合风险；规则检查字段完整性、期间一致性、权重和来源定位；业务人员处理专业判断、利益冲突与最终交付。</p>
 <p>规划、执行、审核可以拆成不同角色，也可以由同一个工作流顺序完成。增加一个Reviewer模型有助于查漏，但多个模型可能共享同类错误。关键字段的原文核对和程序计算仍有独立价值。</p>
-<p>在Dify等平台上，可以将文件输入、文档提取器、检索、代码、条件分支和输出节点映射到这些环节。Dify的文档提取器把上传文档转换为文本；扫描件、复杂表格及页码定位还需要结合解析服务和返回结构检查。<sup class="citation"><a href="#ref-11">[11]</a></sup> 扣子等平台也可按相同方法组织工具与变量，具体节点能力以所选平台和版本为准。</p>
+<p>以第五讲的工作流为起点，在 Dify 中把文件输入接到文档提取器，再把原值送入代码节点计算同比。文档提取器返回文本，遇到扫描件或列关系丢失的表格，可以改用保留页号与版面的解析结果。发布摘要之前，加一道字段检查：若问题写“前三季度”，而证据字段的开始日期是7月1日，退回重新选列。<sup class="citation"><a href="#ref-11">[11]</a></sup></p>
 </section>
 <section id="一份抽取任务提示" class="level3">
 <h3>一份抽取任务提示</h3>
@@ -470,7 +521,33 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <section id="奖励成本与硬约束" class="level3">
 <h3>奖励、成本与硬约束</h3>
 <p>若只奖励单期收益，策略可能偏好集中持仓、频繁交易或较大风险。需要把交易费用计入组合价值，并说明回撤、波动、资金用途等如何进入目标或约束。</p>
-<p>例如，从60/40调整到40/60，两个资产权重变化绝对值之和为40%。若本例定义每单位买入或卖出的费用率均为0.1%，则交易费用约占组合价值0.04%，10万元约为40元。这是小成本近似；精确回测还需处理费用造成的现金和权重变化。</p>
+<p>沿用前面的24万元组合。经过权益类下跌20%、债券类下跌3%的给定压力情景，两项持仓市值分别为76,800元和139,680元，组合剩216,480元，权益权重降至35.48%。6万元应急资金仍单列。这里的收益路径是题目给定的条件，贵州茅台公告仅用于练习财务字段与信息时点。</p>
+<p>比较两个在本题40%权益上限内的动作。甲保持持仓。乙卖出8,008元债券，同时买入7,992元权益。题定买入和卖出合并按成交额的0.1%计费，无滑点、无其他现金流。乙的总成交额为16,000元，费用为16元，卖出款恰好覆盖买入款和费用。交易后权益为84,792元、债券为131,672元，权益占216,464元净值的39.17%。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格8"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">下一期给定情景</th>
+<th style="text-align: right;">甲期末组合／元</th>
+<th style="text-align: right;">乙期末组合／元</th>
+<th style="text-align: right;">乙相对甲／元</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">权益涨1%，债券持平</td>
+<td style="text-align: right;">217,248.00</td>
+<td style="text-align: right;">217,311.92</td>
+<td style="text-align: right;">+63.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">权益跌1%，债券持平</td>
+<td style="text-align: right;">215,712.00</td>
+<td style="text-align: right;">215,616.08</td>
+<td style="text-align: right;">−95.92</td>
+</tr>
+</tbody>
+</table></div>
+<p>两个终值都取下一决策前。乙比甲多持有7,992元权益，因此两者终值之差等于这笔增持带来的盈亏减去16元费用。债券持平时，权益下一期收益达到约0.20%是两个动作的盈亏平衡点。作出决定时，这一收益仍未知。<a href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-06-reinforcement.html">配套阅读《强化学习与自主决策系统》</a></p>
 <p>资金用途、禁止投资范围和集中度上限通常需要通过明确的可行动作约束处理。把违反约束写成奖励惩罚，未必能保证策略永远符合约束。</p>
 </section>
 <section id="三类机制与验证方法" class="level3">
@@ -484,7 +561,8 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <h2>六、结果评价与课堂练习</h2>
 <section id="把质量拆成可以检查的指标" class="level3">
 <h3>把质量拆成可以检查的指标</h3>
-<div class="table-wrap" role="region" aria-label="本讲表格7" tabindex="0"><table>
+<p>俞定甫等在《交易技术前沿》发表的金融长文档研究，使用八类文件、十二类任务，分别检查数据抽取、计算和陷阱问题等能力。课堂可以对同一份三季报分别提问“单季利润是多少”“同比怎样算”“报告中是否解释了变化原因”，依次检查查找、计算和证据边界。<sup class="citation"><a href="#ref-15">[15]</a></sup></p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格9"><table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -532,7 +610,7 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <p>使用本讲贵州茅台公告，核对原文中的两期营业收入和归母净利润。每人完成以下检查：</p>
 <ol type="1">
 <li>确认主体、年度、金额单位和PDF页码。</li>
-<li>用Excel、R或Python复算两个同比，核对四舍五入结果。</li>
+<li>用Excel、R或Python复算年报两个同比，再用两份三季报第1页复核单季和累计归母净利润，解释两个同比的符号为何不同。</li>
 <li>将生成摘要拆成事实、计算、解释与预测，检查每项依据。</li>
 <li>删除或改写不能由现有证据支持的原因判断，列出需要补充的资料。</li>
 </ol>
@@ -540,11 +618,11 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <section id="课堂练习二检查一个配置解释" class="level3">
 <h3>课堂练习二：检查一个配置解释</h3>
 <p>使用本讲给定配置参数，复算预期收益、组合波动与压力情景损失。解释为什么“预期收益5%”不能写成“每年可获得5%”，以及为什么40/60尚不能称为最优配置。</p>
-<p>再检查客户记录中的期限、应急资金和风险约束。若关键信息缺失，写出需要补充的具体问题，并说明哪个计算或判断暂时不能完成。</p>
+<p>再回到两种再平衡动作。分别算出交易后净值、权益权重和下一期两种终值。交给同学复核时，注明费用在哪一步扣除、哪个上限限制了动作、公告可以从哪个日期进入状态。这些记录可直接用于同一份个人简报的测试附表。</p>
 </section>
 <section id="工作流测试至少覆盖六类材料" class="level3">
 <h3>工作流测试：至少覆盖六类材料</h3>
-<div class="table-wrap" role="region" aria-label="本讲表格8" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格10"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">测试材料</th>
@@ -593,7 +671,7 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <li><strong>AI使用说明</strong>：记录工具与模型版本、AI承担的任务、本人核对内容及尚未解决的问题。</li>
 </ol>
 <p>简报提交PDF或HTML；学生不要求提交Rmd。作业聚焦资料分析与方法验证，投资预测需要明确假设，具体交易执行不属于本作业交付。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格9" tabindex="0"><table>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格11"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">评价维度</th>
@@ -639,7 +717,7 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <h2>参考文献</h2>
 <ol class="references">
 <li id="ref-1">
-<span class="ref-number">[1]</span> 中国证券监督管理委员会. 证券期货投资者适当性管理办法（2020年修订）[Z]. <a href="https://www.csrc.gov.cn/csrc/c106256/c1653849/content.shtml">中国证监会官方文本</a>.
+<span class="ref-number">[1]</span> 中国证券监督管理委员会. 证券期货投资者适当性管理办法（2022年修正）[Z]. 2022-08-12，第3、4条. <a href="https://www.csrc.gov.cn/csrc/c101953/c5359211/content.shtml">证监会令第202号，参见附件1.1</a>.
 </li>
 <li id="ref-2">
 <span class="ref-number">[2]</span> Markowitz H. Portfolio Selection[J]. The Journal of Finance, 1952, 7(1): 77–91. DOI: 10.1111/j.1540-6261.1952.tb01525.x.
@@ -657,7 +735,7 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <span class="ref-number">[6]</span> Chen Z, Chen W, Smiley C, et al. FinQA: A Dataset of Numerical Reasoning over Financial Data[C]//Proceedings of EMNLP. 2021: 3697–3711. DOI: 10.18653/v1/2021.emnlp-main.300.
 </li>
 <li id="ref-7">
-<span class="ref-number">[7]</span> 飞桨PaddleOCR团队. PP-StructureV3产线使用教程[EB/OL]. 查阅于2026-11-20. <a href="https://www.paddleocr.ai/main/version3.x/pipeline_usage/PP-StructureV3.html">官方中文文档</a>.
+<span class="ref-number">[7]</span> 飞桨 PaddleOCR 团队. PP-StructureV3 与 PaddleOCR-VL 产线使用教程[EB/OL]. 查阅于2026-11-21. <a href="https://www.paddleocr.ai/main/version3.x/pipeline_usage/PP-StructureV3.html">版面与表格解析</a> · <a href="https://www.paddleocr.ai/main/version3.x/pipeline_usage/PaddleOCR-VL.html">视觉语言模型与结果字段</a>.
 </li>
 <li id="ref-8">
 <span class="ref-number">[8]</span> 百度智能云. 文档解析（PaddleOCR-VL）[EB/OL]. 查阅于2026-11-20. <a href="https://cloud.baidu.com/product/OCR/doc_parser.html">百度智能云产品说明</a>.
@@ -674,9 +752,17 @@ G_t=\sum_{k=0}^{T-t-1}\gamma^k r_{t+k+1}.
 <li id="ref-12">
 <span class="ref-number">[12]</span> Sutton R S, Barto A G. Reinforcement Learning: An Introduction[M]. 2nd ed. Cambridge, MA: MIT Press, 2018.
 </li>
+<li id="ref-13">
+<span class="ref-number">[13]</span> 贵州茅台酒股份有限公司. 2026年第三季度报告[R]. 2026-10-31，第1—2页. <a href="https://static.cninfo.com.cn/finalpage/2026-10-31/1225649896.PDF#page=1">巨潮资讯公告原文</a> · <a href="https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=600519">上交所公告日期</a>.
+</li>
+<li id="ref-14">
+<span class="ref-number">[14]</span> 贵州茅台酒股份有限公司. 2025年第三季度报告[R]. 2025-10-30，第1页. <a href="https://static.cninfo.com.cn/finalpage/2025-10-30/1224764517.PDF#page=1">巨潮资讯公告原文</a>.
+</li>
+<li id="ref-15">
+<span class="ref-number">[15]</span> 俞定甫，张宇豪，胡斯涵，杨忠良，周琳娜. 大语言模型面向金融长文档智能理解的能力评测系统[J]. 交易技术前沿，2025年第4期（总第64期），34–40. <a href="https://www.sse.com.cn/services/tradingtech/transaction/c/10789748/files/ec537554991a42c6ab8bed8b4c4bed64.pdf">上交所刊载原文</a>.
+</li>
 </ol>
 </section>
 
-</main>
-<footer><a href="/teaching/business-skills/">返回商业技能课程首页</a> · <a href="#top">返回顶部</a></footer>
+</main><footer><a href="/teaching/business-skills/">返回商业技能课程首页</a> · <a href="lecture-05.html">第五讲</a> · <a href="lecture-07.html">第七讲</a> · <a href="#top">返回顶部</a></footer>
 </body></html>

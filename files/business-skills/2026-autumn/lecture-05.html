@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="通过活动费用预检比较扣子编程、Dify、阿里云百炼，学习工作流、技能、AI编程与风控评测，完成个人期中项目汇报。">
+<title>第五讲：大语言模型智能体开发平台 - 商业技能</title>
+<link rel="canonical" href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-05.html">
+<style>body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#203347;max-width:860px;margin:52px auto;padding:0 30px;font-size:18px;line-height:1.95}h1{font-size:36px;line-height:1.45}h2{font-size:25px;line-height:1.6;margin-top:42px;color:#176b70}p{margin:16px 0;text-align:justify}.subtitle{font-size:17px;color:#667480}.reading{font-size:15px}a{color:#176b70;overflow-wrap:anywhere}@media print{body{max-width:none;margin:0;font-size:12pt;line-height:1.75}h1{font-size:24pt}h2{font-size:16pt;break-after:avoid}p{orphans:3;widows:3}a{color:inherit}}h3{font-size:21px;line-height:1.6;margin-top:28px}nav{font-size:15px;margin-bottom:24px}.contents{padding:18px 24px;background:#f4f8f8;border-left:3px solid #176b70}.contents ol{margin:6px 0}pre{background:#f4f7f9;padding:18px;border:1px solid #e1e7eb;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.8}code{font-family:ui-monospace,Menlo,monospace}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.7}caption{text-align:left;font-weight:600;margin-bottom:8px}th,td{padding:10px 12px;border:1px solid #dce5e9;text-align:left;vertical-align:top}th{background:#f1f6f5}.formula{margin:24px 0;padding:18px 8px;overflow-x:auto;text-align:center}math{font-family:"STIX Two Math","Cambria Math",math;font-size:1.08em}math[display="inline"]{display:inline math}.formula math{min-width:max-content;margin:auto}math mtext{font-family:"PingFang SC","Microsoft YaHei",sans-serif}footer{border-top:1px solid #dce5e9;margin-top:40px}@media(max-width:600px){body{margin:28px auto;padding:0 18px;font-size:17px}h1{font-size:29px}h2{font-size:23px}pre{font-size:14px;padding:12px}.contents{padding:14px 16px}}@media print{nav{display:none}pre{font-size:10pt}table{font-size:10pt}h3{break-after:avoid}tr{break-inside:avoid}}
+*{box-sizing:border-box}body{max-width:960px}.subtitle{text-align:left}
+main,section,.column{min-width:0}section{scroll-margin-top:24px}h2,h3{scroll-margin-top:24px}
+li{margin:.35em 0}pre,code{font-variant-ligatures:none}pre{max-width:100%;overflow-x:auto}
+img{display:block;max-width:100%;height:auto;margin:18px auto}
+.columns{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center;margin:22px 0 32px}
+.columns .column p{margin:12px 0}.column img{max-height:640px;object-fit:contain}
+.column ul{padding-left:1.4em}figure{margin:24px 0}figcaption{font-size:15px;color:#667480}
+.display.math{display:block;max-width:100%;overflow-x:auto;text-align:center;padding:12px 0}
+math{max-width:100%}math[display="block"]{margin:auto;min-width:max-content}
+th,td{overflow-wrap:anywhere}.table-wrap{margin:18px 0 26px}table{min-width:520px}
+.contents ol{padding-left:1.5em}
+.updated{display:inline-block;white-space:nowrap}footer{font-size:15px;padding-top:16px}
+@media(max-width:700px){.columns{grid-template-columns:minmax(0,1fr);gap:8px}.column img{max-height:none}h1{font-size:29px}.contents{padding:14px 18px}}
+@media print{.columns{display:block}img{max-height:210mm;object-fit:contain}pre{white-space:pre-wrap}section{break-before:auto}}
+
+.citation{font-size:.78em;line-height:0;vertical-align:super;white-space:nowrap}
+.citation a{text-decoration:none;padding:0 2px}
+.references{list-style:none;padding-left:0;font-size:16px;line-height:1.8}
+.references li{margin:14px 0;padding-left:2.3em;text-indent:-2.3em;overflow-wrap:anywhere;scroll-margin-top:24px}
+.ref-number{font-variant-numeric:tabular-nums}
+.numeric-table{min-width:670px;font-variant-numeric:tabular-nums}
+.numeric-table td,.numeric-table thead th:not(:first-child){text-align:right}
+.numeric-table tbody th,.experiment-table tbody th,.rfm-table tbody th{background:transparent;font-weight:400}
+.rfm-table td:nth-child(2),.rfm-table td:nth-child(3),.rfm-table td:nth-child(4),.experiment-table td{text-align:right;font-variant-numeric:tabular-nums}
+.metric-formulas{padding-left:1.4em}.metric-formulas li{margin:.55em 0}
+.process,.calculation{overflow-wrap:anywhere}
+a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offset:4px}
+.skip-link{position:absolute;left:-10000px}.skip-link:focus{position:static;display:inline-block}
+@media(max-width:600px){.references{font-size:15px}p{text-align:left}}
+@media print{.table-wrap{overflow:visible}table,.numeric-table{min-width:0;table-layout:fixed}.references{font-size:10pt}.contents{display:none}.citation a{color:inherit}.table-wrap{break-inside:auto}}
+
+.source-downloads{font-size:16px;border-top:1px solid #dce5e9;border-bottom:1px solid #dce5e9;margin:24px 0;padding:12px 0}.source-downloads summary{cursor:pointer;color:#176b70}.source-downloads li{margin:.5em 0}.math.display{display:block;overflow-x:auto;max-width:100%;padding:12px 0}.math.display math{min-width:max-content}pre code{font-size:inherit}blockquote{margin:24px 0;padding:2px 20px;border-left:3px solid #176b70;background:#f4f8f8}blockquote p{text-align:left}.numeric{font-variant-numeric:tabular-nums}.references li{list-style:none}.table-wrap:focus-visible{outline:2px solid #176b70;outline-offset:4px}@media(max-width:600px){table{font-size:15px}.subtitle{font-size:15px}.source-downloads{font-size:15px}blockquote{padding:2px 14px}}@media print{.source-downloads{display:none}a{text-decoration:none}a[href]::after{content:none}}
+
+.table-wrap [style*="text-align: right"]{white-space:nowrap;overflow-wrap:normal;font-variant-numeric:tabular-nums}#quarterly td,#quarterly th{white-space:nowrap}#practice table{min-width:0}@media(max-width:600px){#practice td,#practice th{padding:8px}}
+</style></head>
+<body id="top"><a class="skip-link" href="#main">跳至正文</a>
+<nav aria-label="课程导航"><a href="/teaching/business-skills/">返回课程首页</a> · <a href="lecture-04.html">第四讲</a> · <a href="lecture-06.html">第六讲</a></nav>
+<main id="main"><h1>大语言模型智能体开发平台</h1>
+<p class="subtitle">第五讲　平台选择、可复用技能与 AI 编程<br>王小宁　2026年秋季　<span class="updated">更新于2026年11月21日</span></p>
+<nav class="contents" aria-label="本讲目录"><strong>阅读路径</strong><ol><li><a href="#overview">一、三笔费用能通过预检吗</a></li><li><a href="#models">二、模型能处理哪些输入，结果怎样验收</a></li><li><a href="#platforms">三、三个平台如何处理同一条异常</a></li><li><a href="#skills">四、工具、技能与任务状态</a></li><li><a href="#coding">五、给编程助手一项可验收的修改</a></li><li><a href="#practice">六、费用预检的五个验收用例</a></li><li><a href="#assignment">七、个人期中项目汇报</a></li><li><a href="#references">参考文献</a></li></ol></nav>
+<section id="overview" class="level2">
+<h2>一、三笔费用能通过预检吗</h2>
+<p>一场学生活动的预算是300元。三笔费用分别申请120元、80元和100元，前两笔能在凭证上找到相同金额，第三笔尚未提交凭证。经办人需要同时看到两个结论：申请总额恰好用完预算，其中200元已匹配凭证，100元待补。若系统只显示一个绿色的“通过”，就丢掉了经办人下一步要做的事。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格1"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">费用编号</th>
+<th style="text-align: right;">申请／元</th>
+<th style="text-align: right;">凭证／元</th>
+<th style="text-align: right;">申请减凭证／元</th>
+<th style="text-align: left;">逐笔结果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">F01</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">已匹配</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F02</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">已匹配</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F03</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">缺</td>
+<td style="text-align: right;">待核</td>
+<td style="text-align: left;">待补凭证</td>
+</tr>
+</tbody>
+</table></div>
+<p>本讲用这份清单比较扣子编程、Dify 与阿里云百炼。学完后，应能为自己的商业项目选择开发方式，写出模型、程序与经办人的分工，并用能够复现的输入检验结果。</p>
+</section>
+<section id="models" class="level2">
+<h2>二、模型能处理哪些输入，结果怎样验收</h2>
+<p>模型可以读取凭证图片、抽取字段、提出工具调用并起草说明。开发平台把文件、模型、计算节点、权限和运行记录连成流程。AI 编程助手则可以修改复核页的代码、运行程序并检查改动。出现“合计金额算错”时，先看送入计算节点的数值，便能区分是读错了凭证，还是算错了合计。</p>
+<section id="年11月的模型与接口" class="level3">
+<h3>2026年11月的模型与接口</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格2"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">官方记录</th>
+<th style="text-align: left;">与开发有关的变化</th>
+<th style="text-align: left;">可以怎样检验</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DeepSeek，11月13日</td>
+<td style="text-align: left;">开放文件输入、联网搜索、链接阅读等应用接口</td>
+<td style="text-align: left;">读取活动制度，核对模型返回的条款位置。 <a href="#ref-1">[1]</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">百炼，11月16日、19日</td>
+<td style="text-align: left;">上架 Qwen4-Max 正式版和北京地域 Kimi-K3.1-Pro-Prime。前者支持图像、工具调用与结构化输出，后者面向响应速度敏感的任务</td>
+<td style="text-align: left;">固定相同图片和字段，比较金额正确性与完整任务耗时。 <a href="#ref-2">[2]</a> <a href="#ref-3">[3]</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anthropic，11月9日</td>
+<td style="text-align: left;">Claude Fable 5.2 更新编码、推理与视觉能力</td>
+<td style="text-align: left;">给出导致金额重复累加的输入，检查修复后是否仍能通过原例。 <a href="#ref-5">[5]</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OpenAI，11月17日</td>
+<td style="text-align: left;">GPT-6.2 Astra 与 Sol 接受文本和图片。两者面向不同的推理、速度与成本需求</td>
+<td style="text-align: left;">在相同设置下比较凭证字段、等待时间和调用费用。 <a href="#ref-4">[4]</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Google DeepMind，11月18日</td>
+<td style="text-align: left;">Gemini 4 Neon 面向软件工程与知识工作，可通过 Gemini API 接入</td>
+<td style="text-align: left;">让模型修改录入和导出两个环节，再比较导出表与页面合计。 <a href="#ref-6">[6]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>验收基准。</strong> 凭证写“合计80.00元”，预期抽出80.00和人民币元。若申请80元、凭证79元，预期输出差额1元。若仅有申请单，凭证金额应留空。比较模型时固定输入、提示、工具与输出字段，记录实际模型标识、日期和推理设置。</p>
+<p><strong>成本算例。</strong> 自11月18日12时起，DeepSeek 模型内部触发的服务端搜索与网页抓取不另收工具调用费，返回的内容进入上下文后计入模型用量。程序直接调用独立 Search 或 Fetch 接口时，则按每千次成功请求5元计费。两次搜索加一次抓取均成功，独立接口费为0.015元，随后交给模型总结的用量另计。 <a href="#ref-1">[1]</a></p>
+</section>
+</section>
+<section id="platforms" class="level2">
+<h2>三、三个平台如何处理同一条异常</h2>
+<p>把 F02 的凭证由80元改为79元，申请仍是80元。无需模型判断“差一元是否算错”，程序可以直接算出差额。平台的选择取决于谁来接收结果、能否追溯输入，以及经办人如何更正。</p>
+<section id="扣子编程在画布上查看输入与输出" class="level3">
+<h3>扣子编程：在画布上查看输入与输出</h3>
+<p>扣子提供使用智能体与技能的入口，扣子编程提供开发智能体、工作流及应用的工作台。扣子侧自2026年9月8日起用 Agent 中的编程开发和部署运维插件承接新项目的开发、部署。 <a href="#ref-7">[7]</a> <a href="#ref-8">[8]</a></p>
+<p>在开始节点传入三笔费用和预算，在计算节点输出逐笔状态、差额与批次合计。条件分支把 F03 送入补件清单，把改成79元的 F02 送交人工复核。在画布点击这两个节点，看异常编号是否完整传到摘要。用 API 运行已发布的工作流时，可通过返回的 <code>debug_url</code> 查看节点输入与输出。套餐资源和发布入口依项目类型而定。 <a href="#ref-10">[10]</a> <a href="#ref-11">[11]</a></p>
+</section>
+<section id="dify让经办人决定异常如何处理" class="level3">
+<h3>Dify：让经办人决定异常如何处理</h3>
+<p>Workflow 适合处理一批明细，Chatflow 可承接带上下文的对话。New Agent 可以独立使用，也可在工作流里复用。配置模式用于选择模型、提示、文件、工具与技能，Build mode 支持通过对话拟定配置，再预览草稿。 <a href="#ref-14">[14]</a> <a href="#ref-15">[15]</a></p>
+<p>当 F02 出现1元差额时，人工介入节点暂停流程，表单同时显示编号、申请、凭证和差额。经办人可选择“退回补件”或“确认更正”。更正后保存原值和新值，并重新计算。超时分支保留待办记录。调试时查看节点追踪，编辑器中的 Workflow 或 Chatflow 预览、测试运行与已发布应用的运行日志分别查看。 <a href="#ref-17">[17]</a></p>
+</section>
+<section id="阿里云百炼把条款检索与金额计算连起来" class="level3">
+<h3>阿里云百炼：把条款检索与金额计算连起来</h3>
+<p>Flow Agent 支持工作流和智能体应用。固定的核验顺序可用脚本节点计算，再用条件节点分支。若经办人询问本次活动为何限额300元，Agent 2.0 可使用知识库检索工具；配置“必定调用”时，会在首次推理前检索。将找出的条款、规则版本传给后续节点。台账与制度版本不同，先把冲突列出来，交经办人确认。 <a href="#ref-12">[12]</a> <a href="#ref-16">[16]</a></p>
+<p>选平台时，可以直接做三个小试验：在扣子画布找到差额的输入，在 Dify 表单处理一次超时，在百炼查到上限所依据的条款。计划自部署的项目还要核对许可。Coze Studio 采用 Apache 2.0，Dify 在 Apache 2.0 基础上设有附加条件。自部署时，外部模型或插件仍按实际连接接收调用数据。 <a href="#ref-13">[13]</a> <a href="#ref-18">[18]</a></p>
+</section>
+</section>
+<section id="skills" class="level2">
+<h2>四、工具、技能与任务状态</h2>
+<p><strong>工具</strong>提供可执行能力。费用核验工具接收编号和金额，返回差额、状态与错误信息。API 定义服务怎样接收调用，MCP 让应用以约定的接口接入工具和上下文。一个平台可以调用别人的 MCP 工具，也可以把自己的应用作为 MCP 服务提供给其他应用。两种连接分别配置权限与参数。 <a href="#ref-19">[19]</a> <a href="#ref-20">[20]</a></p>
+<p><strong>技能（Skill）</strong>保存可重复使用的方法。以扣子为例，可以在 <code>SKILL.md</code> 中说明何时核对凭证、怎样标记缺失、以何种格式交付；字段字典、脚本和模板随技能组织。本次活动的300元上限从活动记录或适用制度传入，下次活动可以使用另一份已确认预算。 <a href="#ref-9">[9]</a> <a href="#ref-19">[19]</a></p>
+<p><strong>任务状态</strong>记录这一次的事实。F03 的凭证在补交之前保持“待补凭证”。收到新文件、核对到100元、保存更正后，才能更新状态。下一次对话仍应通过费用编号找回记录。规则版本、用户偏好和当前核验结果各有不同的更新条件。</p>
+</section>
+<section id="coding" class="level2">
+<h2>五、给编程助手一项可验收的修改</h2>
+<p>可视化工作流适合按固定步骤读取、计算和分流。项目还需要可编辑表格、自定义导出或特殊计算时，可以用 AI 编程实现界面或计算模块。对话式工具可用自然语言搭原型，Codex、Claude Code 等项目工具还可读取文件、修改实现并运行测试。 <a href="#ref-8">[8]</a> <a href="#ref-21">[21]</a> <a href="#ref-22">[22]</a></p>
+<blockquote>
+<p>在费用复核页加一列凭证金额，允许暂时留空。申请总额包括所有有效申请，已匹配金额只累计凭证与申请一致的行。编辑一笔已有费用后，刷新页面仍能看到同一条记录。</p>
+</blockquote>
+<p>给助手提供原始三行作为输入。在 F03 的原行补入100元后，记录数应仍为三行，申请总额仍为300元，已匹配金额由200元变为300元。如果申请总额变成400元，先检查“保存修改”是否调用了新增记录的逻辑。修复后再次运行补件和重复导入两个用例，并核对导出清单。</p>
+<p>作为延伸阅读，可在 AI-Trader 开源仓库对照技能说明与 OpenAPI 接口定义，找出一个查询接口的输入、返回、凭据与失败状态。 <a href="#ref-23">[23]</a></p>
+</section>
+<section id="practice" class="level2">
+<h2>六、费用预检的五个验收用例</h2>
+<p>本例按费用编号核对。完全相同的行重复导入时只计一次，保留重复记录。同编号出现相互冲突的金额时，先核对原始记录，再确定批次总额。待补凭证的申请计入预算，计入已匹配金额则须有相符凭证。每次从开头的三笔记录出发，只改变下表一项。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="本讲表格3"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">单独改变的输入</th>
+<th style="text-align: left;">预期输出</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">F03 补入100元凭证</td>
+<td style="text-align: left;">已匹配300元，总申请仍为300元</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">再导入完全相同的 F02</td>
+<td style="text-align: left;">提示重复，总申请仍为300元</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F02 凭证改为79元</td>
+<td style="text-align: left;">差额1元，转人工复核</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F03 申请改为100.01元</td>
+<td style="text-align: left;">超预算0.01元，F03 仍待补凭证</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">金额核验工具超时</td>
+<td style="text-align: left;">保存输入，标记核验未完成，等待重新核验</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>评价练习。</strong> 给定12笔申请，人工确认4笔需要复核。系统标出5笔，其中3笔确需复核。查准率的分母是系统标出的5笔，结果为 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>5</mn><mo>=</mo><mn>60</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">3/5=60\%</annotation></semantics></math>。召回率的分母是确需复核的4笔，结果为 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>4</mn><mo>=</mo><mn>75</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">3/4=75\%</annotation></semantics></math>。系统漏报1笔，误报2笔。前者可能让一笔有问题的费用继续流转，后者会占用经办人的复核时间。指标定义可参阅 Saito 与 Rehmsmeier 的研究。 <a href="#ref-24">[24]</a></p>
+</section>
+<section id="assignment" class="level2">
+<h2>七、个人期中项目汇报</h2>
+<p>每人独立提交一份项目说明，沿用自己的商业项目，可视化工作流和 AI 编程任选一种。</p>
+<ol type="1">
+<li>说明目标使用者、现有做法、一个待解决的问题，以及为什么选择该平台。</li>
+<li>并列展示一次正常运行和一次异常运行的输入、预期与实际结果，附关键节点记录或界面截图，标出谁处理异常。</li>
+<li>用同一输入比较原办法与原型的耗时或错误，说明样本数，并写出一项本人完成的核验或修改。</li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2>参考文献</h2>
+<ol class="references">
+<li id="ref-1">
+<span class="ref-number">[1]</span> DeepSeek. 应用 API 更新与搜索计费[EB/OL]. 2026-11-13、11-18. <a href="https://api-docs.deepseek.com/zh-cn/updates/">更新日志</a> · <a href="https://api-docs.deepseek.com/zh-cn/quick_start/pricing/">模型与价格</a>.
+</li>
+<li id="ref-2">
+<span class="ref-number">[2]</span> 阿里云. 模型上架与更新（北京地域）[EB/OL]. 2026-11-16、11-19. <a href="https://help.aliyun.com/zh/model-studio/newly-released-models">百炼上架记录</a>.
+</li>
+<li id="ref-3">
+<span class="ref-number">[3]</span> 阿里云. Qwen4-Max[EB/OL]. <a href="https://help.aliyun.com/zh/model-studio/qwen4-max">正式版模型文档</a>.
+</li>
+<li id="ref-4">
+<span class="ref-number">[4]</span> OpenAI. Model Release Notes, GPT-6.2 Astra and GPT-6.2 Sol[EB/OL]. 2026-11-17. <a href="https://help.openai.com/en/articles/9624314-model-release-notes">发布记录</a>.
+</li>
+<li id="ref-5">
+<span class="ref-number">[5]</span> Anthropic. Introducing Claude Fable 5.2 and Claude Mythos 5.2[EB/OL]. 2026-11-09. <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">官方发布</a>.
+</li>
+<li id="ref-6">
+<span class="ref-number">[6]</span> Google DeepMind. Introducing Gemini 4 Neon[EB/OL]. 2026-11-18. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">官方发布</a>.
+</li>
+<li id="ref-7">
+<span class="ref-number">[7]</span> 扣子. 扣子常见问题[EB/OL]. <a href="https://docs.coze.cn/cozespace_coze_app_faq">产品与入口</a>.
+</li>
+<li id="ref-8">
+<span class="ref-number">[8]</span> 扣子. AI编程概述[EB/OL]. <a href="https://docs.coze.cn/cozespace_5uu7ba6t">编程入口与调整说明</a>.
+</li>
+<li id="ref-9">
+<span class="ref-number">[9]</span> 扣子. 技能概述[EB/OL]. <a href="https://docs.coze.cn/guides_skill_overview">Skill说明</a>.
+</li>
+<li id="ref-10">
+<span class="ref-number">[10]</span> 扣子. 开发与执行工作流[EB/OL]. <a href="https://docs.coze.cn/guides_ai_powered_workflow_development">画布试运行</a> · <a href="https://docs.coze.cn/developer_guides_workflow_run">调用与调试</a>.
+</li>
+<li id="ref-11">
+<span class="ref-number">[11]</span> 扣子. 套餐与定价[EB/OL]. <a href="https://docs.coze.cn/cozespace_coze_billing_overview">资源与计费</a>.
+</li>
+<li id="ref-12">
+<span class="ref-number">[12]</span> 阿里云. Flow Agent 与工作流应用[EB/OL]. <a href="https://help.aliyun.com/zh/model-studio/flow-agent-introduction">开发方式</a> · <a href="https://help.aliyun.com/zh/model-studio/workflow-application">节点类型</a>.
+</li>
+<li id="ref-13">
+<span class="ref-number">[13]</span> Coze Dev. Coze Studio: README and License[CP/OL]. <a href="https://github.com/coze-dev/coze-studio">项目仓库</a>.
+</li>
+<li id="ref-14">
+<span class="ref-number">[14]</span> Dify. Dify文档[EB/OL]. <a href="https://docs.dify.ai/zh/home">官方文档</a>.
+</li>
+<li id="ref-15">
+<span class="ref-number">[15]</span> Dify. Introducing New Agent[EB/OL]. 2026-08-27. <a href="https://dify.ai/zh/blog/introducing-new-dify-agent">官方发布</a>.
+</li>
+<li id="ref-16">
+<span class="ref-number">[16]</span> 阿里云. 新版智能体应用（Agent 2.0）[EB/OL]. <a href="https://help.aliyun.com/zh/model-studio/new-single-agent-application">官方文档</a>.
+</li>
+<li id="ref-17">
+<span class="ref-number">[17]</span> Dify. 日志与人工介入节点[EB/OL]. <a href="https://docs.dify.ai/zh/cloud/use-dify/monitor/logs">运行追踪</a> · <a href="https://docs.dify.ai/zh/cloud/use-dify/nodes/human-input">人工介入</a>.
+</li>
+<li id="ref-18">
+<span class="ref-number">[18]</span> LangGenius. Dify License[CP/OL]. <a href="https://github.com/langgenius/dify/blob/main/LICENSE">项目许可</a>.
+</li>
+<li id="ref-19">
+<span class="ref-number">[19]</span> 阿里云. 工具与Skills介绍[EB/OL]. <a href="https://help.aliyun.com/zh/agentrun/introduction-to-tools-and-skills">能力组织</a>.
+</li>
+<li id="ref-20">
+<span class="ref-number">[20]</span> Dify. MCP服务器[EB/OL]. <a href="https://docs.dify.ai/zh/cloud/use-dify/publish/publish-mcp">服务发布</a>.
+</li>
+<li id="ref-21">
+<span class="ref-number">[21]</span> OpenAI. Codex CLI and Codex IDE extension[EB/OL]. <a href="https://learn.chatgpt.com/docs/codex/cli">终端</a> · <a href="https://learn.chatgpt.com/docs/codex/ide">编辑器</a>.
+</li>
+<li id="ref-22">
+<span class="ref-number">[22]</span> Anthropic. Claude Code概述[EB/OL]. <a href="https://code.claude.com/docs/zh-CN/overview">中文文档</a>.
+</li>
+<li id="ref-23">
+<span class="ref-number">[23]</span> HKUDS. AI-Trader[CP/OL]. <a href="https://github.com/HKUDS/AI-Trader">项目仓库与接口文档</a>.
+</li>
+<li id="ref-24">
+<span class="ref-number">[24]</span> Saito T, Rehmsmeier M. The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets[J]. PLoS ONE, 2015, 10(3), e0118432. <a href="https://doi.org/10.1371/journal.pone.0118432">论文</a>.
+</li>
+</ol>
+</section>
+
+</main><footer><a href="/teaching/business-skills/">返回商业技能课程首页</a> · <a href="lecture-04.html">第四讲</a> · <a href="lecture-06.html">第六讲</a> · <a href="#top">返回顶部</a></footer>
+</body></html>
