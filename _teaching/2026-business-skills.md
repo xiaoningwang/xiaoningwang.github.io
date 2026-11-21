@@ -75,6 +75,12 @@ location: "Beijing, China"
 
 讲解客户需求与资产配置、财报与研报生成、文档解析与RAG证据核验、再平衡与顺序决策，以及工作流设计和质量评测。包含公开财报与机构应用案例、课堂练习、个人作业与参考文献。
 
+### 第七讲：强化学习、多智能体协作与治理评测
+
+[阅读第七讲讲义：强化学习、多智能体协作与治理评测]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }})
+
+以财报简报助手为案例，讲解MDP、Q-learning与策略优化、多智能体分工、方案比较、重复测试、工具权限和运行控制。包含近期官方案例、课堂测试、个人项目改进作业与参考文献。
+
 ### 第一讲作业点评
 
 [查看第一讲作业点评（密码访问）]({{ '/files/business-skills/2026-autumn/lecture-01-feedback.html' | relative_url }})
@@ -332,6 +338,7 @@ location: "Beijing, China"
 ---
 
 [← 返回全部课程]({{ '/teaching/' | relative_url }})
+
 
 
 
