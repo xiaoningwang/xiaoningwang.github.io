@@ -15,6 +15,15 @@ redirect_from:
 
 本课程从传媒实践、学术研究与公共文化服务中的具体问题出发，学习如何把大模型与资料、工具和人工判断连接起来，完成有来源、可复核、可迭代的智能体作品。每个项目都要回答：**谁需要它、依据是什么、怎样证明有效**。
 
+## 第三讲　RAG 与证据链 {#lecture-03}
+
+<details markdown="0" id="lecture-03-handout">
+<summary><strong>展开第三讲课堂讲义全文</strong></summary>
+{% include llmpracticeandapplication/lecture-03-body.html %}
+</details>
+
+[单独阅读第三讲讲义](/files/llmpracticeandapplication/2026-autumn/lecture-03-notes.html)
+
 ## 第二讲　模型能力与提示设计 {#lecture-02}
 
 <details markdown="0" id="lecture-02-handout">
