@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="商业技能第七讲：强化学习、多智能体协作、结果与行为评测、重复测试、工具权限、人工控制及个人项目改进。">
+<meta name="description" content="商业技能第七讲：强化学习、八种多智能体架构、SuperAgent持续任务与事件、WorkBuddy专家团和Worktree、企业案例、治理评测及个人项目改进。">
 <title>第七讲：强化学习、多智能体协作与治理评测 - 商业技能</title>
 <link rel="canonical" href="https://xiaoningwang.github.io/files/business-skills/2026-autumn/lecture-07.html">
 <style>body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#203347;max-width:860px;margin:52px auto;padding:0 30px;font-size:18px;line-height:1.95}h1{font-size:36px;line-height:1.45}h2{font-size:25px;line-height:1.6;margin-top:42px;color:#176b70}p{margin:16px 0;text-align:justify}.subtitle{font-size:17px;color:#667480}.reading{font-size:15px}a{color:#176b70;overflow-wrap:anywhere}@media print{body{max-width:none;margin:0;font-size:12pt;line-height:1.75}h1{font-size:24pt}h2{font-size:16pt;break-after:avoid}p{orphans:3;widows:3}a{color:inherit}}h3{font-size:21px;line-height:1.6;margin-top:28px}nav{font-size:15px;margin-bottom:24px}.contents{padding:18px 24px;background:#f4f8f8;border-left:3px solid #176b70}.contents ol{margin:6px 0}pre{background:#f4f7f9;padding:18px;border:1px solid #e1e7eb;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.8}code{font-family:ui-monospace,Menlo,monospace}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:16px;line-height:1.7}caption{text-align:left;font-weight:600;margin-bottom:8px}th,td{padding:10px 12px;border:1px solid #dce5e9;text-align:left;vertical-align:top}th{background:#f1f6f5}.formula{margin:24px 0;padding:18px 8px;overflow-x:auto;text-align:center}math{font-family:"STIX Two Math","Cambria Math",math;font-size:1.08em}math[display="inline"]{display:inline math}.formula math{min-width:max-content;margin:auto}math mtext{font-family:"PingFang SC","Microsoft YaHei",sans-serif}footer{border-top:1px solid #dce5e9;margin-top:40px}@media(max-width:600px){body{margin:28px auto;padding:0 18px;font-size:17px}h1{font-size:29px}h2{font-size:23px}pre{font-size:14px;padding:12px}.contents{padding:14px 16px}}@media print{nav{display:none}pre{font-size:10pt}table{font-size:10pt}h3{break-after:avoid}tr{break-inside:avoid}}
@@ -43,18 +43,18 @@ a:focus-visible,.table-wrap:focus-visible{outline:2px solid #176b70;outline-offs
 <body id="top"><a class="skip-link" href="#main">跳至正文</a>
 <nav aria-label="课程导航"><a href="/teaching/business-skills/">返回课程首页</a> · <a href="lecture-06.html">第六讲</a></nav>
 <main id="main"><h1>强化学习、多智能体协作与治理评测</h1>
-<p class="subtitle">第七讲　从能完成任务到稳定、可控地交付<br>王小宁　2026年秋季　<span class="updated">更新：2026年11月21日</span></p>
-<nav class="contents" aria-label="本讲目录"><strong>阅读路径</strong><ol><li><a href="#overview">学习目标与贯穿任务</a></li><li><a href="#reinforcement">一、强化学习与顺序决策</a></li><li><a href="#collaboration">二、多智能体协作</a></li><li><a href="#evaluation">三、评测与方案比较</a></li><li><a href="#governance">四、治理与运行控制</a></li><li><a href="#practice">五、课堂练习</a></li><li><a href="#assignment">六、个人作业</a></li><li><a href="#references">参考文献</a></li></ol></nav>
+<p class="subtitle">第七讲　从能完成任务到稳定、可控地交付<br>王小宁　2026年秋季　<span class="updated">更新：2026年11月28日</span></p>
+<nav class="contents" aria-label="本讲目录"><strong>阅读路径</strong><ol><li><a href="#overview">学习目标与贯穿任务</a></li><li><a href="#reinforcement">一、强化学习与顺序决策</a></li><li><a href="#collaboration">二、多智能体协作</a></li><li><a href="#evaluation">三、评测与方案比较</a></li><li><a href="#governance">四、治理与运行控制</a></li><li><a href="#practice">五、课堂练习</a></li><li><a href="#assignment">六、个人作业</a></li><li><a href="#references">参考文献</a></li><li><a href="#architectures">常见多智能体架构</a></li><li><a href="#superagent">SuperAgent</a></li><li><a href="#workbuddy">WorkBuddy操作</a></li><li><a href="#business-cases">商用案例</a></li></ol></nav>
 <section id="overview" class="level2">
 <h2>学习目标与贯穿任务</h2>
 <p>第六讲围绕智能投顾、研报生成与文档智能，建立了“资料—字段—计算—证据—分析”的关系。本讲进一步讨论：系统怎样在连续任务中选择行动，怎样组织多个角色协作，以及怎样判断结果是否稳定、可控。</p>
 <p>完成本讲后，应能够：</p>
 <ol type="1">
 <li>解释MDP、回报、价值函数与Q-learning的基本含义，区分模型训练与运行时编排。</li>
-<li>根据任务依赖选择顺序、并行、路由和审核结构，明确角色之间传递什么信息。</li>
+<li>比较流水线、路由、并行汇总、主管分派、交接、审核循环、群聊与黑板结构，明确角色之间传递什么信息。</li>
 <li>编写任务验收条件，使用相同材料比较不同方案，并记录重复运行差异。</li>
 <li>将数据范围、工具权限、重要操作确认、停止条件与运行记录纳入设计。</li>
-<li>在已有个人项目上完成一次有测试依据的改进，为期末展示准备原型与证据。</li>
+<li>说明 SuperAgent 的任务调度、事件与恢复机制，用 WorkBuddy 专家团完成一次有测试依据的个人项目改进。</li>
 </ol>
 <p>贯穿案例仍然是<strong>财报简报助手</strong>。它需要读取公开披露文件、计算指标、形成分析并核对引用。本讲重点检查正常任务之外的情况：资料缺失、来源冲突、工具失败、角色意见不一致，以及文档要求系统执行额外操作。</p>
 </section>
@@ -125,37 +125,88 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 <h3>什么时候需要多个角色</h3>
 <p>多智能体适合将任务拆成相对独立、可以检查输入输出的部分。例如，不同公司或不同资料来源的检索可以并行；同比计算必须等待可比原值确认；审核需要查看证据与计算结果。</p>
 <p>角色数量会影响调用费用、延迟和协调成本。任务较简单、字段固定时，单智能体加计算工具或固定工作流也可能满足需要。判断方案是否值得采用，应通过同一组任务比较结果与成本。</p>
+</section>
+<section id="architectures" class="level3">
+<h3>八种常见架构怎样选择</h3>
+<p>架构首先规定三个问题，谁选择下一步、工作结果交给谁、大家能看见哪些信息。下表结合经典黑板系统、现代智能体编排文档与本讲财报任务整理。一个系统可以组合几种结构，例如先路由、再并行取数，最后进入审核循环。<sup class="citation"><a href="#ref-11">[11]</a> <a href="#ref-12">[12]</a> <a href="#ref-15">[15]</a> <a href="#ref-18">[18]</a></sup></p>
 <div class="table-wrap" role="region" aria-label="本讲表格1" tabindex="0"><table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">协作结构</th>
-<th style="text-align: left;">典型用途</th>
-<th style="text-align: left;">主要检查事项</th>
+<th style="text-align: left;">架构与信息流</th>
+<th style="text-align: left;">适合怎样的任务</th>
+<th style="text-align: left;">财报简报中的用法</th>
+<th style="text-align: left;">设计时要解决的问题</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">顺序处理</td>
-<td style="text-align: left;">文档抽取、指标计算、解释</td>
-<td style="text-align: left;">前一步结果是否完整、可用</td>
+<td style="text-align: left;">流水线 Sequential，A → B → C</td>
+<td style="text-align: left;">步骤与依赖已知，后一项需要前一项的结果</td>
+<td style="text-align: left;">抽取原值 → 计算同比 → 撰写解释</td>
+<td style="text-align: left;">每一步检查输入是否完整，避免错误连续传递</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">并行处理</td>
-<td style="text-align: left;">独立公司、来源或研究维度</td>
-<td style="text-align: left;">子任务边界、重复与遗漏</td>
+<td style="text-align: left;">路由 Router，输入 → 分类 → 相应专家</td>
+<td style="text-align: left;">问题类型不同，处理方法相对明确</td>
+<td style="text-align: left;">金额问题交计算，条款问题交检索，原因问题交研究</td>
+<td style="text-align: left;">低置信度如何处理，分错后怎样回退</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">路由分发</td>
-<td style="text-align: left;">按问题类型交给专长角色</td>
-<td style="text-align: left;">分类错误与无人处理的任务</td>
+<td style="text-align: left;">并行汇总 Fan-out / Fan-in，分派 → A、B、C → 汇总</td>
+<td style="text-align: left;">子任务能够独立完成</td>
+<td style="text-align: left;">收入、现金流、费用各查一组证据，再合成简报</td>
+<td style="text-align: left;">统一主体与期间，标记缺失成员和互相矛盾的结果</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">生成后审核</td>
-<td style="text-align: left;">对初稿检查数字、引用与行为</td>
-<td style="text-align: left;">审核依据、反馈与修订效果</td>
+<td style="text-align: left;">主管分派 Supervisor，主管 ⇄ 多个执行者</td>
+<td style="text-align: left;">子问题需要随中间结果调整</td>
+<td style="text-align: left;">Planner先派取数，再按缺口增加检索，回收结果</td>
+<td style="text-align: left;">主管的任务边界、资源预算与最终汇总责任</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">交接 Handoff，A → B，B继续处理</td>
+<td style="text-align: left;">随对话或任务状态转移责任</td>
+<td style="text-align: left;">咨询入口将税务口径问题连同必要资料交给专长角色</td>
+<td style="text-align: left;">明确当前负责人，移交上下文并防止来回交接</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">审核循环 Evaluator–Optimizer，生成 ⇄ 审核</td>
+<td style="text-align: left;">输出有可检查标准，反馈能指导修改</td>
+<td style="text-align: left;">Reviewer指出错列或无依据归因，撰写者据此修订</td>
+<td style="text-align: left;">指出具体错误，规定迭代上限与通过条件</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">群聊与辩论 Group Chat，多角色 ⇄ 共享讨论</td>
+<td style="text-align: left;">需要比较解释、提出反例或综合专业视角</td>
+<td style="text-align: left;">收入、成本与审阅角色讨论利润变化的替代解释</td>
+<td style="text-align: left;">主持发言顺序，按证据裁决，保存未解决的分歧</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">黑板与共享状态 Blackboard，专家 ⇄ 统一工作区</td>
+<td style="text-align: left;">多个专家逐步补充同一个问题的结构化结果</td>
+<td style="text-align: left;">字段表保存原值、单位、来源与核验状态，角色按缺口补充</td>
+<td style="text-align: left;">字段所有者、版本检查、写入顺序与完成判据</td>
 </tr>
 </tbody>
 </table></div>
+<p><strong>主管调用与交接。</strong> 主管调用执行者后接收结果，并继续统筹。交接后由接收角色承担当前处理责任。设计客服时，要能指出现在由谁回答用户。设计研究助手时，要能指出谁负责合并收入与现金流证据。路由既可由规则完成，也可由模型选择，结果需要通过同一套任务测试。<sup class="citation"><a href="#ref-15">[15]</a></sup></p>
+<p><strong>黑板的理论来源。</strong> 经典黑板系统把共享问题状态、专家知识源与控制机制结合起来，专家依据当前状态贡献局部解。移到财报任务中，可以由资料角色补原值、计算角色补公式、审核角色写核验结果。每次更新都关联字段与来源版本，汇总者再判断是否满足交付条件。<sup class="citation"><a href="#ref-18">[18]</a></sup></p>
+</section>
+<section id="用依赖关系解释成本与延迟" class="level3">
+<h3>用依赖关系解释成本与延迟</h3>
+<p>若一轮中的 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> 个子任务相互独立，各自用时为 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>i</mi></msub><annotation encoding="application/x-tex">L_i</annotation></semantics></math>，汇总用时为 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow></msub><annotation encoding="application/x-tex">L_{\mathrm{merge}}</annotation></semantics></math>，在资源充足且不计排队时，可以近似比较：</p>
+<p><span class="math display"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi></mrow></msub><mo>≈</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>L</mi><mi>i</mi></msub><mo>+</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>L</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>≈</mo><munder><mo>max</mo><mi>i</mi></munder><msub><mi>L</mi><mi>i</mi></msub><mo>+</mo><msub><mi>L</mi><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L_{\mathrm{seq}}\approx\sum_{i=1}^{n}L_i+L_{\mathrm{merge}},\qquad
+L_{\mathrm{parallel}}\approx\max_i L_i+L_{\mathrm{merge}}.
+</annotation></semantics></math></span></p>
+<p>总调用成本仍要累加各成员的实际消耗，并加上调度、通信与汇总开销。模型限流、重复检索、共享文件冲突和较慢成员会影响实际等待时间。若每个角色都必须看完上一角色的结果，流程的关键路径决定延迟，增加并发数量也难以缩短它。</p>
+<p>在本讲案例中，两家公司的取数可并行。某项同比计算依赖两期可比原值，审核依赖原值、公式与初稿。画流程图时将这些依赖画出来，再选择架构。</p>
 </section>
 <section id="plannerexecutor与reviewer" class="level3">
 <h3>Planner、Executor与Reviewer</h3>
@@ -192,6 +243,181 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 <p>AgentScope当前中文文档介绍了由队长通过工具调用分派任务的团队流水线：成员在各自上下文中工作，最终结果返回队长；不同成员任务可以并发，同一成员的多个任务按顺序执行。官方将该模块标为实验功能。<sup class="citation"><a href="#ref-5">[5]</a></sup></p>
 <p>这一结构使“谁可以接受任务、结果返回哪里”较为明确。财报场景中，可以将检索、计算和核验组织为不同职责，但是否需要动态分派，应由任务复杂度和实际比较结果决定。框架提供组织方式，具体资料范围、权限和验收条件仍由应用设计确定。</p>
 </section>
+<section id="superagent" class="level3">
+<h3>SuperAgent怎样跨任务持续工作</h3>
+<p>本节以 DeepSeek Harness 团队的 <code>dsh-superagent-prototype</code> 研究原型为例。它面向单个 GitHub 仓库接收工作事件，可接 GitHub 与飞书，为工作项保留执行会话、目录和返回渠道。这里的 SuperAgent 指这类围绕持续任务组织起来的系统。<sup class="citation"><a href="#ref-13">[13]</a></sup></p>
+<p>与用户对话的主会话承担 Router 的职责，识别新任务和已有任务的后续消息。每个工作项由 Worker 在自己的上下文和目录中推进。用户补充资料、改变要求或询问进度时，系统把消息关联到正确工作项，并把结果送回相应渠道。Worker内部还可以采用本节的流水线、并行或审核结构。<sup class="citation"><a href="#ref-13">[13]</a> <a href="#ref-14">[14]</a></sup></p>
+<style>
+.agent-flow{margin:1.4em 0;padding:1.1em;border:1px solid #d4dfdc;border-radius:6px;background:#f7faf9;text-align:center}
+.agent-flow .flow-step{display:inline-block;padding:.6em 1em;border:1px solid #8baba1;background:#fff;line-height:1.6}
+.agent-flow .flow-arrow{margin:.2em 0;font-size:1.25em}
+.agent-flow .flow-workers{display:flex;justify-content:center;gap:1em;flex-wrap:wrap}
+.agent-flow figcaption{margin-top:1em;font-size:.9em;color:#52636b;line-height:1.7}
+@media(max-width:600px){.agent-flow{margin:1em 0;padding:.8em}.agent-flow .flow-workers{gap:.6em}.agent-flow .flow-step{padding:.5em .7em}}
+</style>
+<figure class="agent-flow" aria-label="SuperAgent从消息入口，经Router分派到独立Worker，再保存任务状态的结构">
+<div class="flow-step">
+消息与工作事件
+</div>
+<div class="flow-arrow" aria-hidden="true">
+↓
+</div>
+<div class="flow-step">
+Router<br>关联任务、分派与接收结果
+</div>
+<div class="flow-arrow" aria-hidden="true">
+↓
+</div>
+<div class="flow-workers">
+<div class="flow-step">
+Worker A<br>会话、资料与产物
+</div>
+<div class="flow-step">
+Worker B<br>会话、资料与产物
+</div>
+</div>
+<div class="flow-arrow" aria-hidden="true">
+↕
+</div>
+<div class="flow-step">
+任务记录、输入版本与执行状态
+</div>
+<figcaption>
+按原型机制简化的课堂结构。每个Worker内部可继续安排检索、计算与审核。
+</figcaption>
+</figure>
+<div class="table-wrap" role="region" aria-label="本讲表格2" tabindex="0"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">机制</th>
+<th style="text-align: left;">需要解决的问题</th>
+<th style="text-align: left;">财报场景中的设计</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Router与Worker分工</td>
+<td style="text-align: left;">交互入口需要及时接收指令，较长任务需要独立推进</td>
+<td style="text-align: left;">主入口接单，两个Worker分别核对公司A、B</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">事件与订阅</td>
+<td style="text-align: left;">后续消息应进入相关任务，重复事件应能识别</td>
+<td style="text-align: left;">新公告触发取数，补件消息关联已有任务编号</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">异步执行</td>
+<td style="text-align: left;">等待下载或计算时仍能处理新输入</td>
+<td style="text-align: left;">保存运行中状态，工具完成后按任务编号回传</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">持久状态与恢复</td>
+<td style="text-align: left;">重启后需要知道已完成哪些步骤</td>
+<td style="text-align: left;">保存原始输入、报告版本、待办及实际交付状态</td>
+</tr>
+</tbody>
+</table></div>
+<p>以上财报流程是对原型机制的课堂迁移设计。原型的事件接收与会话分配可在仓库文档中查看，财报解析、数值核验和引用检查由本课程案例补入。<sup class="citation"><a href="#ref-13">[13]</a> <a href="#ref-14">[14]</a></sup></p>
+<p><strong>从一条新公告看完整过程。</strong> 收到公告事件，先按主体与资料范围判断是否相关，再判断是新工作还是原任务更新。接着写入任务编号，唤起负责该公司的Worker，补充字段与计算，交审核角色核对。完成后更新原报告版本，给出变更及仍有的缺口。相同公告重复到达时，应回到已有工作项检查状态。</p>
+<p>长期运行还需要监控任务心跳和异常。重启或重试前，读取已保存状态与外部系统结果，判断上次动作是否已经完成。例如报告已保存而回执丢失时，应找回已有版本。外部发布由该任务的授权与交付状态控制。原型文档给出了后台任务、失败重试与重启恢复的实现，部署效果还取决于接入、权限与实际测试。<sup class="citation"><a href="#ref-14">[14]</a></sup></p>
+</section>
+<section id="workbuddy" class="level3">
+<h3>在WorkBuddy中选择专家、专家团与并行任务</h3>
+<p>结合提供的 WorkBuddy 操作材料，可以把平台能力对应到三个设计问题。Skill保存方法与可调用能力，专家配置专业角色，专家团由团长组织成员完成一项共同任务。多个任务也可以各自推进，Git代码项目通过Worktree分配独立工作目录和分支。<sup class="citation"><a href="#ref-9">[9]</a> <a href="#ref-10">[10]</a></sup></p>
+<div class="table-wrap" role="region" aria-label="本讲表格3" tabindex="0"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">需求</th>
+<th style="text-align: left;">使用入口</th>
+<th style="text-align: left;">要观察的结果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">按同一种办法反复核对字段</td>
+<td style="text-align: left;">Skill与工具</td>
+<td style="text-align: left;">输入、方法和输出是否能重复使用</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">请某类专业角色完成一项工作</td>
+<td style="text-align: left;">专家</td>
+<td style="text-align: left;">角色是否取得适用材料并返回可核对结果</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">多个角色共同完成一份简报</td>
+<td style="text-align: left;">专家团Team</td>
+<td style="text-align: left;">分派、成员结果与团长汇总是否对应</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">同时推进几个独立任务</td>
+<td style="text-align: left;">多任务；Git项目可用Worktree</td>
+<td style="text-align: left;">任务各有产物，合并时再核对冲突</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>专家团操作。</strong> 在“专家·技能·连接器”的专家页查看专家团成员与能力，召唤后提交目标、文件、输出格式与约束。团长会拆解任务、调用成员并汇总。若某项工作需要腾讯文档等已支持服务，连接器完成相应授权后继续执行。提交前对照任务要求逐项查看成员输出与最终文件。<sup class="citation"><a href="#ref-9">[9]</a></sup></p>
+<p><strong>Worktree操作。</strong> Git项目新建任务时，在分支菜单打开“本次使用Worktree”，选择基础分支。每个任务得到单独目录和任务分支，代码结果随后经过检查与合并。目录分开后，数据库、远程接口与外部文件的访问仍由各自工具权限控制。<sup class="citation"><a href="#ref-10">[10]</a></sup></p>
+<p><strong>费用记录。</strong> WorkBuddy专家文档提示，专家团积分消耗通常为单专家的3—5倍，取决于实际任务。课堂比较填写每次真实消耗与用时，再结合任务成功率解释是否值得增加角色。<sup class="citation"><a href="#ref-9">[9]</a></sup></p>
+</section>
+<section id="workbuddy财报简报任务示例" class="level3">
+<h3>WorkBuddy财报简报任务示例</h3>
+<p>每位同学可以独立向专家团提交下面的任务，沿用第六讲取得的公开财报文件。复制提示后填入具体公司、资料截止日及文件名，运行结果用于本讲已有的个人项目改进作业。</p>
+<blockquote>
+<p>请依据我提供的两份公开披露文件，为〔公司〕撰写一份收入与利润变化简报，资料截止〔日期〕。先列出分工与每个角色需要返回的字段。资料角色提取两期原值、期间、单位和页码，计算角色依据原值复算同比，审核角色逐项检查数字与引用，团长整合正文及问题清单。缺少单位、期间不一致或两份材料冲突时，请保留原值并提出待确认事项。请把正文、来源字段表和异常记录保存为可查看的文件，交付前给我核对。</p>
+</blockquote>
+<p>观察运行记录，确认哪些角色实际执行了任务、能否找到成员返回的原值与页码，以及审核指出的问题是否进入了修订。若平台仅展示最终结果，可另行保留一份人工核验表，说明能核对到的范围。官方实践还提供数据分析、文档与会议管理等用例，可将同一分工方法用于经营分析、会议纪要和材料汇总。<a href="https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Three">WorkBuddy数据分析实践</a> · <a href="https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Practice-Cases/Practice-Nine">AI自驱动实践</a></p>
+</section>
+<section id="business-cases" class="level3">
+<h3>商用案例怎样对应架构</h3>
+<p>提供的材料包含企业智能体落地报道。下表选取能回查分工的案例，架构一栏是依据公开流程所作的课堂分析，实施平台与具体功能见原报道。<sup class="citation"><a href="#ref-16">[16]</a> <a href="#ref-17">[17]</a></sup></p>
+<div class="table-wrap" role="region" aria-label="本讲表格4" tabindex="0"><table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">案例与公开分工</th>
+<th style="text-align: left;">可以用哪些结构解释</th>
+<th style="text-align: left;">课堂应追问什么</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">五粮液浓香酒公司，多个角色连接总部、大区、经销商、终端与消费者</td>
+<td style="text-align: left;">角色路由、分层信息服务</td>
+<td style="text-align: left;">同一制度怎样保持版本一致，哪些问询要转交人工</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">富通天下JoinfClaw，AI-ASs处理背景调查、评级与分配，AI-GB承接多语种网站响应</td>
+<td style="text-align: left;">路由、流程衔接与系统集成</td>
+<td style="text-align: left;">线索评级结果如何传给跟进环节，资料与更新是否及时</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">迈富时涂料企业方案，需求识别、产品查询、历史方案检索、施工指导与推广文件生成</td>
+<td style="text-align: left;">路由后检索，确认方案后分支生成</td>
+<td style="text-align: left;">哪些步骤依赖前一步确认，产品参数与生成文档怎样核对</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">叮当快药，WorkBuddy与CodeBuddy参与需求、测试、取数及代码工作</td>
+<td style="text-align: left;">跨环节编排、生成与审核</td>
+<td style="text-align: left;">自动产物如何经过业务确认并进入下一环节</td>
+</tr>
+</tbody>
+</table></div>
+<p>报道给出五粮液约70%的业务问询由智能体应答，涂料企业平均处理时长缩短70%。阅读这些数字时，要追问统计期间、问询或任务的分母、人工参与环节及比较基线。课程项目以自己的测试记录计算收益与成本，案例中的百分比可作为提出验证问题的线索。<sup class="citation"><a href="#ref-16">[16]</a> <a href="#ref-17">[17]</a></sup></p>
+</section>
 </section>
 <section id="evaluation" class="level2">
 <h2>三、评测：同时检查答案、行为与稳定性</h2>
@@ -214,7 +440,7 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 </section>
 <section id="指标与分母" class="level3">
 <h3>指标与分母</h3>
-<div class="table-wrap" role="region" aria-label="本讲表格2" tabindex="0"><table>
+<div class="table-wrap" role="region" aria-label="本讲表格5" tabindex="0"><table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -265,7 +491,7 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 <section id="计分算例75与58.3分别表示什么" class="level3">
 <h3>计分算例：75%与58.3%分别表示什么</h3>
 <p>给定12个任务，每个运行3次，成功次数如下。这组给定记录用于练习指标计算。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格3" tabindex="0"><table style="width:100%;">
+<div class="table-wrap" role="region" aria-label="本讲表格6" tabindex="0"><table style="width:100%;">
 <colgroup>
 <col style="width: 7%" />
 <col style="width: 7%" />
@@ -366,7 +592,7 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 <section id="practice" class="level2">
 <h2>五、课堂练习：用12类任务检查原型</h2>
 <p>本节给定的材料用于测试正常与异常处理。表中的甲公司数字为题设输入；T01采用第六讲的公开财报案例。<sup class="citation"><a href="#ref-8">[8]</a></sup> 每位同学可以选择其中与个人项目相关的任务，保留实际输入和运行记录。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格4" tabindex="0"><table>
+<div class="table-wrap" role="region" aria-label="本讲表格7" tabindex="0"><table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -444,6 +670,16 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 </table></div>
 <p>T01的原始营业收入为2025年168,838,102,514.79元、2024年170,899,152,276.34元。请先复算，再检查生成解释是否超出了现有材料。</p>
 <p>课堂可以按“写验收条件—运行—检查证据与动作—记录问题—修改后复测”推进。每人选一个失败案例，写出导致失败的具体环节、修改内容和复测结果。失败没有消失时，保留问题及适用范围。</p>
+<section id="architecture-practice" class="level3">
+<h3>本次补充练习　画出并验证你的协作架构</h3>
+<p>每人沿用已有项目，完成一张架构图和一行异常记录，放入同一份改进报告。</p>
+<ol type="1">
+<li>在图上标出用户入口、调度者、执行者、共享数据和交付位置。箭头注明传的是任务、证据还是结果，在有依赖的地方标明等待条件。</li>
+<li>选择本讲一种主要架构，写出与较简单基线相比需要增加什么、希望改善什么。使用WorkBuddy时，在报告中标明采用的是专家团、独立任务还是Worktree。</li>
+<li>复用T03、T07或T08中的一项异常，检查资料缺失、角色冲突或工具失败后是否仍生成了无依据结论，保留实际输出与本人修改。</li>
+<li>采用事件触发设计时，再说明相同事件重复到达、用户中途改要求及任务重启各自交给谁处理。可在流程图上演示这三个分支，并注明实际运行方式。</li>
+</ol>
+</section>
 </section>
 <section id="assignment" class="level2">
 <h2>六、个人作业：一次有依据的项目改进</h2>
@@ -452,13 +688,13 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 <p>提交材料包括：</p>
 <ol type="1">
 <li><strong>2—3页改进报告</strong>：问题、原方案、改动、比较结果、失败分析与下一步优先事项。</li>
-<li><strong>原型与流程说明</strong>：角色、输入输出、工具范围、依赖、停止条件及实际运行入口。</li>
+<li><strong>原型与流程说明</strong>：标明采用的协作架构、各角色输入输出、工具范围、依赖、停止条件及实际运行入口。使用WorkBuddy时保留专家团或任务的可查看记录。</li>
 <li><strong>测试记录表</strong>：输入、预期行为、实际输出、成败依据、重复编号、成本和延迟。</li>
 <li><strong>代表性证据</strong>：至少一项成功与一项失败或待核实案例，保留来源和运行记录。</li>
 <li><strong>AI使用与本人修订说明</strong>：工具、模型版本、AI承担任务、本人核验与修改。</li>
 </ol>
 <p>学生提交PDF或HTML、CSV或表格及原型材料，不要求Rmd。测试输入和预期结果可以事先写好，实际结果和指标应在运行后填写。</p>
-<div class="table-wrap" role="region" aria-label="本讲表格5" tabindex="0"><table>
+<div class="table-wrap" role="region" aria-label="本讲表格8" tabindex="0"><table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">评价维度</th>
@@ -527,8 +763,37 @@ Q(s_t,a_t)\leftarrow Q(s_t,a_t)+\alpha\big[&amp;r_{t+1}\\
 <li id="ref-8">
 <span class="ref-number">[8]</span> 贵州茅台酒股份有限公司. 2025年年度报告摘要[R]. 2026-04-17: 4. <a href="https://static.cninfo.com.cn/finalpage/2026-04-17/1225114731.PDF#page=4">巨潮资讯公告原文，第4页</a>.
 </li>
+<li id="ref-9">
+<span class="ref-number">[9]</span> WorkBuddy. 专家：专家中心、专家团与使用说明[EB/OL]. 查阅于2026-11-28. <a href="https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center">官方中文文档</a>.
+</li>
+<li id="ref-10">
+<span class="ref-number">[10]</span> WorkBuddy. Git集成和并行开发[EB/OL]. 查阅于2026-11-28. <a href="https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Worktree-Task">Worktree任务说明</a>.
+</li>
+<li id="ref-11">
+<span class="ref-number">[11]</span> Anthropic. Building effective agents[EB/OL]. 2024-12-19. <a href="https://www.anthropic.com/research/building-effective-agents">流程与编排模式</a>.
+</li>
+<li id="ref-12">
+<span class="ref-number">[12]</span> Microsoft. AI代理编排模式[EB/OL]. Azure Architecture Center，查阅于2026-11-28. <a href="https://learn.microsoft.com/zh-cn/azure/architecture/ai-ml/guide/ai-agent-design-patterns">官方中文说明</a>.
+</li>
+<li id="ref-13">
+<span class="ref-number">[13]</span> DeepSeek Harness团队. dsh-superagent-prototype：README与Domain model[EB/OL]. 查阅于2026-11-28. <a href="https://github.com/deepseek-ai/dsh-superagent-prototype">研究原型</a> · <a href="https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/001-domain.md">任务与事件模型</a>.
+</li>
+<li id="ref-14">
+<span class="ref-number">[14]</span> DeepSeek Harness团队. dsh-superagent-prototype：Execution与Architecture[EB/OL]. 查阅于2026-11-28. <a href="https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/003-execution.md">执行、失败与恢复</a> · <a href="https://github.com/deepseek-ai/dsh-superagent-prototype/blob/main/docs/007-architecture.md">实现结构</a>.
+</li>
+<li id="ref-15">
+<span class="ref-number">[15]</span> LangChain. Multi-agent[EB/OL]. 查阅于2026-11-28. <a href="https://docs.langchain.com/oss/python/langchain/multi-agent">Subagents、Handoffs与Router</a>.
+</li>
+<li id="ref-16">
+<span class="ref-number">[16]</span> 东方网. Agent走进企业一线，与员工联手组成“超级团队”[N/OL]. 中国日报网转载，2026-06-08. <a href="https://caijing.chinadaily.com.cn/a/202606/08/WS6a2628e9a310942cc49b0693.html">企业分工与应用报道</a>.
+</li>
+<li id="ref-17">
+<span class="ref-number">[17]</span> 中国日报网. 从“用得上”到“用得好”：迈富时智能体落地的“最后一公里”[N/OL]. 2026-11-18. <a href="https://cnews.chinadaily.com.cn/a/202611/18/WS6afd68c3e4b0e14252fcbf80.html">涂料企业协作流程</a>.
+</li>
+<li id="ref-18">
+<span class="ref-number">[18]</span> Nii H P. The Blackboard Model of Problem Solving and the Evolution of Blackboard Architectures[J]. AI Magazine, 1986, 7(2): 38–53. DOI: 10.1609/aimag.v7i2.537.
+</li>
 </ol>
 </section>
-
 </main><footer><a href="/teaching/business-skills/">返回商业技能课程首页</a> · <a href="lecture-06.html">阅读第六讲</a> · <a href="#top">返回顶部</a></footer>
 </body></html>

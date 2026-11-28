@@ -89,7 +89,9 @@ location: "Beijing, China"
 
 [阅读第七讲讲义：强化学习、多智能体协作与治理评测]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }})
 
-以财报简报助手为案例，讲解MDP、Q-learning与策略优化、多智能体分工、方案比较、重复测试、工具权限和运行控制。包含近期官方案例、课堂测试、个人项目改进作业与参考文献。
+以财报简报助手为案例，讲解MDP与Q-learning、八种常见多智能体架构、SuperAgent的任务调度与恢复、WorkBuddy专家团和Worktree，以及方案评测、工具权限和个人项目改进。补充企业分工案例与可回查来源。
+
+[常见多智能体架构]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }}#architectures) · [SuperAgent]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }}#superagent) · [WorkBuddy操作与案例]({{ '/files/business-skills/2026-autumn/lecture-07.html' | relative_url }}#workbuddy)
 
 ### 第一讲作业点评
 
